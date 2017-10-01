@@ -1,5 +1,22 @@
+/* @flow */
 import classnames from 'classnames';
 
+type CursorParameters = {
+  left: boolean,
+  center: boolean,
+  right: boolean,
+  justify: boolean,
+  lowercase: boolean,
+  uppercase: boolean,
+  capitalize: boolean,
+  normal: boolean,
+  bold: boolean,
+  italic: boolean,
+  large: boolean,
+  ellipsis: boolean,
+  clip: boolean,
+  textBreak: boolean,
+};
 export default function cursor({
   left,
   center,
@@ -15,7 +32,7 @@ export default function cursor({
   ellipsis,
   clip,
   textBreak,
-}, className) {
+}: CursorParameters, className: string): string {
   return classnames({
     'text-left': left,
     'text-center': center,

@@ -2,7 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const Column = ({ children, className, xs, sm, md, lg, xl, size, ...props }) => {
+
+export type ColumnProps = {
+  children: React.DOM,
+  className: string,
+  xs: number,
+  sm: number,
+  md: number,
+  lg: number,
+  xl: number,
+  size: number,
+};
+const Column = ({ children, className, xs, sm, md, lg, xl, size, ...props }: ColumnProps) => {
   const classes = classnames(
     'column',
     {
@@ -21,17 +32,6 @@ const Column = ({ children, className, xs, sm, md, lg, xl, size, ...props }) => 
       {children}
     </div>
   );
-};
-
-Column.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  xs: PropTypes.number,
-  sm: PropTypes.number,
-  md: PropTypes.number,
-  lg: PropTypes.number,
-  xl: PropTypes.number,
-  size: PropTypes.number,
 };
 Column.defaultProps = {
   children: null,

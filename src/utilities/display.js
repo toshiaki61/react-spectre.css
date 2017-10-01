@@ -1,5 +1,19 @@
+/* @flow */
 import classnames from 'classnames';
 
+export type DisplayParameters = {
+  block: boolean,
+  inline: boolean,
+  inlineBlock: boolean,
+  flex: boolean,
+  inlineFlex: boolean,
+  none: boolean,
+  hide: boolean,
+  visible: boolean,
+  invisible: boolean,
+  textHide: boolean,
+  assistive: boolean,
+};
 export default function display({
   block,
   inline,
@@ -12,7 +26,7 @@ export default function display({
   invisible,
   textHide,
   assistive,
-}, className) {
+}: DisplayParameters, className: string): string {
   return classnames({
     'd-block': block,
     'd-inline': inline,

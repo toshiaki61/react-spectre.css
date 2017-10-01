@@ -1,9 +1,13 @@
+/* @flow */
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import uniqueId from './uniqueId';
 
+export type SwitchProps = {
+  children: PropTypes.node.isRequired,
+  className: string,
+};
 const Switch = ({ children, className, ...props }) => {
   const classes = classnames('form-switch', className);
   const id = uniqueId('switch');
@@ -13,11 +17,6 @@ const Switch = ({ children, className, ...props }) => {
       <i className="form-icon" /> {children}
     </label>
   );
-};
-
-Switch.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
 };
 Switch.defaultProps = {
   className: '',

@@ -1,6 +1,16 @@
+/* @flow */
 import classnames from 'classnames';
 
-function text({ primary, secondary, gray, light, success, warning, error }, className = '') {
+export type ColorParameters = {
+  primary: boolean,
+  secondary: boolean,
+  gray: boolean,
+  light: boolean,
+  success: boolean,
+  warning: boolean,
+  error: boolean
+};
+function text({ primary, secondary, gray, light, success, warning, error }: ColorParameters, className: string = ''): string {
   return classnames({
     'text-primary': primary,
     'text-secondary': secondary,
@@ -12,7 +22,7 @@ function text({ primary, secondary, gray, light, success, warning, error }, clas
   }, className);
 }
 
-function background({ primary, secondary, gray, light, success, warning, error }, className = '') {
+function background({ primary, secondary, gray, light, success, warning, error }: ColorParameters, className: string = ''): string {
   return classnames({
     'bg-primary': primary,
     'bg-secondary': secondary,

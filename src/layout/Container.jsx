@@ -1,26 +1,31 @@
+/* @flow */
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const Container = ({ children, className, xs, sm, md, lg, xl, ...props }) => {
+export type ContainerProps = {
+  children: React.DOM,
+  className: string,
+  xs: boolean,
+  sm: boolean,
+  md: boolean,
+  lg: boolean,
+  xl: boolean,
+};
+const Container = ({ children, className, xs, sm, md, lg, xl, ...props }: ContainerProps) => {
   const classes = classnames(
-    'container', xs, sm, md, lg, xl, className,
+    'container', {
+      xs,
+      sm,
+      md,
+      lg,
+      xl
+    }, className
   );
   return (
     <section className={classes} {...props}>
       {children}
     </section>
   );
-};
-
-Container.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  xs: PropTypes.bool,
-  sm: PropTypes.bool,
-  md: PropTypes.bool,
-  lg: PropTypes.bool,
-  xl: PropTypes.bool,
 };
 Container.defaultProps = {
   className: '',

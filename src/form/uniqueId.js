@@ -1,3 +1,4 @@
+/* @flow */
 const current = {};
 const uniqueId = (prefix) => {
   if (!current[prefix]) {

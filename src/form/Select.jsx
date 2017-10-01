@@ -1,10 +1,16 @@
+/* @flow */
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { Group as FormGroup, Label as FormLabel } from './Form';
 
-const SelectOnly = ({ children, className, sm, lg, ...props }) => {
+export type SelectOnlyProps = {
+  children: React.DOM,
+  className: string,
+  sm: boolean,
+  lg: boolean,
+};
+const SelectOnly = ({ children, className, sm, lg, ...props }: SelectOnlyProps) => {
   const classes = classnames(
     'form-select',
     className,
@@ -19,13 +25,6 @@ const SelectOnly = ({ children, className, sm, lg, ...props }) => {
     </select>
   );
 };
-
-SelectOnly.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  sm: PropTypes.bool,
-  lg: PropTypes.bool,
-};
 SelectOnly.defaultProps = {
   children: null,
   className: '',
@@ -33,7 +32,13 @@ SelectOnly.defaultProps = {
   lg: false,
 };
 
-const Select = ({ children, label, options, ...props }) => {
+export type SelectProps = SelectOnlyProps & {
+  label: string,
+  options: {
+    [key: string]: string,
+  },
+};
+const Select = ({ children, label, options, ...props }: SelectProps) => {
   const labelNode = label ? <FormLabel>{label}</FormLabel> : null;
   const keys = Object.keys(options);
   if (keys.length > 0) {
@@ -53,15 +58,6 @@ const Select = ({ children, label, options, ...props }) => {
       {children}
     </SelectOnly>
   );
-};
-
-Select.propTypes = {
-  ...SelectOnly.propTypes,
-  label: PropTypes.string,
-  options: PropTypes.shape({
-    key: PropTypes.string,
-    value: PropTypes.string,
-  }),
 };
 Select.defaultProps = {
   label: '',

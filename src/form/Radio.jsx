@@ -1,10 +1,16 @@
+/* @flow */
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import uniqueId from './uniqueId';
 
-const RadioSingle = ({ label, className, name, checked, ...props }) => {
+export RadioSingleProps = {
+  label: string,
+  name: string,
+  className: string,
+  checked: boolean,
+};
+const RadioSingle = ({ label, className, name, checked, ...props }: RadioSingleProps) => {
   const classes = classnames('form-radio', className);
   const id = uniqueId('radio');
   return (
@@ -14,19 +20,18 @@ const RadioSingle = ({ label, className, name, checked, ...props }) => {
     </label>
   );
 };
-
-RadioSingle.propTypes = {
-  label: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  checked: PropTypes.bool,
-};
 RadioSingle.defaultProps = {
   label: '',
   className: '',
   checked: false,
 };
 
+
+export type RadioProps = RadioSingleProps & {
+  options: {
+    [key: string]: string,
+  },
+};
 const Radio = ({ name, label, options, ...props }) => {
   const keys = Object.keys(options);
   if (keys.length === 0) {
@@ -40,14 +45,6 @@ const Radio = ({ name, label, options, ...props }) => {
       {list}
     </div>
   );
-};
-
-Radio.propTypes = {
-  ...RadioSingle.propTypes,
-  options: PropTypes.shape({
-    key: PropTypes.string,
-    value: PropTypes.string,
-  }),
 };
 Radio.defaultProps = {
   options: {},

@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import Filter from '../experimentals/Filter';
 
-class FilterExample extends Component {
-  static propTypes = {
-    tags: PropTypes.shape({}),
-    data: PropTypes.arrayOf(PropTypes.shape({
-      tag: PropTypes.string,
-      title: PropTypes.string,
-      subtitle: PropTypes.string,
-    })),
-  };
+type FilterProps = {
+  tags: {
+    [key: strihg]: string,
+  },
+  data: Array<{
+    tag: string,
+    title: string,
+    subtitle: string,
+  }>,
+};
+type FilterStates = {
+  active: string,
+};
+class FilterExample extends Component<FilterProps, FilterStates> {
   static defaultProps = {
     tags: {
       'tag-all': 'All',

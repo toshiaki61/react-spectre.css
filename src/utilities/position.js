@@ -1,5 +1,43 @@
+/* @flow */
 import classnames from 'classnames';
 
+type PositionParameters = {
+  clearfix: boolean,
+  floatLeft: boolean,
+  floatRight: boolean,
+  relative: boolean,
+  absolute: boolean,
+  fixed: boolean,
+  centered: boolean,
+  margin: boolean,
+  marginMore: boolean,
+  marginTop: boolean,
+  marginTopMore: boolean,
+  marginBottom: boolean,
+  marginBottomMore: boolean,
+  marginLeft: boolean,
+  marginLeftMore: boolean,
+  marginRight: boolean,
+  marginRightMore: boolean,
+  marginWidth: boolean,
+  marginWidthMore: boolean,
+  marginHeight: boolean,
+  marginHeightMore: boolean,
+  padding: boolean,
+  paddingMore: boolean,
+  paddingTop: boolean,
+  paddingTopMore: boolean,
+  paddingBottom: boolean,
+  paddingBottomMore: boolean,
+  paddingLeft: boolean,
+  paddingLeftMore: boolean,
+  paddingRight: boolean,
+  paddingRightMore: boolean,
+  paddingWidth: boolean,
+  paddingWidthMore: boolean,
+  paddingHeight: boolean,
+  paddingHeightMore: boolean,
+};
 export default function position({
   clearfix,
   floatLeft,
@@ -36,7 +74,7 @@ export default function position({
   paddingWidthMore,
   paddingHeight,
   paddingHeightMore,
-}, className) {
+}: PositionParameters, className: string): string {
   return classnames({
     clearfix,
     'float-left': floatLeft,

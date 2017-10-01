@@ -1,18 +1,18 @@
+/* @flow */
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const Loading = ({ lg, className }) => {
+export type LoadingProps = {
+  lg: boolean,
+  className: string,
+};
+const Loading = ({ lg, className }: LoadingProps) => {
   const classes = classnames('loading', {
     'loading-lg': lg,
   }, className);
   return (
     <div className={classes} />
   );
-};
-Loading.propTypes = {
-  lg: PropTypes.bool,
-  className: PropTypes.string,
 };
 Loading.defaultProps = {
   lg: false,

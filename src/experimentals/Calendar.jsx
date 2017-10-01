@@ -2,13 +2,13 @@
 import React from 'react';
 import classnames from 'classnames';
 import moment from 'moment';
+import noop from 'noop';
 
 import Button from '../Button';
 import Icon from '../Icon';
-import noop from 'noop';
 
 export type NavProps = {
-  current: moment$Moment,
+  current: moment,
   navFormat: string,
   onPrevMonthClick: (e: Event) => void,
   onNextMonthClick: (e: Event) => void,

@@ -1,10 +1,14 @@
+/* @flow */
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import uniqueId from './uniqueId';
 
-const CheckboxSingle = ({ label, className, ...props }) => {
+export type CheckboxSingleProps = {
+  label: React.DOM,
+  className: string,
+};
+const CheckboxSingle = ({ label, className, ...props }: CheckboxSingleProps) => {
   const classes = classnames('form-checkbox', className);
   const id = uniqueId('checkbox');
   return (
@@ -14,16 +18,16 @@ const CheckboxSingle = ({ label, className, ...props }) => {
     </label>
   );
 };
-
-CheckboxSingle.propTypes = {
-  label: PropTypes.node.isRequired,
-  className: PropTypes.string,
-};
 CheckboxSingle.defaultProps = {
   className: '',
 };
 
-const Checkbox = ({ name, label, options, ...props }) => {
+export type CheckboxProps = CheckboxSingleProps & {
+  options: {
+    [key: string]: string,
+  },
+};
+const Checkbox = ({ name, label, options, ...props }: CheckboxProps) => {
   const keys = Object.keys(options);
   if (keys.length === 0) {
     return <CheckboxSingle label={label} name={name} {...props} />;
@@ -38,13 +42,6 @@ const Checkbox = ({ name, label, options, ...props }) => {
   );
 };
 
-Checkbox.propTypes = {
-  ...CheckboxSingle.propTypes,
-  options: PropTypes.shape({
-    key: PropTypes.string,
-    value: PropTypes.string,
-  }),
-};
 Checkbox.defaultProps = {
   options: {},
 };

@@ -1,10 +1,9 @@
 /* @flow */
 import React from 'react';
 import classnames from 'classnames';
-
 import noop from 'noop';
 
-type LinkProps = {
+export type LinkProps = {
   onClick: (e: Event) => void,
   className?: string,
   'data-badge'?: number | string,

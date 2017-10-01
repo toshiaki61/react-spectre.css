@@ -1,10 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Container from './Container';
 
-const ColumnsWithoutContainer = ({ children, gapless, oneline, className, ...props }) => {
+export type ColumnsWithoutContainerProps = {
+  children: React.DOM,
+  className: string,
+  gapless: boolean,
+  oneline: boolean,
+};
+const ColumnsWithoutContainer = ({ children, gapless, oneline, className, ...props }: ColumnsWithoutContainerProps) => {
   const classes = classnames('columns', {
     'col-gapless': gapless,
     'col-oneline': oneline,
@@ -15,13 +20,6 @@ const ColumnsWithoutContainer = ({ children, gapless, oneline, className, ...pro
       {children}
     </div>
   );
-};
-
-ColumnsWithoutContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  gapless: PropTypes.bool,
-  oneline: PropTypes.bool,
 };
 ColumnsWithoutContainer.defaultProps = {
   className: '',
@@ -40,7 +38,22 @@ export function acquireContainerProps(option) {
   }
 }
 
-const Columns = ({ children, container, ...props }) => {
+export type ContainerProps = {
+  className: string,
+  xs: boolean,
+  sm: boolean,
+  md: boolean,
+  lg: boolean,
+  xl: boolean,
+};
+export type ColumnsProps = {
+  children: React.DOM,
+  container: 
+    boolean |
+    string |
+    ContainerProps,
+};
+const Columns = ({ children, container, ...props }: ColumnsProps) => {
   const content = <ColumnsWithoutContainer {...props}>{children}</ColumnsWithoutContainer>;
 
   if (!container) {
@@ -52,22 +65,6 @@ const Columns = ({ children, container, ...props }) => {
       {content}
     </Container>
   );
-};
-
-Columns.propTypes = {
-  children: PropTypes.node.isRequired,
-  container: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      className: PropTypes.string,
-      xs: PropTypes.bool,
-      sm: PropTypes.bool,
-      md: PropTypes.bool,
-      lg: PropTypes.bool,
-      xl: PropTypes.bool,
-    }),
-  ]),
 };
 Columns.defaultProps = {
   container: false,

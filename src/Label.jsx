@@ -1,8 +1,17 @@
+/* @flow */
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-
+export type LabelProps = {
+  children: React.DOM,
+  className: string,
+  rounded: boolean,
+  primary: boolean,
+  secondary: boolean,
+  success: boolean,
+  warning: boolean,
+  error: boolean,
+};
 const Label = ({
   children,
   className,
@@ -13,7 +22,7 @@ const Label = ({
   warning,
   error,
   ...props
-}) => {
+}: LabelProps) => {
   const classes = classnames('label', {
     'label-rounded': rounded,
     'label-primary': primary,
@@ -25,17 +34,6 @@ const Label = ({
   return (
     <span className={classes} {...props}>{children}</span>
   );
-};
-
-Label.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  rounded: PropTypes.rounded,
-  primary: PropTypes.bool,
-  secondary: PropTypes.bool,
-  success: PropTypes.bool,
-  warning: PropTypes.bool,
-  error: PropTypes.bool,
 };
 Label.defaultProps = {
   className: '',

@@ -22,17 +22,19 @@ const Table = ({ header, contents, className, striped, hover, ...props }: TableP
     <table className={classes} {...props}>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Genre</th>
-          <th>Release date</th>
+          {header.map((row, i) => (
+            <th>{row}</th>
+          ))}
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>The Shawshank Redemption</td>
-          <td>Crime, Drama</td>
-          <td>14 October 1994</td>
-        </tr>
+        {contents.map((content, i) => (
+          <tr>
+            {content.map((column, j) => (
+              <td>{column}</td>
+            ))}
+          </tr>
+        ))}
       </tbody>
     </table>
   );

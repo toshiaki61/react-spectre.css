@@ -1,9 +1,9 @@
 /* @flow */
 import React from 'react';
 import classnames from 'classnames';
+import noop from 'noop';
 
 import Divider from '../utilities/Divider';
-import noop from 'noop';
 
 export type BadgeProps = {
   content: string | number | React.DOM

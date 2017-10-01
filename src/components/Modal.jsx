@@ -1,9 +1,9 @@
 /* @flow */
 import React from 'react';
 import classnames from 'classnames';
+import noop from 'noop';
 
 import Button from '../Button';
-import noop from 'noop';
 
 export type ModalProps = {
   active: boolean,

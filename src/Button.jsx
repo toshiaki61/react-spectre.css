@@ -1,9 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import Link from './Link';
-
+export type ButtonProps = {
+  loading: boolean,
+  href: string,
+  lg: boolean,
+  sm: boolean,
+  block: boolean,
+  inputGroup: boolean,
+  primary: boolean,
+  clear: boolean,
+  link: boolean,
+  action: boolean,
+  circle: boolean,
+};
 const Button = ({
   children,
   className,
@@ -12,7 +22,6 @@ const Button = ({
   lg,
   sm,
   block,
-  to,
   inputGroup,
   primary,
   clear,
@@ -20,8 +29,8 @@ const Button = ({
   action,
   circle,
   ...props
-}) => {
-  const linkButton = link || href || to;
+}: ButtonProps) => {
+  const linkButton = link || href;
   const classes = classnames(
     'btn',
     {
@@ -42,8 +51,6 @@ const Button = ({
   let toReturn = null;
   if (href) {
     toReturn = <a href={href} className={classes} {...props}>{children}</a>;
-  } else if (to) {
-    toReturn = <Link to={to} className={classes} {...props}>{children}</Link>;
   } else {
     toReturn = <button className={classes} {...props}>{children}</button>;
   }
@@ -51,24 +58,14 @@ const Button = ({
   return toReturn;
 };
 
-Button.propTypes = {
-  loading: PropTypes.bool,
-  href: PropTypes.string,
-  lg: PropTypes.bool,
-  sm: PropTypes.bool,
-  block: PropTypes.bool,
-  to: PropTypes.string,
-  inputGroup: PropTypes.bool,
-  primary: PropTypes.bool,
-  clear: PropTypes.bool,
-  link: PropTypes.bool,
-  action: PropTypes.bool,
-  circle: PropTypes.bool,
-};
-
 export default Button;
 
-const Group = ({ children, className, block }) => {
+export type GroupProps = {
+  children: React.DOM,
+  className: string,
+  block: boolean,
+};
+const Group = ({ children, className, block }: GroupProps) => {
   const classes = classnames(
     'btn-group',
     { 'btn-group-block': block },
@@ -80,12 +77,6 @@ const Group = ({ children, className, block }) => {
       {children}
     </div>
   );
-};
-
-Group.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  block: PropTypes.bool,
 };
 Group.defaultProps = {
   className: '',

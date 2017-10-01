@@ -1,11 +1,20 @@
+/* @flow */
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { Group as FormGroup, Label as FormLabel } from './Form';
 import uniqueId from './uniqueId';
 
-const BaseInput = ({ className, success, danger, textarea, slider, sm, lg, ...props }) => {
+export type BaseInputProps = {
+  className: string,
+  success: boolean,
+  danger: boolean,
+  sm: boolean,
+  lg: boolean,
+  textarea: boolean,
+  slider: boolean,
+};
+const BaseInput = ({ className, success, danger, textarea, slider, sm, lg, ...props }: BaseInputProps) => {
   const classes = classnames(
     className,
     {
@@ -23,16 +32,6 @@ const BaseInput = ({ className, success, danger, textarea, slider, sm, lg, ...pr
   }
   return <input {...props} className={classes} />;
 };
-
-BaseInput.propTypes = {
-  className: PropTypes.string,
-  success: PropTypes.bool,
-  danger: PropTypes.bool,
-  sm: PropTypes.bool,
-  lg: PropTypes.bool,
-  textarea: PropTypes.bool,
-  slider: PropTypes.bool,
-};
 BaseInput.defaultProps = {
   className: '',
   success: false,
@@ -43,7 +42,16 @@ BaseInput.defaultProps = {
   slider: false,
 };
 
-const Input = ({ label, ...props }) => {
+export type InputProps = BaseInputProps & {
+  className: string,
+  success: boolean,
+  danger: boolean,
+  sm: boolean,
+  lg: boolean,
+  textarea: boolean,
+  label: string,
+};
+const Input = ({ label, ...props }: InputProps) => {
   const id = props.id || uniqueId('input');
   const content = <BaseInput id={id} {...props} />;
   if (label) {
@@ -55,17 +63,6 @@ const Input = ({ label, ...props }) => {
     );
   }
   return content;
-};
-
-Input.propTypes = {
-  ...BaseInput.propTypes,
-  className: PropTypes.string,
-  success: PropTypes.bool,
-  danger: PropTypes.bool,
-  sm: PropTypes.bool,
-  lg: PropTypes.bool,
-  textarea: PropTypes.bool,
-  label: PropTypes.string,
 };
 Input.defaultProps = {
   className: '',
@@ -79,7 +76,13 @@ Input.defaultProps = {
 
 export default Input;
 
-const Group = ({ children, className, success, danger, ...props }) => {
+export type GroupProps = {
+  children: React.DOM,
+  className: string,
+  success: boolean,
+  danger: boolean,
+};
+const Group = ({ children, className, success, danger, ...props }: GroupProps) => {
   const classes = classnames('input-group', className, { 'has-success': success, 'has-danger': danger });
   return (
     <div {...props} className={classes}>
@@ -87,33 +90,25 @@ const Group = ({ children, className, success, danger, ...props }) => {
     </div>
   );
 };
-
-Group.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  success: PropTypes.bool,
-  danger: PropTypes.bool,
-};
 Group.defaultProps = {
   className: '',
   success: false,
   danger: false,
 };
 
-const Addon = ({ children, className, sm, lg, ...props }) => {
+export type AddonProps = {
+  children: React.DOM,
+  className: string,
+  sm: boolean,
+  lg: boolean,
+};
+const Addon = ({ children, className, sm, lg, ...props }: AddonProps) => {
   const classes = classnames('input-group-addon', className, { 'addon-sm': sm, 'addon-lg': lg });
   return (
     <span {...props} className={classes} >
       {children}
     </span>
   );
-};
-
-Addon.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  sm: PropTypes.bool,
-  lg: PropTypes.bool,
 };
 Addon.defaultProps = {
   className: '',

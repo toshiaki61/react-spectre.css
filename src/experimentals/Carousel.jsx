@@ -1,8 +1,8 @@
 /* @flow */
 import React from 'react';
+import noop from 'noop';
 
 import Icon from '../Icon';
-import noop from 'noop';
 
 export type ItemProps = {
   src: string,

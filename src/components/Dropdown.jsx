@@ -1,11 +1,11 @@
 /* @flow */
 import React from 'react';
 import classnames from 'classnames';
+import noop from 'noop';
 
 import Button from '../Button';
 import Icon from '../Icon';
 import Menu from './Menu';
-import noop from 'noop';
 
 import type { ItemProps as MenuItemProps } from './Menu';
 

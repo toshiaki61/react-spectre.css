@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
 import Carousel from '../experimentals/Carousel';
 
-class CarouselExample extends Component {
-  static propTypes = {
-    slides: PropTypes.arrayOf(PropTypes.shape({
-      src: PropTypes.string,
-      alt: PropTypes.string,
-    })),
-  };
+type CarouselProps = {
+  slides: Array<{
+    src: string,
+    alt: string,
+  }>,
+};
+type CarouselStates = {
+  active: string,
+};
+class CarouselExample extends Component<CarouselProps, CarouselStates> {
   static defaultProps = {
     slides: [
       { src: '//picturepan2.github.io/spectre/img/osx-yosemite.jpg', alt: 'macOS Yosemite Wallpaper' },

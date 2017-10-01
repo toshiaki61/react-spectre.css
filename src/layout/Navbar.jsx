@@ -1,30 +1,36 @@
+/* @flow */
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Container from './Container';
 import { acquireContainerProps } from './Columns';
 
-const Section = ({ children, className, center, ...props }) => {
-  const classes = classnames({ 'navbar-section': !center, 'navbar-center': center }, className);
+export type SectionProps = {
+  children: React.DOM,
+  className: string,
+  center: boolean,
+};
+const Section = ({ children, className, center, ...props }: SectionProps) => {
+  const classes = classnames({
+    'navbar-section': !center,
+    'navbar-center': center
+  }, className);
   return (
     <section className={classes} {...props}>
       {children}
     </section>
   );
 };
-
-Section.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  center: PropTypes.bool,
-};
 Section.defaultProps = {
   className: '',
   center: false,
 };
 
-const NavbarWithoutContainer = ({ children, className, ...props }) => {
+export type NavbarWithoutContainerProps = {
+  children: Section,
+  className: string,
+};
+const NavbarWithoutContainer = ({ children, className, ...props }: NavbarWithoutContainerProps) => {
   const classes = classnames('navbar', className);
 
   return (
@@ -33,16 +39,25 @@ const NavbarWithoutContainer = ({ children, className, ...props }) => {
     </header>
   );
 };
-
-NavbarWithoutContainer.propTypes = {
-  children: PropTypes.instanceOf(Section).isRequired,
-  className: PropTypes.string,
-};
 NavbarWithoutContainer.defaultProps = {
   className: '',
 };
 
-const Navbar = ({ children, container, ...props }) => {
+export type NavbarProps = {
+  children: React.DOM,
+  container:
+    boolean |
+    string |
+    {
+      className: string,
+      xs: boolean,
+      sm: boolean,
+      md: boolean,
+      lg: boolean,
+      xl: boolean,
+    }
+};
+const Navbar = ({ children, container, ...props }: NavbarProps) => {
   const content = <NavbarWithoutContainer {...props}>{children}</NavbarWithoutContainer>;
 
   if (!container) {
@@ -56,29 +71,18 @@ const Navbar = ({ children, container, ...props }) => {
     </Container>
   );
 };
-
-Navbar.propTypes = {
-  children: PropTypes.node.isRequired,
-  container: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-    PropTypes.shape({
-      className: PropTypes.string,
-      xs: PropTypes.bool,
-      sm: PropTypes.bool,
-      md: PropTypes.bool,
-      lg: PropTypes.bool,
-      xl: PropTypes.bool,
-    }),
-  ]),
-};
 Navbar.defaultProps = {
   container: false,
 };
 
 export default Navbar;
 
-const Brand = ({ children, className, ...props }) => {
+export type BrandProps = {
+  children: React.DOM,
+  className: string,
+  href: string,
+};
+const Brand = ({ children, className, ...props }: BrandProps) => {
   const classes = classnames('navbar-brand', className);
   let component = null;
   if (props.href) {
@@ -87,12 +91,6 @@ const Brand = ({ children, className, ...props }) => {
     component = <span className={classes} {...props}>{children}</span>;
   }
   return component;
-};
-
-Brand.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  href: PropTypes.string,
 };
 Brand.propTypes = {
   className: '',

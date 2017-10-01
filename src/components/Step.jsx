@@ -9,7 +9,7 @@ export type ItemProps = {
 };
 export type StepProps = {
   items: Array<ItemProps>,
-  active: string,
+  active?: string,
 };
 const Step = ({ items, active }: StepProps) => {
   if (!items.length) {

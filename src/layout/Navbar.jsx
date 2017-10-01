@@ -7,8 +7,8 @@ import { acquireContainerProps } from './Columns';
 
 export type SectionProps = {
   children: React.DOM,
-  className: string,
-  center: boolean,
+  className?: string,
+  center?: boolean,
 };
 const Section = ({ children, className, center, ...props }: SectionProps) => {
   const classes = classnames({
@@ -27,8 +27,8 @@ Section.defaultProps = {
 };
 
 export type NavbarWithoutContainerProps = {
-  children: Section,
-  className: string,
+  children: React.DOM,
+  className?: string,
 };
 const NavbarWithoutContainer = ({ children, className, ...props }: NavbarWithoutContainerProps) => {
   const classes = classnames('navbar', className);
@@ -45,16 +45,16 @@ NavbarWithoutContainer.defaultProps = {
 
 export type NavbarProps = {
   children: React.DOM,
-  container:
+  container?:
     boolean |
     string |
     {
-      className: string,
-      xs: boolean,
-      sm: boolean,
-      md: boolean,
-      lg: boolean,
-      xl: boolean,
+      className?: string,
+      xs?: boolean,
+      sm?: boolean,
+      md?: boolean,
+      lg?: boolean,
+      xl?: boolean,
     }
 };
 const Navbar = ({ children, container, ...props }: NavbarProps) => {
@@ -79,8 +79,8 @@ export default Navbar;
 
 export type BrandProps = {
   children: React.DOM,
-  className: string,
-  href: string,
+  className?: string,
+  href?: string,
 };
 const Brand = ({ children, className, ...props }: BrandProps) => {
   const classes = classnames('navbar-brand', className);

@@ -2,12 +2,12 @@
 import classnames from 'classnames';
 
 export type CursorParameters = {
-  hand: boolean,
-  move: boolean,
-  zoomIn: boolean,
-  zoomOut: boolean,
-  notAllowed: boolean,
-  auto: boolean
+  hand?: boolean,
+  move?: boolean,
+  zoomIn?: boolean,
+  zoomOut?: boolean,
+  notAllowed?: boolean,
+  auto?: boolean
 };
 export default function cursor({ hand, move, zoomIn, zoomOut, notAllowed, auto }: CursorParameters, className: string): string {
   return classnames({

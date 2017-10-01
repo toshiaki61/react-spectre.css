@@ -5,10 +5,10 @@ import classnames from 'classnames';
 import { Group as FormGroup, Label as FormLabel } from './Form';
 
 export type SelectOnlyProps = {
-  children: React.DOM,
-  className: string,
-  sm: boolean,
-  lg: boolean,
+  children?: React.DOM,
+  className?: string,
+  sm?: boolean,
+  lg?: boolean,
 };
 const SelectOnly = ({ children, className, sm, lg, ...props }: SelectOnlyProps) => {
   const classes = classnames(
@@ -33,7 +33,7 @@ SelectOnly.defaultProps = {
 };
 
 export type SelectProps = SelectOnlyProps & {
-  label: string,
+  label?: string,
   options: {
     [key: string]: string,
   },

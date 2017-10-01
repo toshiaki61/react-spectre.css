@@ -2,13 +2,13 @@
 import classnames from 'classnames';
 
 export type ColorParameters = {
-  primary: boolean,
-  secondary: boolean,
-  gray: boolean,
-  light: boolean,
-  success: boolean,
-  warning: boolean,
-  error: boolean
+  primary?: boolean,
+  secondary?: boolean,
+  gray?: boolean,
+  light?: boolean,
+  success?: boolean,
+  warning?: boolean,
+  error?: boolean
 };
 function text({ primary, secondary, gray, light, success, warning, error }: ColorParameters, className: string = ''): string {
   return classnames({

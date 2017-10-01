@@ -5,13 +5,13 @@ import classnames from 'classnames';
 import Button from '../Button';
 
 export type ToastProps = {
-  title: string,
+  title?: string,
   content: string,
-  onClearClick: (e: Event) => void,
-  primary: boolean,
-  success: boolean,
-  warning: boolean,
-  error: boolean,
+  onClearClick?: (e: Event) => void,
+  primary?: boolean,
+  success?: boolean,
+  warning?: boolean,
+  error?: boolean,
 };
 const Toast = ({ title, content, onClearClick, primary, success, warning, error }: ToastProps) => {
   const classes = classnames('toast', {

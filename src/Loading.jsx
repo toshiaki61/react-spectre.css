@@ -3,8 +3,8 @@ import React from 'react';
 import classnames from 'classnames';
 
 export type LoadingProps = {
-  className: string,
-  lg: boolean,
+  className?: string,
+  lg?: boolean,
 };
 const Loading = ({ className, lg, ...props }: LoadingProps) => {
   const classes = classnames('loading', {

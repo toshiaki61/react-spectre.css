@@ -4,8 +4,8 @@ import classnames from 'classnames';
 
 export type IconProp = {
   src: string;
-  alt: string;
-  className: string;
+  alt?: string;
+  className?: string;
 };
 const Icon = ({ className, alt, ...props }: IconProp) => {
   const classes = classnames('avatar-icon', className);

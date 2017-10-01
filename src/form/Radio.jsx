@@ -4,11 +4,11 @@ import classnames from 'classnames';
 
 import uniqueId from './uniqueId';
 
-export RadioSingleProps = {
-  label: string,
+export type RadioSingleProps = {
+  label?: string,
   name: string,
-  className: string,
-  checked: boolean,
+  className?: string,
+  checked?: boolean,
 };
 const RadioSingle = ({ label, className, name, checked, ...props }: RadioSingleProps) => {
   const classes = classnames('form-radio', className);
@@ -26,13 +26,12 @@ RadioSingle.defaultProps = {
   checked: false,
 };
 
-
 export type RadioProps = RadioSingleProps & {
   options: {
     [key: string]: string,
   },
 };
-const Radio = ({ name, label, options, ...props }) => {
+const Radio = ({ name, label, options, ...props }: RadioProps) => {
   const keys = Object.keys(options);
   if (keys.length === 0) {
     return <RadioSingle label={label} name={name} {...props} />;

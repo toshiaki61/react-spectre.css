@@ -9,7 +9,7 @@ export type ItemProps = {
   id: string,
   name: string,
   onClick: (e: Event, id: string) => void,
-  active: boolean,
+  active?: boolean,
   items: Array<ItemProps>,
 };
 const Item = ({ id, name, items, active, onClick }: ItemProps) => (
@@ -29,8 +29,8 @@ Item.defaultProps = {
 
 export type NavProps = {
   items: Array<ItemProps>,
-  active: string,
-  onClick: (e: Event, id: string) => void,
+  active?: string,
+  onClick?: (e: Event, id: string) => void,
 };
 const Nav = ({ items, active, onClick }: NavProps) => (
   <ul className="nav">

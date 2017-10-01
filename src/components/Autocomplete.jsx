@@ -25,7 +25,7 @@ function mark(target: string, search: string): string | Array<React.DOM> {
       return row;
     });
 }
-function filter(word, key) {
+function filter(word: string, key: string) {
   const regex = new RegExp(word, 'ig');
   return function search(value) {
     if (word === '') {
@@ -41,12 +41,12 @@ export type SuggestProps = {
   initial?: string,
 };
 export type AutocompleteProps = {
-  placeholder: string,
-  active: boolean,
+  placeholder?: string,
+  active?: boolean,
   selected: Array<SuggestProps>,
   suggests: Array<SuggestProps>,
   input: string,
-  loading: boolean,
+  loading?: boolean,
   onChange: (e: Event) => void,
   onFocus: (e: Event) => void,
   onBlur: (e: Event) => void,

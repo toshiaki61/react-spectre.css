@@ -3,12 +3,12 @@ import React from 'react';
 import classnames from 'classnames';
 
 export type TileProps = {
-  compact: boolean,
-  title: string,
-  subtitle: string,
-  content: React.DOM | string,
-  icon: React.DOM | string,
-  action: React.DOM,
+  compact?: boolean,
+  title?: string,
+  subtitle?: string,
+  content?: React.DOM | string,
+  icon?: React.DOM | string,
+  action?: React.DOM,
 };
 const Tile = ({ compact, title, subtitle, content, icon, action }: TileProps) => {
   const classes = classnames('tile', { 'tile-centered': compact });

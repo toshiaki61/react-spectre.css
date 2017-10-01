@@ -3,11 +3,11 @@ import React from 'react';
 import classnames from 'classnames';
 
 export type PanelProps = {
-  header: React.DOM,
-  nav: React.DOM,
-  content: React.DOM,
-  footer: React.DOM,
-  headerClass: string,
+  header?: React.DOM,
+  nav?: React.DOM,
+  content?: React.DOM,
+  footer?: React.DOM,
+  headerClass?: string,
 };
 const Panel = ({ header, nav, content, footer, headerClass }: PanelProps) => {
   const headerClasses = classnames('panel-header', headerClass);

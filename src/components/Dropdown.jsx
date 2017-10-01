@@ -10,12 +10,12 @@ import Menu from './Menu';
 import type { ItemProps as MenuItemProps } from './Menu';
 
 export type DropdownProps = {
-  className: string,
-  active: boolean,
-  right: boolean,
-  initialValue: string,
-  contents: Array<MenuItemProps>,
-  onClick: (e: Event) => void,
+  className?: string,
+  active?: boolean,
+  right?: boolean,
+  initialValue?: string,
+  contents?: Array<MenuItemProps>,
+  onClick?: (e: Event) => void,
 };
 const Dropdown = ({
   className,

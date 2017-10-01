@@ -2,8 +2,8 @@
 import React from 'react';
 
 export type ItemProps = {
-  link: string,
-  content: string,
+  link?: string,
+  content?: string,
 };
 const Item = ({ link, content }: ItemProps) => (
   <li className="breadcrumb-item">

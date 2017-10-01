@@ -6,7 +6,7 @@ import uniqueId from './uniqueId';
 
 export type CheckboxSingleProps = {
   label: React.DOM,
-  className: string,
+  className?: string,
 };
 const CheckboxSingle = ({ label, className, ...props }: CheckboxSingleProps) => {
   const classes = classnames('form-checkbox', className);
@@ -27,13 +27,13 @@ export type CheckboxProps = CheckboxSingleProps & {
     [key: string]: string,
   },
 };
-const Checkbox = ({ name, label, options, ...props }: CheckboxProps) => {
+const Checkbox = ({ className, label, options, ...props }: CheckboxProps) => {
   const keys = Object.keys(options);
   if (keys.length === 0) {
-    return <CheckboxSingle label={label} name={name} {...props} />;
+    return <CheckboxSingle label={label} className={className} {...props} />;
   }
   const list = keys.map(key =>
-    <CheckboxSingle key={key} label={options[key]} name={name} value={key} {...props} />);
+    <CheckboxSingle key={key} label={options[key]} className={className} value={key} {...props} />);
   return (
     <div className="form-group">
       <span className="form-label">{label}</span>
@@ -41,8 +41,8 @@ const Checkbox = ({ name, label, options, ...props }: CheckboxProps) => {
     </div>
   );
 };
-
 Checkbox.defaultProps = {
   options: {},
 };
+
 export default Checkbox;

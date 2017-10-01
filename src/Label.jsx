@@ -4,13 +4,13 @@ import classnames from 'classnames';
 
 export type LabelProps = {
   children: React.DOM,
-  className: string,
-  rounded: boolean,
-  primary: boolean,
-  secondary: boolean,
-  success: boolean,
-  warning: boolean,
-  error: boolean,
+  className?: string,
+  rounded?: boolean,
+  primary?: boolean,
+  secondary?: boolean,
+  success?: boolean,
+  warning?: boolean,
+  error?: boolean,
 };
 const Label = ({
   children,

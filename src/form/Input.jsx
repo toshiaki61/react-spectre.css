@@ -43,21 +43,22 @@ BaseInput.defaultProps = {
 };
 
 export type InputProps = BaseInputProps & {
-  className: string,
-  success: boolean,
-  danger: boolean,
-  sm: boolean,
-  lg: boolean,
-  textarea: boolean,
-  label: string,
+  className?: string,
+  success?: boolean,
+  danger?: boolean,
+  sm?: boolean,
+  lg?: boolean,
+  textarea?: boolean,
+  label?: string,
+  id?: string,
 };
-const Input = ({ label, ...props }: InputProps) => {
-  const id = props.id || uniqueId('input');
-  const content = <BaseInput id={id} {...props} />;
+const Input = ({ label, id, ...props }: InputProps) => {
+  const elementId = id || uniqueId('input');
+  const content = <BaseInput id={elementId} {...props} />;
   if (label) {
     return (
       <FormGroup>
-        <FormLabel htmlFor={id}>{label}</FormLabel>
+        <FormLabel htmlFor={elementId}>{label}</FormLabel>
         {content}
       </FormGroup>
     );
@@ -72,15 +73,16 @@ Input.defaultProps = {
   lg: false,
   textarea: false,
   label: '',
+  id: '',
 };
 
 export default Input;
 
 export type GroupProps = {
   children: React.DOM,
-  className: string,
-  success: boolean,
-  danger: boolean,
+  className?: string,
+  success?: boolean,
+  danger?: boolean,
 };
 const Group = ({ children, className, success, danger, ...props }: GroupProps) => {
   const classes = classnames('input-group', className, { 'has-success': success, 'has-danger': danger });
@@ -98,9 +100,9 @@ Group.defaultProps = {
 
 export type AddonProps = {
   children: React.DOM,
-  className: string,
-  sm: boolean,
-  lg: boolean,
+  className?: string,
+  sm?: boolean,
+  lg?: boolean,
 };
 const Addon = ({ children, className, sm, lg, ...props }: AddonProps) => {
   const classes = classnames('input-group-addon', className, { 'addon-sm': sm, 'addon-lg': lg });

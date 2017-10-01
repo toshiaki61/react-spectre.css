@@ -1,6 +1,6 @@
 /* @flow */
 const current = {};
-const uniqueId = (prefix) => {
+const uniqueId = (prefix: string = '') => {
   if (!current[prefix]) {
     current[prefix] = 0;
   }

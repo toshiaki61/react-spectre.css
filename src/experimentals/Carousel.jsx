@@ -10,7 +10,7 @@ export type ItemProps = {
 };
 export type CarouselProps = {
   slides: Array<ItemProps>,
-  active: string,
+  active?: string,
   onChange: (e: Event, id: string) => void,
 }
 const Carousel = ({ slides, active, onChange }: CarouselProps) => {

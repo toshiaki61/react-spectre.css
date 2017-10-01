@@ -6,7 +6,7 @@ import Icon from '../Icon';
 
 export type TitleProps = {
   children: React.DOM,
-  className: string,
+  className?: string,
 };
 const Title = ({ children, className, ...props }: TitleProps) => {
   const classes = classnames('empty-title', 'h5', className);
@@ -21,8 +21,8 @@ Title.defaultProps = {
 };
 
 export type SubtitleProps = {
-  children: React.DOM,
-  className: string,
+  children?: React.DOM,
+  className?: string,
 };
 const Subtitle = ({ children, className, ...props }: SubtitleProps) => {
   const classes = classnames('empty-subtitle', className);
@@ -38,11 +38,11 @@ Subtitle.defaultProps = {
 };
 
 export type EmptyProps = {
-  children: React.DOM,
-  className: string,
-  icon: string,
-  title: string,
-  subtitle: string,
+  children?: React.DOM,
+  className?: string,
+  icon?: string,
+  title?: string,
+  subtitle?: string,
 };
 const Empty = ({ children, className, icon, title, subtitle, ...props }: EmptyProps) => {
   const classes = classnames('empty', className);

@@ -2,17 +2,17 @@ import React from 'react';
 import classnames from 'classnames';
 
 export type ButtonProps = {
-  loading: boolean,
-  href: string,
-  lg: boolean,
-  sm: boolean,
-  block: boolean,
-  inputGroup: boolean,
-  primary: boolean,
-  clear: boolean,
-  link: boolean,
-  action: boolean,
-  circle: boolean,
+  loading?: boolean,
+  href?: string,
+  lg?: boolean,
+  sm?: boolean,
+  block?: boolean,
+  inputGroup?: boolean,
+  primary?: boolean,
+  clear?: boolean,
+  link?: boolean,
+  action?: boolean,
+  circle?: boolean,
 };
 const Button = ({
   children,
@@ -62,8 +62,8 @@ export default Button;
 
 export type GroupProps = {
   children: React.DOM,
-  className: string,
-  block: boolean,
+  className?: string,
+  block?: boolean,
 };
 const Group = ({ children, className, block }: GroupProps) => {
   const classes = classnames(

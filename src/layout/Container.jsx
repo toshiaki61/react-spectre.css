@@ -4,12 +4,12 @@ import classnames from 'classnames';
 
 export type ContainerProps = {
   children: React.DOM,
-  className: string,
-  xs: boolean,
-  sm: boolean,
-  md: boolean,
-  lg: boolean,
-  xl: boolean,
+  className?: string,
+  xs?: boolean,
+  sm?: boolean,
+  md?: boolean,
+  lg?: boolean,
+  xl?: boolean,
 };
 const Container = ({ children, className, xs, sm, md, lg, xl, ...props }: ContainerProps) => {
   const classes = classnames(

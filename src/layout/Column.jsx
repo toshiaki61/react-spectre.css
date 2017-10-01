@@ -5,13 +5,13 @@ import classnames from 'classnames';
 
 export type ColumnProps = {
   children: React.DOM,
-  className: string,
-  xs: number,
-  sm: number,
-  md: number,
-  lg: number,
-  xl: number,
-  size: number,
+  className?: string,
+  xs?: number,
+  sm?: number,
+  md?: number,
+  lg?: number,
+  xl?: number,
+  size?: number,
 };
 const Column = ({ children, className, xs, sm, md, lg, xl, size, ...props }: ColumnProps) => {
   const classes = classnames(

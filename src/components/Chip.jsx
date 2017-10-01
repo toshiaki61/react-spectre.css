@@ -9,12 +9,12 @@ import Avatar from './Avatar';
 import type { AvatarProps } from './Avatar';
 
 type ChipProps = {
-  className: string,
-  clear: boolean,
-  icon: React.DOM,
-  avatar: AvatarProps,
-  content: string,
-  onClearClick: (e: Event) => void,
+  className?: string,
+  clear?: boolean,
+  icon?: React.DOM,
+  avatar?: AvatarProps,
+  content?: string,
+  onClearClick?: (e: Event) => void,
 };
 const Chip = ({ clear, icon, avatar, content, className, onClearClick, ...props }: ChipProps) => {
   const classes = classnames('chip', className);

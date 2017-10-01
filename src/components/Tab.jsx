@@ -15,9 +15,9 @@ export type ItemProps = {
 };
 export type TabProps = {
   items: Array<ItemProps>,
-  active: string,
+  active?: string,
   onClick: (e: Event, id: string) => void,
-  action: React.DOM,
+  action?: React.DOM,
 };
 const Tab = ({ items, active, onClick, action }: TabProps) => {
   if (!items.length) {

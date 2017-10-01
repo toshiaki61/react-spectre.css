@@ -10,9 +10,9 @@ import Icon from '../Icon';
 export type NavProps = {
   current: moment,
   navFormat: string,
-  onPrevMonthClick: (e: Event) => void,
-  onNextMonthClick: (e: Event) => void,
-  onCurrentMonthClick: (e: Event) => void,
+  onPrevMonthClick?: (e: Event) => void,
+  onNextMonthClick?: (e: Event) => void,
+  onCurrentMonthClick?: (e: Event) => void,
 };
 const Nav = ({
   current,

@@ -5,9 +5,9 @@ import classnames from 'classnames';
 import Button from '../Button';
 
 export type ItemProps = {
-  small: boolean,
-  tooltip: string,
-  content: React.DOM | string,
+  small?: boolean,
+  tooltip?: string,
+  content?: React.DOM | string,
 };
 const Item = ({ small, tooltip, content, ...props }: ItemProps) => {
   const classes = classnames('bar-item', { tooltip });
@@ -32,9 +32,9 @@ export type ProgressBarItemProps = ItemProps & {
   content: React.DOM,
 };
 export type BarProps = {
-  className: string,
-  small: boolean,
-  slider: boolean,
+  className?: string,
+  small?: boolean,
+  slider?: boolean,
   items: Array<ProgressBarItemProps>,
 };
 const Bar = ({ className, small, slider, items }: BarProps) => {

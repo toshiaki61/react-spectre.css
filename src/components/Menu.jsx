@@ -6,7 +6,7 @@ import noop from 'noop';
 import Divider from '../utilities/Divider';
 
 export type BadgeProps = {
-  content: string | number | React.DOM
+  content?: string | number | React.DOM
 };
 const Badge = ({ content }: BadgeProps) => {
   if (!content) {
@@ -20,13 +20,13 @@ const Badge = ({ content }: BadgeProps) => {
 };
 
 export type ItemProps = {
-  link: string,
-  content: string,
-  className: string,
-  divider: boolean | string,
-  active: boolean,
-  badge: number,
-  onClick: (e: Event) => void,
+  link?: string,
+  content?: string,
+  className?: string,
+  divider?: boolean | string,
+  active?: boolean,
+  badge?: number,
+  onClick?: (e: Event) => void,
 };
 const Item = ({
   link,
@@ -60,8 +60,8 @@ Item.defaultProps = {
 };
 
 export type MenuProps = {
-  className: string,
-  nav: boolean,
+  className?: string,
+  nav?: boolean,
   contents: Array<ItemProps>
 }
 const Menu = ({ className, nav, contents, ...props }: MenuProps) => {

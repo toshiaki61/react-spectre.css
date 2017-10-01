@@ -2,17 +2,17 @@
 import classnames from 'classnames';
 
 export type DisplayParameters = {
-  block: boolean,
-  inline: boolean,
-  inlineBlock: boolean,
-  flex: boolean,
-  inlineFlex: boolean,
-  none: boolean,
-  hide: boolean,
-  visible: boolean,
-  invisible: boolean,
-  textHide: boolean,
-  assistive: boolean,
+  block?: boolean,
+  inline?: boolean,
+  inlineBlock?: boolean,
+  flex?: boolean,
+  inlineFlex?: boolean,
+  none?: boolean,
+  hide?: boolean,
+  visible?: boolean,
+  invisible?: boolean,
+  textHide?: boolean,
+  assistive?: boolean,
 };
 export default function display({
   block,

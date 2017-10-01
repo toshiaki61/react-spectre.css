@@ -43,9 +43,9 @@ Item.defaultProps = {
 
 export type AccordionProps = {
   menus: React.DOM,
-  className: string,
-  exclusive: boolean,
-  useIcon: boolean,
+  className?: string,
+  exclusive?: boolean,
+  useIcon?: boolean,
 }
 const Accordion = ({ menus, className, exclusive, useIcon }: AccordionProps) => {
   const classes = classnames('accordion', className);

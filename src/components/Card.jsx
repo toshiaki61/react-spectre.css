@@ -7,8 +7,8 @@ export type ItemHeaderProps = {
   subtitle: React.DOM,
 };
 export type ItemProps = {
-  type: 'image' | 'body' | 'footer',
-  content: React.DOM,
+  type?: 'image' | 'body' | 'footer',
+  content?: React.DOM,
 };
 const Item = ({ type, content }: ItemProps) => {
   switch (type) {

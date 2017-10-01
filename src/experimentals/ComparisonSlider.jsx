@@ -4,8 +4,8 @@ import classnames from 'classnames';
 
 export type ImageProps = {
   src: string,
-  alt: string,
-  className: string,
+  alt?: string,
+  className?: string,
 };
 const Image = ({ src, alt, className, ...props }: ImageProps) => (
   <img src={src} className={classnames('rounded', className)} alt={alt} {...props} />

@@ -5,9 +5,9 @@ import Container from './Container';
 
 export type ColumnsWithoutContainerProps = {
   children: React.DOM,
-  className: string,
-  gapless: boolean,
-  oneline: boolean,
+  className?: string,
+  gapless?: boolean,
+  oneline?: boolean,
 };
 const ColumnsWithoutContainer = ({ children, gapless, oneline, className, ...props }: ColumnsWithoutContainerProps) => {
   const classes = classnames('columns', {
@@ -39,16 +39,16 @@ export function acquireContainerProps(option) {
 }
 
 export type ContainerProps = {
-  className: string,
-  xs: boolean,
-  sm: boolean,
-  md: boolean,
-  lg: boolean,
-  xl: boolean,
+  className?: string,
+  xs?: boolean,
+  sm?: boolean,
+  md?: boolean,
+  lg?: boolean,
+  xl?: boolean,
 };
 export type ColumnsProps = {
   children: React.DOM,
-  container: 
+  container?: 
     boolean |
     string |
     ContainerProps,

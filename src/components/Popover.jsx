@@ -5,9 +5,9 @@ import classnames from 'classnames';
 export type PopoverProps = {
   target: React.DOM,
   children: React.DOM,
-  right: boolean,
-  left: boolean,
-  bottom: boolean,
+  right?: boolean,
+  left?: boolean,
+  bottom?: boolean,
 };
 const Popover = ({ target, children, right, left, bottom }: PopoverProps) => {
   const classes = classnames('popover', {

@@ -5,9 +5,9 @@ import classnames from 'classnames';
 export type TableProps = {
   header: Array<string>,
   contents: Array<Array<string>>,
-  className: string,
-  striped: boolean,
-  hover: boolean,
+  className?: string,
+  striped?: boolean,
+  hover?: boolean,
 };
 const Table = ({ header, contents, className, striped, hover, ...props }: TableProps) => {
   const classes = classnames(

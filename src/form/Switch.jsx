@@ -5,10 +5,10 @@ import classnames from 'classnames';
 import uniqueId from './uniqueId';
 
 export type SwitchProps = {
-  children: PropTypes.node.isRequired,
-  className: string,
+  children: React.DOM,
+  className?: string,
 };
-const Switch = ({ children, className, ...props }) => {
+const Switch = ({ children, className, ...props }: SwitchProps) => {
   const classes = classnames('form-switch', className);
   const id = uniqueId('switch');
   return (

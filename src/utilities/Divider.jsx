@@ -4,10 +4,10 @@ import classnames from 'classnames';
 
 export type DividerProps = {
   content: string,
-  vertical: boolean,
-  li: boolean,
-  center: boolean,
-  className: string,
+  vertical?: boolean,
+  li?: boolean,
+  center?: boolean,
+  className?: string,
 };
 const Divider = ({ content, vertical, li, center, className }: DividerProps) => {
   const classes = classnames({

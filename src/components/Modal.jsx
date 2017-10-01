@@ -6,12 +6,12 @@ import noop from 'noop';
 import Button from '../Button';
 
 export type ModalProps = {
-  active: boolean,
-  title: string,
-  content: React.DOM,
-  footer: React.DOM,
-  small: boolean,
-  onClearClick: (e: Event) => void,
+  active?: boolean,
+  title?: string,
+  content?: React.DOM,
+  footer?: React.DOM,
+  small?: boolean,
+  onClearClick?: (e: Event) => void,
 };
 const Modal = ({
   active,

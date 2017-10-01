@@ -3,9 +3,9 @@ import React from 'react';
 import classnames from 'classnames';
 import noop from 'noop';
 
-import Button from '../Button';
-import Icon from '../Icon';
 import Menu from './Menu';
+import Button from '../elements/Button';
+import Icon from '../elements/Icon';
 
 import type { ItemProps as MenuItemProps } from './Menu';
 
@@ -16,6 +16,7 @@ export type DropdownProps = {
   initialValue?: string,
   contents?: Array<MenuItemProps>,
   onClick?: (e: Event) => void,
+  onMenuClick: (e: Event, id: string) => void,
 };
 const Dropdown = ({
   className,
@@ -24,6 +25,7 @@ const Dropdown = ({
   initialValue,
   contents,
   onClick,
+  onMenuClick,
   ...props
 }: DropdownProps) => {
   const classes = classnames('dropdown', {
@@ -35,7 +37,7 @@ const Dropdown = ({
       <Button link className="dropdown-toggle" tabIndex="0" onClick={onClick}>
         {initialValue} <Icon caret />
       </Button>
-      <Menu contents={contents} />
+      <Menu onClick={onMenuClick} contents={contents} />
     </div>
   );
 };

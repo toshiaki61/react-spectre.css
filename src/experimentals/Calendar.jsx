@@ -4,35 +4,29 @@ import classnames from 'classnames';
 import moment from 'moment';
 import noop from 'noop';
 
-import Button from '../Button';
-import Icon from '../Icon';
+import Button from '../elements/Button';
+import Icon from '../elements/Icon';
 
 export type NavProps = {
   current: moment,
   navFormat: string,
-  onPrevMonthClick?: (e: Event) => void,
-  onNextMonthClick?: (e: Event) => void,
-  onCurrentMonthClick?: (e: Event) => void,
+  onMonthClick?: (e: Event, m: moment) => void,
 };
 const Nav = ({
   current,
   navFormat,
-  onPrevMonthClick,
-  onNextMonthClick,
-  onCurrentMonthClick,
+  onMonthClick = noop,
 }: NavProps) => (
   <div className="calendar-nav navbar">
-    <Button action link lg onClick={onPrevMonthClick}><Icon arrowLeft /></Button>
-    <Button link lg onClick={onCurrentMonthClick}>{current.format(navFormat)}</Button>
-    <Button action link lg onClick={onNextMonthClick}><Icon arrowRight /></Button>
+    <Button action link lg onClick={e => onMonthClick(e, current.clone().add(-1, 'month'))}><Icon arrowLeft /></Button>
+    <Button link lg onClick={e => onMonthClick(e, current.clone())}>{current.format(navFormat)}</Button>
+    <Button action link lg onClick={e => onMonthClick(e, current.clone().add(1, 'month'))}><Icon arrowRight /></Button>
   </div>
 );
 Nav.defaultProps = {
   current: moment(),
   navFormat: 'MMMM YYYY',
-  onPrevMonthClick: noop,
-  onNextMonthClick: noop,
-  onCurrentMonthClick: noop,
+  onMonthClick: noop,
 };
 
 export type HeaderProps = {
@@ -93,13 +87,14 @@ const Body = ({ current, start, end, options, dateFormat, onDateClick }: BodyPro
       badge: datum && datum.type === 'badge',
       'date-today': datum && datum.type === 'today',
     });
+    const date = d.clone();
     dates.push((
-      <div key={d.format()} className={classes} data-tooltip={datum && datum.tooltip}>
+      <div key={date.format()} className={classes} data-tooltip={datum && datum.tooltip}>
         <Button
           disabled={datum && datum.type === 'disabled'}
           className={btnClasses}
-          onClick={e => onDateClick(e, d)}
-        >{d.format(dateFormat)}</Button>
+          onClick={e => onDateClick(e, date)}
+        >{date.format(dateFormat)}</Button>
       </div>
     ));
   }
@@ -126,8 +121,8 @@ const Calendar = ({
   start,
   end,
   options,
-  onPrevMonthClick,
-  onNextMonthClick,
+  onMonthClick,
+  onDateClick,
   current,
   weekdays,
   ...props
@@ -140,8 +135,7 @@ const Calendar = ({
       <Nav
         current={current}
         navFormat={navFormat}
-        onPrevMonthClick={onPrevMonthClick}
-        onNextMonthClick={onNextMonthClick}
+        onMonthClick={onMonthClick}
       />
       <div className="calendar-container">
         <Header weekdays={weekdays} />
@@ -151,6 +145,7 @@ const Calendar = ({
           start={start || current.clone().startOf('month').startOf('week')}
           end={end || current.clone().endOf('month').endOf('week')}
           options={options}
+          onDateClick={onDateClick}
         />
       </div>
     </div>

@@ -27,6 +27,7 @@ const ComparisonSlider = ({ before, after }: ComparisonSliderProps) => (
     </figure>
     <figure className="comparison-after">
       <Image {...after} />
+      <div className="comparison-label">After</div>
       <textarea className="comparison-resizer" readOnly />
     </figure>
   </div>

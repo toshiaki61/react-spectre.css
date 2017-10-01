@@ -3,7 +3,7 @@ import React from 'react';
 import classnames from 'classnames';
 import noop from 'noop';
 
-import Button from '../Button';
+import Button from '../elements/Button';
 
 export type ItemProps = {
   id: string,

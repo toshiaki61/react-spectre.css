@@ -3,19 +3,19 @@ import React from 'react';
 import classnames from 'classnames';
 
 export type LoadingProps = {
-  lg?: boolean,
+  large?: boolean,
   className?: string,
 };
-const Loading = ({ lg, className }: LoadingProps) => {
+const Loading = ({large, className }: LoadingProps) => {
   const classes = classnames('loading', {
-    'loading-lg': lg,
+    'loading-lg': large,
   }, className);
   return (
     <div className={classes} />
   );
 };
 Loading.defaultProps = {
-  lg: false,
+  large: false,
   className: '',
 };
 

@@ -13,8 +13,9 @@ class DropdownExample extends Component {
     return (
       <Dropdown
         initialValue={value}
+        onMenuClick={(e, id) => console.log(id)}
         contents={[
-          { link: '#accordions', content: 'Element 1', onClick: () => this.setState({ value: 'Element 1' }) },
+          { id: 'e-1', link: '#accordions', content: 'Element 1' },
         ]}
         active={active}
         onClick={this.onClick}

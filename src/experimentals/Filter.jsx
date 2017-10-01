@@ -40,8 +40,8 @@ const Filter = ({ tags, data, active, onChange }: FilterProps) => (
       {data.map(({ tag, title, subtitle }, i) => {
         const key = `card_${i}`;
         return (
-          <div key={key} className="column col-4" data-tag={tag} style={{ padding: '0.4rem' }}>
-            <div className="filter-item card">
+          <div key={key} className="column col-4 filter-item" data-tag={tag}>
+            <div className="card" style={{ marginBottom: '0.4rem' }}>
               <div className="card-header">
                 <div className="card-title">{title}</div>
                 <div className="card-subtitle">{subtitle}</div>

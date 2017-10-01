@@ -20,15 +20,17 @@ const Badge = ({ content }: BadgeProps) => {
 };
 
 export type ItemProps = {
+  id: string,
   link?: string,
   content?: string,
   className?: string,
   divider?: boolean | string,
   active?: boolean,
   badge?: number,
-  onClick?: (e: Event) => void,
+  onClick: (e: Event, id: string) => void,
 };
 const Item = ({
+  id,
   link,
   content,
   className,
@@ -45,7 +47,7 @@ const Item = ({
   return (
     <li className={classes} {...props}>
       <Badge content={badge} />
-      <a href={link} className={classnames({ active })} onClick={onClick}>{content}</a>
+      <a href={link} className={classnames({ active })} onClick={e => onClick(e, id)}>{content}</a>
     </li>
   );
 };
@@ -62,9 +64,10 @@ Item.defaultProps = {
 export type MenuProps = {
   className?: string,
   nav?: boolean,
-  contents: Array<ItemProps>
+  contents: Array<ItemProps>,
+  onClick: (e: Event, id: string) => void,
 }
-const Menu = ({ className, nav, contents, ...props }: MenuProps) => {
+const Menu = ({ className, nav, contents, onClick, ...props }: MenuProps) => {
   const classes = classnames('menu', {
     'menu-nav': nav,
   }, className);
@@ -75,9 +78,9 @@ const Menu = ({ className, nav, contents, ...props }: MenuProps) => {
   return (
     <ul className={classes} {...ulProps}>
       {contents.map((content, i) => {
-        const key = `menu-item_${i}`;
+        const key = content.id || `menu-item_${i}`;
         return (
-          <Item key={key} {...content} />
+          <Item key={key} {...content} onClick={onClick} />
         );
       })}
     </ul>
@@ -87,6 +90,7 @@ Menu.defaultProps = {
   className: '',
   nav: false,
   contents: [],
+  onClick: noop,
 };
 
 export default Menu;

@@ -3,7 +3,7 @@ import React from 'react';
 import classnames from 'classnames';
 import noop from 'noop';
 
-import Button from '../Button';
+import Button from '../elements/Button';
 
 export type ModalProps = {
   active?: boolean,
@@ -11,6 +11,7 @@ export type ModalProps = {
   content?: React.DOM,
   footer?: React.DOM,
   small?: boolean,
+  large?: boolean,
   onClearClick?: (e: Event) => void,
 };
 const Modal = ({
@@ -19,12 +20,14 @@ const Modal = ({
   content,
   footer,
   small,
+  large,
   onClearClick,
   ...props
 }: ModalProps) => {
   const classes = classnames('modal', {
     active,
     'modal-sm': small,
+    'modal-lg': large,
   });
   return (
     <div className={classes} {...props}>
@@ -52,6 +55,7 @@ Modal.defaultProps = {
   content: null,
   footer: null,
   small: false,
+  large: false,
   onClearClick: noop,
 };
 

@@ -2,7 +2,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import Button from '../Button';
+import Button from '../elements/Button';
 
 export type ToastProps = {
   title?: string,

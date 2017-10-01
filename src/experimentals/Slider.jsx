@@ -1,7 +1,7 @@
 /* @flow */
 import React from 'react';
 
-import Input from '../form/Input';
+import Input from '../elements/form/Input';
 
 export type SliderProps = {
   min: number,

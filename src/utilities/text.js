@@ -17,7 +17,7 @@ type TextParameters = {
   clip?: boolean,
   textBreak?: boolean,
 };
-export default function cursor({
+export default function text({
   left,
   center,
   right,

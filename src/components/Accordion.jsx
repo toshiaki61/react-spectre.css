@@ -2,9 +2,9 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import Icon from '../Icon';
 import Menu from './Menu';
-import uniqueId from '../form/uniqueId';
+import Icon from '../elements/Icon';
+import uniqueId from '../elements/form/uniqueId';
 import position from '../utilities/position';
 
 import type { ItemProps as MenuItemProps } from './Menu';

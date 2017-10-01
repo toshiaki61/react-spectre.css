@@ -3,8 +3,8 @@ import React from 'react';
 import classnames from 'classnames';
 import noop from 'noop';
 
-import Button from '../Button';
 import Avatar from './Avatar';
+import Button from '../elements/Button';
 
 import type { AvatarProps } from './Avatar';
 

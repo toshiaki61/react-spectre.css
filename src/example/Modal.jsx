@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Modal from '../components/Modal';
-import Button from '../Button';
+import Button from '../elements/Button';
 
 class ModalExample extends Component {
   state = {

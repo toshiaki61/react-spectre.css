@@ -8,8 +8,7 @@ class CalendarExample extends Component {
   state = {
     current: moment(),
   };
-  onPrevMonthClick = () => this.setState({ current: this.state.current.add(-1, 'month') });
-  onNextMonthClick = () => this.setState({ current: this.state.current.add(1, 'month') });
+  onMonthClick = (e, m) => this.setState({ current: m });
   onClick = () => this.setState({ active: !this.state.active });
   render() {
     const { current } = this.state;
@@ -17,8 +16,8 @@ class CalendarExample extends Component {
       <Popover target={<div>PopOver</div>} bottom>
         <Calendar
           current={current}
-          onPrevMonthClick={this.onPrevMonthClick}
-          onNextMonthClick={this.onNextMonthClick}
+          onMonthClick={this.onMonthClick}
+          onDateClick={this.onClick}
           weekdays={moment().localeData().weekdaysShort()}
         />
       </Popover>

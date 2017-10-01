@@ -2,7 +2,7 @@
 import React from 'react';
 import noop from 'noop';
 
-import Icon from '../Icon';
+import Icon from '../elements/Icon';
 
 export type ItemProps = {
   src: string,

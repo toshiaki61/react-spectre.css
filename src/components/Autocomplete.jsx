@@ -5,8 +5,8 @@ import classnames from 'classnames';
 import Chip from './Chip';
 import Tile from './Tile';
 import Avatar from './Avatar';
-import Icon from '../Icon';
-import Button from "../Button";
+import Icon from '../elements/Icon';
+import Button from '../elements/Button';
 
 const delimiter = '______';
 function mark(target: string, search: string): string | Array<React.DOM> {

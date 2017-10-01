@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 type IconProps = {
   className?: string,
+  size?: '' | '2x' | '3x' | '4x',
   name?: string,
   arrowUp?: boolean,
   arrowRight?: boolean,
@@ -48,6 +49,7 @@ type IconProps = {
 };
 const Icon = ({
   className,
+  size = '',
   name = '',
   arrowUp,
   arrowRight,
@@ -96,6 +98,7 @@ const Icon = ({
     'form-icon': form,
     loading,
     [`icon-${name}`]: name,
+    [`icon-${size}`]: size,
     'icon-arrow-up': arrowUp,
     'icon-arrow-right': arrowRight,
     'icon-arrow-down': arrowDown,

@@ -18,30 +18,30 @@ type FilterStates = {
 class FilterExample extends Component<FilterProps, FilterStates> {
   static defaultProps = {
     tags: {
-      'tag-all': 'All',
-      'tag-action': 'Action',
-      'tag-roleplaying': 'Roleplaying',
-      'tag-shooter': 'Shooter',
-      'tag-sports': 'Sports',
+      'tag-0': 'All',
+      'tag-1': 'Action',
+      'tag-2': 'Roleplaying',
+      'tag-3': 'Shooter',
+      'tag-4': 'Sports',
     },
     data: [
-      { tag: 'tag-roleplaying', title: 'Fallout 4', subtitle: 'Roleplaying' },
-      { tag: 'tag-shooter', title: 'Halo 5', subtitle: 'Shooter' },
-      { tag: 'tag-action', title: 'Quantum Break', subtitle: 'Action' },
-      { tag: 'tag-sports', title: 'Forza Horizon 3', subtitle: 'Sports' },
-      { tag: 'tag-roleplaying', title: 'Final Fantasy XV', subtitle: 'Roleplaying' },
-      { tag: 'tag-sports', title: 'NBA 2K17', subtitle: 'Sports' },
-      { tag: 'tag-shooter', title: 'Battlefield 1', subtitle: 'Shooter' },
-      { tag: 'tag-action', title: 'GTA V', subtitle: 'Action' },
-      { tag: 'tag-sports', title: 'FIFA 17', subtitle: 'Sports' },
-      { tag: 'tag-shooter', title: 'Overwatch', subtitle: 'Shooter' },
-      { tag: 'tag-shooter', title: 'Titanfall 2', subtitle: 'Shooter' },
-      { tag: 'tag-shooter', title: 'Gears of Wars 4', subtitle: 'Shooter' },
+      { tag: 'tag-2', title: 'Fallout 4', subtitle: 'Roleplaying' },
+      { tag: 'tag-3', title: 'Halo 5', subtitle: 'Shooter' },
+      { tag: 'tag-1', title: 'Quantum Break', subtitle: 'Action' },
+      { tag: 'tag-4', title: 'Forza Horizon 3', subtitle: 'Sports' },
+      { tag: 'tag-2', title: 'Final Fantasy XV', subtitle: 'Roleplaying' },
+      { tag: 'tag-4', title: 'NBA 2K17', subtitle: 'Sports' },
+      { tag: 'tag-3', title: 'Battlefield 1', subtitle: 'Shooter' },
+      { tag: 'tag-1', title: 'GTA V', subtitle: 'Action' },
+      { tag: 'tag-4', title: 'FIFA 17', subtitle: 'Sports' },
+      { tag: 'tag-3', title: 'Overwatch', subtitle: 'Shooter' },
+      { tag: 'tag-3', title: 'Titanfall 2', subtitle: 'Shooter' },
+      { tag: 'tag-3', title: 'Gears of Wars 4', subtitle: 'Shooter' },
     ],
   };
 
   state = {
-    active: 'tag-all',
+    active: 'tag-0',
   };
   onChange = (e, id) => this.setState({ active: id });
   render() {

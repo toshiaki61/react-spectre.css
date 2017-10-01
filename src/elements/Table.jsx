@@ -22,19 +22,28 @@ const Table = ({ header, contents, className, striped, hover, ...props }: TableP
     <table className={classes} {...props}>
       <thead>
         <tr>
-          {header.map((row, i) => (
-            <th>{row}</th>
-          ))}
+          {header.map((row, i) => {
+            const key = `header-${i}`;
+            return (
+              <th key={key}>{row}</th>
+            );
+          })}
         </tr>
       </thead>
       <tbody>
-        {contents.map((content, i) => (
-          <tr>
-            {content.map((column, j) => (
-              <td>{column}</td>
-            ))}
-          </tr>
-        ))}
+        {contents.map((content, i) => {
+          const rowKey = `row-${i}`;
+          return (
+            <tr key={rowKey}>
+              {content.map((column, j) => {
+                const columnKey = `column-${j}`;
+                return (
+                  <td key={columnKey}>{column}</td>
+                )
+              })}
+            </tr>
+          )
+        })}
       </tbody>
     </table>
   );

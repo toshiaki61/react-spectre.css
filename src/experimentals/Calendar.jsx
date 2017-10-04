@@ -2,7 +2,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import moment from 'moment';
-import noop from 'noop';
+import noop from 'lodash.noop';
 
 import Button from '../elements/Button';
 import Icon from '../elements/Icon';

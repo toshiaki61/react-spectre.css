@@ -1,7 +1,7 @@
 /* @flow */
 import React from 'react';
 import classnames from 'classnames';
-import noop from 'noop';
+import noop from 'lodash.noop';
 
 import Avatar from './Avatar';
 import Button from '../elements/Button';

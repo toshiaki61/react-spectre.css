@@ -1,6 +1,6 @@
 /* @flow */
 import React from 'react';
-import noop from 'noop';
+import noop from 'lodash.noop';
 
 import Icon from '../elements/Icon';
 

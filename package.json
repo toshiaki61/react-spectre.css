@@ -11,8 +11,9 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "flow": "flow",
-    "rollup": "rollup -c config/rollup.config.prod.js",
-    "rollup:dev": "rollup -c config/rollup.config.dev.js"
+    "build:lib": "node scripts/build-lib.js",
+    "build:lib:dev": "node scripts/build-lib-dev.js",
+    "lib": "yarn build:lib && yarn build:lib:dev"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -49,11 +50,16 @@
   },
   "babel": {
     "presets": [
+      [
+        "env",
+        {
+          "modules": false
+        }
+      ],
       "react-app"
     ],
     "plugins": [
-      "react-flow-props-to-prop-types",
-      "external-helpers"
+      "react-flow-props-to-prop-types"
     ]
   },
   "eslintConfig": {
@@ -65,7 +71,6 @@
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "7.1.2",
-    "babel": "^6.23.0",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
@@ -90,10 +95,8 @@
     "extract-text-webpack-plugin": "3.0.0",
     "file-loader": "0.11.2",
     "flow-bin": "^0.56.0",
-    "from": "^0.1.7",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
-    "import": "^0.0.6",
     "jest": "20.0.4",
     "lodash.noop": "^3.0.1",
     "moment": "^2.18.1",
@@ -103,20 +106,27 @@
     "promise": "8.0.1",
     "prop-types": "^15.6.0",
     "prop-types-extra": "^1.0.1",
-    "react": "15.5.0",
+    "react": "16.0.0",
     "react-dev-utils": "^4.1.0",
-    "react-dom": "15.5.0",
-    "rollup": "^0.50.0",
-    "rollup-plugin-babel": "^3.0.2",
-    "rollup-plugin-commonjs": "^8.2.1",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-replace": "^2.0.0",
+    "react-dom": "16.0.0",
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.5.9",
     "webpack": "3.5.1",
     "webpack-dev-server": "2.8.2",
     "webpack-manifest-plugin": "1.2.1",
+    "whatwg-fetch": "2.0.3"
+  },
+  "peerDependencies": {
+    "classnames": "^2.2.5",
+    "lodash.noop": "^3.0.1",
+    "moment": "^2.18.1",
+    "object-assign": "4.1.1",
+    "promise": "8.0.1",
+    "prop-types": "^15.6.0",
+    "prop-types-extra": "^1.0.1",
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
     "whatwg-fetch": "2.0.3"
   }
 }

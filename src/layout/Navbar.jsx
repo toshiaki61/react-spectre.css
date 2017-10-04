@@ -75,8 +75,6 @@ Navbar.defaultProps = {
   container: false,
 };
 
-export default Navbar;
-
 export type BrandProps = {
   children: React.DOM,
   className?: string,
@@ -97,4 +95,7 @@ Brand.propTypes = {
   href: '',
 };
 
-export { Brand, Section };
+Navbar.Brand = Brand;
+Navbar.Section = Section;
+
+export default Navbar;

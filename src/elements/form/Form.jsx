@@ -20,8 +20,6 @@ Form.defaultProps = {
   horizontal: false,
 };
 
-export default Form;
-
 export type GroupProps = {
   children: React.DOM,
   className?: string,
@@ -67,4 +65,7 @@ Label.defaultProps = {
   htmlFor: '',
 };
 
-export { Group, Label };
+Form.Group = Group;
+Form.Label = Label;
+
+export default Form;

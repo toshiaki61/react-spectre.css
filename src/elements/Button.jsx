@@ -58,8 +58,6 @@ const Button = ({
   return toReturn;
 };
 
-export default Button;
-
 export type GroupProps = {
   children: React.DOM,
   className?: string,
@@ -83,4 +81,6 @@ Group.defaultProps = {
   block: false,
 };
 
-export { Group };
+Button.Group = Group;
+
+export default Button;

@@ -2,7 +2,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import { Group as FormGroup, Label as FormLabel } from './Form';
+import Form from './Form';
 
 export type SelectOnlyProps = {
   children?: React.DOM,
@@ -39,18 +39,18 @@ export type SelectProps = SelectOnlyProps & {
   },
 };
 const Select = ({ children, label, options, ...props }: SelectProps) => {
-  const labelNode = label ? <FormLabel>{label}</FormLabel> : null;
+  const labelNode = label ? <Form.Label>{label}</Form.Label> : null;
   const keys = Object.keys(options);
   if (keys.length > 0) {
     return (
-      <FormGroup>
+      <Form.Group>
         {labelNode}
         <SelectOnly {...props}>
           {keys.map(key => (
             <option key={key}>{options[key]}</option>
           ))}
         </SelectOnly>
-      </FormGroup>
+      </Form.Group>
     );
   }
   return (
@@ -65,4 +65,3 @@ Select.defaultProps = {
 };
 
 export default Select;
-export { SelectOnly };

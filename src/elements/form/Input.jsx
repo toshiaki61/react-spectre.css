@@ -2,7 +2,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import { Group as FormGroup, Label as FormLabel } from './Form';
+import Form from './Form';
 import uniqueId from './uniqueId';
 
 export type BaseInputProps = {
@@ -57,10 +57,10 @@ const Input = ({ label, id, ...props }: InputProps) => {
   const content = <BaseInput id={elementId} {...props} />;
   if (label) {
     return (
-      <FormGroup>
-        <FormLabel htmlFor={elementId}>{label}</FormLabel>
+      <Form.Group>
+        <Form.Label htmlFor={elementId}>{label}</Form.Label>
         {content}
-      </FormGroup>
+      </Form.Group>
     );
   }
   return content;
@@ -75,8 +75,6 @@ Input.defaultProps = {
   label: '',
   id: '',
 };
-
-export default Input;
 
 export type GroupProps = {
   children: React.DOM,
@@ -118,5 +116,7 @@ Addon.defaultProps = {
   lg: false,
 };
 
-export { Group, Addon };
+Input.Group = Group;
+Input.Addon = Addon;
 
+export default Input;

@@ -3,13 +3,9 @@
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
-const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 
@@ -56,15 +52,18 @@ module.exports = {
   // You can exclude the *.map files from the build during deployment.
   devtool: shouldUseSourceMap ? 'source-map' : false,
   // In production, we only want to load the polyfills and the app code.
-  entry: [require.resolve('./polyfills'), paths.appIndexJs.replace('app.jsx', 'index.js')],
+  // entry: [require.resolve('./polyfills'), paths.appIndexJs.replace('app.jsx', 'index.js')],
+  entry: {
+    'react-spectre.css': paths.appIndexJs.replace('app.jsx', 'index.js'),
+  },
   output: {
     // The build folder.
     path: paths.appBuild.replace('build', 'dist'),
     // Generated JS file names (with nested folders).
     // There will be one main bundle, and one file per asynchronous chunk.
     // We don't currently advertise code splitting but Webpack supports it.
-    filename: 'react-spectre.css.min.js',
-    chunkFilename: 'react-spectre.css.min.chunk.js',
+    filename: '[name].min.js',
+    chunkFilename: '[name].min.chunk.js',
     // We inferred the "public path" (such as / or /my-project) from homepage.
     publicPath: publicPath,
     // Point sourcemap entries to original disk location (format as URL on Windows)
@@ -72,6 +71,8 @@ module.exports = {
       path
         .relative(paths.appSrc, info.absoluteResourcePath)
         .replace(/\\/g, '/'),
+    library: 'ReactSpectre',
+    libraryTarget: 'umd',
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
@@ -332,11 +333,31 @@ module.exports = {
     child_process: 'empty',
   },
   externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-    'classnames': 'classnames',
+    'react': {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
+    },
+    'react-dom': {
+      root: 'ReactDOM',
+      commonjs2: 'react-dom',
+      commonjs: 'react-dom',
+      amd: 'react-dom',
+    },
+    'classnames': {
+      root: 'classNames',
+      commonjs2: 'classnames',
+      commonjs: 'classnames',
+      amd: 'classnames',
+    },
     'moment': 'moment',
     'lodash.noop': 'noop',
-    'prop-types': 'PropTypes',
+    'prop-types': {
+      root: 'PropTypes',
+      commonjs2: 'prop-types',
+      commonjs: 'prop-types',
+      amd: 'prop-types',
+    },
   }
 };

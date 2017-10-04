@@ -3,12 +3,8 @@
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
-const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
-const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
-const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 
@@ -32,7 +28,7 @@ module.exports = {
   // These are the "entry points" to our application.
   // This means they will be the "root" imports that are included in JS bundle.
   // The first two entry points enable "hot" CSS and auto-refreshes for JS.
-  entry: [
+  entry: {
     // We ship a few polyfills by default:
     // require.resolve('./polyfills'),
     // Include an alternative client for WebpackDevServer. A client's job is to
@@ -47,11 +43,11 @@ module.exports = {
     // require.resolve('webpack/hot/dev-server'),
     // require.resolve('react-dev-utils/webpackHotDevClient'),
     // Finally, this is your app's code:
-    paths.appIndexJs.replace('app.jsx', 'index.js'),
+    'react-spectre.css': paths.appIndexJs.replace('app.jsx', 'index.js'),
     // We include the app code last so that if there is a runtime error during
     // initialization, it doesn't blow up the WebpackDevServer client, and
     // changing JS code would still trigger a refresh.
-  ],
+  },
   output: {
     // Next line is not used in dev but WebpackDevServer crashes without it:
     path: paths.appBuild.replace('build', 'dist'),
@@ -60,14 +56,16 @@ module.exports = {
     // This does not produce a real file. It's just the virtual path that is
     // served by WebpackDevServer in development. This is the JS bundle
     // containing code from all our entry points, and the Webpack runtime.
-    filename: 'react-spectre.css.js',
+    filename: '[name].js',
     // There are also additional JS chunk files if you use code splitting.
-    chunkFilename: 'react-spectre.css.chunk.js',
+    chunkFilename: '[name].chunk.js',
     // This is the URL that app is served from. We use "/" in development.
     publicPath: publicPath,
     // Point sourcemap entries to original disk location (format as URL on Windows)
     devtoolModuleFilenameTemplate: info =>
       path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'),
+    library: 'ReactSpectre',
+    libraryTarget: 'umd',
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
@@ -262,11 +260,31 @@ module.exports = {
     hints: false,
   },
   externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-    'classnames': 'classnames',
+    'react': {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
+    },
+    'react-dom': {
+      root: 'ReactDOM',
+      commonjs2: 'react-dom',
+      commonjs: 'react-dom',
+      amd: 'react-dom',
+    },
+    'classnames': {
+      root: 'classNames',
+      commonjs2: 'classnames',
+      commonjs: 'classnames',
+      amd: 'classnames',
+    },
     'moment': 'moment',
     'lodash.noop': 'noop',
-    'prop-types': 'PropTypes',
+    'prop-types': {
+      root: 'PropTypes',
+      commonjs2: 'prop-types',
+      commonjs: 'prop-types',
+      amd: 'prop-types',
+    },
   }
 };

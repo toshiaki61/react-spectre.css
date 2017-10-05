@@ -1,10 +1,10 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("classnames"), require("noop"), require("moment"), require("prop-types"), require("react"));
+		module.exports = factory(require("classnames"), require("lodash.noop"), require("moment"), require("prop-types"), require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define(["classnames", "noop", "moment", "prop-types", "react"], factory);
+		define(["classnames", "lodash.noop", "moment", "prop-types", "react"], factory);
 	else if(typeof exports === 'object')
-		exports["ReactSpectre"] = factory(require("classnames"), require("noop"), require("moment"), require("prop-types"), require("react"));
+		exports["ReactSpectre"] = factory(require("classnames"), require("lodash.noop"), require("moment"), require("prop-types"), require("react"));
 	else
 		root["ReactSpectre"] = factory(root["classNames"], root["noop"], root["moment"], root["PropTypes"], root["React"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_classnames__, __WEBPACK_EXTERNAL_MODULE_lodash_noop__, __WEBPACK_EXTERNAL_MODULE_moment__, __WEBPACK_EXTERNAL_MODULE_prop_types__, __WEBPACK_EXTERNAL_MODULE_react__) {
@@ -92,7 +92,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__elements_Icon__ = __webpack_require__(/*! ../elements/Icon */ "./src/elements/Icon.jsx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__elements_form_uniqueId__ = __webpack_require__(/*! ../elements/form/uniqueId */ "./src/elements/form/uniqueId.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utilities_position__ = __webpack_require__(/*! ../utilities/position */ "./src/utilities/position.js");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Accordion.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Accordion.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -235,7 +235,7 @@ Accordion.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Avatar__ = __webpack_require__(/*! ./Avatar */ "./src/components/Avatar.jsx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__elements_Icon__ = __webpack_require__(/*! ../elements/Icon */ "./src/elements/Icon.jsx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__elements_Button__ = __webpack_require__(/*! ../elements/Button */ "./src/elements/Button.jsx");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Autocomplete.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Autocomplete.jsx',
     _this2 = this;
 
 
@@ -457,7 +457,7 @@ Autocomplete.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Avatar.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Avatar.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -574,7 +574,7 @@ Avatar.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__elements_Button__ = __webpack_require__(/*! ../elements/Button */ "./src/elements/Button.jsx");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Bar.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Bar.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -677,7 +677,7 @@ Bar.defaultProps = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Breadcrumb.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Breadcrumb.jsx',
     _this = this;
 
 
@@ -755,7 +755,7 @@ Breadcrumb.defaultProps = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Card.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Card.jsx',
     _this = this;
 
 
@@ -885,7 +885,7 @@ Card.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_noop___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash_noop__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Avatar__ = __webpack_require__(/*! ./Avatar */ "./src/components/Avatar.jsx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__elements_Button__ = __webpack_require__(/*! ../elements/Button */ "./src/elements/Button.jsx");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Chip.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Chip.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -963,7 +963,7 @@ Chip.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Menu__ = __webpack_require__(/*! ./Menu */ "./src/components/Menu.jsx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__elements_Button__ = __webpack_require__(/*! ../elements/Button */ "./src/elements/Button.jsx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__elements_Icon__ = __webpack_require__(/*! ../elements/Icon */ "./src/elements/Icon.jsx");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Dropdown.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Dropdown.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -1051,7 +1051,7 @@ Dropdown.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__elements_Icon__ = __webpack_require__(/*! ../elements/Icon */ "./src/elements/Icon.jsx");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Empty.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Empty.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -1183,7 +1183,7 @@ Empty.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_noop__ = __webpack_require__(/*! lodash.noop */ "lodash.noop");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_noop___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash_noop__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utilities_Divider__ = __webpack_require__(/*! ../utilities/Divider */ "./src/utilities/Divider.jsx");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Menu.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Menu.jsx',
     _this = this;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1354,7 +1354,7 @@ Menu.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_noop__ = __webpack_require__(/*! lodash.noop */ "lodash.noop");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_noop___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash_noop__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__elements_Button__ = __webpack_require__(/*! ../elements/Button */ "./src/elements/Button.jsx");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Modal.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Modal.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -1490,7 +1490,7 @@ Modal.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_noop__ = __webpack_require__(/*! lodash.noop */ "lodash.noop");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_noop___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash_noop__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__elements_Button__ = __webpack_require__(/*! ../elements/Button */ "./src/elements/Button.jsx");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Nav.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Nav.jsx',
     _this = this;
 
 
@@ -1599,7 +1599,7 @@ Nav.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_noop__ = __webpack_require__(/*! lodash.noop */ "lodash.noop");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_noop___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash_noop__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Pagination.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Pagination.jsx',
     _this = this;
 
 
@@ -1870,7 +1870,7 @@ Pagination.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Panel.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Panel.jsx',
     _this = this;
 
 
@@ -1968,7 +1968,7 @@ Panel.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Popover.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Popover.jsx',
     _this = this;
 
 
@@ -2030,7 +2030,7 @@ Popover.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Step.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Step.jsx',
     _this = this;
 
 
@@ -2103,7 +2103,7 @@ Step.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_noop__ = __webpack_require__(/*! lodash.noop */ "lodash.noop");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_noop___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash_noop__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Tab.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Tab.jsx',
     _this = this;
 
 
@@ -2209,7 +2209,7 @@ Tab.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Tile.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Tile.jsx',
     _this = this;
 
 
@@ -2311,7 +2311,7 @@ Tile.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__elements_Button__ = __webpack_require__(/*! ../elements/Button */ "./src/elements/Button.jsx");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/components/Toast.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/components/Toast.jsx',
     _this = this;
 
 
@@ -2388,7 +2388,7 @@ Toast.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/elements/Button.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/elements/Button.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -2498,7 +2498,7 @@ Button.Group = Group;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/elements/Icon.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/elements/Icon.jsx',
     _this = this;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -2633,7 +2633,7 @@ Icon.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/elements/Label.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/elements/Label.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -2699,7 +2699,7 @@ Label.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/elements/Table.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/elements/Table.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -2822,7 +2822,7 @@ Table.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__uniqueId__ = __webpack_require__(/*! ./uniqueId */ "./src/elements/form/uniqueId.js");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/elements/form/Checkbox.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/elements/form/Checkbox.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -2935,7 +2935,7 @@ Checkbox.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/elements/form/Form.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/elements/form/Form.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -3048,7 +3048,7 @@ Form.Label = Label;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Form__ = __webpack_require__(/*! ./Form */ "./src/elements/form/Form.jsx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__uniqueId__ = __webpack_require__(/*! ./uniqueId */ "./src/elements/form/uniqueId.js");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/elements/form/Input.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/elements/form/Input.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -3230,7 +3230,7 @@ Input.Addon = Addon;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__uniqueId__ = __webpack_require__(/*! ./uniqueId */ "./src/elements/form/uniqueId.js");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/elements/form/Radio.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/elements/form/Radio.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -3348,7 +3348,7 @@ Radio.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Form__ = __webpack_require__(/*! ./Form */ "./src/elements/form/Form.jsx");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/elements/form/Select.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/elements/form/Select.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -3476,7 +3476,7 @@ Select.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__uniqueId__ = __webpack_require__(/*! ./uniqueId */ "./src/elements/form/uniqueId.js");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/elements/form/Switch.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/elements/form/Switch.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -3568,7 +3568,7 @@ var uniqueId = function uniqueId() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash_noop___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_lodash_noop__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__elements_Button__ = __webpack_require__(/*! ../elements/Button */ "./src/elements/Button.jsx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__elements_Icon__ = __webpack_require__(/*! ../elements/Icon */ "./src/elements/Icon.jsx");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/experimentals/Calendar.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/experimentals/Calendar.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -3845,7 +3845,7 @@ Calendar.defaultProps = Object.assign({}, Nav.defaultProps, Header.defaultProps,
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_noop__ = __webpack_require__(/*! lodash.noop */ "lodash.noop");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_noop___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash_noop__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__elements_Icon__ = __webpack_require__(/*! ../elements/Icon */ "./src/elements/Icon.jsx");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/experimentals/Carousel.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/experimentals/Carousel.jsx',
     _this = this;
 
 
@@ -4005,7 +4005,7 @@ Carousel.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/experimentals/ComparisonSlider.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/experimentals/ComparisonSlider.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -4119,7 +4119,7 @@ var ComparisonSlider = function ComparisonSlider(_ref2) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/experimentals/Filter.jsx",
+var _jsxFileName = "/Volumes/SSD840/Workspaces/react-spectre.css/src/experimentals/Filter.jsx",
     _this = this;
 
 
@@ -4272,7 +4272,7 @@ var Filter = function Filter(_ref) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/experimentals/Meter.jsx",
+var _jsxFileName = "/Volumes/SSD840/Workspaces/react-spectre.css/src/experimentals/Meter.jsx",
     _this = this;
 
 
@@ -4318,7 +4318,7 @@ Meter.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__elements_Icon__ = __webpack_require__(/*! ../elements/Icon */ "./src/elements/Icon.jsx");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/experimentals/OffCanvas.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/experimentals/OffCanvas.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -4401,7 +4401,7 @@ var OffCanvas = function OffCanvas(_ref) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/experimentals/Parallax.jsx",
+var _jsxFileName = "/Volumes/SSD840/Workspaces/react-spectre.css/src/experimentals/Parallax.jsx",
     _this = this;
 
 
@@ -4509,7 +4509,7 @@ Parallax.defaultProps = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/experimentals/Progress.jsx",
+var _jsxFileName = "/Volumes/SSD840/Workspaces/react-spectre.css/src/experimentals/Progress.jsx",
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -4548,7 +4548,7 @@ Progress.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__elements_form_Input__ = __webpack_require__(/*! ../elements/form/Input */ "./src/elements/form/Input.jsx");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/experimentals/Slider.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/experimentals/Slider.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -4595,7 +4595,7 @@ Slider.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__elements_Icon__ = __webpack_require__(/*! ../elements/Icon */ "./src/elements/Icon.jsx");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/experimentals/Timeline.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/experimentals/Timeline.jsx',
     _this = this;
 
 
@@ -4857,7 +4857,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 // import './example/';
-console.log(__WEBPACK_IMPORTED_MODULE_48__elements_Button__["a" /* default */]);
 
 
 /***/ }),
@@ -4890,7 +4889,7 @@ console.log(__WEBPACK_IMPORTED_MODULE_48__elements_Button__["a" /* default */]);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_classnames__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/layout/Column.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/layout/Column.jsx',
     _this = this;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -5008,7 +5007,7 @@ var _ref2 = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Container__ = __webpack_require__(/*! ./Container */ "./src/layout/Container.jsx");
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/layout/Columns.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/layout/Columns.jsx',
     _this = this;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -5115,7 +5114,7 @@ Columns.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/layout/Container.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/layout/Container.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -5180,7 +5179,7 @@ Container.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Container__ = __webpack_require__(/*! ./Container */ "./src/layout/Container.jsx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Columns__ = __webpack_require__(/*! ./Columns */ "./src/layout/Columns.jsx");
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/layout/Navbar.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/layout/Navbar.jsx',
     _this = this;
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -5338,7 +5337,7 @@ Navbar.Section = Section;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/utilities/Divider.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/utilities/Divider.jsx',
     _this = this;
 
 
@@ -5396,7 +5395,7 @@ Divider.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(/*! classnames */ "classnames");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
-var _jsxFileName = '/Users/saekitoshiaki/Workspace/git/react-spectre.css/src/utilities/Loading.jsx',
+var _jsxFileName = '/Volumes/SSD840/Workspaces/react-spectre.css/src/utilities/Loading.jsx',
     _this = this;
 
 
@@ -5748,9 +5747,9 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_classnames__;
 /***/ }),
 
 /***/ "lodash.noop":
-/*!***********************!*\
-  !*** external "noop" ***!
-  \***********************/
+/*!*******************************************************************************************************!*\
+  !*** external {"root":"noop","commonjs2":"lodash.noop","commonjs":"lodash.noop","amd":"lodash.noop"} ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /*! exports used: default */
 /***/ (function(module, exports) {

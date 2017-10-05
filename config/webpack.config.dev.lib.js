@@ -279,7 +279,12 @@ module.exports = {
       amd: 'classnames',
     },
     'moment': 'moment',
-    'lodash.noop': 'noop',
+    'lodash.noop': {
+      root: 'noop',
+      commonjs2: 'lodash.noop',
+      commonjs: 'lodash.noop',
+      amd: 'lodash.noop',
+    },
     'prop-types': {
       root: 'PropTypes',
       commonjs2: 'prop-types',

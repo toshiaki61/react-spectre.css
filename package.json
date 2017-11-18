@@ -1,20 +1,19 @@
 {
   "name": "react-spectre.css",
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:toshiaki61/react-spectre.css.git"
+    "url": "git+https://github.com/toshiaki61/react-spectre.css.git"
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "flow": "flow",
-    "build:lib": "node scripts/build-lib.js",
-    "build:lib:dev": "node scripts/build-lib-dev.js",
-    "lib": "yarn build:lib && yarn build:lib:dev",
-    "build:flow": "flow-copy-source -v -i '**/__tests__/**' src dist"
+    "build": "yarn build:clean && yarn build:lib && yarn build:flow",
+    "build:clean": "rimraf lib",
+    "build:lib": "babel -d lib src --ignore '**/__tests__/**'",
+    "build:flow": "flow-copy-source -v -i '**/__tests__/**' src lib"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -57,12 +56,16 @@
           "modules": false
         }
       ],
-      "react-app"
+      "react"
     ],
     "plugins": [
       "react-flow-props-to-prop-types",
-      "transform-flow-strip-types"
-    ]
+      "transform-flow-strip-types",
+      "transform-object-rest-spread",
+      "transform-class-properties"
+    ],
+    "sourceMaps": true,
+    "retainLines": true
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -73,14 +76,18 @@
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "7.1.2",
+    "babel-cli": "^6.26.0",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
     "babel-loader": "7.1.1",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-react-flow-props-to-prop-types": "^0.15.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-react-app": "^3.0.3",
     "babel-runtime": "6.26.0",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
@@ -88,13 +95,13 @@
     "classnames": "^2.2.5",
     "css-loader": "0.28.4",
     "dotenv": "4.0.0",
-    "eslint": "4.4.1",
-    "eslint-config-react-app": "^2.0.1",
+    "eslint": "4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
     "eslint-loader": "1.9.0",
     "eslint-plugin-flowtype": "2.35.0",
     "eslint-plugin-import": "2.7.0",
-    "eslint-plugin-jsx-a11y": "5.1.1",
-    "eslint-plugin-react": "7.1.0",
+    "eslint-plugin-jsx-a11y": "6.0.2",
+    "eslint-plugin-react": "7.4.0",
     "extract-text-webpack-plugin": "3.0.0",
     "file-loader": "0.11.2",
     "flow-bin": "^0.56.0",
@@ -110,9 +117,10 @@
     "promise": "8.0.1",
     "prop-types": "^15.6.0",
     "prop-types-extra": "^1.0.1",
-    "react": "16.0.0",
+    "react": "^16.1.1",
     "react-dev-utils": "^4.1.0",
     "react-dom": "16.0.0",
+    "rimraf": "^2.6.2",
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.5.9",

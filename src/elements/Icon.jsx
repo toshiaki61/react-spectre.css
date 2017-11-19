@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 type IconProps = {
@@ -144,6 +144,7 @@ const Icon = ({
 };
 Icon.defaultProps = {
   className: '',
+  size: '',
   name: '',
   arrowUp: false,
   arrowRight: false,

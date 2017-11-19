@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 
 export type ItemHeaderProps = {
   button: React.DOM,
@@ -10,7 +10,7 @@ export type ItemProps = {
   type?: 'image' | 'body' | 'footer',
   content?: React.DOM,
 };
-const Item = ({ type, content }: ItemProps) => {
+const Item = ({ type, content }: ItemProps): React.Element<*> => {
   switch (type) {
     case 'image':
       return (
@@ -41,7 +41,7 @@ Item.defaultProps = {
 export type CardProps = {
   items: Array<ItemProps>,
 };
-const Card = ({ items }: CardProps) => (
+const Card = ({ items }: CardProps): React.Element<*> => (
   <div className="card">
     {items.map((item, i) => {
       const key = `card-${i}`;
@@ -60,8 +60,5 @@ const Card = ({ items }: CardProps) => (
     })}
   </div>
 );
-Card.defaultProps = {
-  items: [],
-};
 
 export default Card;

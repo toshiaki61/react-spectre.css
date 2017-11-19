@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 import Container from './Container';
@@ -9,7 +9,13 @@ export type ColumnsWithoutContainerProps = {
   gapless?: boolean,
   oneline?: boolean,
 };
-const ColumnsWithoutContainer = ({ children, gapless, oneline, className, ...props }: ColumnsWithoutContainerProps) => {
+const ColumnsWithoutContainer = ({
+  children,
+  gapless,
+  oneline,
+  className,
+  ...props
+}: ColumnsWithoutContainerProps): React.Element<*> => {
   const classes = classnames('columns', {
     'col-gapless': gapless,
     'col-oneline': oneline,
@@ -48,12 +54,12 @@ export type ContainerProps = {
 };
 export type ColumnsProps = {
   children: React.DOM,
-  container?: 
+  container?:
     boolean |
     string |
     ContainerProps,
 };
-const Columns = ({ children, container, ...props }: ColumnsProps) => {
+const Columns = ({ children, container, ...props }: ColumnsProps): React.Element<*> => {
   const content = <ColumnsWithoutContainer {...props}>{children}</ColumnsWithoutContainer>;
 
   if (!container) {

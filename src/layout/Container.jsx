@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 export type ContainerProps = {
@@ -11,16 +11,23 @@ export type ContainerProps = {
   lg?: boolean,
   xl?: boolean,
 };
-const Container = ({ children, className, xs, sm, md, lg, xl, ...props }: ContainerProps) => {
-  const classes = classnames(
-    'container', {
-      xs,
-      sm,
-      md,
-      lg,
-      xl
-    }, className
-  );
+const Container = ({
+  children,
+  className,
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
+  ...props
+}: ContainerProps): React.Element<*> => {
+  const classes = classnames('container', {
+    xs,
+    sm,
+    md,
+    lg,
+    xl,
+  }, className);
   return (
     <section className={classes} {...props}>
       {children}

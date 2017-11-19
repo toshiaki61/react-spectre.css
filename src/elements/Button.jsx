@@ -1,7 +1,10 @@
-import React from 'react';
+/* @flow */
+import * as React from 'react';
 import classnames from 'classnames';
 
 export type ButtonProps = {
+  children?: React.Node,
+  className?: string,
   loading?: boolean,
   href?: string,
   lg?: boolean,
@@ -59,7 +62,7 @@ const Button = ({
 };
 
 export type GroupProps = {
-  children: React.DOM,
+  children: React.Node,
   className?: string,
   block?: boolean,
 };

@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 import moment from 'moment';
 import noop from 'lodash.noop';
@@ -16,23 +16,23 @@ const Nav = ({
   current,
   navFormat,
   onMonthClick = noop,
-}: NavProps) => (
+}: NavProps): React.Element<*> => (
   <div className="calendar-nav navbar">
     <Button action link lg onClick={e => onMonthClick(e, current.clone().add(-1, 'month'))}><Icon arrowLeft /></Button>
-    <Button link lg onClick={e => onMonthClick(e, current.clone())}>{current.format(navFormat)}</Button>
+    <Button link lg onClick={e => onMonthClick(e, current.clone())}>
+      {current.format(navFormat)}
+    </Button>
     <Button action link lg onClick={e => onMonthClick(e, current.clone().add(1, 'month'))}><Icon arrowRight /></Button>
   </div>
 );
 Nav.defaultProps = {
-  current: moment(),
-  navFormat: 'MMMM YYYY',
   onMonthClick: noop,
 };
 
 export type HeaderProps = {
   weekdays: Array<string>,
 };
-const Header = ({ weekdays }: HeaderProps) => (
+const Header = ({ weekdays }: HeaderProps): React.Element<*> => (
   <div className="calendar-header">
     {weekdays.map((d, i) => {
       const key = `weekday-${i}`;
@@ -48,27 +48,34 @@ export type BodyProps = {
   current: moment,
   start: moment,
   end: moment,
-  options: {
+  options?: {
     data: Array<{
       date: string,
       tooltip: string,
-      type: 'badge' | 'disabled' | 'today',
+      type?: 'badge' | 'disabled' | 'today',
     }>,
     range: Array<{
       start: string,
       end: string,
     }>,
   },
-  dateFormat: string,
+  dateFormat?: string,
   onDateClick: (e: Event, d: moment) => void,
 };
-const Body = ({ current, start, end, options, dateFormat, onDateClick }: BodyProps) => {
+const Body = ({
+  current,
+  start,
+  end,
+  options,
+  dateFormat,
+  onDateClick,
+}: BodyProps): React.Element<*> => {
   const dates = [];
   for (const d = start.clone(); d.isSameOrBefore(end, 'date'); d.add(1, 'day')) {
     const before = d.isBefore(current, 'month');
     const after = d.isAfter(current, 'month');
-    const datum = options.data && options.data.find(({ date }) => d.isSame(date, 'date'));
-    const range = options.range && options.range
+    const datum = options && options.data && options.data.find(({ date }) => d.isSame(date, 'date'));
+    const range = options && options.range && options.range
       .find(r => d.isBetween(r.start, r.end, 'date', '[]'));
     const rangeStart = range && d.isSame(range.start, 'date');
     const rangeEnd = range && d.isSame(range.end, 'date');
@@ -94,7 +101,9 @@ const Body = ({ current, start, end, options, dateFormat, onDateClick }: BodyPro
           disabled={datum && datum.type === 'disabled'}
           className={btnClasses}
           onClick={e => onDateClick(e, date)}
-        >{date.format(dateFormat)}</Button>
+        >
+          {date.format(dateFormat)}
+        </Button>
       </div>
     ));
   }
@@ -106,16 +115,14 @@ const Body = ({ current, start, end, options, dateFormat, onDateClick }: BodyPro
   );
 };
 Body.defaultProps = {
-  current: undefined,
-  start: undefined,
-  end: undefined,
-  options: {},
+  options: {
+    data: [],
+    range: [],
+  },
   dateFormat: 'D',
-  onDateClick: noop,
 };
 
-export type CalendarProps = NavProps & HeaderProps & BodyProps & {
-};
+export type CalendarProps = NavProps & HeaderProps & BodyProps;
 const Calendar = ({
   navFormat,
   start,
@@ -126,7 +133,7 @@ const Calendar = ({
   current,
   weekdays,
   ...props
-}: CalendarProps) => {
+}: CalendarProps): React.Element<*> => {
   if (!current) {
     return null;
   }

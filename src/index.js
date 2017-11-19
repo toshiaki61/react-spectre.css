@@ -63,7 +63,7 @@ export {
   shape, text, position, Menu, Avatar, Dropdown, Breadcrumb,
   Panel, Autocomplete, Toast, Modal, Bar, Tile, Popover, Card,
   Pagination, Nav, Step, Chip, Empty, Accordion, Tab, Button,
-  Table, Loading, Icon, Label, 
+  Table, Loading, Icon, Label,
   Column1, Column2, Column3, Column4,
   Column5, Column6, Column7, Column8,
   Column9, Column10, Column11, Column12,

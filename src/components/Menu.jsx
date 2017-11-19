@@ -1,14 +1,13 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
-import noop from 'lodash.noop';
 
 import Divider from '../utilities/Divider';
 
 export type BadgeProps = {
   content?: string | number | React.DOM
 };
-const Badge = ({ content }: BadgeProps) => {
+const Badge = ({ content }: BadgeProps): React.Element<*> | null => {
   if (!content) {
     return null;
   }
@@ -17,6 +16,9 @@ const Badge = ({ content }: BadgeProps) => {
       <span className="label label-primary">{content}</span>
     </div>
   );
+};
+Badge.defaultProps = {
+  content: '',
 };
 
 export type ItemProps = {
@@ -39,7 +41,7 @@ const Item = ({
   badge,
   onClick,
   ...props
-}: ItemProps) => {
+}: ItemProps): React.Element<*> => {
   const classes = classnames('menu-item', className);
   if (divider) {
     return <Divider className={className} content={typeof divider === 'string' ? divider : ''} />;
@@ -58,7 +60,6 @@ Item.defaultProps = {
   divider: false,
   active: false,
   badge: 0,
-  onClick: noop,
 };
 
 export type MenuProps = {
@@ -67,7 +68,7 @@ export type MenuProps = {
   contents: Array<ItemProps>,
   onClick: (e: Event, id: string) => void,
 }
-const Menu = ({ className, nav, contents, onClick, ...props }: MenuProps) => {
+const Menu = ({ className, nav, contents, onClick, ...props }: MenuProps): React.Element<*> => {
   const classes = classnames('menu', {
     'menu-nav': nav,
   }, className);
@@ -89,8 +90,6 @@ const Menu = ({ className, nav, contents, onClick, ...props }: MenuProps) => {
 Menu.defaultProps = {
   className: '',
   nav: false,
-  contents: [],
-  onClick: noop,
 };
 
 export default Menu;

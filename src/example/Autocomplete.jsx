@@ -7,11 +7,21 @@ class AutocompleteExample extends Component {
     active: false,
     loading: false,
     suggests: [
-      { id: '1', name: 'Bruce Banner', img: '', initial: '' },
-      { id: '2', name: 'Thor Odinson', img: '//picturepan2.github.io/spectre/img/avatar-1.png', initial: '' },
-      { id: '3', name: 'Steve Rogers', img: '//picturepan2.github.io/spectre/img/avatar-4.png', initial: '' },
-      { id: '4', name: 'Tony Stark', img: '', initial: 'TS' },
-      { id: '5', name: 'Natasha Romanoff', img: '', initial: '' },
+      {
+        id: '1', name: 'Bruce Banner', img: '', initial: '',
+      },
+      {
+        id: '2', name: 'Thor Odinson', img: '//picturepan2.github.io/spectre/img/avatar-1.png', initial: '',
+      },
+      {
+        id: '3', name: 'Steve Rogers', img: '//picturepan2.github.io/spectre/img/avatar-4.png', initial: '',
+      },
+      {
+        id: '4', name: 'Tony Stark', img: '', initial: 'TS',
+      },
+      {
+        id: '5', name: 'Natasha Romanoff', img: '', initial: '',
+      },
     ],
     selected: [
     ],

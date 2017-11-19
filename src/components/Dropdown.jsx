@@ -1,7 +1,6 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
-import noop from 'lodash.noop';
 
 import Menu from './Menu';
 import Button from '../elements/Button';
@@ -14,8 +13,8 @@ export type DropdownProps = {
   active?: boolean,
   right?: boolean,
   initialValue?: string,
-  contents?: Array<MenuItemProps>,
-  onClick?: (e: Event) => void,
+  contents: Array<MenuItemProps>,
+  onClick: (e: Event) => void,
   onMenuClick: (e: Event, id: string) => void,
 };
 const Dropdown = ({
@@ -27,7 +26,7 @@ const Dropdown = ({
   onClick,
   onMenuClick,
   ...props
-}: DropdownProps) => {
+}: DropdownProps): React.Element<*> => {
   const classes = classnames('dropdown', {
     'dropdown-right': right,
     active,
@@ -46,8 +45,6 @@ Dropdown.defaultProps = {
   active: false,
   right: false,
   initialValue: '',
-  contents: [],
-  onClick: noop,
 };
 
 export default Dropdown;

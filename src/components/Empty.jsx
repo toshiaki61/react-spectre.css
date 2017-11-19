@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 import Icon from '../elements/Icon';
@@ -8,7 +8,7 @@ export type TitleProps = {
   children: React.DOM,
   className?: string,
 };
-const Title = ({ children, className, ...props }: TitleProps) => {
+const Title = ({ children, className, ...props }: TitleProps): React.Element<*> => {
   const classes = classnames('empty-title', 'h5', className);
   return (
     <p className={classes} {...props}>
@@ -24,7 +24,7 @@ export type SubtitleProps = {
   children?: React.DOM,
   className?: string,
 };
-const Subtitle = ({ children, className, ...props }: SubtitleProps) => {
+const Subtitle = ({ children, className, ...props }: SubtitleProps): React.Element<*> => {
   const classes = classnames('empty-subtitle', className);
   return (
     <p className={classes} {...props}>
@@ -44,7 +44,14 @@ export type EmptyProps = {
   title?: string,
   subtitle?: string,
 };
-const Empty = ({ children, className, icon, title, subtitle, ...props }: EmptyProps) => {
+const Empty = ({
+  children,
+  className,
+  icon,
+  title,
+  subtitle,
+  ...props
+}: EmptyProps): React.Element<*> => {
   const classes = classnames('empty', className);
   return (
     <div className={classes} {...props}>

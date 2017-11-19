@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 export type TileProps = {
@@ -10,21 +10,25 @@ export type TileProps = {
   icon?: React.DOM | string,
   action?: React.DOM,
 };
-const Tile = ({ compact, title, subtitle, content, icon, action }: TileProps) => {
+const Tile = ({ compact, title, subtitle, content, icon, action }: TileProps): React.Element<*> => {
   const classes = classnames('tile', { 'tile-centered': compact });
   return (
     <div className={classes}>
-      {icon ? <div className="tile-icon">
-        {icon}
-      </div> : null}
+      {icon ? (
+        <div className="tile-icon">
+          {icon}
+        </div>
+      ) : null}
       <div className="tile-content">
         {title ? <p className="tile-title">{title}</p> : null}
         {subtitle ? <p className="tile-subtitle text-gray">{subtitle}</p> : null}
         {content}
       </div>
-      {action ? <div className="tile-action">
-        {action}
-      </div> : null}
+      {action ? (
+        <div className="tile-action">
+          {action}
+        </div>
+      ) : null}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 import Button from '../elements/Button';
@@ -9,14 +9,16 @@ export type ItemProps = {
   tooltip?: string,
   content?: React.DOM | string,
 };
-const Item = ({ small, tooltip, content, ...props }: ItemProps) => {
+const Item = ({ small, tooltip, content, ...props }: ItemProps): React.Element<*> => {
   const classes = classnames('bar-item', { tooltip });
   return (
     <div
       className={classes}
       data-tooltip={tooltip}
       {...props}
-    >{small ? null : content}</div>
+    >
+      {small ? null : content}
+    </div>
   );
 };
 Item.defaultProps = {
@@ -37,7 +39,7 @@ export type BarProps = {
   slider?: boolean,
   items: Array<ProgressBarItemProps>,
 };
-const Bar = ({ className, small, slider, items }: BarProps) => {
+const Bar = ({ className, small, slider, items }: BarProps): React.Element<*> => {
   const classes = classnames('bar', {
     'bar-sm': small,
     'bar-slider': slider,
@@ -65,7 +67,6 @@ Bar.defaultProps = {
   className: '',
   small: false,
   slider: false,
-  items: [],
 };
 
 export default Bar;

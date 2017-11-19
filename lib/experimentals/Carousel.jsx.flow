@@ -1,6 +1,5 @@
 /* @flow */
-import React from 'react';
-import noop from 'lodash.noop';
+import * as React from 'react';
 
 import Icon from '../elements/Icon';
 
@@ -13,7 +12,7 @@ export type CarouselProps = {
   active?: string,
   onChange: (e: Event, id: string) => void,
 }
-const Carousel = ({ slides, active, onChange }: CarouselProps) => {
+const Carousel = ({ slides, active, onChange }: CarouselProps): React.Element<*> => {
   if (!slides || slides.length === 0) {
     return null;
   }
@@ -64,9 +63,7 @@ const Carousel = ({ slides, active, onChange }: CarouselProps) => {
   );
 };
 Carousel.defaultProps = {
-  slides: [],
   active: 'slide-0',
-  onChange: noop,
 };
 
 export default Carousel;

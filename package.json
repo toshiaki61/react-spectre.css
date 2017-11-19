@@ -1,16 +1,17 @@
 {
   "name": "react-spectre.css",
   "version": "0.1.0",
-  "main": "lib/index.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/toshiaki61/react-spectre.css.git"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "test": "node scripts/test.js --env=jsdom",
+    "start": "yarn scripts/start.js",
+    "test": "yarn scripts/test.js --env=jsdom",
     "flow": "flow",
-    "build": "yarn build:clean && yarn build:lib && yarn build:flow",
+    "prod": "node scripts/build-lib.js",    
+    "build": "yarn build:clean && yarn build:lib && yarn build:flow && yarn prod",
     "build:clean": "rimraf lib",
     "build:lib": "babel -d lib src --ignore '**/__tests__/**'",
     "build:flow": "flow-copy-source -v -i '**/__tests__/**' src lib"
@@ -59,6 +60,7 @@
       "react"
     ],
     "plugins": [
+      "flow-react-proptypes",
       "react-flow-props-to-prop-types",
       "transform-flow-strip-types",
       "transform-object-rest-spread",
@@ -68,9 +70,32 @@
     "retainLines": true
   },
   "eslintConfig": {
-    "extends": "react-app",
+    "env": {
+      "browser": true,
+      "node": true,
+      "jasmine": true
+    },
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "plugins": [
+      "flowtype"
+    ],
     "rules": {
-      "jsx-a11y/href-no-hash": "off"
+      "no-console": "off",
+      "object-curly-newline": "off",
+      "jsx-a11y/href-no-hash": "off",
+      "jsx-a11y/label-has-for": [
+        "error",
+        {
+          "required": {
+            "every": [
+              "id"
+            ]
+          },
+          "allowChildren": false
+        }
+      ],
+      "react/default-props-match-prop-types": "off"
     }
   },
   "dependencies": {},
@@ -82,6 +107,7 @@
     "babel-jest": "20.0.3",
     "babel-loader": "7.1.1",
     "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-flow-react-proptypes": "^9.1.0",
     "babel-plugin-react-flow-props-to-prop-types": "^0.15.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
@@ -95,16 +121,15 @@
     "classnames": "^2.2.5",
     "css-loader": "0.28.4",
     "dotenv": "4.0.0",
-    "eslint": "4.9.0",
+    "eslint": "^4.11.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-loader": "1.9.0",
-    "eslint-plugin-flowtype": "2.35.0",
+    "eslint-plugin-flowtype": "^2.39.1",
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-jsx-a11y": "6.0.2",
     "eslint-plugin-react": "7.4.0",
     "extract-text-webpack-plugin": "3.0.0",
     "file-loader": "0.11.2",
-    "flow-bin": "^0.56.0",
     "flow-copy-source": "^1.2.1",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",

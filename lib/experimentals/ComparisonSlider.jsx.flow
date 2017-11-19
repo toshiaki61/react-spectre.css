@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 export type ImageProps = {
@@ -7,7 +7,9 @@ export type ImageProps = {
   alt?: string,
   className?: string,
 };
-const Image = ({ src, alt, className, ...props }: ImageProps) => (
+const Image = ({
+  src, alt, className, ...props
+}: ImageProps): React.Element<*> => (
   <img src={src} className={classnames('rounded', className)} alt={alt} {...props} />
 );
 Image.defaultProps = {
@@ -19,7 +21,7 @@ export type ComparisonSliderProps = {
   before: ImageProps,
   after: ImageProps,
 };
-const ComparisonSlider = ({ before, after }: ComparisonSliderProps) => (
+const ComparisonSlider = ({ before, after }: ComparisonSliderProps): React.Element<*> => (
   <div className="comparison-slider">
     <figure className="comparison-before">
       <Image {...before} />

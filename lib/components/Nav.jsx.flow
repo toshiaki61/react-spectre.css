@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 import noop from 'lodash.noop';
 
@@ -12,19 +12,19 @@ export type ItemProps = {
   active?: boolean,
   items: Array<ItemProps>,
 };
-const Item = ({ id, name, items, active, onClick }: ItemProps) => (
+const Item = ({ id, name, items, active, onClick }: ItemProps): React.Element<*> => (
   <li className={classnames('nav-item', { active })}>
     <Button
       href="#"
       onClick={e => onClick(e, id)}
-    >{name}</Button>
+    >
+      {name}
+    </Button>
     {items && items.length ? <Nav items={items} onClick={onClick} /> : null}
   </li>
 );
 Item.defaultProps = {
-  items: [],
   active: false,
-  onClick: noop,
 };
 
 export type NavProps = {
@@ -32,7 +32,7 @@ export type NavProps = {
   active?: string,
   onClick?: (e: Event, id: string) => void,
 };
-const Nav = ({ items, active, onClick }: NavProps) => (
+const Nav = ({ items, active, onClick }: NavProps): React.Element<*> => (
   <ul className="nav">
     {items.map(item => (
       <Item key={item.id} {...item} active={active === item.id} onClick={onClick} />
@@ -40,7 +40,6 @@ const Nav = ({ items, active, onClick }: NavProps) => (
   </ul>
 );
 Nav.defaultProps = {
-  items: [],
   active: '',
   onClick: noop,
 };

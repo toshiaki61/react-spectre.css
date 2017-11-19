@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 import Form from './Form';
@@ -10,7 +10,13 @@ export type SelectOnlyProps = {
   sm?: boolean,
   lg?: boolean,
 };
-const SelectOnly = ({ children, className, sm, lg, ...props }: SelectOnlyProps) => {
+const SelectOnly = ({
+  children,
+  className,
+  sm,
+  lg,
+  ...props
+}: SelectOnlyProps): React.Element<*> => {
   const classes = classnames(
     'form-select',
     className,
@@ -38,7 +44,7 @@ export type SelectProps = SelectOnlyProps & {
     [key: string]: string,
   },
 };
-const Select = ({ children, label, options, ...props }: SelectProps) => {
+const Select = ({ children, label, options, ...props }: SelectProps): React.Element<*> => {
   const labelNode = label ? <Form.Label>{label}</Form.Label> : null;
   const keys = Object.keys(options);
   if (keys.length > 0) {

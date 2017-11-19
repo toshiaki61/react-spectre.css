@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 export type TableProps = {
@@ -9,7 +9,14 @@ export type TableProps = {
   striped?: boolean,
   hover?: boolean,
 };
-const Table = ({ header, contents, className, striped, hover, ...props }: TableProps) => {
+const Table = ({
+  header,
+  contents,
+  className,
+  striped,
+  hover,
+  ...props
+}: TableProps): React.Element<*> => {
   const classes = classnames(
     'table',
     {
@@ -39,10 +46,10 @@ const Table = ({ header, contents, className, striped, hover, ...props }: TableP
                 const columnKey = `column-${j}`;
                 return (
                   <td key={columnKey}>{column}</td>
-                )
+                );
               })}
             </tr>
-          )
+          );
         })}
       </tbody>
     </table>

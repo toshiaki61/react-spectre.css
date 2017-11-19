@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 import Container from './Container';
@@ -10,10 +10,10 @@ export type SectionProps = {
   className?: string,
   center?: boolean,
 };
-const Section = ({ children, className, center, ...props }: SectionProps) => {
+const Section = ({ children, className, center, ...props }: SectionProps): React.Element<*> => {
   const classes = classnames({
     'navbar-section': !center,
-    'navbar-center': center
+    'navbar-center': center,
   }, className);
   return (
     <section className={classes} {...props}>
@@ -30,7 +30,11 @@ export type NavbarWithoutContainerProps = {
   children: React.DOM,
   className?: string,
 };
-const NavbarWithoutContainer = ({ children, className, ...props }: NavbarWithoutContainerProps) => {
+const NavbarWithoutContainer = ({
+  children,
+  className,
+  ...props
+}: NavbarWithoutContainerProps): React.Element<*> => {
   const classes = classnames('navbar', className);
 
   return (
@@ -57,7 +61,7 @@ export type NavbarProps = {
       xl?: boolean,
     }
 };
-const Navbar = ({ children, container, ...props }: NavbarProps) => {
+const Navbar = ({ children, container, ...props }: NavbarProps): React.Element<*> => {
   const content = <NavbarWithoutContainer {...props}>{children}</NavbarWithoutContainer>;
 
   if (!container) {
@@ -80,7 +84,7 @@ export type BrandProps = {
   className?: string,
   href?: string,
 };
-const Brand = ({ children, className, ...props }: BrandProps) => {
+const Brand = ({ children, className, ...props }: BrandProps): React.Element<*> => {
   const classes = classnames('navbar-brand', className);
   let component = null;
   if (props.href) {

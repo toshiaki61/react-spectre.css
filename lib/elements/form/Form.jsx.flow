@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 export type FormProps = {
@@ -7,7 +7,7 @@ export type FormProps = {
   className?: string,
   horizontal?: boolean,
 };
-const Form = ({ children, className, horizontal, ...props }: FormProps) => {
+const Form = ({ children, className, horizontal, ...props }: FormProps): React.Element<*> => {
   const classes = classnames(className, { 'form-horizontal': horizontal });
   return (
     <form {...props} className={classes} >
@@ -26,7 +26,13 @@ export type GroupProps = {
   success?: boolean,
   danger?: boolean,
 };
-const Group = ({ children, className, success, danger, ...props }: GroupProps) => {
+const Group = ({
+  children,
+  className,
+  success,
+  danger,
+  ...props
+}: GroupProps): React.Element<*> => {
   const classes = classnames('form-group', className, { 'has-success': success, 'has-danger': danger });
   return (
     <div {...props} className={classes} >

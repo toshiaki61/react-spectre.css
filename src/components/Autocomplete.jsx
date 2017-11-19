@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 import Chip from './Chip';
@@ -8,24 +8,26 @@ import Avatar from './Avatar';
 import Icon from '../elements/Icon';
 import Button from '../elements/Button';
 
-const delimiter = '______';
-function mark(target: string, search: string): string | Array<React.DOM> {
+const delimiter: string = '______';
+
+function mark(target: string, search: string): string | Array<string | React.Element<*>> {
   if (!search) {
     return target;
   }
-  const regex = new RegExp(`(${search})`, 'ig');
+  const regex: RegExp = new RegExp(`(${search})`, 'ig');
   return target.replace(regex, `${delimiter}$1${delimiter}`)
     .replace(new RegExp(`^${delimiter}|${delimiter}$`, 'g'), '')
-    .split(delimiter).filter(row => row !== '')
-    .map((row, i) => {
+    .split(delimiter).filter((row: string) => row !== '')
+    .map((row: string, i: number) => {
       if (regex.test(row)) {
-        const key = `mark-${i}`;
+        const key: string = `mark-${i}`;
         return <mark key={key}>{row}</mark>;
       }
       return row;
     });
 }
-function filter(word: string, key: string) {
+
+function filter(word: string, key: string): ({[key: string]: string}) => boolean {
   const regex = new RegExp(word, 'ig');
   return function search(value) {
     if (word === '') {
@@ -34,6 +36,7 @@ function filter(word: string, key: string) {
     return regex.test(value[key]);
   };
 }
+
 export type SuggestProps = {
   id: string,
   name: string,
@@ -65,7 +68,7 @@ const Autocomplete = ({
   onBlur,
   onClearClick,
   onSelected,
-}: AutocompleteProps) => {
+}: AutocompleteProps): React.Element<*> => {
   const classes = classnames('form-autocomplete-input form-input', {
     'is-focused': active,
   });
@@ -85,7 +88,9 @@ const Autocomplete = ({
       onBlur={onBlur}
     >
       <div className={classes}>
-        {selected.map(({ id, name, img, initial }) => (
+        {selected.map(({
+          id, name, img, initial,
+        }) => (
           <Chip
             key={id}
             avatar={{ initial, img, alt: name }}
@@ -97,7 +102,9 @@ const Autocomplete = ({
         {loading ? <div className="has-icon-left">{inputNode}<Icon form loading /></div> : inputNode}
       </div>
       <ul className="menu" style={{ position: active ? 'static' : 'absolute' }}>
-        {suggests.filter(filter(input, 'name')).map(({ id, name, img, initial }) => (
+        {suggests.filter(filter(input, 'name')).map(({
+          id, name, img, initial,
+        }) => (
           <li key={id} className="menu-item">
             <Button href="#" onClick={e => onSelected(e, id)}>
               <Tile
@@ -115,9 +122,6 @@ const Autocomplete = ({
 Autocomplete.defaultProps = {
   placeholder: 'typing here',
   active: false,
-  selected: [],
-  suggests: [],
-  input: '',
   loading: false,
 };
 

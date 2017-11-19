@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 export type PopoverProps = {
@@ -9,7 +9,13 @@ export type PopoverProps = {
   left?: boolean,
   bottom?: boolean,
 };
-const Popover = ({ target, children, right, left, bottom }: PopoverProps) => {
+const Popover = ({
+  target,
+  children,
+  right,
+  left,
+  bottom,
+}: PopoverProps): React.Element<*> => {
   const classes = classnames('popover', {
     'popover-right': right,
     'popover-left': left,

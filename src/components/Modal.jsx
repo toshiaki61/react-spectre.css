@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 import noop from 'lodash.noop';
 
@@ -23,7 +23,7 @@ const Modal = ({
   large,
   onClearClick,
   ...props
-}: ModalProps) => {
+}: ModalProps): React.Element<*> => {
   const classes = classnames('modal', {
     active,
     'modal-sm': small,
@@ -37,14 +37,18 @@ const Modal = ({
           <Button clear className="float-right" onClick={onClearClick} />
           {title ? <div className="modal-title h5">{title}</div> : null}
         </div>
-        {content ? <div className="modal-body">
-          <div className="content">
-            {content}
+        {content ? (
+          <div className="modal-body">
+            <div className="content">
+              {content}
+            </div>
           </div>
-        </div> : null}
-        {footer ? <div className="modal-footer">
-          {footer}
-        </div> : null}
+        ) : null}
+        {footer ? (
+          <div className="modal-footer">
+            {footer}
+          </div>
+        ) : null}
       </div>
     </div>
   );

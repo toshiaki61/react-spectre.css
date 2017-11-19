@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -12,7 +12,17 @@ export type ColumnProps = {
   xl?: number,
   size?: number,
 };
-const Column = ({ children, className, xs, sm, md, lg, xl, size, ...props }: ColumnProps) => {
+const Column = ({
+  children,
+  className,
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
+  size,
+  ...props
+}: ColumnProps): React.Element<*> => {
   const classes = classnames(
     'column',
     {
@@ -33,7 +43,6 @@ const Column = ({ children, className, xs, sm, md, lg, xl, size, ...props }: Col
   );
 };
 Column.defaultProps = {
-  children: null,
   className: '',
   xs: 0,
   sm: 0,

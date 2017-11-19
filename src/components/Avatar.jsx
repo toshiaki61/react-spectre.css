@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 export type IconProp = {
@@ -7,7 +7,7 @@ export type IconProp = {
   alt?: string;
   className?: string;
 };
-const Icon = ({ className, alt, ...props }: IconProp) => {
+const Icon = ({ className, alt, ...props }: IconProp): React.Element<*> => {
   const classes = classnames('avatar-icon', className);
   return (
     <img className={classes} alt={alt} {...props} />
@@ -21,7 +21,7 @@ Icon.defaultProps = {
 export type PresenceProp = {
   presence: string,
 };
-const Presence = ({ presence }: PresenceProp) => (
+const Presence = ({ presence }: PresenceProp): React.Element<*> => (
   <i className={classnames('avatar-presence', presence)} />
 );
 
@@ -49,7 +49,7 @@ const Avatar = ({
   alt,
   presence,
   ...props
-}: AvatarProps) => {
+}: AvatarProps): React.Element<*> => {
   const classes = classnames(
     'avatar',
     {
@@ -68,7 +68,6 @@ const Avatar = ({
     </figure>
   );
 };
-
 Avatar.defaultProps = {
   className: '',
   xl: false,

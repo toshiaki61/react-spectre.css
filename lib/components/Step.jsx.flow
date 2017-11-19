@@ -1,6 +1,8 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
+
+const sharp = '#';
 
 export type ItemProps = {
   id: string,
@@ -11,7 +13,7 @@ export type StepProps = {
   items: Array<ItemProps>,
   active?: string,
 };
-const Step = ({ items, active }: StepProps) => {
+const Step = ({ items, active }: StepProps): React.Element<*> | null => {
   if (!items.length) {
     return null;
   }
@@ -21,7 +23,7 @@ const Step = ({ items, active }: StepProps) => {
         const key = `step-${id}`;
         return (
           <li key={key} className={classnames('step-item', { active: id === active })}>
-            <a href="#" className="tooltip" data-tooltip={tooltip}>{name}</a>
+            <a href={sharp} className="tooltip" data-tooltip={tooltip}>{name}</a>
           </li>
         );
       })}
@@ -29,7 +31,6 @@ const Step = ({ items, active }: StepProps) => {
   );
 };
 Step.defaultProps = {
-  items: [],
   active: '',
 };
 

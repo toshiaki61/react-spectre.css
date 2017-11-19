@@ -58,7 +58,7 @@ module.exports = {
   },
   output: {
     // The build folder.
-    path: paths.appBuild.replace('build', 'dist'),
+    path: paths.appBuild.replace('build', 'lib'),
     // Generated JS file names (with nested folders).
     // There will be one main bundle, and one file per asynchronous chunk.
     // We don't currently advertise code splitting but Webpack supports it.

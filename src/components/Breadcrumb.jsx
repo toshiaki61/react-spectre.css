@@ -1,11 +1,11 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 
 export type ItemProps = {
   link?: string,
   content?: string,
 };
-const Item = ({ link, content }: ItemProps) => (
+const Item = ({ link, content }: ItemProps): React.Element<*> => (
   <li className="breadcrumb-item">
     <a href={link}>{content}</a>
   </li>
@@ -18,7 +18,7 @@ Item.defaultProps = {
 export type BreadcrumbProps = {
   items: Array<ItemProps>,
 };
-const Breadcrumb = ({ items }: BreadcrumbProps) => {
+const Breadcrumb = ({ items }: BreadcrumbProps): React.Element<*> | null => {
   if (items.length === 0) {
     return null;
   }
@@ -30,9 +30,6 @@ const Breadcrumb = ({ items }: BreadcrumbProps) => {
       })}
     </ul>
   );
-};
-Breadcrumb.defaultProps = {
-  items: [],
 };
 
 export default Breadcrumb;

@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 
 export type MeterProps = {
   value: number,
@@ -9,16 +9,9 @@ export type MeterProps = {
   low: number,
   high: number,
 };
-const Meter = ({ value, optimum, min, max, low, high }: MeterProps) => (
+const Meter = ({ value, optimum, min, max, low, high }: MeterProps): React.Element<*> => (
   <meter className="meter" value={value} optimum={optimum} min={min} max={max} low={low} high={high} />
 );
-Meter.defaultProps = {
-  value: 0,
-  optimum: 90,
-  min: 0,
-  max: 100,
-  low: 30,
-  high: 80,
-};
+Meter.defaultProps = {};
 
 export default Meter;

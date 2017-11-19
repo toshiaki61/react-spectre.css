@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import ReactDOM from 'react-dom';
 import moment from 'moment';
 
@@ -13,7 +13,7 @@ import {
   Accordion, Avatar, Bar, Button, Calendar, Card, Column6, Columns,
   ComparisonSlider, Empty, Icon, Menu, Meter, Nav, Pagination, Panel,
   Parallax, Progress, Slider, Step, Tile, Timeline, position,
-  OffCanvas, Table, Toast, Tab
+  OffCanvas, Table, Toast, Tab,
 } from './';
 
 const App = () => (
@@ -60,20 +60,22 @@ const App = () => (
         onClick={(e, key) => console.log('clicked: ', key)}
         items={[
           { id: '1', name: 'Elements' },
-          { id: '2',
+          {
+            id: '2',
             name: 'Layout',
             items: [
               { id: '2-1', name: 'Flexbox' },
               { id: '2-2', name: 'Responsible' },
               { id: '2-3', name: 'Navbar' },
               { id: '2-4', name: 'Empty state' },
-            ] },
+            ],
+          },
           { id: '3', name: 'Components' },
           { id: '4', name: 'Utilities' },
         ]}
         active="2"
       />
-      <Panel headerClass="text-center" header={<p>aaa</p>} content={'test'} footer={'footer'} />
+      <Panel headerClass="text-center" header={<p>aaa</p>} content="test" footer="footer" />
       <Pagination total={34} current={1} title={{ prev: { title: 'test1', subtitle: 'test2' }, next: { title: 'test3', subtitle: 'test4' } }} />
       <Pagination total={34} current={1} onClick={(e, page) => console.log('page: ', page)} />
       <CalendarExample />
@@ -83,20 +85,26 @@ const App = () => (
       <Columns>
         <Column6>
           <Card items={[
-            { type: 'header',
+            {
+              type: 'header',
               content: {
                 title: 'Google I/O',
                 subtitle: 'Software and hardware',
-                button: <Button primary className="float-right">
-                  <Icon plus />
-                </Button>,
-              } },
+                button: (
+                  <Button primary className="float-right">
+                    <Icon plus />
+                  </Button>
+                ),
+              },
+            },
             { type: 'body', content: 'body' },
-            { type: 'footer',
+            {
+              type: 'footer',
               content: [
                 <a key="button-1" href="#cards" className="btn btn-primary">Search</a>,
                 <a key="button-2" href="#cards" className="btn btn-link">Share</a>,
-              ] },
+              ],
+            },
             {
               type: 'image',
               content: <img className="img-responsive" src="//picturepan2.github.io/spectre/img/macos-sierra-2.jpg" alt="macOS Sierra" />,
@@ -105,11 +113,16 @@ const App = () => (
           />
         </Column6>
         <Column6>
-          <Card />
+          <Card items={[]} />
         </Column6>
       </Columns>
       <Bar slider items={[{ value: 15 }, { value: 45 }]} />
-      <Bar className={position({ marginBottom: true })} items={[{ role: 'progressbar', style: { width: '25%' }, 'aria-valuenow': 25, 'aria-valuemin': 0, 'aria-valuemax': 100 }]} />
+      <Bar
+        className={position({ marginBottom: true })}
+        items={[{
+          role: 'progressbar', style: { width: '25%' }, 'aria-valuenow': 25, 'aria-valuemin': 0, 'aria-valuemax': 100,
+        }]}
+      />
       <Bar
         small
         items={[
@@ -117,14 +130,16 @@ const App = () => (
           { tooltip: '25%', content: '25%', style: { width: '25%', backgroundColor: 'gray' } },
         ]}
       />
-      <Avatar lg initial={'kkkkkk'} presence="online" />
+      <Avatar lg initial="kkkkkk" presence="online" />
       <Tile icon={<Icon people className="centered" />} compact title="アイウエオ" subtitle="カキクケコ" />
       <AutocompleteExample />
       <Menu
         onClick={(e, id) => console.log(id)}
         contents={[
           { id: 'e-1', link: '#accordions', content: 'Element 1' },
-          { id: 'e-2', link: '#accordions', content: 'Element 2', badge: 8 },
+          {
+            id: 'e-2', link: '#accordions', content: 'Element 2', badge: 8,
+          },
           { link: '', content: '', divider: 'aaa' },
           { id: 'e-3', link: '#accordions', content: 'Element 3' },
         ]}
@@ -133,20 +148,24 @@ const App = () => (
         exclusive
         useIcon
         menus={[
-          { header: 'Elements',
+          {
+            header: 'Elements',
             contents: [
               { link: '#accordions', content: 'Element 1' },
               { link: '#accordions', content: 'Element 2', badge: 8 },
               { link: '', content: '', divider: 'aaa' },
               { link: '#accordions', content: 'Element 3' },
-            ] },
-          { header: 'Layout',
+            ],
+          },
+          {
+            header: 'Layout',
             contents: [
               { link: '#accordions', content: 'Layout 1' },
               { link: '#accordions', content: 'Layout 2', badge: 8 },
               { link: '', content: '', divider: 'aaa' },
               { link: '#accordions', content: 'Layout 3' },
-            ] },
+            ],
+          },
         ]}
       />
       <Timeline timelines={['March 2016', 'February 2017', 'March 2017']}>

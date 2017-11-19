@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 import Button from '../elements/Button';
@@ -13,7 +13,15 @@ export type ToastProps = {
   warning?: boolean,
   error?: boolean,
 };
-const Toast = ({ title, content, onClearClick, primary, success, warning, error }: ToastProps) => {
+const Toast = ({
+  title,
+  content,
+  onClearClick,
+  primary,
+  success,
+  warning,
+  error,
+}: ToastProps): React.Element<*> => {
   const classes = classnames('toast', {
     'toast-primary': primary,
     'toast-success': success,

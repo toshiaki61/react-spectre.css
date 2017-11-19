@@ -1,8 +1,8 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
-import noop from 'lodash.noop';
 
+const sharp = '#';
 export type LinkProps = {
   onClick: (e: Event) => void,
   className?: string,
@@ -19,7 +19,7 @@ export type TabProps = {
   onClick: (e: Event, id: string) => void,
   action?: React.DOM,
 };
-const Tab = ({ items, active, onClick, action }: TabProps) => {
+const Tab = ({ items, active, onClick, action }: TabProps): React.Element<*> | null => {
   if (!items.length) {
     return null;
   }
@@ -36,20 +36,20 @@ const Tab = ({ items, active, onClick, action }: TabProps) => {
         }
         return (
           <li key={key} className={classnames('tab-item', { active: id === active })}>
-            <a href="#" {...linkProp}>{name}</a>
+            <a href={sharp} {...linkProp}>{name}</a>
           </li>
         );
       })}
-      {action ? <li className="tab-item tab-action">
-        {action}
-      </li> : null}
+      {action ? (
+        <li className="tab-item tab-action">
+          {action}
+        </li>
+      ) : null}
     </ul>
   );
 };
 Tab.defaultProps = {
-  items: [],
   active: '',
-  onClick: noop,
   action: null,
 };
 

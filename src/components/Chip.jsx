@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 import noop from 'lodash.noop';
 
@@ -16,7 +16,15 @@ type ChipProps = {
   content?: string,
   onClearClick?: (e: Event) => void,
 };
-const Chip = ({ clear, icon, avatar, content, className, onClearClick, ...props }: ChipProps) => {
+const Chip = ({
+  clear,
+  icon,
+  avatar,
+  content,
+  className,
+  onClearClick,
+  ...props
+}: ChipProps): React.Element<*> => {
   const classes = classnames('chip', className);
   return (
     <span className={classes} {...props}>

@@ -1,7 +1,9 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 import noop from 'lodash.noop';
+
+const sharp = '#';
 
 function calculateStartAndEnd(
   current: number,
@@ -46,7 +48,7 @@ export type ItemProps = {
   disabled?: boolean,
   onClick: (e: Event, value: number) => void,
 };
-const Item = ({ current, value, label, disabled, onClick }: ItemProps) => {
+const Item = ({ current, value, label, disabled, onClick }: ItemProps): React.Element<*> => {
   const classes = classnames('page-item', {
     disabled,
     active: value === current,
@@ -57,14 +59,12 @@ const Item = ({ current, value, label, disabled, onClick }: ItemProps) => {
   }
   return (
     <li className={classes}>
-      <a href="#" {...linkProp} onClick={e => onClick(e, value)}>{label}</a>
+      <a href={sharp} {...linkProp} onClick={e => onClick(e, value)}>{label}</a>
     </li>
   );
 };
 Item.defaultProps = {
-  value: 1,
   disabled: false,
-  onClick: noop,
 };
 
 export type TitleProps = {
@@ -74,14 +74,14 @@ export type TitleProps = {
   value: number,
   onClick: (e: Event, value: number) => void,
 };
-const Title = ({ title, subtitle, current, value, onClick }: TitleProps) => {
+const Title = ({ title, subtitle, current, value, onClick }: TitleProps): React.Element<*> => {
   const classes = classnames('page-item', {
     'page-prev': current > value,
     'page-next': current < value,
   });
   return (
     <li className={classes}>
-      <a href="#" onClick={e => onClick(e, value)}>
+      <a href={sharp} onClick={e => onClick(e, value)}>
         <div className="page-item-subtitle">{subtitle}</div>
         <div className="page-item-title h5">{title}</div>
       </a>
@@ -104,7 +104,14 @@ export type PaginationProps = {
   },
   onClick: (e: Event) => void,
 };
-const Pagination = ({ label, current, total, each, title, onClick }: PaginationProps) => {
+const Pagination = ({
+  label,
+  current,
+  total,
+  each,
+  title,
+  onClick,
+}: PaginationProps): React.Element<*> => {
   if (title) {
     return (
       <ul className="pagination">

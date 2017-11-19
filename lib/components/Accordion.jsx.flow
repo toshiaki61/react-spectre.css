@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 import Menu from './Menu';
@@ -16,7 +16,7 @@ export type ItemProps = {
   useIcon?: boolean,
   header: React.DOM | string,
 };
-const Item = ({ contents, className, exclusive, useIcon, header }: ItemProps) => {
+const Item = ({ contents, className, exclusive, useIcon, header }: ItemProps): React.Element<*> => {
   const classes = classnames('accordion-item', className);
   const id = uniqueId('accordion-item');
   const type = exclusive ? 'radio' : 'checkbox';
@@ -24,13 +24,13 @@ const Item = ({ contents, className, exclusive, useIcon, header }: ItemProps) =>
   const icon = useIcon ? <Icon className={position({ marginRight: true })} arrowRight /> : null;
   return (
     <div className={classes}>
-      <input {...inputProps} hidden />
+      <input {...inputProps} id={id} />
       <label className="accordion-header" htmlFor={id}>
         {icon}
         {header}
       </label>
       <div className="accordion-body">
-        <Menu nav contents={contents} />
+        <Menu nav contents={contents} onClick={() => {}} />
       </div>
     </div>
   );
@@ -42,12 +42,12 @@ Item.defaultProps = {
 };
 
 export type AccordionProps = {
-  menus: React.DOM,
+  menus: Array<ItemProps>,
   className?: string,
   exclusive?: boolean,
   useIcon?: boolean,
-}
-const Accordion = ({ menus, className, exclusive, useIcon }: AccordionProps) => {
+};
+const Accordion = ({ menus, className, exclusive, useIcon }: AccordionProps): React.Element<*> => {
   const classes = classnames('accordion', className);
   return (
     <div className={classes}>

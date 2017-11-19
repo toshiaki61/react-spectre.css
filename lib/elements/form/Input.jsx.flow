@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 import Form from './Form';
@@ -14,16 +14,23 @@ export type BaseInputProps = {
   textarea: boolean,
   slider: boolean,
 };
-const BaseInput = ({ className, success, danger, textarea, slider, sm, lg, ...props }: BaseInputProps) => {
-  const classes = classnames(
-    className,
-    {
-      'form-input': !slider,
-      'is-success': success,
-      'is-danger': danger,
-      'input-lg': lg,
-      'input-sm': sm,
-    });
+const BaseInput = ({
+  className,
+  success,
+  danger,
+  textarea,
+  slider,
+  sm,
+  lg,
+  ...props
+}: BaseInputProps): React.Element<*> => {
+  const classes = classnames(className, {
+    'form-input': !slider,
+    'is-success': success,
+    'is-danger': danger,
+    'input-lg': lg,
+    'input-sm': sm,
+  });
   if (textarea) {
     return <textarea className={classes} {...props} />;
   }
@@ -32,27 +39,13 @@ const BaseInput = ({ className, success, danger, textarea, slider, sm, lg, ...pr
   }
   return <input {...props} className={classes} />;
 };
-BaseInput.defaultProps = {
-  className: '',
-  success: false,
-  danger: false,
-  sm: false,
-  lg: false,
-  textarea: false,
-  slider: false,
-};
+BaseInput.defaultProps = {};
 
 export type InputProps = BaseInputProps & {
-  className?: string,
-  success?: boolean,
-  danger?: boolean,
-  sm?: boolean,
-  lg?: boolean,
-  textarea?: boolean,
   label?: string,
   id?: string,
 };
-const Input = ({ label, id, ...props }: InputProps) => {
+const Input = ({ label, id, ...props }: InputProps): React.Element<*> => {
   const elementId = id || uniqueId('input');
   const content = <BaseInput id={elementId} {...props} />;
   if (label) {
@@ -82,7 +75,13 @@ export type GroupProps = {
   success?: boolean,
   danger?: boolean,
 };
-const Group = ({ children, className, success, danger, ...props }: GroupProps) => {
+const Group = ({
+  children,
+  className,
+  success,
+  danger,
+  ...props
+}: GroupProps): React.Element<*> => {
   const classes = classnames('input-group', className, { 'has-success': success, 'has-danger': danger });
   return (
     <div {...props} className={classes}>
@@ -102,7 +101,7 @@ export type AddonProps = {
   sm?: boolean,
   lg?: boolean,
 };
-const Addon = ({ children, className, sm, lg, ...props }: AddonProps) => {
+const Addon = ({ children, className, sm, lg, ...props }: AddonProps): React.Element<*> => {
   const classes = classnames('input-group-addon', className, { 'addon-sm': sm, 'addon-lg': lg });
   return (
     <span {...props} className={classes} >

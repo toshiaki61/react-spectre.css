@@ -4,7 +4,7 @@ import Filter from '../experimentals/Filter';
 
 type FilterProps = {
   tags: {
-    [key: strihg]: string,
+    [key: string]: string,
   },
   data: Array<{
     tag: string,

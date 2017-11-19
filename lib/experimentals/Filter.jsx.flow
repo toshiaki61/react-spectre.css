@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 
 export type ItemProps = {
   tag: string,
@@ -12,7 +12,7 @@ export type FilterProps = {
   active: string,
   onChange: (e: Event, id: string) => void,
 };
-const Filter = ({ tags, data, active, onChange }: FilterProps) => (
+const Filter = ({ tags, data, active, onChange }: FilterProps): React.Element<*> => (
   <div className="filter">
     {Object.keys(tags).map(key => (
       <input
@@ -33,7 +33,9 @@ const Filter = ({ tags, data, active, onChange }: FilterProps) => (
           key={`${key}_nav`}
           className="chip"
           htmlFor={key}
-        >{tags[key]}</label>
+        >
+          {tags[key]}
+        </label>
       ))}
     </div>
     <div className="filter-body columns">

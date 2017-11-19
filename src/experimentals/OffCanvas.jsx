@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 
 import Icon from '../elements/Icon';
@@ -12,7 +12,7 @@ export type OffCanvasProps = {
   children: Array<React.DOM> | React.DOM,
   sidebar: SidebarProps,
 };
-const OffCanvas = ({ children, sidebar, ...props }: OffCanvasProps) => (
+const OffCanvas = ({ children, sidebar, ...props }: OffCanvasProps): React.Element<*> => (
   <div className="off-canvas" {...props}>
     <input type="checkbox" className="off-canvas-checkbox" id="sidebar-checkbox" name="sidebar-checkbox" hidden />
     <label className="off-canvas-toggle btn btn-primary btn-lg" htmlFor="sidebar-checkbox">

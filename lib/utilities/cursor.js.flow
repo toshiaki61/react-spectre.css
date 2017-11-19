@@ -9,7 +9,14 @@ export type CursorParameters = {
   notAllowed?: boolean,
   auto?: boolean
 };
-export default function cursor({ hand, move, zoomIn, zoomOut, notAllowed, auto }: CursorParameters, className: string): string {
+export default function cursor({
+  hand,
+  move,
+  zoomIn,
+  zoomOut,
+  notAllowed,
+  auto,
+}: CursorParameters, className: string): string {
   return classnames({
     'c-hand': hand,
     'c-move': move,

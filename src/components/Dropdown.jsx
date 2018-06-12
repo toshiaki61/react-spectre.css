@@ -1,23 +1,22 @@
 /* @flow */
-import React from 'react';
-import classnames from 'classnames';
-import noop from 'lodash.noop';
+import * as React from 'react'
+import classnames from 'classnames'
 
-import Menu from './Menu';
-import Button from '../elements/Button';
-import Icon from '../elements/Icon';
+import Menu from './Menu'
+import Button from '../elements/Button'
+import Icon from '../elements/Icon'
 
-import type { ItemProps as MenuItemProps } from './Menu';
+import type {ItemProps as MenuItemProps} from './Menu'
 
 export type DropdownProps = {
   className?: string,
   active?: boolean,
   right?: boolean,
   initialValue?: string,
-  contents?: Array<MenuItemProps>,
-  onClick?: (e: Event) => void,
+  contents: Array<MenuItemProps>,
+  onClick: (e: Event) => void,
   onMenuClick: (e: Event, id: string) => void,
-};
+}
 const Dropdown = ({
   className,
   active,
@@ -27,11 +26,15 @@ const Dropdown = ({
   onClick,
   onMenuClick,
   ...props
-}: DropdownProps) => {
-  const classes = classnames('dropdown', {
-    'dropdown-right': right,
-    active,
-  }, className);
+}: DropdownProps): React.Element<*> => {
+  const classes = classnames(
+    'dropdown',
+    {
+      'dropdown-right': right,
+      active,
+    },
+    className
+  )
   return (
     <div className={classes} {...props}>
       <Button link className="dropdown-toggle" tabIndex="0" onClick={onClick}>
@@ -39,15 +42,13 @@ const Dropdown = ({
       </Button>
       <Menu onClick={onMenuClick} contents={contents} />
     </div>
-  );
-};
+  )
+}
 Dropdown.defaultProps = {
   className: '',
   active: false,
   right: false,
   initialValue: '',
-  contents: [],
-  onClick: noop,
-};
+}
 
-export default Dropdown;
+export default Dropdown

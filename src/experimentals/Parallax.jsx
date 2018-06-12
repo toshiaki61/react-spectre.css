@@ -1,12 +1,12 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react'
 
 export type ParallaxProps = {
   src: string,
   alt: string,
   title: string,
-};
-const Parallax = ({ src, alt, title }: ParallaxProps) => (
+}
+const Parallax = ({src, alt, title}: ParallaxProps): React.Element<*> => (
   <div className="parallax">
     <div className="parallax-top-left" />
     <div className="parallax-top-right" />
@@ -21,11 +21,7 @@ const Parallax = ({ src, alt, title }: ParallaxProps) => (
       </div>
     </div>
   </div>
-);
-Parallax.defaultProps = {
-  src: 'https://picturepan2.github.io/spectre/img/osx-yosemite-2.jpg',
-  alt: 'macOS Yosemite Wallpaper',
-  title: 'tvOS parallax demo',
-};
+)
+Parallax.defaultProps = {}
 
-export default Parallax;
+export default Parallax

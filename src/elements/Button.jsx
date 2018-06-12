@@ -1,7 +1,10 @@
-import React from 'react';
-import classnames from 'classnames';
+/* @flow */
+import * as React from 'react'
+import classnames from 'classnames'
 
 export type ButtonProps = {
+  children?: React.Node,
+  className?: string,
   loading?: boolean,
   href?: string,
   lg?: boolean,
@@ -13,7 +16,7 @@ export type ButtonProps = {
   link?: boolean,
   action?: boolean,
   circle?: boolean,
-};
+}
 const Button = ({
   children,
   className,
@@ -30,7 +33,7 @@ const Button = ({
   circle,
   ...props
 }: ButtonProps) => {
-  const linkButton = link || href;
+  const linkButton = link || href
   const classes = classnames(
     'btn',
     {
@@ -45,42 +48,42 @@ const Button = ({
       'btn-action': action,
       circle,
     },
-    className,
-  );
+    className
+  )
 
-  let toReturn = null;
+  let toReturn = null
   if (href) {
-    toReturn = <a href={href} className={classes} {...props}>{children}</a>;
+    toReturn = (
+      <a href={href} className={classes} {...props}>
+        {children}
+      </a>
+    )
   } else {
-    toReturn = <button className={classes} {...props}>{children}</button>;
+    toReturn = (
+      <button className={classes} {...props}>
+        {children}
+      </button>
+    )
   }
 
-  return toReturn;
-};
+  return toReturn
+}
 
 export type GroupProps = {
-  children: React.DOM,
+  children: React.Node,
   className?: string,
   block?: boolean,
-};
-const Group = ({ children, className, block }: GroupProps) => {
-  const classes = classnames(
-    'btn-group',
-    { 'btn-group-block': block },
-    className,
-  );
+}
+const Group = ({children, className, block}: GroupProps) => {
+  const classes = classnames('btn-group', {'btn-group-block': block}, className)
 
-  return (
-    <div className={classes}>
-      {children}
-    </div>
-  );
-};
+  return <div className={classes}>{children}</div>
+}
 Group.defaultProps = {
   className: '',
   block: false,
-};
+}
 
-Button.Group = Group;
+Button.Group = Group
 
-export default Button;
+export default Button

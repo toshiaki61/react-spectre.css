@@ -1,6 +1,6 @@
 /* @flow */
-import React from 'react';
-import classnames from 'classnames';
+import * as React from 'react'
+import classnames from 'classnames'
 
 type IconProps = {
   className?: string,
@@ -46,7 +46,7 @@ type IconProps = {
   emoji?: boolean,
   form?: boolean,
   loading?: boolean,
-};
+}
 const Icon = ({
   className,
   size = '',
@@ -93,57 +93,59 @@ const Icon = ({
   loading,
   ...props
 }: IconProps) => {
-  const classes = classnames({
-    icon: !form,
-    'form-icon': form,
-    loading,
-    [`icon-${name}`]: name,
-    [`icon-${size}`]: size,
-    'icon-arrow-up': arrowUp,
-    'icon-arrow-right': arrowRight,
-    'icon-arrow-down': arrowDown,
-    'icon-arrow-left': arrowLeft,
-    'icon-upward': upward,
-    'icon-forward': forward,
-    'icon-downward': downward,
-    'icon-back': back,
-    'icon-caret': caret,
-    'icon-menu': menu,
-    'icon-apps': apps,
-    'icon-more-horiz': moreHoriz,
-    'icon-more-vert': moreVert,
-    'icon-resize-horiz': resizeHoriz,
-    'icon-resize-vert': resizeVert,
-    'icon-plus': plus,
-    'icon-minus': minus,
-    'icon-cross': cross,
-    'icon-check': check,
-    'icon-stop': stop,
-    'icon-shutdown': shutdown,
-    'icon-refresh': refresh,
-    'icon-search': search,
-    'icon-flag': flag,
-    'icon-bookmark': bookmark,
-    'icon-edit': edit,
-    'icon-delete': del,
-    'icon-share': share,
-    'icon-download': download,
-    'icon-upload': upload,
-    'icon-mail': mail,
-    'icon-people': people,
-    'icon-message': message,
-    'icon-photo': photo,
-    'icon-time': time,
-    'icon-location': location,
-    'icon-link': link,
-    'icon-emoji': emoji,
-  }, className);
-  return (
-    <i className={classes} {...props} />
-  );
-};
+  const classes = classnames(
+    {
+      icon: !form,
+      'form-icon': form,
+      loading,
+      [`icon-${name}`]: name,
+      [`icon-${size}`]: size,
+      'icon-arrow-up': arrowUp,
+      'icon-arrow-right': arrowRight,
+      'icon-arrow-down': arrowDown,
+      'icon-arrow-left': arrowLeft,
+      'icon-upward': upward,
+      'icon-forward': forward,
+      'icon-downward': downward,
+      'icon-back': back,
+      'icon-caret': caret,
+      'icon-menu': menu,
+      'icon-apps': apps,
+      'icon-more-horiz': moreHoriz,
+      'icon-more-vert': moreVert,
+      'icon-resize-horiz': resizeHoriz,
+      'icon-resize-vert': resizeVert,
+      'icon-plus': plus,
+      'icon-minus': minus,
+      'icon-cross': cross,
+      'icon-check': check,
+      'icon-stop': stop,
+      'icon-shutdown': shutdown,
+      'icon-refresh': refresh,
+      'icon-search': search,
+      'icon-flag': flag,
+      'icon-bookmark': bookmark,
+      'icon-edit': edit,
+      'icon-delete': del,
+      'icon-share': share,
+      'icon-download': download,
+      'icon-upload': upload,
+      'icon-mail': mail,
+      'icon-people': people,
+      'icon-message': message,
+      'icon-photo': photo,
+      'icon-time': time,
+      'icon-location': location,
+      'icon-link': link,
+      'icon-emoji': emoji,
+    },
+    className
+  )
+  return <i className={classes} {...props} />
+}
 Icon.defaultProps = {
   className: '',
+  size: '',
   name: '',
   arrowUp: false,
   arrowRight: false,
@@ -185,6 +187,6 @@ Icon.defaultProps = {
   emoji: false,
   form: false,
   loading: false,
-};
+}
 
-export default Icon;
+export default Icon

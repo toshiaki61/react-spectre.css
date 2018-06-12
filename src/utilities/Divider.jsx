@@ -1,33 +1,51 @@
 /* @flow */
-import React from 'react';
-import classnames from 'classnames';
+import * as React from 'react'
+import classnames from 'classnames'
 
 export type DividerProps = {
+  children?: React.Node,
   content: string,
   vertical?: boolean,
   li?: boolean,
   center?: boolean,
   className?: string,
-};
-const Divider = ({ content, vertical, li, center, className }: DividerProps) => {
-  const classes = classnames({
-    divider: !vertical,
-    'divider-vert': vertical,
-    'text-center': center,
-  }, className);
+}
+
+const Divider = ({
+  children,
+  content,
+  vertical,
+  li,
+  center,
+  className,
+}: DividerProps): React.Element<*> => {
+  const classes = classnames(
+    {
+      divider: !vertical,
+      'divider-vert': vertical,
+      'text-center': center,
+    },
+    className
+  )
   if (li) {
-    return <li className={classes} data-content={content} />;
+    return (
+      <li className={classes} data-content={content}>
+        {children}
+      </li>
+    )
   }
   return (
-    <div className={classes} data-content={content} />
-  );
-};
+    <div className={classes} data-content={content}>
+      {children}
+    </div>
+  )
+}
 Divider.defaultProps = {
-  content: '',
+  children: null,
   vertical: false,
   li: false,
   center: false,
   className: '',
-};
+}
 
-export default Divider;
+export default Divider

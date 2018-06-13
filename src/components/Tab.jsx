@@ -11,7 +11,7 @@ export type LinkProps = {
 export type ItemProps = {
   id: string,
   name: string,
-  badge: number | string,
+  badge?: number | string,
 }
 export type TabProps = {
   items: Array<ItemProps>,

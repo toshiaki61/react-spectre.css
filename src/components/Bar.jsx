@@ -29,10 +29,10 @@ Item.defaultProps = {
 }
 
 export type ProgressBarItemProps = ItemProps & {
-  value: string,
-  role: string,
-  style: {width: string},
-  content: React.DOM,
+  value?: string | number,
+  role?: string,
+  style?: {width: string},
+  content?: React.DOM,
 }
 export type BarProps = {
   className?: string,

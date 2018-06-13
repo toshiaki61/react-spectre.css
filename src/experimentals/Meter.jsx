@@ -3,30 +3,18 @@ import * as React from 'react'
 
 export type MeterProps = {
   value: number,
-  optimum: number,
-  min: number,
-  max: number,
-  low: number,
-  high: number,
+  optimum?: number,
+  min?: number,
+  max?: number,
+  low?: number,
+  high?: number,
 }
-const Meter = ({
-  value,
-  optimum,
-  min,
-  max,
-  low,
-  high,
-}: MeterProps): React.Element<*> => (
-  <meter
-    className="meter"
-    value={value}
-    optimum={optimum}
-    min={min}
-    max={max}
-    low={low}
-    high={high}
-  />
+const Meter = ({value, ...props}: MeterProps): React.Element<*> => (
+  <meter className="meter" value={value} {...props} />
 )
-Meter.defaultProps = {}
+Meter.defaultProps = {
+  min: 0,
+  max: 100,
+}
 
 export default Meter

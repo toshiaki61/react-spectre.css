@@ -7,17 +7,25 @@ export type SliderProps = {
   min: number,
   max: number,
   value: number,
+  onChange: e => void,
 }
-const Slider = ({min, max, value, ...props}: SliderProps): React.Element<*> => (
+const Slider = ({
+  min,
+  max,
+  value,
+  onChange,
+  ...props
+}: SliderProps): React.Element<*> => (
   <Input
     slider
     min={min}
     max={max}
-    defaultValue={value}
+    value={value}
+    onChange={onChange}
     data-tooltip={value}
     {...props}
   />
 )
-Slider.defaultProps = {}
+Slider.defaultProps = {min: 0, max: 100}
 
 export default Slider

@@ -1,12 +1,23 @@
 import React, {Component} from 'react'
-import moment from 'moment'
+
+import {eachDay, endOfWeek, format, startOfWeek} from 'date-fns'
 
 import Popover from '../components/Popover'
 import Calendar from '../experimentals/Calendar'
 
 class CalendarExample extends Component {
-  state = {
-    current: moment(),
+  constructor(props) {
+    super(props)
+    this.state = {
+      current: new Date(),
+    }
+    this.weekdays = eachDay(
+      startOfWeek(this.state.current),
+      endOfWeek(this.state.current)
+    ).reduce((a, d) => {
+      a.push(format(d, 'dd'))
+      return a
+    }, [])
   }
   onMonthClick = (e, m) => this.setState({current: m})
   onClick = () => this.setState({active: !this.state.active})
@@ -18,9 +29,7 @@ class CalendarExample extends Component {
           current={current}
           onMonthClick={this.onMonthClick}
           onDateClick={this.onClick}
-          weekdays={moment()
-            .localeData()
-            .weekdaysShort()}
+          weekdays={this.weekdays}
         />
       </Popover>
     )

@@ -117,7 +117,7 @@ export type PaginationProps = {
   total: number,
   current: number,
   each: number,
-  title: {
+  title?: {
     prev: {title: string, subtitle: string},
     next: {title: string, subtitle: string},
   },

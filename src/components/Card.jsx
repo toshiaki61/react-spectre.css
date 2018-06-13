@@ -7,7 +7,7 @@ export type ItemHeaderProps = {
   subtitle: React.DOM,
 }
 export type ItemProps = {
-  type?: 'image' | 'body' | 'footer',
+  type?: 'image' | 'body' | 'footer' | 'header',
   content?: React.DOM,
 }
 const Item = ({type, content}: ItemProps): React.Element<*> => {

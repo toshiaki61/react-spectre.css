@@ -1,6 +1,7 @@
 import * as React from 'react'
 import ReactDOM from 'react-dom'
-import moment from 'moment'
+
+import {format} from 'date-fns'
 
 import AutocompleteExample from './example/Autocomplete'
 import CalendarExample from './example/Calendar'
@@ -39,6 +40,7 @@ import {
   Tab,
 } from './'
 
+const now = new Date()
 const App = () => (
   <OffCanvas
     sidebar={{content: <span>sidebar</span>, className: 'flex-centered'}}
@@ -293,8 +295,12 @@ const App = () => (
         </div>
       </Timeline>
       <Progress />
-      <Parallax />
-      <Meter />
+      <Parallax
+        src="//picturepan2.github.io/spectre/img/osx-yosemite-2.jpg"
+        title="test"
+        alt="test"
+      />
+      <Meter value={30} />
       <FilterExample />
       <ComparisonSlider
         before={{
@@ -310,11 +316,13 @@ const App = () => (
       />
       <CarouselExample />
       <Calendar
-        current={moment()}
+        lg
+        current={now}
+        navFormat="YYYY-MM"
         weekdays={['日', '月', '火', '水', '木', '金', '土']}
         options={{
           data: [
-            {date: moment().format(), tooltip: 'test', type: 'today'},
+            {date: format(now, 'YYYY-MM-DD'), tooltip: 'test', type: 'today'},
             {date: '2017-09-12', tooltip: 'aaa', type: 'disabled'},
             {date: '2017-09-18', tooltip: 'bbb', type: 'badge'},
           ],
@@ -326,7 +334,10 @@ const App = () => (
         onMonthClick={(e, m) => console.log('month', m)}
         onDateClick={(e, d) => console.log('click', d)}
       />
-      <Slider />
+      <Slider
+        value={32}
+        onChange={e => console.log('slide:', e.target.value)}
+      />
     </div>
   </OffCanvas>
 )

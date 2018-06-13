@@ -23,14 +23,14 @@ Badge.defaultProps = {
 }
 
 export type ItemProps = {
-  id: string,
+  id?: string,
   link?: string,
   content?: string,
   className?: string,
   divider?: boolean | string,
   active?: boolean,
   badge?: number,
-  onClick: (e: Event, id: string) => void,
+  onClick?: (e: Event, id: string) => void,
 }
 const Item = ({
   id,
@@ -101,7 +101,9 @@ const Menu = ({
     <ul className={classes} {...ulProps}>
       {contents.map((content, i) => {
         const key = content.id || `menu-item_${i}`
-        return <Item key={key} {...content} onClick={onClick} />
+        return (
+          <Item key={key} {...content} onClick={content.onClick || onClick} />
+        )
       })}
     </ul>
   )

@@ -13,3 +13,5 @@ resources/sass/.sass-cache/
 .idea
 node_modules
 yarn-error.log
+.env
+lib

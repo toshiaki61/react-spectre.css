@@ -1,16 +1,33 @@
 /* @flow */
 import * as React from 'react'
 import classnames from 'classnames'
-import moment from 'moment'
 import noop from 'lodash.noop'
+
+import {compose, range} from 'ramda'
+import {
+  addDays,
+  addMonths,
+  differenceInCalendarDays,
+  endOfWeek,
+  endOfMonth,
+  format,
+  isAfter,
+  isBefore,
+  isEqual,
+  isSameDay,
+  isSameMonth,
+  subMonths,
+  startOfWeek,
+  startOfMonth,
+} from 'date-fns'
 
 import Button from '../elements/Button'
 import Icon from '../elements/Icon'
 
 export type NavProps = {
-  current: moment,
-  navFormat: string,
-  onMonthClick?: (e: Event, m: moment) => void,
+  current: Date | string | number,
+  navFormat?: string,
+  onMonthClick?: (e: Event, m: Date) => void,
 }
 const Nav = ({
   current,
@@ -22,18 +39,18 @@ const Nav = ({
       action
       link
       lg
-      onClick={e => onMonthClick(e, current.clone().add(-1, 'month'))}
+      onClick={e => onMonthClick(e, subMonths(current, 1))}
     >
       <Icon arrowLeft />
     </Button>
-    <Button link lg onClick={e => onMonthClick(e, current.clone())}>
-      {current.format(navFormat)}
+    <Button link lg onClick={e => onMonthClick(e, current)}>
+      {format(current, navFormat)}
     </Button>
     <Button
       action
       link
       lg
-      onClick={e => onMonthClick(e, current.clone().add(1, 'month'))}
+      onClick={e => onMonthClick(e, addMonths(current, 1))}
     >
       <Icon arrowRight />
     </Button>
@@ -41,6 +58,7 @@ const Nav = ({
 )
 Nav.defaultProps = {
   onMonthClick: noop,
+  navFormat: 'YYYY-MM-DD',
 }
 
 export type HeaderProps = {
@@ -61,9 +79,9 @@ const Header = ({weekdays}: HeaderProps): React.Element<*> => (
 Header.defaultProps = {}
 
 export type BodyProps = {
-  current: moment,
-  start: moment,
-  end: moment,
+  current: Date | string | number,
+  start?: Date | string | number,
+  end?: Date | string | number,
   options?: {
     data: Array<{
       date: string,
@@ -76,7 +94,29 @@ export type BodyProps = {
     }>,
   },
   dateFormat?: string,
-  onDateClick: (e: Event, d: moment) => void,
+  onDateClick: (e: Event, d: Date) => void,
+}
+
+const isBeforeMonth = (date, target) =>
+  isBefore(date, target) && !isSameMonth(date, target)
+
+const isAfterMonth = (date, target) =>
+  isAfter(date, target) && !isSameMonth(date, target)
+
+const isBetween = (date, from, to, inclusivity = '()') => {
+  if (!['()', '[]', '(]', '[)'].includes(inclusivity)) {
+    throw new Error('Inclusivity parameter must be one of (), [], (], [)')
+  }
+
+  const isBeforeEqual = inclusivity[0] === '[',
+    isAfterEqual = inclusivity[1] === ']'
+
+  return (
+    (isBeforeEqual
+      ? isEqual(from, date) || isBefore(from, date)
+      : isBefore(from, date)) &&
+    (isAfterEqual ? isEqual(to, date) || isAfter(to, date) : isAfter(to, date))
+  )
 }
 const Body = ({
   current,
@@ -86,27 +126,23 @@ const Body = ({
   dateFormat,
   onDateClick,
 }: BodyProps): React.Element<*> => {
-  const dates = []
-  for (
-    const d = start.clone();
-    d.isSameOrBefore(end, 'date');
-    d.add(1, 'day')
-  ) {
-    const before = d.isBefore(current, 'month')
-    const after = d.isAfter(current, 'month')
+  const dates = range(0, differenceInCalendarDays(end, start) + 1).map(d => {
+    const date = addDays(start, d)
+    const before = isBeforeMonth(date, current)
+    const after = isAfterMonth(date, current)
     const datum =
       options &&
       options.data &&
-      options.data.find(({date}) => d.isSame(date, 'date'))
+      options.data.find(datum => isSameDay(date, datum.date))
     const range =
       options &&
       options.range &&
-      options.range.find(r => d.isBetween(r.start, r.end, 'date', '[]'))
-    const rangeStart = range && d.isSame(range.start, 'date')
-    const rangeEnd = range && d.isSame(range.end, 'date')
+      options.range.find(r => isBetween(date, r.start, r.end, '[]'))
+    const rangeStart = range && isSameDay(date, range.start)
+    const rangeEnd = range && isSameDay(date, range.end)
     const classes = classnames('calendar-date', {
       'prev-month': before,
-      'current-month': d.isSame(current, 'month'),
+      'current-month': isSameMonth(date, current),
       'next-month': after,
       'calendar-range': range,
       'range-start': rangeStart,
@@ -119,24 +155,18 @@ const Body = ({
       badge: datum && datum.type === 'badge',
       'date-today': datum && datum.type === 'today',
     })
-    const date = d.clone()
-    dates.push(
-      <div
-        key={date.format()}
-        className={classes}
-        data-tooltip={datum && datum.tooltip}
-      >
+    return (
+      <div key={d} className={classes} data-tooltip={datum && datum.tooltip}>
         <Button
           disabled={datum && datum.type === 'disabled'}
           className={btnClasses}
           onClick={e => onDateClick(e, date)}
         >
-          {date.format(dateFormat)}
+          {format(date, dateFormat)}
         </Button>
       </div>
     )
-  }
-  // console.log(dates, current, options);
+  })
   return <div className="calendar-body">{dates}</div>
 }
 Body.defaultProps = {
@@ -146,8 +176,19 @@ Body.defaultProps = {
   },
   dateFormat: 'D',
 }
-
-export type CalendarProps = NavProps & HeaderProps & BodyProps
+const startOfCalendarWeek = compose(
+  startOfWeek,
+  startOfMonth
+)
+const endOfCalendarWeek = compose(
+  endOfWeek,
+  endOfMonth
+)
+export type CalendarProps = NavProps &
+  HeaderProps &
+  BodyProps & {
+    lg?: boolean,
+  }
 const Calendar = ({
   navFormat,
   start,
@@ -157,6 +198,7 @@ const Calendar = ({
   onDateClick,
   current,
   weekdays,
+  lg,
   ...props
 }: CalendarProps): React.Element<*> | null => {
   if (!current) {
@@ -164,7 +206,7 @@ const Calendar = ({
   }
 
   return (
-    <div className="calendar">
+    <div className={classnames('calendar', {'calendar-lg': lg})}>
       <Nav
         current={current}
         navFormat={navFormat}
@@ -175,20 +217,8 @@ const Calendar = ({
         <Body
           {...props}
           current={current}
-          start={
-            start ||
-            current
-              .clone()
-              .startOf('month')
-              .startOf('week')
-          }
-          end={
-            end ||
-            current
-              .clone()
-              .endOf('month')
-              .endOf('week')
-          }
+          start={start || startOfCalendarWeek(current)}
+          end={end || endOfCalendarWeek(current)}
           options={options}
           onDateClick={onDateClick}
         />

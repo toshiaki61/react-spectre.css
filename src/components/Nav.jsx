@@ -8,9 +8,9 @@ import Button from '../elements/Button'
 export type ItemProps = {
   id: string,
   name: string,
-  onClick: (e: Event, id: string) => void,
+  onClick?: (e: Event, id: string) => void,
   active?: boolean,
-  items: Array<ItemProps>,
+  items?: Array<ItemProps>,
 }
 const Item = ({
   id,
@@ -33,7 +33,7 @@ Item.defaultProps = {
 export type NavProps = {
   items: Array<ItemProps>,
   active?: string,
-  onClick?: (e: Event, id: string) => void,
+  onClick: (e: Event, id: string) => void,
 }
 const Nav = ({items, active, onClick}: NavProps): React.Element<*> => (
   <ul className="nav">

@@ -1,12 +1,12 @@
 /* @flow */
-import * as React from 'react';
+import * as React from 'react'
 
 export type ParallaxProps = {
   src: string,
   alt: string,
   title: string,
-};
-const Parallax = ({ src, alt, title }: ParallaxProps): React.Element<*> => (
+}
+const Parallax = ({src, alt, title}: ParallaxProps): React.Element<*> => (
   <div className="parallax">
     <div className="parallax-top-left" />
     <div className="parallax-top-right" />
@@ -21,7 +21,7 @@ const Parallax = ({ src, alt, title }: ParallaxProps): React.Element<*> => (
       </div>
     </div>
   </div>
-);
-Parallax.defaultProps = {};
+)
+Parallax.defaultProps = {}
 
-export default Parallax;
+export default Parallax

@@ -1,6 +1,6 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import * as React from 'react'
+import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
 export type ColumnProps = {
   children: React.DOM,
@@ -11,7 +11,7 @@ export type ColumnProps = {
   lg?: number,
   xl?: number,
   size?: number,
-};
+}
 const Column = ({
   children,
   className,
@@ -33,15 +33,15 @@ const Column = ({
       [`col-xl-${xl || 0}`]: !!xl,
       [`col-${size || 0}`]: !!size,
     },
-    className,
-  );
+    className
+  )
 
   return (
     <div className={classes} {...props}>
       {children}
     </div>
-  );
-};
+  )
+}
 Column.defaultProps = {
   className: '',
   xs: 0,
@@ -50,9 +50,9 @@ Column.defaultProps = {
   lg: 0,
   xl: 0,
   size: 0,
-};
+}
 
-export default Column;
+export default Column
 
 export const ColumnClassnames = [
   'Column12',
@@ -68,7 +68,7 @@ export const ColumnClassnames = [
   'Column2',
   'Column1',
   'Column',
-];
+]
 
 export const {
   Column12,
@@ -84,13 +84,17 @@ export const {
   Column2,
   Column1,
 } = (() => {
-  const toExport = {};
+  const toExport = {}
   for (let i = 12; i > 0; i -= 1) {
-    const func = ({ children, ...props }) => <Column size={i} {...props}>{children}</Column>;
-    func.propTypes = { children: PropTypes.node };
-    func.defaultProps = { children: null };
-    func.funcName = `Column${i}`;
-    toExport[`Column${i}`] = func;
+    const func = ({children, ...props}) => (
+      <Column size={i} {...props}>
+        {children}
+      </Column>
+    )
+    func.propTypes = {children: PropTypes.node}
+    func.defaultProps = {children: null}
+    func.funcName = `Column${i}`
+    toExport[`Column${i}`] = func
   }
-  return toExport;
-})();
+  return toExport
+})()

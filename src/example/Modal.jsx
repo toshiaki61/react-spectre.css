@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react'
 
-import Modal from '../components/Modal';
-import Button from '../elements/Button';
+import Modal from '../components/Modal'
+import Button from '../elements/Button'
 
 class ModalExample extends Component {
   state = {
     active: false,
-  };
-  onClick = () => this.setState({ active: !this.state.active });
+  }
+  onClick = () => this.setState({active: !this.state.active})
   render() {
     return (
       <div>
-        <Button primary onClick={() => this.setState({ active: true })}>open modal</Button>
+        <Button primary onClick={() => this.setState({active: true})}>
+          open modal
+        </Button>
         <Modal
           content="aaa"
           footer="footer"
@@ -20,8 +22,8 @@ class ModalExample extends Component {
           onClearClick={this.onClick}
         />
       </div>
-    );
+    )
   }
 }
 
-export default ModalExample;
+export default ModalExample

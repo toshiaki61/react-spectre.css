@@ -1,16 +1,31 @@
 /* @flow */
-import * as React from 'react';
+import * as React from 'react'
 
-import Input from '../elements/form/Input';
+import Input from '../elements/form/Input'
 
 export type SliderProps = {
   min: number,
   max: number,
   value: number,
-};
-const Slider = ({ min, max, value, ...props }: SliderProps): React.Element<*> => (
-  <Input slider min={min} max={max} defaultValue={value} data-tooltip={value} {...props} />
-);
-Slider.defaultProps = {};
+  onChange: e => void,
+}
+const Slider = ({
+  min,
+  max,
+  value,
+  onChange,
+  ...props
+}: SliderProps): React.Element<*> => (
+  <Input
+    slider
+    min={min}
+    max={max}
+    value={value}
+    onChange={onChange}
+    data-tooltip={value}
+    {...props}
+  />
+)
+Slider.defaultProps = {min: 0, max: 100}
 
-export default Slider;
+export default Slider

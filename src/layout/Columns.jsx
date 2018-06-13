@@ -1,14 +1,14 @@
-import * as React from 'react';
-import classnames from 'classnames';
+import * as React from 'react'
+import classnames from 'classnames'
 
-import Container from './Container';
+import Container from './Container'
 
 export type ColumnsWithoutContainerProps = {
   children: React.DOM,
   className?: string,
   gapless?: boolean,
   oneline?: boolean,
-};
+}
 const ColumnsWithoutContainer = ({
   children,
   gapless,
@@ -16,31 +16,35 @@ const ColumnsWithoutContainer = ({
   className,
   ...props
 }: ColumnsWithoutContainerProps): React.Element<*> => {
-  const classes = classnames('columns', {
-    'col-gapless': gapless,
-    'col-oneline': oneline,
-  }, className);
+  const classes = classnames(
+    'columns',
+    {
+      'col-gapless': gapless,
+      'col-oneline': oneline,
+    },
+    className
+  )
 
   return (
     <div className={classes} {...props}>
       {children}
     </div>
-  );
-};
+  )
+}
 ColumnsWithoutContainer.defaultProps = {
   className: '',
   gapless: false,
   oneline: false,
-};
+}
 
 export function acquireContainerProps(option) {
   switch (typeof option) {
     case 'boolean':
-      return null;
+      return null
     case 'string':
-      return { [option]: true };
+      return {[option]: true}
     default:
-      return option;
+      return option
   }
 }
 
@@ -51,29 +55,28 @@ export type ContainerProps = {
   md?: boolean,
   lg?: boolean,
   xl?: boolean,
-};
+}
 export type ColumnsProps = {
   children: React.DOM,
-  container?:
-    boolean |
-    string |
-    ContainerProps,
-};
-const Columns = ({ children, container, ...props }: ColumnsProps): React.Element<*> => {
-  const content = <ColumnsWithoutContainer {...props}>{children}</ColumnsWithoutContainer>;
+  container?: boolean | string | ContainerProps,
+}
+const Columns = ({
+  children,
+  container,
+  ...props
+}: ColumnsProps): React.Element<*> => {
+  const content = (
+    <ColumnsWithoutContainer {...props}>{children}</ColumnsWithoutContainer>
+  )
 
   if (!container) {
-    return content;
+    return content
   }
-  const containerProps = acquireContainerProps(container);
-  return (
-    <Container {...containerProps}>
-      {content}
-    </Container>
-  );
-};
+  const containerProps = acquireContainerProps(container)
+  return <Container {...containerProps}>{content}</Container>
+}
 Columns.defaultProps = {
   container: false,
-};
+}
 
-export default Columns;
+export default Columns

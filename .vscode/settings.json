@@ -1,0 +1,8 @@
+{
+  "editor.detectIndentation": false,
+  "editor.fontFamily": "'SourceHanCodeJP-ExtraLight', Menlo, Monaco, 'Courier New', monospace",
+  "editor.renderWhitespace": "all",
+  "editor.tabSize": 2,
+  "files.autoSave": "onFocusChange",
+  "eslint.autoFixOnSave": true
+}

@@ -1,8 +1,8 @@
 /* @flow */
-import * as React from 'react';
-import classnames from 'classnames';
+import * as React from 'react'
+import classnames from 'classnames'
 
-import Button from '../elements/Button';
+import Button from '../elements/Button'
 
 export type ToastProps = {
   title?: string,
@@ -12,7 +12,7 @@ export type ToastProps = {
   success?: boolean,
   warning?: boolean,
   error?: boolean,
-};
+}
 const Toast = ({
   title,
   content,
@@ -27,15 +27,17 @@ const Toast = ({
     'toast-success': success,
     'toast-warning': warning,
     'toast-error': error,
-  });
+  })
   return (
     <div className={classes}>
-      {onClearClick ? <Button clear className="float-right" onClick={onClearClick} /> : null}
+      {onClearClick ? (
+        <Button clear className="float-right" onClick={onClearClick} />
+      ) : null}
       {title ? <h5>{title}</h5> : null}
       {content}
     </div>
-  );
-};
+  )
+}
 Toast.defaultProps = {
   title: '',
   onClearClick: undefined,
@@ -43,6 +45,6 @@ Toast.defaultProps = {
   success: false,
   warning: false,
   error: false,
-};
+}
 
-export default Toast;
+export default Toast

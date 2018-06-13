@@ -1,12 +1,12 @@
 /* @flow */
-import * as React from 'react';
-import classnames from 'classnames';
-import noop from 'lodash.noop';
+import * as React from 'react'
+import classnames from 'classnames'
+import noop from 'lodash.noop'
 
-import Avatar from './Avatar';
-import Button from '../elements/Button';
+import Avatar from './Avatar'
+import Button from '../elements/Button'
 
-import type { AvatarProps } from './Avatar';
+import type {AvatarProps} from './Avatar'
 
 type ChipProps = {
   className?: string,
@@ -15,7 +15,7 @@ type ChipProps = {
   avatar?: AvatarProps,
   content?: string,
   onClearClick?: (e: Event) => void,
-};
+}
 const Chip = ({
   clear,
   icon,
@@ -25,16 +25,18 @@ const Chip = ({
   onClearClick,
   ...props
 }: ChipProps): React.Element<*> => {
-  const classes = classnames('chip', className);
+  const classes = classnames('chip', className)
   return (
     <span className={classes} {...props}>
       {icon}
-      {avatar ? <Avatar sm initial={avatar.initial} img={avatar.img} alt={avatar.alt} /> : null}
+      {avatar ? (
+        <Avatar sm initial={avatar.initial} img={avatar.img} alt={avatar.alt} />
+      ) : null}
       {content}
       {clear ? <Button clear onClick={onClearClick} /> : null}
     </span>
-  );
-};
+  )
+}
 Chip.defaultProps = {
   className: '',
   clear: false,
@@ -42,6 +44,6 @@ Chip.defaultProps = {
   avatar: null,
   content: '',
   onClearClick: noop,
-};
+}
 
-export default Chip;
+export default Chip

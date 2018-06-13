@@ -1,6 +1,6 @@
 /* @flow */
-import * as React from 'react';
-import classnames from 'classnames';
+import * as React from 'react'
+import classnames from 'classnames'
 
 export type TableProps = {
   header: Array<string>,
@@ -8,7 +8,7 @@ export type TableProps = {
   className?: string,
   striped?: boolean,
   hover?: boolean,
-};
+}
 const Table = ({
   header,
   contents,
@@ -23,42 +23,38 @@ const Table = ({
       'table-striped': striped,
       'table-hover': hover,
     },
-    className,
-  );
+    className
+  )
   return (
     <table className={classes} {...props}>
       <thead>
         <tr>
           {header.map((row, i) => {
-            const key = `header-${i}`;
-            return (
-              <th key={key}>{row}</th>
-            );
+            const key = `header-${i}`
+            return <th key={key}>{row}</th>
           })}
         </tr>
       </thead>
       <tbody>
         {contents.map((content, i) => {
-          const rowKey = `row-${i}`;
+          const rowKey = `row-${i}`
           return (
             <tr key={rowKey}>
               {content.map((column, j) => {
-                const columnKey = `column-${j}`;
-                return (
-                  <td key={columnKey}>{column}</td>
-                );
+                const columnKey = `column-${j}`
+                return <td key={columnKey}>{column}</td>
               })}
             </tr>
-          );
+          )
         })}
       </tbody>
     </table>
-  );
-};
+  )
+}
 Table.defaultProps = {
   className: '',
   striped: false,
   hover: false,
-};
+}
 
-export default Table;
+export default Table

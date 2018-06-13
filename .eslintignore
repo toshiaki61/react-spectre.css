@@ -1,7 +1,7 @@
 build
 config
-dist
-lib
-public
-scripts
-index.js
+./dist
+./lib/**/*
+./public
+./scripts
+./index.js

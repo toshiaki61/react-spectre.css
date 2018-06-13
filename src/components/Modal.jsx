@@ -1,9 +1,9 @@
 /* @flow */
-import * as React from 'react';
-import classnames from 'classnames';
-import noop from 'lodash.noop';
+import * as React from 'react'
+import classnames from 'classnames'
+import noop from 'lodash.noop'
 
-import Button from '../elements/Button';
+import Button from '../elements/Button'
 
 export type ModalProps = {
   active?: boolean,
@@ -11,9 +11,10 @@ export type ModalProps = {
   content?: React.DOM,
   footer?: React.DOM,
   small?: boolean,
+
   large?: boolean,
   onClearClick?: (e: Event) => void,
-};
+}
 const Modal = ({
   active,
   title,
@@ -28,7 +29,7 @@ const Modal = ({
     active,
     'modal-sm': small,
     'modal-lg': large,
-  });
+  })
   return (
     <div className={classes} {...props}>
       <div className="modal-overlay" />
@@ -39,20 +40,14 @@ const Modal = ({
         </div>
         {content ? (
           <div className="modal-body">
-            <div className="content">
-              {content}
-            </div>
+            <div className="content">{content}</div>
           </div>
         ) : null}
-        {footer ? (
-          <div className="modal-footer">
-            {footer}
-          </div>
-        ) : null}
+        {footer ? <div className="modal-footer">{footer}</div> : null}
       </div>
     </div>
-  );
-};
+  )
+}
 Modal.defaultProps = {
   active: false,
   title: '',
@@ -61,6 +56,6 @@ Modal.defaultProps = {
   small: false,
   large: false,
   onClearClick: noop,
-};
+}
 
-export default Modal;
+export default Modal

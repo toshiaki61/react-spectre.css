@@ -4,6 +4,7 @@ import classnames from 'classnames'
 export type ColorParameters = {
   primary?: boolean,
   secondary?: boolean,
+  dark?: boolean,
   gray?: boolean,
   light?: boolean,
   success?: boolean,
@@ -12,13 +13,23 @@ export type ColorParameters = {
 }
 
 function text(
-  {primary, secondary, gray, light, success, warning, error}: ColorParameters,
+  {
+    primary,
+    secondary,
+    dark,
+    gray,
+    light,
+    success,
+    warning,
+    error,
+  }: ColorParameters,
   className: string = ''
 ): string {
   return classnames(
     {
       'text-primary': primary,
       'text-secondary': secondary,
+      'text-dark': dark,
       'text-gray': gray,
       'text-light': light,
       'text-success': success,
@@ -30,13 +41,23 @@ function text(
 }
 
 function background(
-  {primary, secondary, gray, light, success, warning, error}: ColorParameters,
+  {
+    primary,
+    secondary,
+    dark,
+    gray,
+    light,
+    success,
+    warning,
+    error,
+  }: ColorParameters,
   className: string = ''
 ): string {
   return classnames(
     {
       'bg-primary': primary,
       'bg-secondary': secondary,
+      'bg-dark': dark,
       'bg-gray': gray,
       'bg-light': light,
       'bg-success': success,

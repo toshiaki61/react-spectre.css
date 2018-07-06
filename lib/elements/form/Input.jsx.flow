@@ -12,7 +12,7 @@ export type BaseInputProps = {
   sm: boolean,
   lg: boolean,
   textarea: boolean,
-  slider: boolean,
+  slider?: boolean,
 }
 const BaseInput = ({
   className,

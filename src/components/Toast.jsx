@@ -7,6 +7,7 @@ import Button from '../elements/Button'
 export type ToastProps = {
   title?: string,
   content: string,
+  className: string,
   onClearClick?: (e: Event) => void,
   primary?: boolean,
   success?: boolean,
@@ -16,20 +17,22 @@ export type ToastProps = {
 const Toast = ({
   title,
   content,
+  className,
   onClearClick,
   primary,
   success,
   warning,
   error,
+  ...props
 }: ToastProps): React.Element<*> => {
-  const classes = classnames('toast', {
+  const classes = classnames('toast', className, {
     'toast-primary': primary,
     'toast-success': success,
     'toast-warning': warning,
     'toast-error': error,
   })
   return (
-    <div className={classes}>
+    <div className={classes} {...props}>
       {onClearClick ? (
         <Button clear className="float-right" onClick={onClearClick} />
       ) : null}
@@ -40,6 +43,7 @@ const Toast = ({
 }
 Toast.defaultProps = {
   title: '',
+  className: '',
   onClearClick: undefined,
   primary: false,
   success: false,

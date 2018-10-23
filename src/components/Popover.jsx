@@ -8,6 +8,7 @@ export type PopoverProps = {
   right?: boolean,
   left?: boolean,
   bottom?: boolean,
+  className?: string,
 }
 const Popover = ({
   target,
@@ -15,8 +16,9 @@ const Popover = ({
   right,
   left,
   bottom,
+  className,
 }: PopoverProps): React.Element<*> => {
-  const classes = classnames('popover', {
+  const classes = classnames('popover', className, {
     'popover-right': right,
     'popover-left': left,
     'popover-bottom': bottom,
@@ -32,6 +34,7 @@ Popover.defaultProps = {
   right: false,
   left: false,
   bottom: false,
+  className: '',
 }
 
 export default Popover

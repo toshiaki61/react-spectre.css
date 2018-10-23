@@ -32,7 +32,7 @@ const Modal = ({
   })
   return (
     <div className={classes} {...props}>
-      <div className="modal-overlay" />
+      <div className="modal-overlay" onClick={onClearClick} />
       <div className="modal-container">
         <div className="modal-header">
           <Button clear className="float-right" onClick={onClearClick} />

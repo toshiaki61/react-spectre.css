@@ -11,8 +11,8 @@ export default function shape(
 ): string {
   return classnames(
     {
-      rounded,
-      circle,
+      's-rounded': rounded,
+      's-circle': circle,
     },
     className
   )

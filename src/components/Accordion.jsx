@@ -32,7 +32,7 @@ const Item = ({
   ) : null
   return (
     <div className={classes}>
-      <input {...inputProps} id={id} />
+      <input {...inputProps} id={id} hidden />
       <label className="accordion-header" htmlFor={id}>
         {icon}
         {header}

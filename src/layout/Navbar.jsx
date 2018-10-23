@@ -6,7 +6,7 @@ import Container from './Container'
 import {acquireContainerProps} from './Columns'
 
 export type SectionProps = {
-  children: React.DOM,
+  children?: React.DOM,
   className?: string,
   center?: boolean,
 }
@@ -30,6 +30,7 @@ const Section = ({
   )
 }
 Section.defaultProps = {
+  children: null,
   className: '',
   center: false,
 }

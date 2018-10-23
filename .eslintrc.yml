@@ -1,0 +1,34 @@
+extends:
+  - airbnb
+  - plugin:prettier/recommended
+plugins:
+  - react
+  - import
+  - jsx-a11y
+  - prettier
+  - typescript
+parser: typescript-eslint-parser
+parserOptions: {}
+rules:
+  prettier/prettier:
+    - error
+    - trailingComma: es5
+      singleQuote: true
+      semi: false
+      bracketSpacing: false
+  react/jsx-uses-react: 1
+  react/jsx-uses-vars: 1
+  react/jsx-filename-extension:
+    - error
+    - extensions:
+        - tsx
+  jsx-a11y/href-no-hash: off
+  jsx-a11y/anchor-is-valid: off
+  camelcase: error
+  import/no-unresolved: off
+  typescript/no-unused-vars: error
+  no-restricted-globals: 0
+  no-undef: 0
+  no-console: warn
+  no-var: error
+  prefer-const: error

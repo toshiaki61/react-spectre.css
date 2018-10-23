@@ -10,9 +10,13 @@ module.exports = (env, argv) => ({
   externals: {
     'aws-sdk': true,
     rxjs: true,
+    'date-fns': true,
   },
   target: 'node',
   mode: argv.mode || 'development',
+  optimization: {
+    minimize: false,
+  },
   module: {
     rules: [
       {

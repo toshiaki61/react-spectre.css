@@ -12,7 +12,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "flow": "flow",
     "prod": "node scripts/build-lib.js",
-    "build": "webpack --mode production",
+    "build": "tsc --build tsconfig.json",
     "clean": "rimraf dist",
     "postinstall": "yarn build"
   },

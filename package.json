@@ -13,7 +13,8 @@
     "flow": "flow",
     "prod": "node scripts/build-lib.js",
     "build": "webpack --mode production",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "postinstall": "yarn build"
   },
   "jest": {
     "collectCoverageFrom": [

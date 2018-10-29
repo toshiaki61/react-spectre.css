@@ -13,8 +13,7 @@
     "flow": "flow",
     "prod": "node scripts/build-lib.js",
     "build": "tsc --build tsconfig.json",
-    "clean": "rimraf dist",
-    "postinstall": "yarn build"
+    "clean": "rimraf dist"
   },
   "jest": {
     "collectCoverageFrom": [

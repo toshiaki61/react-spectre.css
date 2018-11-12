@@ -3,7 +3,7 @@ import classnames from 'classnames'
 
 export interface DividerProps {
   children?: ReactChildren
-  content: string
+  content?: string
   vertical?: boolean
   li?: boolean
   center?: boolean

@@ -4,7 +4,7 @@ import Container from './Container'
 import {acquireContainerProps} from './Columns'
 
 export interface SectionProps {
-  children?: ReactElement<any>
+  children?: ReactElement<any> | ReactElement<any>[]
   className?: string
   center?: boolean
 }
@@ -33,7 +33,7 @@ Section.defaultProps = {
   center: false,
 }
 export interface NavbarWithoutContainerProps {
-  children: ReactElement<any>
+  children: ReactElement<any> | ReactElement<any>[]
   className?: string
 }
 const NavbarWithoutContainer = ({
@@ -52,7 +52,7 @@ NavbarWithoutContainer.defaultProps = {
   className: '',
 }
 export interface NavbarProps {
-  children: ReactElement<any>
+  children: ReactElement<any> | ReactElement<any>[]
   container?:
     | boolean
     | string

@@ -2,11 +2,13 @@ import React, {ReactElement} from 'react'
 import classnames from 'classnames'
 import Container from './Container'
 
-export interface ColumnsWithoutContainerProps {
-  children: ReactElement<any> | ReactElement<any>[]
-  className?: string
+interface ColumnsVisualProps {
   gapless?: boolean
   oneline?: boolean
+}
+export interface ColumnsWithoutContainerProps extends ColumnsVisualProps {
+  children: ReactElement<any> | ReactElement<any>[]
+  className?: string
 }
 const ColumnsWithoutContainer = ({
   children,
@@ -36,6 +38,7 @@ ColumnsWithoutContainer.defaultProps = {
   gapless: false,
   oneline: false,
 }
+
 export function acquireContainerProps(option) {
   switch (typeof option) {
     case 'boolean':
@@ -54,7 +57,7 @@ export interface ContainerProps {
   lg?: boolean
   xl?: boolean
 }
-export interface ColumnsProps {
+export interface ColumnsProps extends ColumnsVisualProps {
   children: ReactElement<any> | ReactElement<any>[]
   container?: boolean | string | ContainerProps
 }

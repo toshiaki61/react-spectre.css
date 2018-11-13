@@ -103,7 +103,7 @@
     "@types/jest": "^23.3.7",
     "@types/lodash.noop": "^3.0.4",
     "@types/ramda": "^0.25.39",
-    "@types/react": "^16.4.18",
+    "@types/react": "^16.7.3",
     "@types/react-dom": "^16.0.9",
     "autoprefixer": "7.1.6",
     "babel-cli": "^6.26.0",

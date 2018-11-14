@@ -337,6 +337,7 @@ const App = () => (
         value={32}
         onChange={e => console.log('slide:', e.target.value)}
       />
+      <Menu contents={[{content: 'test'}, {content: <CarouselExample />}]} />
     </div>
   </OffCanvas>
 )

@@ -1,5 +1,5 @@
 import classnames from 'classnames'
-import React, {MouseEvent, ReactElement} from 'react'
+import React, {MouseEvent, ReactElement, ReactNode} from 'react'
 import Divider from '../utilities/Divider'
 import noop from '../utilities/noop'
 
@@ -22,7 +22,7 @@ Badge.defaultProps = {
 export interface IItemProps {
   id?: string
   link?: string
-  content?: string
+  content?: ReactNode
   className?: string
   divider?: boolean | string
   active?: boolean
@@ -49,6 +49,14 @@ const Item = ({
       />
     )
   }
+  if (typeof content !== 'string') {
+    return (
+      <li className={classes} {...props}>
+        {content}
+      </li>
+    )
+  }
+
   const handleItemClick = onClick
     ? (e: MouseEvent<any>) => onClick(e, id || '')
     : noop

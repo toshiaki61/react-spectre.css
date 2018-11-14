@@ -1,6 +1,5 @@
 import React, {ReactElement} from 'react'
 import classnames from 'classnames'
-import noop from 'lodash.noop'
 import {compose, range} from 'ramda'
 import {
   addDays,
@@ -20,6 +19,7 @@ import {
 } from 'date-fns'
 import Button from '../elements/Button'
 import Icon from '../elements/Icon'
+import noop from '../utilities/noop'
 
 export interface NavProps {
   current: Date | string | number

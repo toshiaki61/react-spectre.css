@@ -15,10 +15,10 @@ import Select from './elements/form/Select'
 import Checkbox from './elements/form/Checkbox'
 import uniqueId from './elements/form/uniqueId'
 import Radio from './elements/form/Radio'
-import Column from './layout/Column'
-import Container from './layout/Container'
-import Navbar from './layout/Navbar'
-import Columns from './layout/Columns'
+import Column from './layouts/Column'
+import Container from './layouts/Container'
+import Navbar from './layouts/Navbar'
+import Columns from './layouts/Columns'
 import display from './utilities/display'
 import * as color from './utilities/color'
 import cursor from './utilities/cursor'
@@ -27,6 +27,7 @@ import Loading from './utilities/Loading'
 import shape from './utilities/shape'
 import text from './utilities/text'
 import position from './utilities/position'
+import noop from './utilities/noop'
 import Menu from './components/Menu'
 import Avatar from './components/Avatar'
 import Dropdown from './components/Dropdown'
@@ -81,6 +82,7 @@ export {
   shape,
   text,
   position,
+  noop,
   Menu,
   Avatar,
   Dropdown,

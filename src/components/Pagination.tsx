@@ -1,6 +1,7 @@
 import React, {ReactElement, MouseEvent} from 'react'
 import classnames from 'classnames'
-import noop from 'lodash.noop'
+
+import noop from '../utilities/noop'
 
 const sharp = '#'
 function calculateStartAndEnd(

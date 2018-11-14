@@ -1,7 +1,7 @@
 import React, {ReactElement, MouseEvent} from 'react'
 import classnames from 'classnames'
-import noop from 'lodash.noop'
 
+import noop from '../utilities/noop'
 import Avatar, {AvatarProps} from './Avatar'
 import Button from '../elements/Button'
 

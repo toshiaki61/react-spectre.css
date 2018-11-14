@@ -1,7 +1,8 @@
 import React, {ReactElement, MouseEvent} from 'react'
 import classnames from 'classnames'
-import noop from 'lodash.noop'
+
 import Button from '../elements/Button'
+import noop from '../utilities/noop'
 
 export interface ModalProps {
   active?: boolean

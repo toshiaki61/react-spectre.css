@@ -1,12 +1,12 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {MouseEvent, ReactElement} from 'react'
 import Button from '../elements/Button'
 
-export interface ToastProps {
+export interface IToastProps {
   title?: string
   content: string
   className?: string
-  onClearClick?: (e: Event) => void
+  onClearClick?: (e: MouseEvent<any>) => void
   primary?: boolean
   success?: boolean
   warning?: boolean
@@ -22,7 +22,7 @@ const Toast = ({
   warning,
   error,
   ...props
-}: ToastProps): ReactElement<ToastProps> => {
+}: IToastProps): ReactElement<IToastProps> => {
   const classes = classnames('toast', className, {
     'toast-primary': primary,
     'toast-success': success,

@@ -1,13 +1,13 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {ReactElement} from 'react'
 
-import Menu, {ItemProps as MenuItemProps} from './Menu'
-import Icon from '../elements/Icon'
 import uniqueId from '../elements/form/uniqueId'
+import Icon from '../elements/Icon'
 import position from '../utilities/position'
+import Menu, {IItemProps as IMenuItemProps} from './Menu'
 
-export interface ItemProps {
-  contents: Array<MenuItemProps>
+export interface IItemProps {
+  contents: IMenuItemProps[]
   className?: string
   exclusive?: boolean
   useIcon?: boolean
@@ -19,7 +19,7 @@ const Item = ({
   exclusive,
   useIcon,
   header,
-}: ItemProps): ReactElement<ItemProps> => {
+}: IItemProps): ReactElement<IItemProps> => {
   const classes = classnames('accordion-item', className)
   const id = uniqueId('accordion-item')
   const type = exclusive ? 'radio' : 'checkbox'
@@ -35,7 +35,7 @@ const Item = ({
         {header}
       </label>
       <div className="accordion-body">
-        <Menu nav contents={contents} onClick={() => {}} />
+        <Menu nav contents={contents} />
       </div>
     </div>
   )
@@ -46,8 +46,8 @@ Item.defaultProps = {
   useIcon: false,
 }
 
-export interface AccordionProps {
-  menus: Array<ItemProps>
+export interface IAccordionProps {
+  menus: IItemProps[]
   className?: string
   exclusive?: boolean
   useIcon?: boolean
@@ -57,11 +57,11 @@ const Accordion = ({
   className,
   exclusive,
   useIcon,
-}: AccordionProps): ReactElement<AccordionProps> => {
+}: IAccordionProps): ReactElement<IAccordionProps> => {
   const classes = classnames('accordion', className)
   return (
     <div className={classes}>
-      {menus.map(({header, contents, ...menu}: ItemProps, i: number) => {
+      {menus.map(({header, contents, ...menu}: IItemProps, i: number) => {
         const key = `accordion_${i}`
         return (
           <Item

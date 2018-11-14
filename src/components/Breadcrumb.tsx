@@ -13,12 +13,12 @@ Item.defaultProps = {
   link: '#',
   content: '',
 }
-export interface BreadcrumbProps {
-  items: Array<ItemProps>
+export interface IBreadcrumbProps {
+  items: ItemProps[]
 }
 const Breadcrumb = ({
   items,
-}: BreadcrumbProps): ReactElement<BreadcrumbProps> | null => {
+}: IBreadcrumbProps): ReactElement<IBreadcrumbProps> | null => {
   if (items.length === 0) {
     return null
   }

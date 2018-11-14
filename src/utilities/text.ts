@@ -1,6 +1,6 @@
 import classnames from 'classnames'
 
-interface TextParameters {
+interface ITextParameters {
   left?: boolean
   center?: boolean
   right?: boolean
@@ -33,7 +33,7 @@ export default function text(
     ellipsis,
     clip,
     textBreak,
-  }: TextParameters,
+  }: ITextParameters,
   className: string
 ): string {
   return classnames(

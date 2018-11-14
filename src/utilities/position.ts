@@ -1,6 +1,6 @@
 import classnames from 'classnames'
 
-interface PositionParameters {
+interface IPositionParameters {
   clearfix?: boolean
   floatLeft?: boolean
   floatRight?: boolean
@@ -74,7 +74,7 @@ export default function position(
     paddingWidthMore,
     paddingHeight,
     paddingHeightMore,
-  }: PositionParameters,
+  }: IPositionParameters,
   className: string = ''
 ): string {
   return classnames(

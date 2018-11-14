@@ -1,18 +1,17 @@
-
 import classnames from 'classnames'
 
-export interface DisplayParameters {
-  block?: boolean,
-  inline?: boolean,
-  inlineBlock?: boolean,
-  flex?: boolean,
-  inlineFlex?: boolean,
-  none?: boolean,
-  hide?: boolean,
-  visible?: boolean,
-  invisible?: boolean,
-  textHide?: boolean,
-  assistive?: boolean,
+export interface IDisplayParameters {
+  block?: boolean
+  inline?: boolean
+  inlineBlock?: boolean
+  flex?: boolean
+  inlineFlex?: boolean
+  none?: boolean
+  hide?: boolean
+  visible?: boolean
+  invisible?: boolean
+  textHide?: boolean
+  assistive?: boolean
 }
 
 export default function display(
@@ -28,7 +27,7 @@ export default function display(
     invisible,
     textHide,
     assistive,
-  }: DisplayParameters,
+  }: IDisplayParameters,
   className: string
 ): string {
   return classnames(

@@ -1,7 +1,7 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {ReactElement, ReactNode, ReactNodeArray} from 'react'
 
-export interface FormProps {
+export interface IFormProps {
   children: ReactElement<any>
   className?: string
   horizontal?: boolean
@@ -11,7 +11,7 @@ const Form = ({
   className,
   horizontal,
   ...props
-}: FormProps): ReactElement<FormProps> => {
+}: IFormProps): ReactElement<IFormProps> => {
   const classes = classnames(className, {'form-horizontal': horizontal})
   return (
     <form {...props} className={classes}>
@@ -23,8 +23,8 @@ Form.defaultProps = {
   className: '',
   horizontal: false,
 }
-export interface GroupProps {
-  children: ReactElement<any> | ReactElement<any>[]
+export interface IGroupProps {
+  children: ReactNode | ReactNodeArray
   className?: string
   success?: boolean
   danger?: boolean
@@ -35,7 +35,7 @@ const Group = ({
   success,
   danger,
   ...props
-}: GroupProps): ReactElement<GroupProps> => {
+}: IGroupProps): ReactElement<IGroupProps> => {
   const classes = classnames('form-group', className, {
     'has-success': success,
     'has-danger': danger,
@@ -51,12 +51,12 @@ Group.defaultProps = {
   success: false,
   danger: false,
 }
-export interface LabelProps {
-  children: ReactElement<any> | string
+export interface ILabelProps {
+  children: ReactNode
   className?: string
   htmlFor?: string
 }
-const Label = ({children, className, htmlFor, ...props}: LabelProps) => {
+const Label = ({children, className, htmlFor, ...props}: ILabelProps) => {
   const classes = classnames('form-label', className)
   if (htmlFor) {
     return (

@@ -1,8 +1,7 @@
-import React, {CSSProperties} from 'react'
 import classnames from 'classnames'
-import {start} from 'repl'
+import React, {CSSProperties} from 'react'
 
-interface IconProps {
+interface IIconProps {
   className?: string
   size?: '' | '2x' | '3x' | '4x'
   name?: string
@@ -93,7 +92,7 @@ const Icon = ({
   form,
   loading,
   ...props
-}: IconProps) => {
+}: IIconProps) => {
   const classes = classnames(
     {
       icon: !form,

@@ -1,7 +1,7 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {ReactElement} from 'react'
 
-export interface PanelProps {
+export interface IPanelProps {
   header?: ReactElement<any>
   nav?: ReactElement<any>
   content?: ReactElement<any> | string
@@ -15,7 +15,7 @@ const Panel = ({
   content,
   footer,
   headerClass,
-}: PanelProps): ReactElement<PanelProps> => {
+}: IPanelProps): ReactElement<IPanelProps> => {
   const headerClasses = classnames('panel-header', headerClass)
   return (
     <div className="panel">

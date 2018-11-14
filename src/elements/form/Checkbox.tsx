@@ -1,8 +1,8 @@
-import React, {ReactElement, ReactChildren} from 'react'
 import classnames from 'classnames'
+import React, {ReactChildren, ReactElement} from 'react'
 import uniqueId from './uniqueId'
 
-export interface CheckboxSingleProps {
+export interface ICheckboxSingleProps {
   children?: ReactChildren
   label: string
   className?: string
@@ -13,7 +13,7 @@ const CheckboxSingle = ({
   label,
   className,
   ...props
-}: CheckboxSingleProps): ReactElement<CheckboxSingleProps> => {
+}: ICheckboxSingleProps): ReactElement<ICheckboxSingleProps> => {
   const classes = classnames('form-checkbox', className)
   const id = uniqueId('checkbox')
   return (
@@ -27,7 +27,7 @@ CheckboxSingle.defaultProps = {
   children: null,
   className: '',
 }
-interface CheckboxProps extends CheckboxSingleProps {
+interface ICheckboxProps extends ICheckboxSingleProps {
   options: {
     key: string
   }
@@ -37,7 +37,7 @@ const Checkbox = ({
   label,
   options,
   ...props
-}: CheckboxProps): ReactElement<CheckboxProps> => {
+}: ICheckboxProps): ReactElement<ICheckboxProps> => {
   const keys = Object.keys(options)
   if (keys.length === 0) {
     return <CheckboxSingle label={label} className={className} {...props} />

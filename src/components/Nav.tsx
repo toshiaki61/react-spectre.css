@@ -1,16 +1,15 @@
-// @flow
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {MouseEvent, ReactElement} from 'react'
 
 import Button from '../elements/Button'
 import noop from '../utilities/noop'
 
-export interface ItemProps {
+export interface IItemProps {
   id: string
   name: string
-  onClick?: (e: Event, id: string) => void
+  onClick?: (e: MouseEvent<any>, id: string) => void
   active?: boolean
-  items?: Array<ItemProps>
+  items?: IItemProps[]
 }
 const Item = ({
   id,
@@ -18,23 +17,28 @@ const Item = ({
   items,
   active,
   onClick,
-}: ItemProps): ReactElement<ItemProps> => (
-  <li className={classnames('nav-item', {active})}>
-    <Button href="#" onClick={e => onClick(e, id)}>
-      {name}
-    </Button>
-    {items && items.length ? <Nav items={items} onClick={onClick} /> : null}
-  </li>
-)
+}: IItemProps): ReactElement<IItemProps> => {
+  const handleButtonClick = onClick
+    ? (e: MouseEvent<any>) => onClick(e, id)
+    : noop
+  return (
+    <li className={classnames('nav-item', {active})}>
+      <Button href="#" onClick={handleButtonClick}>
+        {name}
+      </Button>
+      {items && items.length ? <Nav items={items} onClick={onClick} /> : null}
+    </li>
+  )
+}
 Item.defaultProps = {
   active: false,
 }
-export interface NavProps {
-  items: Array<ItemProps>
+export interface INavProps {
+  items: IItemProps[]
   active?: string
-  onClick: (e: Event, id: string) => void
+  onClick?: (e: MouseEvent<any>, id: string) => void
 }
-const Nav = ({items, active, onClick}: NavProps): ReactElement<NavProps> => (
+const Nav = ({items, active, onClick}: INavProps): ReactElement<INavProps> => (
   <ul className="nav">
     {items.map(item => (
       <Item

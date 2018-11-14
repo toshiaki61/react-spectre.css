@@ -1,6 +1,6 @@
 import React, {ReactElement} from 'react'
 
-export interface MeterProps {
+export interface IMeterProps {
   value: number
   optimum?: number
   min?: number
@@ -8,7 +8,7 @@ export interface MeterProps {
   low?: number
   high?: number
 }
-const Meter = ({value, ...props}: MeterProps): ReactElement<MeterProps> => (
+const Meter = ({value, ...props}: IMeterProps): ReactElement<IMeterProps> => (
   <meter className="meter" value={value} {...props} />
 )
 Meter.defaultProps = {

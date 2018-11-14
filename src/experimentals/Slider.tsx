@@ -1,12 +1,12 @@
-import React, {ReactElement, ChangeEvent} from 'react'
+import React, {ChangeEvent, ReactElement} from 'react'
 
-import Input, {BaseInputProps} from '../elements/form/Input'
+import Input, {IBaseInputProps} from '../elements/form/Input'
 
-export interface SliderProps {
+export interface ISliderProps {
   min?: number
   max?: number
   value?: number
-  onChange: (e: ChangeEvent<BaseInputProps>) => void
+  onChange: (e: ChangeEvent<IBaseInputProps>) => void
 }
 const Slider = ({
   min,
@@ -14,7 +14,7 @@ const Slider = ({
   value,
   onChange,
   ...props
-}: SliderProps): ReactElement<SliderProps> => (
+}: ISliderProps): ReactElement<ISliderProps> => (
   <Input
     slider
     min={min}

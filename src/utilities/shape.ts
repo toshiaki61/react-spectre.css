@@ -1,11 +1,11 @@
 import classnames from 'classnames'
 
-interface ShapeParameters {
+interface IShapeParameters {
   rounded?: boolean
   circle?: boolean
 }
 export default function shape(
-  {rounded, circle}: ShapeParameters,
+  {rounded, circle}: IShapeParameters,
   className: string = ''
 ): string {
   return classnames(

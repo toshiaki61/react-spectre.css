@@ -1,10 +1,10 @@
-import React, {ReactElement, MouseEvent} from 'react'
 import classnames from 'classnames'
+import React, {MouseEvent, ReactElement} from 'react'
 
 import Button from '../elements/Button'
 import noop from '../utilities/noop'
 
-export interface ModalProps {
+export interface IModalProps {
   active?: boolean
   title?: string
   content?: ReactElement<any> | string
@@ -23,7 +23,7 @@ const Modal = ({
   large,
   onClearClick,
   ...props
-}: ModalProps): ReactElement<ModalProps> => {
+}: IModalProps): ReactElement<IModalProps> => {
   const classes = classnames('modal', {
     active,
     'modal-sm': small,

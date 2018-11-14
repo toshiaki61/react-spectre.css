@@ -1,10 +1,10 @@
-import React, {ReactElement, ChangeEvent, FocusEvent, MouseEvent} from 'react'
 import classnames from 'classnames'
+import React, {ChangeEvent, FocusEvent, MouseEvent, ReactElement} from 'react'
+import Button from '../elements/Button'
+import Icon from '../elements/Icon'
+import Avatar from './Avatar'
 import Chip from './Chip'
 import Tile from './Tile'
-import Avatar from './Avatar'
-import Icon from '../elements/Icon'
-import Button from '../elements/Button'
 
 const delimiter: string = '______'
 function mark(
@@ -28,7 +28,7 @@ function mark(
       return row
     })
 }
-function filter(word: string, key: string): (v: SuggestProps) => boolean {
+function filter(word: string, key: string): (v: ISuggestProps) => boolean {
   const regex = new RegExp(word, 'ig')
   return function search(value) {
     if (word === '') {
@@ -37,17 +37,17 @@ function filter(word: string, key: string): (v: SuggestProps) => boolean {
     return regex.test(value[key])
   }
 }
-export interface SuggestProps {
+export interface ISuggestProps {
   id: string
   name: string
   img?: string
   initial?: string
 }
-export interface AutocompleteProps {
+export interface IAutocompleteProps {
   placeholder?: string
   active?: boolean
-  selected: Array<SuggestProps>
-  suggests: Array<SuggestProps>
+  selected: ISuggestProps[]
+  suggests: ISuggestProps[]
   input: string
   loading?: boolean
   onChange: (e: ChangeEvent<any>) => void
@@ -68,7 +68,7 @@ const Autocomplete = ({
   onBlur,
   onClearClick,
   onSelected,
-}: AutocompleteProps): ReactElement<AutocompleteProps> => {
+}: IAutocompleteProps): ReactElement<IAutocompleteProps> => {
   const classes = classnames('form-autocomplete-input form-input', {
     'is-focused': active,
   })
@@ -84,15 +84,18 @@ const Autocomplete = ({
   return (
     <div className="form-autocomplete" onFocus={onFocus} onBlur={onBlur}>
       <div className={classes}>
-        {selected.map(({id, name, img, initial}) => (
-          <Chip
-            key={id}
-            avatar={{initial, src: img, alt: name}}
-            content={name}
-            clear={active}
-            onClearClick={e => onClearClick(e, id)}
-          />
-        ))}
+        {selected.map(({id, name, img, initial}) => {
+          const handleClearClick = (e: MouseEvent<any>) => onClearClick(e, id)
+          return (
+            <Chip
+              key={id}
+              avatar={{initial, src: img, alt: name}}
+              content={name}
+              clear={active}
+              onClearClick={handleClearClick}
+            />
+          )
+        })}
 
         {loading ? (
           <div className="has-icon-left">
@@ -106,17 +109,20 @@ const Autocomplete = ({
       <ul className="menu" style={{position: active ? 'static' : 'absolute'}}>
         {suggests
           .filter(v => filter(input, 'name')(v))
-          .map(({id, name, img, initial}) => (
-            <li key={id} className="menu-item">
-              <Button href="#" onClick={e => onSelected(e, id)}>
-                <Tile
-                  compact
-                  content={mark(name, input)}
-                  icon={<Avatar sm initial={initial} src={img} alt={name} />}
-                />
-              </Button>
-            </li>
-          ))}
+          .map(({id, name, img, initial}) => {
+            const handleSelect = (e: MouseEvent<any>) => onSelected(e, id)
+            return (
+              <li key={id} className="menu-item">
+                <Button href="#" onClick={handleSelect}>
+                  <Tile
+                    compact
+                    content={mark(name, input)}
+                    icon={<Avatar sm initial={initial} src={img} alt={name} />}
+                  />
+                </Button>
+              </li>
+            )
+          })}
       </ul>
     </div>
   )

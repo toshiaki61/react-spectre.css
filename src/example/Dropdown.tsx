@@ -1,30 +1,33 @@
-import React, {Component} from 'react'
+import React, {Component, MouseEvent} from 'react'
 import Dropdown from '../components/Dropdown'
 
-interface DropdownExampleState {
+interface IDropdownExampleState {
   value: string
   active: boolean
 }
-class DropdownExample extends Component<{}, DropdownExampleState> {
-  state = {
+class DropdownExample extends Component<{}, IDropdownExampleState> {
+  public state = {
     value: 'initial value',
     active: false,
   }
 
-  onClick = () => this.setState({active: !this.state.active})
-
-  render() {
+  public render() {
     const {active, value} = this.state
+    // tslint:disable-next-line:no-console
+    const handleMenuClick = (e: MouseEvent<any>, id: string) => console.log(id)
+    const handleBlur = () => this.setState({active: false})
     return (
       <Dropdown
         initialValue={value}
-        onMenuClick={(e, id) => console.log(id)}
+        onMenuClick={handleMenuClick}
         contents={[{id: 'e-1', link: '#accordions', content: 'Element 1'}]}
         active={active}
         onClick={this.onClick}
-        onBlur={() => this.setState({active: false})}
+        onBlur={handleBlur}
       />
     )
   }
+
+  private onClick = () => this.setState({active: !this.state.active})
 }
 export default DropdownExample

@@ -1,6 +1,6 @@
 import React, {ReactElement} from 'react'
 
-export interface ParallaxProps {
+export interface IParallaxProps {
   src: string
   alt: string
   title: string
@@ -9,7 +9,7 @@ const Parallax = ({
   src,
   alt,
   title,
-}: ParallaxProps): ReactElement<ParallaxProps> => (
+}: IParallaxProps): ReactElement<IParallaxProps> => (
   <div className="parallax">
     <div className="parallax-top-left" />
     <div className="parallax-top-right" />

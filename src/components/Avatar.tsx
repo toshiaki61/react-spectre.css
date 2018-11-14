@@ -1,7 +1,7 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {ReactElement} from 'react'
 
-export interface AvatarIconProps {
+export interface IAvatarIconProps {
   src: string
   alt?: string
   className?: string
@@ -10,7 +10,7 @@ const AvatarIcon = ({
   className,
   alt,
   ...props
-}: AvatarIconProps): ReactElement<AvatarIconProps> => {
+}: IAvatarIconProps): ReactElement<IAvatarIconProps> => {
   const classes = classnames('avatar-icon', className)
   return <img className={classes} alt={alt} {...props} />
 }
@@ -18,13 +18,13 @@ AvatarIcon.defaultProps = {
   alt: '',
   className: '',
 }
-export interface PresenceProps {
+export interface IPresenceProps {
   presence: string
 }
-const Presence = ({presence}: PresenceProps): ReactElement<PresenceProps> => (
+const Presence = ({presence}: IPresenceProps): ReactElement<IPresenceProps> => (
   <i className={classnames('avatar-presence', presence)} />
 )
-export interface AvatarProps {
+export interface IAvatarProps {
   className?: string
   xl?: boolean
   lg?: boolean
@@ -32,7 +32,7 @@ export interface AvatarProps {
   xs?: boolean
   initial?: string
   src?: string
-  icon?: AvatarIconProps
+  icon?: IAvatarIconProps
   alt?: string
   presence?: '' | 'online' | 'offline' | 'away' | 'busy'
 }
@@ -48,7 +48,7 @@ const Avatar = ({
   alt,
   presence,
   ...props
-}: AvatarProps): ReactElement<AvatarProps> => {
+}: IAvatarProps): ReactElement<IAvatarProps> => {
   const classes = classnames(
     'avatar',
     {

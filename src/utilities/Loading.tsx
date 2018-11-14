@@ -1,14 +1,14 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {ReactElement} from 'react'
 
-export interface LoadingProps {
+export interface ILoadingProps {
   large?: boolean
   className?: string
 }
 const Loading = ({
   large,
   className,
-}: LoadingProps): ReactElement<LoadingProps> => {
+}: ILoadingProps): ReactElement<ILoadingProps> => {
   const classes = classnames(
     'loading',
     {

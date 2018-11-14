@@ -1,9 +1,9 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {ReactElement} from 'react'
 
-export interface TableProps {
-  header: Array<string>
-  contents: Array<Array<string>>
+export interface ITableProps {
+  header: string[]
+  contents: string[][]
   className?: string
   striped?: boolean
   hover?: boolean
@@ -15,7 +15,7 @@ const Table = ({
   striped,
   hover,
   ...props
-}: TableProps): ReactElement<TableProps> => {
+}: ITableProps): ReactElement<ITableProps> => {
   const classes = classnames(
     'table',
     {

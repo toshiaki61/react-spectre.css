@@ -1,12 +1,12 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {ReactElement} from 'react'
 import uniqueId from './uniqueId'
 
-export interface SwitchProps {
+export interface ISwitchProps {
   children: ReactElement<any>
   className?: string
 }
-const Switch = ({children, className, ...props}: SwitchProps) => {
+const Switch = ({children, className, ...props}: ISwitchProps) => {
   const classes = classnames('form-switch', className)
   const id = uniqueId('switch')
   return (

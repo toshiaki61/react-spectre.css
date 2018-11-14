@@ -1,15 +1,15 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {ReactElement, ReactNodeArray} from 'react'
 import Icon from '../elements/Icon'
 
-export interface TimelineProps {
-  children: Array<ReactElement<any>>
-  timelines: Array<string>
+export interface ITimelineProps {
+  children: ReactNodeArray
+  timelines: string[]
 }
 const Timeline = ({
   children,
   timelines,
-}: TimelineProps): ReactElement<TimelineProps> => {
+}: ITimelineProps): ReactElement<ITimelineProps> => {
   const timeline = children.map((child, i) => {
     const key = `timeline-${i}`
     const first = i === 0

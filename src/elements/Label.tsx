@@ -1,7 +1,7 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {ReactElement} from 'react'
 
-export interface LabelProps {
+export interface ILabelProps {
   children: ReactElement<any>
   className?: string
   rounded?: boolean
@@ -21,7 +21,7 @@ const Label = ({
   warning,
   error,
   ...props
-}: LabelProps) => {
+}: ILabelProps) => {
   const classes = classnames(
     'label',
     {

@@ -1,9 +1,9 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {ReactElement, ReactNode, ReactNodeArray} from 'react'
 import Form from './Form'
 
-export interface SelectOnlyProps {
-  children?: ReactElement<any> | ReactElement<any>[]
+export interface ISelectOnlyProps {
+  children?: ReactNode | ReactNodeArray
   className?: string
   sm?: boolean
   lg?: boolean
@@ -14,7 +14,7 @@ const SelectOnly = ({
   sm,
   lg,
   ...props
-}: SelectOnlyProps): ReactElement<SelectOnlyProps> => {
+}: ISelectOnlyProps): ReactElement<ISelectOnlyProps> => {
   const classes = classnames('form-select', className, {
     'select-sm': sm,
     'select-lg': lg,
@@ -31,7 +31,7 @@ SelectOnly.defaultProps = {
   sm: false,
   lg: false,
 }
-interface SelectProps extends SelectOnlyProps {
+interface ISelectProps extends ISelectOnlyProps {
   label?: string
   options: {
     key: string
@@ -42,7 +42,7 @@ const Select = ({
   label,
   options,
   ...props
-}: SelectProps): ReactElement<SelectProps> => {
+}: ISelectProps): ReactElement<ISelectProps> => {
   const labelNode = label ? <Form.Label>{label}</Form.Label> : null
   const keys = Object.keys(options)
   if (keys.length > 0) {

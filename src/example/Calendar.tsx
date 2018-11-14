@@ -1,16 +1,16 @@
-import React, {Component} from 'react'
 import {eachDay, endOfWeek, format, startOfWeek} from 'date-fns'
+import React, {Component, MouseEvent} from 'react'
 import Popover from '../components/Popover'
 import Calendar from '../experimentals/Calendar'
 
-interface CalendarExampleState {
+interface ICalendarExampleState {
   active: boolean
-  current: Date
+  current: Date | string | number
 }
-class CalendarExample extends Component<{}, CalendarExampleState> {
+class CalendarExample extends Component<any, ICalendarExampleState> {
   private weekdays: string[]
 
-  constructor(props) {
+  constructor(props: any) {
     super(props)
     this.state = {
       active: false,
@@ -19,17 +19,13 @@ class CalendarExample extends Component<{}, CalendarExampleState> {
     this.weekdays = eachDay(
       startOfWeek(this.state.current),
       endOfWeek(this.state.current)
-    ).reduce((a, d) => {
-      a.push(format(d, 'dd'))
-      return a
+    ).reduce((acc: string[], d) => {
+      acc.push(format(d, 'dd'))
+      return acc
     }, [])
   }
 
-  onMonthClick = (e, m) => this.setState({current: m})
-
-  onClick = () => this.setState({active: !this.state.active})
-
-  render() {
+  public render() {
     const {current} = this.state
     return (
       <Popover target={<div>PopOver</div>} bottom>
@@ -42,5 +38,10 @@ class CalendarExample extends Component<{}, CalendarExampleState> {
       </Popover>
     )
   }
+
+  private onMonthClick = (e: MouseEvent<any>, m: string | number | Date) =>
+    this.setState({current: m})
+
+  private onClick = () => this.setState({active: !this.state.active})
 }
 export default CalendarExample

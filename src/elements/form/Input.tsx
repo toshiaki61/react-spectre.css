@@ -1,9 +1,9 @@
-import React, {ReactElement, ChangeEvent} from 'react'
 import classnames from 'classnames'
+import React, {ChangeEvent, ReactElement} from 'react'
 import Form from './Form'
 import uniqueId from './uniqueId'
 
-export interface BaseInputProps {
+export interface IBaseInputProps {
   className?: string
   success?: boolean
   danger?: boolean
@@ -27,7 +27,7 @@ const BaseInput = ({
   sm,
   lg,
   ...props
-}: BaseInputProps): ReactElement<BaseInputProps> => {
+}: IBaseInputProps): ReactElement<IBaseInputProps> => {
   const classes = classnames(className, {
     'form-input': !slider,
     'is-success': success,
@@ -44,8 +44,11 @@ const BaseInput = ({
   return <input {...props} className={classes} />
 }
 BaseInput.defaultProps = {}
-export interface InputProps extends BaseInputProps {}
-const Input = ({label, id, ...props}: InputProps): ReactElement<InputProps> => {
+const Input = ({
+  label,
+  id,
+  ...props
+}: IBaseInputProps): ReactElement<IBaseInputProps> => {
   const elementId = id || uniqueId('input')
   const content = <BaseInput id={elementId} {...props} />
   if (label) {
@@ -68,7 +71,7 @@ Input.defaultProps = {
   label: '',
   id: '',
 }
-export interface GroupProps {
+export interface IGroupProps {
   children: ReactElement<any>
   className?: string
   success?: boolean
@@ -80,7 +83,7 @@ const Group = ({
   success,
   danger,
   ...props
-}: GroupProps): ReactElement<GroupProps> => {
+}: IGroupProps): ReactElement<IGroupProps> => {
   const classes = classnames('input-group', className, {
     'has-success': success,
     'has-danger': danger,
@@ -96,7 +99,7 @@ Group.defaultProps = {
   success: false,
   danger: false,
 }
-export interface AddonProps {
+export interface IAddonProps {
   children: ReactElement<any>
   className?: string
   sm?: boolean
@@ -108,7 +111,7 @@ const Addon = ({
   sm,
   lg,
   ...props
-}: AddonProps): ReactElement<AddonProps> => {
+}: IAddonProps): ReactElement<IAddonProps> => {
   const classes = classnames('input-group-addon', className, {
     'addon-sm': sm,
     'addon-lg': lg,

@@ -1,8 +1,8 @@
-import React, {ReactElement, MouseEvent} from 'react'
 import classnames from 'classnames'
+import React, {MouseEvent, ReactElement} from 'react'
 
 const sharp = '#'
-export interface LinkProps {
+export interface ILinkProps {
   onClick: (e: MouseEvent<any>) => void
   className?: string
   'data-badge'?: number | string
@@ -13,8 +13,8 @@ export interface ItemProps {
   name: string
   badge?: number | string
 }
-export interface TabProps {
-  items: Array<ItemProps>
+export interface ITabProps {
+  items: ItemProps[]
   active?: string
   onClick: (e: MouseEvent<any>, id: string) => void
   action?: ReactElement<any>
@@ -24,7 +24,7 @@ const Tab = ({
   active,
   onClick,
   action,
-}: TabProps): ReactElement<TabProps> | null => {
+}: ITabProps): ReactElement<ITabProps> | null => {
   if (!items.length) {
     return null
   }
@@ -32,7 +32,7 @@ const Tab = ({
     <ul className="tab tab-block">
       {items.map(({id, name, badge}) => {
         const key = `tab-${id}`
-        const linkProp: LinkProps = {
+        const linkProp: ILinkProps = {
           onClick: e => onClick(e, id),
         }
         if (badge) {

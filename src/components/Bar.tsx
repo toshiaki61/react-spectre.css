@@ -1,8 +1,8 @@
-import React, {ReactElement, CSSProperties} from 'react'
 import classnames from 'classnames'
+import React, {CSSProperties, ReactElement} from 'react'
 import Button from '../elements/Button'
 
-export interface ItemProps {
+export interface IItemProps {
   small?: boolean
   tooltip?: string
   content?: ReactElement<any> | string
@@ -12,7 +12,7 @@ const Item = ({
   tooltip,
   content,
   ...props
-}: ItemProps): ReactElement<ItemProps> => {
+}: IItemProps): ReactElement<IItemProps> => {
   const classes = classnames('bar-item', {tooltip})
   return (
     <div className={classes} data-tooltip={tooltip} {...props}>
@@ -25,7 +25,7 @@ Item.defaultProps = {
   tooltip: '',
   content: '',
 }
-interface ProgressBarItemProps extends ItemProps {
+interface IProgressBarItemProps extends IItemProps {
   value?: string | number
   role?: string
   style?: CSSProperties
@@ -35,18 +35,18 @@ interface ProgressBarItemProps extends ItemProps {
   'aria-valuemin'?: number
   'aria-valuemax'?: number
 }
-export interface BarProps {
+export interface IBarProps {
   className?: string
   small?: boolean
   slider?: boolean
-  items: Array<ProgressBarItemProps>
+  items: IProgressBarItemProps[]
 }
 const Bar = ({
   className,
   small,
   slider,
   items,
-}: BarProps): ReactElement<BarProps> => {
+}: IBarProps): ReactElement<IBarProps> => {
   const classes = classnames(
     'bar',
     {

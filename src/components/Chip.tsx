@@ -1,15 +1,15 @@
-import React, {ReactElement, MouseEvent} from 'react'
 import classnames from 'classnames'
+import React, {MouseEvent, ReactElement} from 'react'
 
-import noop from '../utilities/noop'
-import Avatar, {AvatarProps} from './Avatar'
 import Button from '../elements/Button'
+import noop from '../utilities/noop'
+import Avatar, {IAvatarProps} from './Avatar'
 
-interface ChipProps {
+interface IChipProps {
   className?: string
   clear?: boolean
   icon?: ReactElement<any>
-  avatar?: AvatarProps
+  avatar?: IAvatarProps
   content?: string
   onClearClick?: (e: MouseEvent<any>) => void
 }
@@ -21,7 +21,7 @@ const Chip = ({
   className,
   onClearClick,
   ...props
-}: ChipProps): ReactElement<ChipProps> => {
+}: IChipProps): ReactElement<IChipProps> => {
   const classes = classnames('chip', className)
   return (
     <span className={classes} {...props}>

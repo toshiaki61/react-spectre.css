@@ -1,15 +1,21 @@
-import React, {Component} from 'react'
+import React, {ChangeEvent, Component, MouseEvent} from 'react'
 import Autocomplete from '../components/Autocomplete'
 
-interface AutocompleteExampleState {
+interface ISuggest {
+  id: string
+  name: string
+  img: string
+  initial: string
+}
+interface IAutocompleteExampleState {
   active: boolean
   loading: boolean
-  suggests: {id: string; name: string; img: string; initial: string}[]
-  selected: undefined[]
+  suggests: ISuggest[]
+  selected: ISuggest[]
   input: string
 }
-class AutocompleteExample extends Component<{}, AutocompleteExampleState> {
-  state = {
+class AutocompleteExample extends Component<{}, IAutocompleteExampleState> {
+  public state: IAutocompleteExampleState = {
     active: false,
     loading: false,
     suggests: [
@@ -48,33 +54,7 @@ class AutocompleteExample extends Component<{}, AutocompleteExampleState> {
     input: '',
   }
 
-  onClearClick = (e, id) => {
-    e.preventDefault()
-    const {suggests, selected} = this.state
-    suggests.push(selected.find(row => row.id === id))
-    this.setState({
-      suggests,
-      selected: selected.filter(row => row.id !== id),
-    })
-  }
-
-  onSelected = (e, id) => {
-    e.preventDefault()
-    const {suggests, selected} = this.state
-    selected.push(suggests.find(row => row.id === id))
-    this.setState({
-      suggests: suggests.filter(row => row.id !== id),
-      selected,
-    })
-  }
-
-  onChange = ({target: {value}}) => this.setState({input: value})
-
-  onFocus = () => this.setState({active: true})
-
-  onBlur = () => this.setState({active: false})
-
-  render() {
+  public render() {
     const props = {
       ...this.state,
       onClearClick: this.onClearClick,
@@ -85,5 +65,35 @@ class AutocompleteExample extends Component<{}, AutocompleteExampleState> {
     }
     return <Autocomplete {...props} />
   }
+
+  private onClearClick = (e: MouseEvent<any>, id: string) => {
+    e.preventDefault()
+    const {suggests, selected} = this.state
+    suggests.push(selected.find(row => row.id === id) as any)
+    this.setState({
+      suggests,
+      selected: selected.filter(row => row.id !== id),
+    })
+  }
+
+  private onSelected = (e: MouseEvent<any>, id: string) => {
+    e.preventDefault()
+    const {suggests, selected} = this.state
+    const found = suggests.find(row => row.id === id)
+    if (found) {
+      selected.push(found)
+    }
+    this.setState({
+      suggests: suggests.filter(row => row.id !== id),
+      selected,
+    })
+  }
+
+  private onChange = ({target: {value}}: ChangeEvent<HTMLInputElement>) =>
+    this.setState({input: value})
+
+  private onFocus = () => this.setState({active: true})
+
+  private onBlur = () => this.setState({active: false})
 }
 export default AutocompleteExample

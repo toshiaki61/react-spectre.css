@@ -1,15 +1,14 @@
-
 import classnames from 'classnames'
 
-export interface ColorParameters {
-  primary?: boolean,
-  secondary?: boolean,
-  dark?: boolean,
-  gray?: boolean,
-  light?: boolean,
-  success?: boolean,
-  warning?: boolean,
-  error?: boolean,
+export interface IColorParameters {
+  primary?: boolean
+  secondary?: boolean
+  dark?: boolean
+  gray?: boolean
+  light?: boolean
+  success?: boolean
+  warning?: boolean
+  error?: boolean
 }
 
 function text(
@@ -22,7 +21,7 @@ function text(
     success,
     warning,
     error,
-  }: ColorParameters,
+  }: IColorParameters,
   className: string = ''
 ): string {
   return classnames(
@@ -50,7 +49,7 @@ function background(
     success,
     warning,
     error,
-  }: ColorParameters,
+  }: IColorParameters,
   className: string = ''
 ): string {
   return classnames(

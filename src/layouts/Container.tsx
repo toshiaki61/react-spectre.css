@@ -1,15 +1,15 @@
+import classnames from 'classnames'
+import React, {ReactElement} from 'react'
 
- import React, {ReactElement} from 'react';
-import classnames from "classnames";
-export interface ContainerProps {
-  children: ReactElement<any>,
-  className?: string,
-  xs?: boolean,
-  sm?: boolean,
-  md?: boolean,
-  lg?: boolean,
+export interface IContainerProps {
+  children: ReactElement<any>
+  className?: string
+  xs?: boolean
+  sm?: boolean
+  md?: boolean
+  lg?: boolean
   xl?: boolean
-};
+}
 const Container = ({
   children,
   className,
@@ -19,30 +19,30 @@ const Container = ({
   lg,
   xl,
   ...props
-}: ContainerProps): ReactElement<ContainerProps> => {
+}: IContainerProps): ReactElement<IContainerProps> => {
   const classes = classnames(
-    "container",
+    'container',
     {
       xs,
       sm,
       md,
       lg,
-      xl
+      xl,
     },
     className
-  );
+  )
   return (
     <section className={classes} {...props}>
       {children}
     </section>
-  );
-};
+  )
+}
 Container.defaultProps = {
-  className: "",
+  className: '',
   xs: false,
   sm: false,
   md: false,
   lg: false,
-  xl: false
-};
-export default Container;
+  xl: false,
+}
+export default Container

@@ -1,13 +1,13 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {ReactElement, ReactNode, ReactNodeArray} from 'react'
 import Container from './Container'
 
-interface ColumnsVisualProps {
+interface IColumnsVisualProps {
   gapless?: boolean
   oneline?: boolean
 }
-export interface ColumnsWithoutContainerProps extends ColumnsVisualProps {
-  children: ReactElement<any> | ReactElement<any>[]
+export interface IColumnsWithoutContainerProps extends IColumnsVisualProps {
+  children: ReactNode | ReactNodeArray
   className?: string
 }
 const ColumnsWithoutContainer = ({
@@ -16,8 +16,8 @@ const ColumnsWithoutContainer = ({
   oneline,
   className,
   ...props
-}: ColumnsWithoutContainerProps): ReactElement<
-  ColumnsWithoutContainerProps
+}: IColumnsWithoutContainerProps): ReactElement<
+  IColumnsWithoutContainerProps
 > => {
   const classes = classnames(
     'columns',
@@ -39,7 +39,7 @@ ColumnsWithoutContainer.defaultProps = {
   oneline: false,
 }
 
-export function acquireContainerProps(option) {
+export function acquireContainerProps(option: boolean | string | object) {
   switch (typeof option) {
     case 'boolean':
       return null
@@ -49,7 +49,7 @@ export function acquireContainerProps(option) {
       return option
   }
 }
-export interface ContainerProps {
+export interface IContainerProps {
   className?: string
   xs?: boolean
   sm?: boolean
@@ -57,15 +57,15 @@ export interface ContainerProps {
   lg?: boolean
   xl?: boolean
 }
-export interface ColumnsProps extends ColumnsVisualProps {
-  children: ReactElement<any> | ReactElement<any>[]
-  container?: boolean | string | ContainerProps
+export interface IColumnsProps extends IColumnsVisualProps {
+  children: ReactNode | ReactNodeArray
+  container?: boolean | string | IContainerProps
 }
 const Columns = ({
   children,
   container,
   ...props
-}: ColumnsProps): ReactElement<ColumnsProps> => {
+}: IColumnsProps): ReactElement<IColumnsProps> => {
   const content = (
     <ColumnsWithoutContainer {...props}>{children}</ColumnsWithoutContainer>
   )

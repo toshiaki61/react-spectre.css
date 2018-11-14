@@ -1,5 +1,5 @@
-import React, {ReactElement, CSSProperties} from 'react'
 import classnames from 'classnames'
+import React, {CSSProperties, ReactElement} from 'react'
 
 export interface ImageProps {
   src: string
@@ -25,14 +25,14 @@ Image.defaultProps = {
   alt: '',
   className: '',
 }
-export interface ComparisonSliderProps {
+export interface IComparisonSliderProps {
   before: ImageProps
   after: ImageProps
 }
 const ComparisonSlider = ({
   before,
   after,
-}: ComparisonSliderProps): ReactElement<ComparisonSliderProps> => (
+}: IComparisonSliderProps): ReactElement<IComparisonSliderProps> => (
   <div className="comparison-slider">
     <figure className="comparison-before">
       <Image {...before} />

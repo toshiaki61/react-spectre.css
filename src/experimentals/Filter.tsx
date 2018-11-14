@@ -1,15 +1,15 @@
-import React, {ReactElement, ChangeEvent} from 'react'
+import React, {ChangeEvent, ReactElement} from 'react'
 
 export interface ItemProps {
   tag: string
   title: string
   subtitle: string
 }
-export interface FilterProps {
+export interface IFilterProps {
   tags: {
     [key: string]: string
   }
-  data: Array<ItemProps>
+  data: ItemProps[]
   active: string
   onChange: (e: ChangeEvent<HTMLInputElement>, id: string) => void
 }
@@ -18,20 +18,23 @@ const Filter = ({
   data,
   active,
   onChange,
-}: FilterProps): ReactElement<FilterProps> => (
+}: IFilterProps): ReactElement<IFilterProps> => (
   <div className="filter">
-    {Object.keys(tags).map(key => (
-      <input
-        key={`${key}_input`}
-        id={key}
-        className="filter-tag"
-        name="filter-radio"
-        checked={key === active}
-        type="radio"
-        hidden
-        onChange={e => onChange(e, key)}
-      />
-    ))}
+    {Object.keys(tags).map(key => {
+      const handleChange = (e: ChangeEvent<any>) => onChange(e, key)
+      return (
+        <input
+          key={`${key}_input`}
+          id={key}
+          className="filter-tag"
+          name="filter-radio"
+          checked={key === active}
+          type="radio"
+          hidden
+          onChange={handleChange}
+        />
+      )
+    })}
 
     <div className="filter-nav">
       {Object.keys(tags).map(key => (

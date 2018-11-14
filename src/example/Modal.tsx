@@ -2,20 +2,19 @@ import React, {Component} from 'react'
 import Modal from '../components/Modal'
 import Button from '../elements/Button'
 
-interface ModalExampleState {
+interface IModalExampleState {
   active: boolean
 }
-class ModalExample extends Component<{}, ModalExampleState> {
-  state = {
+class ModalExample extends Component<{}, IModalExampleState> {
+  public state = {
     active: false,
   }
 
-  onClick = () => this.setState({active: !this.state.active})
-
-  render() {
+  public render() {
+    const handleModal = () => this.setState({active: true})
     return (
       <div>
-        <Button primary onClick={() => this.setState({active: true})}>
+        <Button primary onClick={handleModal}>
           open modal
         </Button>
         <Modal
@@ -28,5 +27,7 @@ class ModalExample extends Component<{}, ModalExampleState> {
       </div>
     )
   }
+
+  private onClick = () => this.setState({active: !this.state.active})
 }
 export default ModalExample

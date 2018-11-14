@@ -1,10 +1,10 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
-import Container from './Container'
+import React, {ReactElement, ReactNode, ReactNodeArray} from 'react'
 import {acquireContainerProps} from './Columns'
+import Container from './Container'
 
-export interface SectionProps {
-  children?: ReactElement<any> | ReactElement<any>[]
+export interface ISectionProps {
+  children?: ReactNode | ReactNodeArray
   className?: string
   center?: boolean
 }
@@ -13,7 +13,7 @@ const Section = ({
   className,
   center,
   ...props
-}: SectionProps): ReactElement<SectionProps> => {
+}: ISectionProps): ReactElement<ISectionProps> => {
   const classes = classnames(
     {
       'navbar-section': !center,
@@ -32,15 +32,17 @@ Section.defaultProps = {
   className: '',
   center: false,
 }
-export interface NavbarWithoutContainerProps {
-  children: ReactElement<any> | ReactElement<any>[]
+export interface INavbarWithoutContainerProps {
+  children: ReactNode | ReactNodeArray
   className?: string
 }
 const NavbarWithoutContainer = ({
   children,
   className,
   ...props
-}: NavbarWithoutContainerProps): ReactElement<NavbarWithoutContainerProps> => {
+}: INavbarWithoutContainerProps): ReactElement<
+  INavbarWithoutContainerProps
+> => {
   const classes = classnames('navbar', className)
   return (
     <header className={classes} {...props}>
@@ -51,8 +53,8 @@ const NavbarWithoutContainer = ({
 NavbarWithoutContainer.defaultProps = {
   className: '',
 }
-export interface NavbarProps {
-  children: ReactElement<any> | ReactElement<any>[]
+export interface INavbarProps {
+  children: ReactNode | ReactNodeArray
   container?:
     | boolean
     | string
@@ -69,7 +71,7 @@ const Navbar = ({
   children,
   container,
   ...props
-}: NavbarProps): ReactElement<NavbarProps> => {
+}: INavbarProps): ReactElement<INavbarProps> => {
   const content = (
     <NavbarWithoutContainer {...props}>{children}</NavbarWithoutContainer>
   )
@@ -82,7 +84,7 @@ const Navbar = ({
 Navbar.defaultProps = {
   container: false,
 }
-export interface BrandProps {
+export interface IBrandProps {
   children: ReactElement<any>
   className?: string
   href?: string
@@ -91,7 +93,7 @@ const Brand = ({
   children,
   className,
   ...props
-}: BrandProps): ReactElement<BrandProps> => {
+}: IBrandProps): ReactElement<IBrandProps> => {
   const classes = classnames('navbar-brand', className)
   let component = null
   if (props.href) {

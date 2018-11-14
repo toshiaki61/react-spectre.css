@@ -1,110 +1,54 @@
-import ComparisonSlider from './experimentals/ComparisonSlider'
-import Filter from './experimentals/Filter'
-import Calendar from './experimentals/Calendar'
-import Timeline from './experimentals/Timeline'
-import Carousel from './experimentals/Carousel'
-import OffCanvas from './experimentals/OffCanvas'
-import Progress from './experimentals/Progress'
-import Slider from './experimentals/Slider'
-import Meter from './experimentals/Meter'
-import Parallax from './experimentals/Parallax'
-import Switch from './elements/form/Switch'
-import Form from './elements/form/Form'
-import Input from './elements/form/Input'
-import Select from './elements/form/Select'
-import Checkbox from './elements/form/Checkbox'
-import uniqueId from './elements/form/uniqueId'
-import Radio from './elements/form/Radio'
-import Column from './layouts/Column'
-import Container from './layouts/Container'
-import Navbar from './layouts/Navbar'
-import Columns from './layouts/Columns'
-import display from './utilities/display'
-import * as color from './utilities/color'
-import cursor from './utilities/cursor'
-import Divider from './utilities/Divider'
-import Loading from './utilities/Loading'
-import shape from './utilities/shape'
-import text from './utilities/text'
-import position from './utilities/position'
-import noop from './utilities/noop'
-import Menu from './components/Menu'
-import Avatar from './components/Avatar'
-import Dropdown from './components/Dropdown'
-import Breadcrumb from './components/Breadcrumb'
-import Panel from './components/Panel'
-import Autocomplete from './components/Autocomplete'
-import Toast from './components/Toast'
-import Modal from './components/Modal'
-import Bar from './components/Bar'
-import Tile from './components/Tile'
-import Popover from './components/Popover'
-import Card from './components/Card'
-import Pagination from './components/Pagination'
-import Nav from './components/Nav'
-import Step from './components/Step'
-import Chip from './components/Chip'
-import Empty from './components/Empty'
-import Accordion from './components/Accordion'
-import Tab from './components/Tab'
+export {default as ComparisonSlider} from './experimentals/ComparisonSlider'
+export {default as Filter} from './experimentals/Filter'
+export {default as Calendar} from './experimentals/Calendar'
+export {default as Timeline} from './experimentals/Timeline'
+export {default as Carousel} from './experimentals/Carousel'
+export {default as OffCanvas} from './experimentals/OffCanvas'
+export {default as Progress} from './experimentals/Progress'
+export {default as Slider} from './experimentals/Slider'
+export {default as Meter} from './experimentals/Meter'
+export {default as Parallax} from './experimentals/Parallax'
+export {default as Switch} from './elements/form/Switch'
+export {default as Form} from './elements/form/Form'
+export {default as Input} from './elements/form/Input'
+export {default as Select} from './elements/form/Select'
+export {default as Checkbox} from './elements/form/Checkbox'
+export {default as uniqueId} from './elements/form/uniqueId'
+export {default as Radio} from './elements/form/Radio'
+export {default as Column} from './layouts/Column'
+export {default as Container} from './layouts/Container'
+export {default as Navbar} from './layouts/Navbar'
+export {default as Columns} from './layouts/Columns'
+export {default as display} from './utilities/display'
+export * from './utilities/color'
+export {default as cursor} from './utilities/cursor'
+export {default as Divider} from './utilities/Divider'
+export {default as Loading} from './utilities/Loading'
+export {default as shape} from './utilities/shape'
+export {default as text} from './utilities/text'
+export {default as position} from './utilities/position'
+export {default as noop} from './utilities/noop'
+export {default as Menu} from './components/Menu'
+export {default as Avatar} from './components/Avatar'
+export {default as Dropdown} from './components/Dropdown'
+export {default as Breadcrumb} from './components/Breadcrumb'
+export {default as Panel} from './components/Panel'
+export {default as Autocomplete} from './components/Autocomplete'
+export {default as Toast} from './components/Toast'
+export {default as Modal} from './components/Modal'
+export {default as Bar} from './components/Bar'
+export {default as Tile} from './components/Tile'
+export {default as Popover} from './components/Popover'
+export {default as Card} from './components/Card'
+export {default as Pagination} from './components/Pagination'
+export {default as Nav} from './components/Nav'
+export {default as Step} from './components/Step'
+export {default as Chip} from './components/Chip'
+export {default as Empty} from './components/Empty'
+export {default as Accordion} from './components/Accordion'
+export {default as Tab} from './components/Tab'
 
-import Button from './elements/Button'
-import Table from './elements/Table'
-import Icon from './elements/Icon'
-import Label from './elements/Label'
-// import './example/';
-export {
-  ComparisonSlider,
-  Filter,
-  Calendar,
-  Timeline,
-  Carousel,
-  OffCanvas,
-  Progress,
-  Slider,
-  Meter,
-  Parallax,
-  Switch,
-  Form,
-  Input,
-  Select,
-  Checkbox,
-  uniqueId,
-  Radio,
-  Column,
-  Container,
-  Navbar,
-  Columns,
-  display,
-  color,
-  cursor,
-  Divider,
-  shape,
-  text,
-  position,
-  noop,
-  Menu,
-  Avatar,
-  Dropdown,
-  Breadcrumb,
-  Panel,
-  Autocomplete,
-  Toast,
-  Modal,
-  Bar,
-  Tile,
-  Popover,
-  Card,
-  Pagination,
-  Nav,
-  Step,
-  Chip,
-  Empty,
-  Accordion,
-  Tab,
-  Button,
-  Table,
-  Loading,
-  Icon,
-  Label,
-}
+export {default as Button} from './elements/Button'
+export {default as Table} from './elements/Table'
+export {default as Icon} from './elements/Icon'
+export {default as Label} from './elements/Label'

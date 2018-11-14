@@ -1,11 +1,11 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {ReactElement, ReactNode, ReactNodeArray} from 'react'
 
-export interface TileProps {
+export interface ITileProps {
   compact?: boolean
   title?: string
   subtitle?: string
-  content?: (ReactElement<any> | string)[] | string
+  content?: ReactNode | ReactNodeArray
   icon?: ReactElement<any> | string
   action?: ReactElement<any>
 }
@@ -16,7 +16,7 @@ const Tile = ({
   content,
   icon,
   action,
-}: TileProps): ReactElement<TileProps> => {
+}: ITileProps): ReactElement<ITileProps> => {
   const classes = classnames('tile', {'tile-centered': compact})
   return (
     <div className={classes}>

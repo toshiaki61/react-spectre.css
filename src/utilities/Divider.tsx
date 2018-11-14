@@ -1,7 +1,7 @@
-import React, {ReactElement, ReactChildren} from 'react'
 import classnames from 'classnames'
+import React, {ReactChildren, ReactElement} from 'react'
 
-export interface DividerProps {
+export interface IDividerProps {
   children?: ReactChildren
   content?: string
   vertical?: boolean
@@ -16,7 +16,7 @@ const Divider = ({
   li,
   center,
   className,
-}: DividerProps): ReactElement<DividerProps> => {
+}: IDividerProps): ReactElement<IDividerProps> => {
   const classes = classnames(
     {
       divider: !vertical,

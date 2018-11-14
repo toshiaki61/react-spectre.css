@@ -1,12 +1,12 @@
-import React, {ReactElement, ChangeEvent} from 'react'
+import React, {ChangeEvent, ReactElement} from 'react'
 import Icon from '../elements/Icon'
 
 export interface ItemProps {
   src: string
   alt: string
 }
-export interface CarouselProps {
-  slides: Array<ItemProps>
+export interface ICarouselProps {
+  slides: ItemProps[]
   active?: string
   onChange: (e: ChangeEvent<HTMLInputElement>, id: string) => void
 }
@@ -14,7 +14,7 @@ const Carousel = ({
   slides,
   active,
   onChange,
-}: CarouselProps): ReactElement<CarouselProps> | null => {
+}: ICarouselProps): ReactElement<ICarouselProps> | null => {
   if (!slides || slides.length === 0) {
     return null
   }
@@ -22,6 +22,7 @@ const Carousel = ({
     <div className="carousel">
       {slides.map((slide, i) => {
         const id = `slide-${i}`
+        const handleChange = (e: ChangeEvent<any>) => onChange(e, id)
         return (
           <input
             key={`${id}_locator`}
@@ -31,7 +32,7 @@ const Carousel = ({
             checked={id === active}
             type="radio"
             hidden
-            onChange={e => onChange(e, id)}
+            onChange={handleChange}
           />
         )
       })}

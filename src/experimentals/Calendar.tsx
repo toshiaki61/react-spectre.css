@@ -1,66 +1,64 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
-import {compose, range} from 'ramda'
 import {
   addDays,
   addMonths,
   differenceInCalendarDays,
-  endOfWeek,
   endOfMonth,
+  endOfWeek,
   format,
   isAfter,
   isBefore,
   isEqual,
   isSameDay,
   isSameMonth,
-  subMonths,
-  startOfWeek,
   startOfMonth,
+  startOfWeek,
+  subMonths,
 } from 'date-fns'
+import {compose, range} from 'ramda'
+import React, {MouseEvent, ReactElement} from 'react'
 import Button from '../elements/Button'
 import Icon from '../elements/Icon'
 import noop from '../utilities/noop'
 
-export interface NavProps {
+export interface INavProps {
   current: Date | string | number
   navFormat?: string
-  onMonthClick?: (e: Event, m: Date | string | number) => void
+  onMonthClick?: (e: MouseEvent<any>, m: Date | string | number) => void
 }
 const Nav = ({
   current,
   navFormat,
   onMonthClick = noop,
-}: NavProps): ReactElement<NavProps> => (
-  <div className="calendar-nav navbar">
-    <Button
-      action
-      link
-      lg
-      onClick={e => onMonthClick(e, subMonths(current, 1))}
-    >
-      <Icon arrowLeft />
-    </Button>
-    <Button link lg onClick={e => onMonthClick(e, current)}>
-      {format(current, navFormat)}
-    </Button>
-    <Button
-      action
-      link
-      lg
-      onClick={e => onMonthClick(e, addMonths(current, 1))}
-    >
-      <Icon arrowRight />
-    </Button>
-  </div>
-)
+}: INavProps): ReactElement<INavProps> => {
+  const handlePrevMonthClick = (e: MouseEvent<any>) =>
+    onMonthClick(e, subMonths(current, 1))
+  const handleCurrentMonthClick = (e: MouseEvent<any>) =>
+    onMonthClick(e, current)
+  const handleNextMonthClick = (e: MouseEvent<any>) =>
+    onMonthClick(e, addMonths(current, 1))
+  return (
+    <div className="calendar-nav navbar">
+      <Button action link lg onClick={handlePrevMonthClick}>
+        <Icon arrowLeft />
+      </Button>
+      <Button link lg onClick={handleCurrentMonthClick}>
+        {format(current, navFormat)}
+      </Button>
+      <Button action link lg onClick={handleNextMonthClick}>
+        <Icon arrowRight />
+      </Button>
+    </div>
+  )
+}
 Nav.defaultProps = {
   onMonthClick: noop,
   navFormat: 'YYYY-MM-DD',
 }
-export interface HeaderProps {
-  weekdays: Array<string>
+export interface IHeaderProps {
+  weekdays: string[]
 }
-const Header = ({weekdays}: HeaderProps): ReactElement<HeaderProps> => (
+const Header = ({weekdays}: IHeaderProps): ReactElement<IHeaderProps> => (
   <div className="calendar-header">
     {weekdays.map((d, i) => {
       const key = `weekday-${i}`
@@ -73,29 +71,20 @@ const Header = ({weekdays}: HeaderProps): ReactElement<HeaderProps> => (
   </div>
 )
 Header.defaultProps = {}
-export interface BodyProps {
-  current: Date | string | number
-  start?: Date | string | number
-  end?: Date | string | number
-  options?: {
-    data: Array<{
-      date: string
-      tooltip: string
-      type?: 'badge' | 'disabled' | 'today'
-    }>
-    range: Array<{
-      start: string
-      end: string
-    }>
-  }
-  dateFormat?: string
-  onDateClick: (e: Event, d: Date) => void
-}
-const isBeforeMonth = (date, target) =>
-  isBefore(date, target) && !isSameMonth(date, target)
-const isAfterMonth = (date, target) =>
-  isAfter(date, target) && !isSameMonth(date, target)
-const isBetween = (date, from, to, inclusivity = '()') => {
+const isBeforeMonth = (
+  date: Date | string | number,
+  target: Date | string | number
+) => isBefore(date, target) && !isSameMonth(date, target)
+const isAfterMonth = (
+  date: Date | string | number,
+  target: Date | string | number
+) => isAfter(date, target) && !isSameMonth(date, target)
+const isBetween = (
+  date: Date | string | number,
+  from: Date | string | number,
+  to: Date | string | number,
+  inclusivity = '()'
+) => {
   if (!['()', '[]', '(]', '[)'].includes(inclusivity)) {
     throw new Error('Inclusivity parameter must be one of (), [], (], [)')
   }
@@ -109,6 +98,25 @@ const isBetween = (date, from, to, inclusivity = '()') => {
     (isAfterEqual ? isEqual(to, date) || isAfter(to, date) : isAfter(to, date))
   )
 }
+
+export interface IBodyProps {
+  current: Date | string | number
+  start: Date | string | number
+  end: Date | string | number
+  options?: {
+    data: Array<{
+      date: string
+      tooltip: string
+      type?: 'badge' | 'disabled' | 'today'
+    }>
+    range: Array<{
+      start: string
+      end: string
+    }>
+  }
+  dateFormat?: string
+  onDateClick: (e: MouseEvent<any>, d: Date) => void
+}
 const Body = ({
   current,
   start,
@@ -116,42 +124,47 @@ const Body = ({
   options,
   dateFormat,
   onDateClick,
-}: BodyProps): ReactElement<BodyProps> => {
+}: IBodyProps): ReactElement<IBodyProps> => {
   const dates = range(0, differenceInCalendarDays(end, start) + 1).map(d => {
     const date = addDays(start, d)
     const before = isBeforeMonth(date, current)
     const after = isAfterMonth(date, current)
-    const datum =
+    const foundSameDay =
       options &&
       options.data &&
       options.data.find(datum => isSameDay(date, datum.date))
-    const range =
+    const foundBetween =
       options &&
       options.range &&
       options.range.find(r => isBetween(date, r.start, r.end, '[]'))
-    const rangeStart = range && isSameDay(date, range.start)
-    const rangeEnd = range && isSameDay(date, range.end)
+    const rangeStart = foundBetween && isSameDay(date, foundBetween.start)
+    const rangeEnd = foundBetween && isSameDay(date, foundBetween.end)
     const classes = classnames('calendar-date', {
       'prev-month': before,
       'current-month': isSameMonth(date, current),
       'next-month': after,
-      'calendar-range': range,
+      'calendar-range': foundBetween,
       'range-start': rangeStart,
       'range-end': rangeEnd,
-      tooltip: datum,
+      tooltip: foundSameDay,
       disabled: before || after,
     })
     const btnClasses = classnames('date-item', {
       active: rangeStart || rangeEnd,
-      badge: datum && datum.type === 'badge',
-      'date-today': datum && datum.type === 'today',
+      badge: foundSameDay && foundSameDay.type === 'badge',
+      'date-today': foundSameDay && foundSameDay.type === 'today',
     })
+    const handleDateClick = (e: MouseEvent<any>) => onDateClick(e, date)
     return (
-      <div key={d} className={classes} data-tooltip={datum && datum.tooltip}>
+      <div
+        key={d}
+        className={classes}
+        data-tooltip={foundSameDay && foundSameDay.tooltip}
+      >
         <Button
-          disabled={datum && datum.type === 'disabled'}
+          disabled={foundSameDay && foundSameDay.type === 'disabled'}
           className={btnClasses}
-          onClick={e => onDateClick(e, date)}
+          onClick={handleDateClick}
         >
           {format(date, dateFormat)}
         </Button>
@@ -175,7 +188,21 @@ const endOfCalendarWeek = compose(
   endOfWeek,
   endOfMonth
 )
-interface CalendarProps extends NavProps, HeaderProps, BodyProps {
+interface ICalendarProps extends INavProps, IHeaderProps {
+  start?: Date | string | number
+  end?: Date | string | number
+  options?: {
+    data: Array<{
+      date: string
+      tooltip: string
+      type?: 'badge' | 'disabled' | 'today'
+    }>
+    range: Array<{
+      start: string
+      end: string
+    }>
+  }
+  onDateClick: (e: MouseEvent<any>, d: Date) => void
   lg?: boolean
 }
 const Calendar = ({
@@ -189,7 +216,7 @@ const Calendar = ({
   weekdays,
   lg,
   ...props
-}: CalendarProps): ReactElement<CalendarProps> | null => {
+}: ICalendarProps): ReactElement<ICalendarProps> | null => {
   if (!current) {
     return null
   }

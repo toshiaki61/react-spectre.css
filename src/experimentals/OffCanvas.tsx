@@ -1,21 +1,20 @@
-// @flow
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {ReactElement} from 'react'
 import Icon from '../elements/Icon'
 
-export interface SidebarProps {
+export interface ISidebarProps {
   className?: string
   content: Array<ReactElement<any>> | ReactElement<any> | string
 }
-export interface OffCanvasProps {
+export interface IOffCanvasProps {
   children: Array<ReactElement<any>> | ReactElement<any>
-  sidebar: SidebarProps
+  sidebar: ISidebarProps
 }
 const OffCanvas = ({
   children,
   sidebar,
   ...props
-}: OffCanvasProps): ReactElement<OffCanvasProps> => (
+}: IOffCanvasProps): ReactElement<IOffCanvasProps> => (
   <div className="off-canvas off-canvas-sidebar-show" {...props}>
     <a
       className="off-canvas-toggle btn btn-primary btn-action"

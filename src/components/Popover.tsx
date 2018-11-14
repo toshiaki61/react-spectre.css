@@ -1,7 +1,7 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {ReactElement} from 'react'
 
-export interface PopoverProps {
+export interface IPopoverProps {
   target: ReactElement<any>
   children: ReactElement<any>
   right?: boolean
@@ -17,7 +17,7 @@ const Popover = ({
   left,
   bottom,
   className,
-}: PopoverProps): ReactElement<PopoverProps> => {
+}: IPopoverProps): ReactElement<IPopoverProps> => {
   const classes = classnames('popover', className, {
     'popover-right': right,
     'popover-left': left,

@@ -1,5 +1,5 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {ReactElement} from 'react'
 
 const sharp = '#'
 export interface ItemProps {
@@ -7,12 +7,12 @@ export interface ItemProps {
   name: string
   tooltip: string
 }
-export interface StepProps {
-  items: Array<ItemProps>
+export interface IStepProps {
+  items: ItemProps[]
   active?: string
 }
 
-const Step = ({items, active}: StepProps): ReactElement<StepProps> | null => {
+const Step = ({items, active}: IStepProps): ReactElement<IStepProps> | null => {
   if (!items.length) {
     return null
   }

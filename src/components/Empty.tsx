@@ -1,8 +1,8 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React, {ReactElement} from 'react'
 import Icon from '../elements/Icon'
 
-export interface TitleProps {
+export interface ITitleProps {
   children: ReactElement<any> | string
   className?: string
 }
@@ -10,7 +10,7 @@ const Title = ({
   children,
   className,
   ...props
-}: TitleProps): ReactElement<TitleProps> => {
+}: ITitleProps): ReactElement<ITitleProps> => {
   const classes = classnames('empty-title', 'h5', className)
   return (
     <p className={classes} {...props}>
@@ -21,7 +21,7 @@ const Title = ({
 Title.defaultProps = {
   className: '',
 }
-export interface SubtitleProps {
+export interface ISubtitleProps {
   children?: ReactElement<any> | string
   className?: string
 }
@@ -29,7 +29,7 @@ const Subtitle = ({
   children,
   className,
   ...props
-}: SubtitleProps): ReactElement<SubtitleProps> => {
+}: ISubtitleProps): ReactElement<ISubtitleProps> => {
   const classes = classnames('empty-subtitle', className)
   return (
     <p className={classes} {...props}>
@@ -41,7 +41,7 @@ Subtitle.defaultProps = {
   children: null,
   className: '',
 }
-export interface EmptyProps {
+export interface IEmptyProps {
   children?: ReactElement<any>
   className?: string
   icon?: string
@@ -55,7 +55,7 @@ const Empty = ({
   title,
   subtitle,
   ...props
-}: EmptyProps): ReactElement<EmptyProps> => {
+}: IEmptyProps): ReactElement<IEmptyProps> => {
   const classes = classnames('empty', className)
   return (
     <div className={classes} {...props}>

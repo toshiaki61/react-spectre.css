@@ -1,11 +1,12 @@
-import React, {ReactElement, MouseEvent} from 'react'
 import classnames from 'classnames'
+import React, {MouseEvent, ReactElement} from 'react'
 import Divider from '../utilities/Divider'
+import noop from '../utilities/noop'
 
-export interface BadgeProps {
+export interface IBadgeProps {
   content?: string | number | ReactElement<any>
 }
-const Badge = ({content}: BadgeProps): ReactElement<BadgeProps> | null => {
+const Badge = ({content}: IBadgeProps): ReactElement<IBadgeProps> | null => {
   if (!content) {
     return null
   }
@@ -18,7 +19,7 @@ const Badge = ({content}: BadgeProps): ReactElement<BadgeProps> | null => {
 Badge.defaultProps = {
   content: '',
 }
-export interface ItemProps {
+export interface IItemProps {
   id?: string
   link?: string
   content?: string
@@ -38,7 +39,7 @@ const Item = ({
   badge,
   onClick,
   ...props
-}: ItemProps): ReactElement<ItemProps> => {
+}: IItemProps): ReactElement<IItemProps> => {
   const classes = classnames('menu-item', className)
   if (divider) {
     return (
@@ -48,14 +49,13 @@ const Item = ({
       />
     )
   }
+  const handleItemClick = onClick
+    ? (e: MouseEvent<any>) => onClick(e, id || '')
+    : noop
   return (
     <li className={classes} {...props}>
       <Badge content={badge} />
-      <a
-        href={link}
-        className={classnames({active})}
-        onClick={e => onClick(e, id)}
-      >
+      <a href={link} className={classnames({active})} onClick={handleItemClick}>
         {content}
       </a>
     </li>
@@ -70,11 +70,11 @@ Item.defaultProps = {
   badge: 0,
 }
 
-export interface MenuProps {
+export interface IMenuProps {
   className?: string
   nav?: boolean
-  contents: Array<ItemProps>
-  onClick: (e: MouseEvent<any>, id: string) => void
+  contents: IItemProps[]
+  onClick?: (e: MouseEvent<any>, id: string) => void
 }
 const Menu = ({
   className,
@@ -82,7 +82,7 @@ const Menu = ({
   contents,
   onClick,
   ...props
-}: MenuProps): ReactElement<MenuProps> => {
+}: IMenuProps): ReactElement<IMenuProps> => {
   const classes = classnames(
     'menu',
     {

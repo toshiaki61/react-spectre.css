@@ -1,16 +1,16 @@
-import React, {ReactElement, MouseEvent, FocusEvent} from 'react'
 import classnames from 'classnames'
+import React, {FocusEvent, MouseEvent, ReactElement} from 'react'
 
-import Menu, {ItemProps as MenuItemProps} from './Menu'
 import Button from '../elements/Button'
 import Icon from '../elements/Icon'
+import Menu, {IItemProps as MenuItemProps} from './Menu'
 
-export interface DropdownProps {
+export interface IDropdownProps {
   className?: string
   active?: boolean
   right?: boolean
   initialValue?: string
-  contents: Array<MenuItemProps>
+  contents: MenuItemProps[]
   onClick: (e: MouseEvent<any>) => void
   onMenuClick: (e: MouseEvent<any>, id: string) => void
   onBlur: (e: FocusEvent<any>) => void
@@ -24,7 +24,7 @@ const Dropdown = ({
   onClick,
   onMenuClick,
   ...props
-}: DropdownProps): ReactElement<DropdownProps> => {
+}: IDropdownProps): ReactElement<IDropdownProps> => {
   const classes = classnames(
     'dropdown',
     {
@@ -35,7 +35,7 @@ const Dropdown = ({
   )
   return (
     <div className={classes} {...props}>
-      <Button link className="dropdown-toggle" tabIndex="0" onClick={onClick}>
+      <Button link className="dropdown-toggle" tabIndex={0} onClick={onClick}>
         {initialValue} <Icon caret />
       </Button>
       <Menu onClick={onMenuClick} contents={contents} />

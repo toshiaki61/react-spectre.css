@@ -1,8 +1,8 @@
-import React, {ReactElement, ReactChildren} from 'react'
 import classnames from 'classnames'
+import React, {MouseEventHandler, ReactNode, ReactNodeArray} from 'react'
 
-export interface ButtonProps {
-  children?: ReactChildren
+export interface IButtonProps {
+  children?: ReactNode
   className?: string
   loading?: boolean
   href?: string
@@ -15,6 +15,9 @@ export interface ButtonProps {
   link?: boolean
   action?: boolean
   circle?: boolean
+  onClick?: MouseEventHandler<Button>
+  tabIndex?: number
+  disabled?: boolean
 }
 const Button = ({
   children,
@@ -31,7 +34,7 @@ const Button = ({
   action,
   circle,
   ...props
-}: ButtonProps) => {
+}: IButtonProps) => {
   const linkButton = link || href
   const classes = classnames(
     'btn',
@@ -65,12 +68,12 @@ const Button = ({
   }
   return toReturn
 }
-export interface GroupProps {
-  children: ReactChildren
+export interface IGroupProps {
+  children: ReactNodeArray
   className?: string
   block?: boolean
 }
-const Group = ({children, className, block}: GroupProps) => {
+const Group = ({children, className, block}: IGroupProps) => {
   const classes = classnames('btn-group', {'btn-group-block': block}, className)
   return <div className={classes}>{children}</div>
 }

@@ -1,8 +1,8 @@
-import React, {ReactElement} from 'react'
 import classnames from 'classnames'
+import React from 'react'
 import uniqueId from './uniqueId'
 
-export interface RadioSingleProps {
+export interface IRadioSingleProps {
   label?: string
   name: string
   className?: string
@@ -15,7 +15,7 @@ const RadioSingle = ({
   name,
   checked,
   ...props
-}: RadioSingleProps) => {
+}: IRadioSingleProps) => {
   const classes = classnames('form-radio', className)
   const id = uniqueId('radio')
   return (
@@ -30,12 +30,12 @@ RadioSingle.defaultProps = {
   className: '',
   checked: false,
 }
-interface RadioProps extends RadioSingleProps {
+interface IRadioProps extends IRadioSingleProps {
   options: {
-    key: string
+    [key: string]: string
   }
 }
-const Radio = ({name, label, options, ...props}: RadioProps) => {
+const Radio = ({name, label, options, ...props}: IRadioProps) => {
   const keys = Object.keys(options)
   if (keys.length === 0) {
     return <RadioSingle label={label} name={name} {...props} />

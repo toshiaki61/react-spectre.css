@@ -1,9 +1,9 @@
 import classnames from 'classnames'
-import React, {ReactElement} from 'react'
+import React, {ReactElement, ReactNode} from 'react'
 import Icon from '../elements/Icon'
 
 export interface ITitleProps {
-  children: ReactElement<any> | string
+  children: ReactNode
   className?: string
 }
 const Title = ({
@@ -22,7 +22,7 @@ Title.defaultProps = {
   className: '',
 }
 export interface ISubtitleProps {
-  children?: ReactElement<any> | string
+  children?: ReactNode
   className?: string
 }
 const Subtitle = ({
@@ -41,12 +41,19 @@ Subtitle.defaultProps = {
   children: null,
   className: '',
 }
+interface IActionProps {
+  children?: ReactNode
+}
+const Action = ({children}: IActionProps) => (
+  <div className="empty-action">{children}</div>
+)
 export interface IEmptyProps {
   children?: ReactElement<any>
   className?: string
   icon?: string
   title?: string
   subtitle?: string
+  action?: ReactNode
 }
 const Empty = ({
   children,
@@ -54,16 +61,20 @@ const Empty = ({
   icon,
   title,
   subtitle,
+  action,
   ...props
 }: IEmptyProps): ReactElement<IEmptyProps> => {
   const classes = classnames('empty', className)
   return (
     <div className={classes} {...props}>
       {icon ? (
-        <Icon className={`icon-${icon}`} style={{fontSize: '4rem'}} />
+        <div className="empty-icon">
+          <Icon className={`icon-${icon} icon-3x`} />
+        </div>
       ) : null}
       {title ? <Title>{title}</Title> : null}
       {subtitle ? <Subtitle>{subtitle}</Subtitle> : null}
+      {action ? {action} : null}
       {children}
     </div>
   )
@@ -75,4 +86,7 @@ Empty.defaultProps = {
   title: null,
   subtitle: null,
 }
+Empty.Title = Title
+Empty.Subtitle = Subtitle
+Empty.Action = Action
 export default Empty

@@ -1,12 +1,13 @@
 import classnames from 'classnames'
-import React, {ReactElement} from 'react'
+import React, {ReactElement, ReactNode} from 'react'
 
 export interface IPanelProps {
   header?: ReactElement<any>
   nav?: ReactElement<any>
-  content?: ReactElement<any> | string
+  content?: ReactNode
   footer?: ReactElement<any> | string
   headerClass?: string
+  className?: string
 }
 
 const Panel = ({
@@ -15,10 +16,12 @@ const Panel = ({
   content,
   footer,
   headerClass,
+  className,
 }: IPanelProps): ReactElement<IPanelProps> => {
+  const panelClass = classnames('panel', className)
   const headerClasses = classnames('panel-header', headerClass)
   return (
-    <div className="panel">
+    <div className={panelClass}>
       {header ? (
         <div className={headerClasses}>
           {typeof header === 'string' ? (

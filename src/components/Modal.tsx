@@ -1,5 +1,5 @@
 import classnames from 'classnames'
-import React, {MouseEvent, ReactElement} from 'react'
+import React, {MouseEvent, ReactElement, ReactNode} from 'react'
 
 import Button from '../elements/Button'
 import noop from '../utilities/noop'
@@ -7,8 +7,8 @@ import noop from '../utilities/noop'
 export interface IModalProps {
   active?: boolean
   title?: string
-  content?: ReactElement<any> | string
-  footer?: ReactElement<any> | string
+  content?: ReactNode
+  footer?: ReactNode
   small?: boolean
   large?: boolean
   onClearClick?: (e: MouseEvent<any>) => void

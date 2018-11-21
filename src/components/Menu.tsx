@@ -70,7 +70,7 @@ const Item = ({
   )
 }
 Item.defaultProps = {
-  link: '',
+  link: 'javascript:void(0)',
   content: '',
   className: '',
   divider: false,

@@ -1,6 +1,6 @@
 {
   "name": "react-spectre.css",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
@@ -75,7 +75,7 @@
   },
   "dependencies": {
     "react": "^16.4.0",
-    "spectre.css": "0.5.5"
+    "spectre.css": "0.5.6"
   },
   "devDependencies": {
     "@babel/core": "7.1.0",

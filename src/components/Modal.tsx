@@ -11,6 +11,7 @@ export interface IModalProps {
   footer?: ReactNode
   small?: boolean
   large?: boolean
+  className?: string
   onClearClick?: (e: MouseEvent<any>) => void
 }
 
@@ -21,10 +22,11 @@ const Modal = ({
   footer,
   small,
   large,
+  className,
   onClearClick,
   ...props
 }: IModalProps): ReactElement<IModalProps> => {
-  const classes = classnames('modal', {
+  const classes = classnames('modal', className, {
     active,
     'modal-sm': small,
     'modal-lg': large,

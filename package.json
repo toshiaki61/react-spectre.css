@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "test": "node scripts/test.js",
-    "build": "tsc --build tsconfig.json",
+    "build": "tsc -p tsconfig.json",
     "clean": "rimraf dist"
   },
   "eslintConfig": {

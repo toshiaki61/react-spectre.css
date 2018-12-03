@@ -1,5 +1,10 @@
 import classnames from 'classnames'
-import React, {ReactElement, ReactNode, ReactNodeArray} from 'react'
+import React, {
+  CSSProperties,
+  ReactElement,
+  ReactNode,
+  ReactNodeArray,
+} from 'react'
 
 export interface ITileProps {
   compact?: boolean
@@ -7,6 +12,7 @@ export interface ITileProps {
   subtitle?: string
   content?: ReactNode | ReactNodeArray
   icon?: ReactElement<any> | string
+  style?: CSSProperties
   action?: ReactElement<any>
 }
 const Tile = ({
@@ -15,6 +21,7 @@ const Tile = ({
   subtitle,
   content,
   icon,
+  style,
   action,
 }: ITileProps): ReactElement<ITileProps> => {
   const classes = classnames('tile', {'tile-centered': compact})
@@ -22,7 +29,11 @@ const Tile = ({
     <div className={classes}>
       {icon ? <div className="tile-icon">{icon}</div> : null}
       <div className="tile-content">
-        {title ? <p className="tile-title">{title}</p> : null}
+        {title ? (
+          <p className="tile-title" style={style}>
+            {title}
+          </p>
+        ) : null}
         {subtitle ? (
           <p className="tile-subtitle text-gray">{subtitle}</p>
         ) : null}

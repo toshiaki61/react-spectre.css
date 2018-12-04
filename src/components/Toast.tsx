@@ -1,10 +1,10 @@
 import classnames from 'classnames'
-import React, {MouseEvent, ReactElement} from 'react'
+import React, {MouseEvent, ReactElement, ReactNode} from 'react'
 import Button from '../elements/Button'
 
 export interface IToastProps {
-  title?: string
-  content: string
+  title?: ReactNode
+  content: ReactNode
   className?: string
   onClearClick?: (e: MouseEvent<any>) => void
   primary?: boolean

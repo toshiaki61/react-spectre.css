@@ -1,10 +1,17 @@
 import classnames from 'classnames'
-import React, {ReactElement, ReactNode, ReactNodeArray} from 'react'
+import React, {
+  CSSProperties,
+  ReactElement,
+  ReactNode,
+  ReactNodeArray,
+} from 'react'
 import Container from './Container'
 
 interface IColumnsVisualProps {
   gapless?: boolean
   oneline?: boolean
+  style?: CSSProperties
+  className?: string
 }
 export interface IColumnsWithoutContainerProps extends IColumnsVisualProps {
   children: ReactNode | ReactNodeArray

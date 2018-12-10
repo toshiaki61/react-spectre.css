@@ -8,8 +8,8 @@ import React, {
 
 export interface ITileProps {
   compact?: boolean
-  title?: string
-  subtitle?: string
+  title?: ReactNode
+  subtitle?: ReactNode
   content?: ReactNode | ReactNodeArray
   icon?: ReactElement<any> | string
   style?: CSSProperties

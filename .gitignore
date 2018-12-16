@@ -14,4 +14,4 @@ resources/sass/.sass-cache/
 node_modules
 yarn-error.log
 .env
-dist
+# dist

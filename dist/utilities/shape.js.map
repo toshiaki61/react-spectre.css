@@ -1,0 +1,1 @@
+{"version":3,"file":"shape.js","sourceRoot":"","sources":["../../src/utilities/shape.ts"],"names":[],"mappings":"AAAA,OAAO,UAAU,MAAM,YAAY,CAAA;AAMnC,MAAM,CAAC,OAAO,UAAU,KAAK,CAC3B,EAAmC,EACnC,SAAsB;QADrB,oBAAO,EAAE,kBAAM;IAChB,0BAAA,EAAA,cAAsB;IAEtB,OAAO,UAAU,CACf;QACE,WAAW,EAAE,OAAO;QACpB,UAAU,EAAE,MAAM;KACnB,EACD,SAAS,CACV,CAAA;AACH,CAAC"}

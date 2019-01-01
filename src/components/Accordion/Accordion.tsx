@@ -1,17 +1,18 @@
 import classnames from 'classnames'
-import React, {ReactElement} from 'react'
+import React, {ReactElement, ReactNode} from 'react'
 
-import uniqueId from '../elements/form/uniqueId'
-import Icon from '../elements/Icon'
-import position from '../utilities/position'
-import Menu, {IItemProps as IMenuItemProps} from './Menu'
+import uniqueId from '../../elements/form/uniqueId'
+import {Icon} from '../../elements/Icon'
 
-export interface IItemProps {
+import position from '../../utilities/position'
+import Menu, {IItemProps as IMenuItemProps} from '../Menu'
+
+export interface AccordionItemProps {
   contents: IMenuItemProps[]
   className?: string
   exclusive?: boolean
   useIcon?: boolean
-  header: ReactElement<any> | string
+  header: ReactNode
 }
 const Item = ({
   contents,
@@ -19,13 +20,13 @@ const Item = ({
   exclusive,
   useIcon,
   header,
-}: IItemProps): ReactElement<IItemProps> => {
+}: AccordionItemProps): ReactElement<AccordionItemProps> => {
   const classes = classnames('accordion-item', className)
   const id = uniqueId('accordion-item')
   const type = exclusive ? 'radio' : 'checkbox'
   const inputProps = {id, type, name: `accordion-${type}`}
   const icon = useIcon ? (
-    <Icon className={position({marginRight: true})} arrowRight />
+    <Icon className={position({marginRight: true})} type="arrow-right" />
   ) : null
   return (
     <div className={classes}>
@@ -46,8 +47,8 @@ Item.defaultProps = {
   useIcon: false,
 }
 
-export interface IAccordionProps {
-  menus: IItemProps[]
+export interface AccordionProps {
+  menus: AccordionItemProps[]
   className?: string
   exclusive?: boolean
   useIcon?: boolean
@@ -57,23 +58,25 @@ const Accordion = ({
   className,
   exclusive,
   useIcon,
-}: IAccordionProps): ReactElement<IAccordionProps> => {
+}: AccordionProps): ReactElement<AccordionProps> => {
   const classes = classnames('accordion', className)
   return (
     <div className={classes}>
-      {menus.map(({header, contents, ...menu}: IItemProps, i: number) => {
-        const key = `accordion_${i}`
-        return (
-          <Item
-            key={key}
-            exclusive={exclusive}
-            useIcon={useIcon}
-            header={header}
-            contents={contents}
-            {...menu}
-          />
-        )
-      })}
+      {menus.map(
+        ({header, contents, ...menu}: AccordionItemProps, i: number) => {
+          const key = `accordion_${i}`
+          return (
+            <Item
+              key={key}
+              exclusive={exclusive}
+              useIcon={useIcon}
+              header={header}
+              contents={contents}
+              {...menu}
+            />
+          )
+        }
+      )}
     </div>
   )
 }

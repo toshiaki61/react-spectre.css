@@ -1,8 +1,16 @@
 {
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-config-prettier",
+    "rxjs-tslint-rules"
+  ],
   "rules": {
     "jsx-boolean-value": false,
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "no-console": false,
+    "no-unused-variable": false,
+    "interface-name": false
   },
   "linterOptions": {
     "exclude": [

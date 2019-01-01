@@ -19,7 +19,7 @@ const Badge = ({content}: IBadgeProps): ReactElement<IBadgeProps> | null => {
 Badge.defaultProps = {
   content: '',
 }
-export interface IItemProps {
+export interface MenuItemProps {
   id?: string
   link?: string
   content?: ReactNode
@@ -29,7 +29,7 @@ export interface IItemProps {
   badge?: number
   onClick?: (e: MouseEvent<any>, id: string) => void
 }
-const Item = ({
+const MenuItem = ({
   id,
   link,
   content,
@@ -39,7 +39,7 @@ const Item = ({
   badge,
   onClick,
   ...props
-}: IItemProps): ReactElement<IItemProps> => {
+}: MenuItemProps): ReactElement<MenuItemProps> => {
   const classes = classnames('menu-item', className)
   if (divider) {
     return (
@@ -69,7 +69,7 @@ const Item = ({
     </li>
   )
 }
-Item.defaultProps = {
+MenuItem.defaultProps = {
   link: 'javascript:void(0)',
   content: '',
   className: '',
@@ -78,10 +78,10 @@ Item.defaultProps = {
   badge: 0,
 }
 
-export interface IMenuProps {
+export interface MenuProps {
   className?: string
   nav?: boolean
-  contents: IItemProps[]
+  contents: MenuItemProps[]
   onClick?: (e: MouseEvent<any>, id: string) => void
 }
 const Menu = ({
@@ -90,7 +90,7 @@ const Menu = ({
   contents,
   onClick,
   ...props
-}: IMenuProps): ReactElement<IMenuProps> => {
+}: MenuProps): ReactElement<MenuProps> => {
   const classes = classnames(
     'menu',
     {
@@ -106,7 +106,11 @@ const Menu = ({
       {contents.map((content, i) => {
         const key = content.id || `menu-item_${i}`
         return (
-          <Item key={key} {...content} onClick={content.onClick || onClick} />
+          <MenuItem
+            key={key}
+            {...content}
+            onClick={content.onClick || onClick}
+          />
         )
       })}
     </ul>

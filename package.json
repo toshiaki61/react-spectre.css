@@ -1,6 +1,6 @@
 {
   "name": "react-spectre.css",
-  "version": "0.5.6",
+  "version": "0.5.8",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
@@ -11,7 +11,9 @@
     "start": "node scripts/start.js",
     "test": "node scripts/test.js",
     "build": "tsc -p tsconfig.json",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -25,22 +27,22 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
-      "!**/*.d.ts"
+      "!src/**/*.d.ts"
     ],
+    "resolver": "jest-pnp-resolver",
     "setupFiles": [
       "react-app-polyfill/jsdom"
     ],
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.(j|t)s?(x)",
-      "<rootDir>/src/**/?(*.)(spec|test).(j|t)s?(x)"
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jsdom",
     "testURL": "http://localhost",
     "transform": {
-      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.tsx?$": "<rootDir>/config/jest/typescriptTransform.js",
+      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
@@ -50,96 +52,142 @@
       "^react-native$": "react-native-web",
       "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
     },
-    "globals": {
-      "ts-jest": {
-        "tsConfigFile": "tsconfig.test.json"
-      }
-    },
     "moduleFileExtensions": [
+      "web.js",
+      "js",
       "web.ts",
       "ts",
       "web.tsx",
       "tsx",
-      "web.js",
-      "js",
+      "json",
       "web.jsx",
       "jsx",
-      "json",
       "node"
     ]
   },
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      [
+        "react-intl-auto",
+        {
+          "removePrefix": "src/",
+          "filebase": false
+        }
+      ]
     ]
   },
   "dependencies": {
-    "date-fns": "^1.30.1",
-    "react": "^16.6.3",
-    "spectre.css": "0.5.6"
+    "formik": "^1.4.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "spectre.css": "0.5.8"
   },
   "devDependencies": {
-    "@babel/core": "7.1.6",
-    "@svgr/webpack": "2.4.1",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-typescript": "^7.1.0",
+    "@storybook/addon-actions": "^4.1.4",
+    "@storybook/addon-info": "^4.1.4",
+    "@storybook/addon-knobs": "^4.1.4",
+    "@storybook/addon-links": "^4.1.4",
+    "@storybook/addon-options": "^4.1.4",
+    "@storybook/addons": "^4.1.4",
+    "@storybook/react": "^4.1.4",
+    "@svgr/webpack": "4.1.0",
     "@types/classnames": "^2.2.6",
-    "@types/date-fns": "^2.6.0",
+    "@types/http-proxy-middleware": "^0.19.1",
     "@types/jest": "^23.3.10",
-    "@types/node": "^10.12.15",
-    "@types/ramda": "^0.25.44",
-    "@types/react": "16.7.17",
+    "@types/node": "^10.12.18",
+    "@types/react": "16.7.18",
+    "@types/react-color": "^2.14.0",
     "@types/react-dom": "16.0.11",
-    "@types/webpack": "^4.4.19",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "9.0.0",
+    "@types/react-helmet": "^5.0.7",
+    "@types/react-intl": "^2.3.14",
+    "@types/react-intl-redux": "^0.1.11",
+    "@types/react-redux": "^6.0.11",
+    "@types/react-router-dom": "^4.3.1",
+    "@types/react-router-redux": "^5.0.17",
+    "@types/react-select": "^2.0.10",
+    "@types/react-tabs": "^2.3.0",
+    "@types/recompose": "^0.30.0",
+    "@types/redux-form": "^7.4.13",
+    "@types/redux-immutable-state-invariant": "^2.1.0",
+    "@types/redux-logger": "^3.0.6",
+    "@types/storybook-readme": "^4.0.0",
+    "@types/storybook__addon-actions": "^3.4.1",
+    "@types/storybook__addon-info": "^3.4.2",
+    "@types/storybook__addon-knobs": "^4.0.0",
+    "@types/storybook__addon-links": "^3.3.3",
+    "@types/storybook__addon-options": "^4.0.0",
+    "@types/storybook__react": "^4.0.0",
+    "@types/webpack": "^4.4.22",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "10.0.1",
     "babel-jest": "23.6.0",
     "babel-loader": "8.0.4",
-    "babel-plugin-named-asset-import": "^0.2.0",
-    "babel-preset-react-app": "^5.0.0",
+    "babel-plugin-named-asset-import": "^0.2.3",
+    "babel-plugin-react-intl-auto": "^1.4.0",
+    "babel-preset-react-app": "^7.0.0",
     "bfj": "6.1.1",
     "case-sensitive-paths-webpack-plugin": "2.1.2",
     "chalk": "2.4.1",
-    "css-loader": "1.0.0",
-    "dotenv": "6.0.0",
+    "css-loader": "2.0.2",
+    "dotenv": "6.2.0",
     "dotenv-expand": "4.2.0",
-    "eslint": "5.6.0",
-    "eslint-config-react-app": "^3.0.0",
+    "eslint": "5.10.0",
+    "eslint-config-react-app": "^3.0.5",
     "eslint-loader": "2.1.1",
-    "eslint-plugin-flowtype": "2.50.1",
+    "eslint-plugin-flowtype": "3.2.0",
     "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-jsx-a11y": "6.1.1",
+    "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "7.11.1",
-    "file-loader": "2.0.0",
-    "fork-ts-checker-webpack-plugin": "0.4.15",
+    "extract-react-intl": "^0.7.0",
+    "extract-react-intl-messages": "^0.11.1",
+    "file-loader": "3.0.1",
+    "fork-ts-checker-webpack-plugin-alt": "0.4.14",
     "fs-extra": "7.0.1",
     "html-webpack-plugin": "4.0.0-alpha.2",
     "identity-obj-proxy": "3.0.0",
     "jest": "23.6.0",
-    "mini-css-extract-plugin": "0.4.4",
+    "jest-pnp-resolver": "1.0.2",
+    "jest-resolve": "23.6.0",
+    "json-loader": "^0.5.7",
+    "mini-css-extract-plugin": "0.5.0",
+    "node-sass": "^4.11.0",
     "optimize-css-assets-webpack-plugin": "5.0.1",
+    "pnp-webpack-plugin": "1.2.1",
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "3.0.0",
-    "postcss-preset-env": "6.4.0",
+    "postcss-preset-env": "6.5.0",
     "postcss-safe-parser": "4.0.1",
     "prettier": "^1.15.3",
+    "prettier-stylelint": "^0.4.2",
+    "prop-types": "^15.6.2",
     "raf": "3.4.1",
-    "ramda": "^0.25.0",
     "react-dev-utils": "^6.1.1",
-    "resolve": "1.8.1",
-    "rxjs-tslint-rules": "^4.11.0",
+    "react-docgen-typescript": "^1.12.2",
+    "react-docgen-typescript-loader": "^3.0.0",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "react-scripts": "^2.1.2",
+    "react-styleguidist": "^8.0.6",
+    "redux-immutable-state-invariant": "^2.1.0",
+    "resolve": "1.9.0",
+    "rxjs-tslint-rules": "^4.14.1",
     "sass-loader": "7.1.0",
-    "source-map-loader": "^0.2.4",
+    "storybook-readme": "^4.0.2",
     "style-loader": "0.23.1",
+    "stylelint": "^9.9.0",
+    "stylelint-config-rational-order": "^0.0.2",
     "terser-webpack-plugin": "1.1.0",
-    "thread-loader": "1.2.0",
-    "ts-jest": "23.10.4",
-    "ts-loader": "5.3.0",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
-    "tslint": "^5.11.0",
+    "tslint": "^5.12.0",
     "tslint-config-prettier": "^1.17.0",
     "tslint-react": "^3.6.0",
     "typescript": "^3.2.2",
     "url-loader": "1.1.2",
-    "webpack": "4.25.1",
+    "webpack": "4.28.1",
     "webpack-dev-server": "3.1.10",
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "3.6.3"

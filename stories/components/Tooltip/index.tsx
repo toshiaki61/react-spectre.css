@@ -1,14 +1,13 @@
 import React from 'react'
 
-import {object, text} from '@storybook/addon-knobs'
+import {text} from '@storybook/addon-knobs'
 
-import {optionalSelect} from '../../utils/optionalSelect'
-
-import {Tooltip, TooltipPosition} from '@components/Tooltip'
-
+import {Tooltip} from '@components/Tooltip'
 import {Button} from '@elements/Button'
+import {TooltipPosition} from '@utils/interfaces'
 
 import {OptionalKeyMap} from '../../utils/OptionalKeyMap'
+import {optionalSelect} from '../../utils/optionalSelect'
 
 const tooltipPositions: OptionalKeyMap<TooltipPosition> = {
   right: 'right',

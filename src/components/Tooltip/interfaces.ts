@@ -1,6 +1,6 @@
 import {ReactNode} from 'react'
 
-export type TooltipPosition = 'right' | 'left' | 'bottom'
+import {TooltipPosition} from '@utils/interfaces'
 
 export interface TooltipProps {
   children: ReactNode

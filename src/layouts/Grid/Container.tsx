@@ -1,7 +1,8 @@
-import classnames from 'classnames'
 import React, {ReactElement} from 'react'
 
-export interface IContainerProps {
+import cx from 'classnames'
+
+export interface ContainerProps {
   children: ReactElement<any>
   className?: string
   xs?: boolean
@@ -19,8 +20,8 @@ const Container = ({
   lg,
   xl,
   ...props
-}: IContainerProps): ReactElement<IContainerProps> => {
-  const classes = classnames(
+}: ContainerProps): ReactElement<ContainerProps> => {
+  const classes = cx(
     'container',
     {
       xs,

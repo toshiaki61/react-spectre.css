@@ -7,9 +7,7 @@ import {TooltipProps} from './interfaces'
 const Tooltip = ({children, text, position}: TooltipProps) => (
   <span
     className={cx('tooltip', {
-      'tooltip-right': position === 'right',
-      'tooltip-left': position === 'left',
-      'tooltip-bottom': position === 'bottom',
+      [`tooltip-${position}`]: position,
     })}
     data-tooltip={text}
   >

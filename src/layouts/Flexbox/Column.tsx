@@ -1,7 +1,8 @@
-import classnames from 'classnames'
 import React, {ReactElement} from 'react'
 
-export interface IColumnProps {
+import cx from 'classnames'
+
+export interface ColumnProps {
   children: ReactElement<any>
   className?: string
   xs?: number
@@ -21,8 +22,8 @@ const Column = ({
   xl,
   size,
   ...props
-}: IColumnProps): ReactElement<IColumnProps> => {
-  const classes = classnames(
+}: ColumnProps): ReactElement<ColumnProps> => {
+  const classes = cx(
     'column',
     {
       [`col-xs-${xs || 0}`]: !!xs,

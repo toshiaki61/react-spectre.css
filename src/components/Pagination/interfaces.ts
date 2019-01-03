@@ -40,4 +40,5 @@ export interface PaginationProps {
     next: PaginationTitle
   }
   onClick?: (e: MouseEvent<any>, page: number) => void
+  children?: ReactNode
 }

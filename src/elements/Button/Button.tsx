@@ -3,15 +3,10 @@ import React, {HTMLProps} from 'react'
 import cx from 'classnames'
 
 import {ButtonProps} from './interfaces'
+import {isAnchorElement, isButtonElement} from './util'
 
 import ButtonGroup from './ButtonGroup'
 
-function isAnchorElement(item: any): item is HTMLProps<HTMLAnchorElement> {
-  return item.href
-}
-function isButtonElement(item: any): item is HTMLProps<HTMLButtonElement> {
-  return !item.href
-}
 const Button = ({
   size,
   color,

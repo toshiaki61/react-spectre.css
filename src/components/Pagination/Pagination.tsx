@@ -13,7 +13,11 @@ const Pagination = ({
   each,
   title,
   onClick,
+  children,
 }: PaginationProps): ReactElement<PaginationProps> => {
+  if (children) {
+    return <ul className="pagination">{children}</ul>
+  }
   if (title) {
     return (
       <ul className="pagination">

@@ -4,7 +4,7 @@ import cx from 'classnames'
 
 import {IconProps} from './interfaces'
 
-const Icon = ({className, size, type, ...props}: IconProps) => {
+const Icon = ({className, size, type, ...rest}: IconProps) => {
   const classes = cx(
     'icon',
     `icon-${type}`,
@@ -13,7 +13,7 @@ const Icon = ({className, size, type, ...props}: IconProps) => {
     },
     className
   )
-  return <i className={classes} {...props} />
+  return <i className={classes} {...rest} />
 }
 
 Icon.defaultProps = {

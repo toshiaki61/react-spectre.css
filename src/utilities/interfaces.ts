@@ -127,6 +127,7 @@ interface DividerProps {
   dividerContent: string
 }
 export type TooltipPosition = 'right' | 'left' | 'bottom'
+
 interface TooltipProps {
   tooltip: string
   tooltipPosition: TooltipPosition

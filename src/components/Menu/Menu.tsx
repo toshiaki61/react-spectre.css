@@ -13,31 +13,30 @@ const Menu = ({
   children,
   ...props
 }: MenuProps): ReactElement<MenuProps> => {
-  const classes = cx(
-    'menu',
-    {
-      'menu-nav': nav,
-    },
-    className
-  )
   const ulProps = Object.keys(props)
     .filter(p => p !== 'header')
-    .reduce((memo, p) => Object.assign(memo, {[p]: props[p]}), {})
+    .reduce((memo, p) => ({...memo, [p]: props[p]}), {})
   return (
-    <ul className={classes} {...ulProps}>
+    <ul
+      className={cx(
+        'menu',
+        {
+          'menu-nav': nav,
+        },
+        className
+      )}
+      {...ulProps}
+    >
       {children
         ? children
         : contents &&
-          contents.map((content, i) => {
-            const key = content.id || `menu-item_${i}`
-            return (
-              <MenuItem
-                key={key}
-                {...content}
-                onClick={content.onClick || onClick}
-              />
-            )
-          })}
+          contents.map((content, i) => (
+            <MenuItem
+              key={content.id}
+              {...content}
+              onClick={content.onClick || onClick}
+            />
+          ))}
     </ul>
   )
 }

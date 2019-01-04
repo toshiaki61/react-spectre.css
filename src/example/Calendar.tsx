@@ -1,7 +1,9 @@
-import {eachDay, endOfWeek, format, startOfWeek} from 'date-fns'
 import React, {Component, MouseEvent} from 'react'
-import Popover from '../components/Popover'
-import Calendar from '../experimentals/Calendar'
+
+import {eachDay, endOfWeek, format, startOfWeek} from 'date-fns'
+
+import {Popover} from '@components/Popover'
+import {Calendar} from '@experimentals/Calendar'
 
 interface ICalendarExampleState {
   active: boolean
@@ -31,7 +33,8 @@ class CalendarExample extends Component<any, ICalendarExampleState> {
       <Popover target={<div>PopOver</div>} bottom>
         <Calendar
           current={current}
-          onMonthClick={this.onMonthClick}
+          // onMonthClick={this.onMonthClick}
+          // nav={{current: {on}}}
           onDateClick={this.onClick}
           weekdays={this.weekdays}
         />

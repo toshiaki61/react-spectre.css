@@ -1,29 +1,22 @@
-import classnames from 'classnames'
-import React, {Fragment, ReactNode} from 'react'
+import React from 'react'
 
-interface IHeroProps {
-  children?: ReactNode
-  title?: ReactNode
-  content?: ReactNode
-  primary?: boolean
-  gray?: boolean
-}
-const Hero = ({children, title, content, gray, primary}: IHeroProps) => {
-  const className = classnames('hero', {'bg-gray': gray, 'bg-primary': primary})
-  return (
-    <div className={className}>
-      <div className="hero-body">
-        {children ? (
-          children
-        ) : (
-          <Fragment>
-            <h1>{title}</h1>
-            <p>{content}</p>
-          </Fragment>
-        )}
-      </div>
-    </div>
-  )
-}
+import cx from 'classnames'
+
+import {HeroProps} from './interfaces'
+
+import HeroBody from './HeroBody'
+
+const Hero = ({children, className, size, title, content}: HeroProps) => (
+  <div className={cx('hero', className, {[`hero-${size}`]: size})}>
+    {children ? (
+      children
+    ) : (
+      <HeroBody>
+        <h1>{title}</h1>
+        <p>{content}</p>
+      </HeroBody>
+    )}
+  </div>
+)
 
 export default Hero

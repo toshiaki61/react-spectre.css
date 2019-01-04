@@ -1,5 +1,5 @@
 export * from './interfaces'
 
 export {default as Autocomplete} from './Autocomplete'
-export {default as MenuBadge} from './MenuBadge'
-export {default as MenuItem} from './MenuItem'
+export {default as FormAutocomplete} from './FormAutocomplete'
+export {default as FormAutocompleteInput} from './FormAutocompleteInput'

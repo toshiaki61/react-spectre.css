@@ -38,7 +38,7 @@ const Modal = ({
         <ModalContainer>
           <ModalHeader>
             <Button
-              clear
+              clearButton
               onClick={onClearClick}
               {...attr({floating: 'right'})}
             />

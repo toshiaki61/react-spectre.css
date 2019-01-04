@@ -2,16 +2,8 @@ import React, {ReactElement} from 'react'
 
 import cx from 'classnames'
 
-export interface ColumnProps {
-  children: ReactElement<any>
-  className?: string
-  xs?: number
-  sm?: number
-  md?: number
-  lg?: number
-  xl?: number
-  size?: number
-}
+import {ColumnProps} from './interfaces'
+
 const Column = ({
   children,
   className,
@@ -21,33 +13,39 @@ const Column = ({
   lg,
   xl,
   size,
+  offset,
+  autoWidth,
+  autoWidthXl,
+  autoWidthLg,
+  autoWidthMd,
+  autoWidthSm,
+  autoWidthXs,
   ...props
-}: ColumnProps): ReactElement<ColumnProps> => {
-  const classes = cx(
-    'column',
-    {
-      [`col-xs-${xs || 0}`]: !!xs,
-      [`col-sm-${sm || 0}`]: !!sm,
-      [`col-md-${md || 0}`]: !!md,
-      [`col-lg-${lg || 0}`]: !!lg,
-      [`col-xl-${xl || 0}`]: !!xl,
-      [`col-${size || 0}`]: !!size,
-    },
-    className
-  )
-  return (
-    <div className={classes} {...props}>
-      {children}
-    </div>
-  )
-}
-Column.defaultProps = {
-  className: '',
-  xs: 0,
-  sm: 0,
-  md: 0,
-  lg: 0,
-  xl: 0,
-  size: 0,
-}
+}: ColumnProps): ReactElement<ColumnProps> => (
+  <div
+    className={cx(
+      'column',
+      {
+        [`col-xs-${xs}`]: xs,
+        [`col-sm-${sm}`]: sm,
+        [`col-md-${md}`]: md,
+        [`col-lg-${lg}`]: lg,
+        [`col-xl-${xl}`]: xl,
+        [`col-${size}`]: size,
+        [`col-${offset}-auto`]: offset,
+        'col-auto': autoWidth,
+        'col-xl-auto': autoWidthXl,
+        'col-lg-auto': autoWidthLg,
+        'col-md-auto': autoWidthMd,
+        'col-sm-auto': autoWidthSm,
+        'col-xs-auto': autoWidthXs,
+      },
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)
+
 export default Column

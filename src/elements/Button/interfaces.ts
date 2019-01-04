@@ -9,6 +9,8 @@ export type ButtonSize = 'lg' | 'sm'
 
 export type ButtonColor = 'success' | 'error' | 'link' | 'primary'
 
+export type ButtonType = 'button' | 'submit'
+
 export interface BaseButtonProps {
   children?: ReactNode
   className?: string
@@ -16,15 +18,15 @@ export interface BaseButtonProps {
   href?: string
   size?: ButtonSize
   color?: ButtonColor
-  block?: boolean
   inputGroup?: boolean
-  clear?: boolean
+  blockButton?: boolean
+  clearButton?: boolean
   actionButton?: boolean
   circle?: boolean
   onClick?: MouseEventHandler
   tabIndex?: number
   disabled?: boolean
-  type?: 'button' | 'submit'
+  type?: ButtonType
   style?: CSSProperties
 }
 

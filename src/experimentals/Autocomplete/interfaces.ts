@@ -1,4 +1,6 @@
-import {ChangeEvent, FocusEvent, MouseEvent} from 'react'
+import {ChangeEventHandler, FocusEventHandler, ReactNode} from 'react'
+
+import {MouseEventIdHandler} from '../../interfaces'
 
 export interface SuggestProps {
   id: string
@@ -14,9 +16,22 @@ export interface AutocompleteProps {
   suggests: SuggestProps[]
   input: string
   loading?: boolean
-  onChange: (e: ChangeEvent<any>) => void
-  onFocus: (e: FocusEvent<any>) => void
-  onBlur: (e: FocusEvent<any>) => void
-  onClearClick: (e: MouseEvent<any>, id: string) => void
-  onSelected: (e: MouseEvent<any>, id: string) => void
+  onChange: ChangeEventHandler
+  onFocus: FocusEventHandler
+  onBlur: FocusEventHandler
+  onClearClick: MouseEventIdHandler
+  onSelected: MouseEventIdHandler
+}
+
+export interface FormAutocompleteProps {
+  children: ReactNode
+  className?: string
+  onFocus: FocusEventHandler
+  onBlur: FocusEventHandler
+}
+
+export interface FormAutocompleteInputProps {
+  children: ReactNode
+  className?: string
+  active?: boolean
 }

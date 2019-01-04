@@ -8,28 +8,35 @@ import {MenuItemProps} from './interfaces'
 import MenuBadge from './MenuBadge'
 
 const MenuItem = ({
+  children,
+  className,
   id,
   link,
   content,
-  className,
   divider,
   active,
   badge,
   onClick,
   ...props
 }: MenuItemProps): ReactElement<MenuItemProps> => {
-  const classes = cx('menu-item', className)
+  if (children) {
+    return (
+      <li className={cx('menu-item', className)} {...props}>
+        {children}
+      </li>
+    )
+  }
   if (divider) {
     return (
       <Divider
-        className={className}
+        className={cx('menu-item', className)}
         content={typeof divider === 'string' ? divider : ''}
       />
     )
   }
   if (typeof content !== 'string') {
     return (
-      <li className={classes} {...props}>
+      <li className={cx('menu-item', className)} {...props}>
         {content}
       </li>
     )
@@ -41,7 +48,7 @@ const MenuItem = ({
   )
 
   return (
-    <li className={classes} {...props}>
+    <li className={cx('menu-item', className)} {...props}>
       <MenuBadge content={badge} />
       <a href={link} className={cx({active})} onClick={handleItemClick}>
         {content}

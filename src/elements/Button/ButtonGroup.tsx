@@ -4,13 +4,14 @@ import cx from 'classnames'
 
 import {ButtonGroupProps} from './interfaces'
 
-const ButtonGroup = ({
-  children,
-  className = '',
-  block = false,
-}: ButtonGroupProps) => {
-  const classes = cx('btn-group', {'btn-group-block': block}, className)
-  return <div className={classes}>{children}</div>
+const ButtonGroup = ({children, className, block}: ButtonGroupProps) => (
+  <div className={cx('btn-group', {'btn-group-block': block}, className)}>
+    {children}
+  </div>
+)
+ButtonGroup.defaultProps = {
+  className: '',
+  block: false,
 }
 
 export default ButtonGroup

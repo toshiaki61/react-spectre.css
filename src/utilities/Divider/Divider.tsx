@@ -1,6 +1,8 @@
-import React, {ReactChildren, ReactElement} from 'react'
+import React, {ReactElement} from 'react'
 
 import cx from 'classnames'
+
+import {attr} from '@utils/attr'
 
 import {DividerProps} from './interfaces'
 
@@ -12,28 +14,34 @@ const Divider = ({
   center,
   className,
   ...rest
-}: DividerProps): ReactElement<DividerProps> => {
-  const classes = cx(
-    {
-      divider: !vertical,
-      'divider-vert': vertical,
-      'text-center': center,
-    },
-    className
-  )
-  if (li) {
-    return (
-      <li className={classes} data-content={content} {...rest}>
-        {children}
-      </li>
-    )
-  }
-  return (
-    <div className={classes} data-content={content} {...rest}>
+}: DividerProps): ReactElement<DividerProps> =>
+  li ? (
+    <li
+      {...attr({
+        divider: true,
+        dividerVertical: vertical,
+        dividerContent: content,
+        className: cx({'text-center': center}),
+      })}
+      {...rest}
+    >
+      {children}
+    </li>
+  ) : (
+    <div
+      {...attr({
+        divider: true,
+        dividerVertical: vertical,
+        dividerContent: content,
+        className: cx({'text-center': center}),
+      })}
+      data-content={content}
+      {...rest}
+    >
       {children}
     </div>
   )
-}
+
 Divider.defaultProps = {
   children: null,
   vertical: false,

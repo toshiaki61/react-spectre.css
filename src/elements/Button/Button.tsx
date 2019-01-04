@@ -8,29 +8,29 @@ import {isAnchorElement, isButtonElement} from './util'
 import ButtonGroup from './ButtonGroup'
 
 const Button = ({
+  children,
+  className,
   size,
   color,
-  children = '',
-  className = '',
-  loading = false,
-  block = false,
-  inputGroup = false,
-  clear = false,
-  actionButton = false,
-  circle = false,
+  loading,
+  circle,
+  blockButton,
+  inputGroup,
+  clearButton,
+  actionButton,
   ...props
 }: ButtonProps) => {
   const classes = cx(
     'btn',
     {
       loading,
+      circle,
       [`btn-${size}`]: size,
       [`btn-${color}`]: color,
-      'btn-block': block,
       'input-group-btn': inputGroup,
-      'btn-clear': clear,
       'btn-action': actionButton,
-      circle,
+      'btn-block': blockButton,
+      'btn-clear': clearButton,
     },
     className
   )
@@ -49,6 +49,16 @@ const Button = ({
   }
   return null
 }
-
+Button.defaultProps = {
+  children: '',
+  className: '',
+  loading: false,
+  circle: false,
+  inputGroup: false,
+  blockButton: false,
+  clearBUtton: false,
+  actionButton: false,
+}
 Button.Group = ButtonGroup
+
 export default Button

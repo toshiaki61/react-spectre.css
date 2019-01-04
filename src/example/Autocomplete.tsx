@@ -1,5 +1,6 @@
 import React, {ChangeEvent, Component, MouseEvent} from 'react'
-import Autocomplete from '../components/Autocomplete'
+
+import {Autocomplete} from '@experimentals/Autocomplete'
 
 interface ISuggest {
   id: string

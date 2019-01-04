@@ -8,16 +8,19 @@ import {Avatar} from '../Avatar'
 
 import {ChipProps} from './interfaces'
 
+import ChipWrapper from './ChipWrapper'
+
 const Chip = ({
+  children,
+  htmlFor,
   clear,
   icon,
   avatar,
   content,
   className,
   onClearClick,
-  children,
 }: ChipProps): ReactElement<ChipProps> => (
-  <span className={cx('chip', className)}>
+  <ChipWrapper htmlFor={htmlFor} className={cx('chip', className)}>
     {children ? (
       children
     ) : (
@@ -25,10 +28,10 @@ const Chip = ({
         {icon}
         {avatar ? <Avatar size="sm" {...avatar} /> : null}
         {content}
-        {clear ? <Button clear onClick={onClearClick} /> : null}
+        {clear ? <Button clearButton onClick={onClearClick} /> : null}
       </Fragment>
     )}
-  </span>
+  </ChipWrapper>
 )
 
 Chip.defaultProps = {

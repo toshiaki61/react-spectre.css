@@ -28,9 +28,9 @@ const component = () => (
     size={optionalSelect<ButtonSize | ''>('Size', sizeOptions, '')}
     color={optionalSelect<ButtonColor | ''>('Color', colorOptions, '')}
     loading={boolean('loading', false)}
-    block={boolean('block', false)}
+    blockButton={boolean('block', false)}
     inputGroup={boolean('inputGroup', false)}
-    clear={boolean('clear', false)}
+    clearButton={boolean('clear', false)}
     actionButton={boolean('actionButton', false)}
     circle={boolean('circle', false)}
     disabled={boolean('disabled', false)}

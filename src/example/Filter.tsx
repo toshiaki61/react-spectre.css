@@ -1,7 +1,8 @@
 import React, {ChangeEvent, Component} from 'react'
-import Filter from '../experimentals/Filter'
 
-interface IFilterProps {
+import {Filter} from '@experimentals/Filter'
+
+interface FilterProps {
   tags: {
     key: string
   }
@@ -12,10 +13,10 @@ interface IFilterProps {
   }>
 }
 
-interface IFilterExampleState {
+interface FilterExampleState {
   active: string
 }
-class FilterExample extends Component<IFilterProps, IFilterExampleState> {
+class FilterExample extends Component<FilterProps, FilterExampleState> {
   public static defaultProps = {
     tags: {
       'tag-0': 'All',
@@ -51,7 +52,7 @@ class FilterExample extends Component<IFilterProps, IFilterExampleState> {
       <Filter
         tags={tags}
         data={data}
-        active={active}
+        activeId={active}
         onChange={this.onChange}
       />
     )

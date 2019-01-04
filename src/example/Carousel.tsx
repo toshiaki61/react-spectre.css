@@ -1,7 +1,8 @@
 import React, {ChangeEvent, Component} from 'react'
-import Carousel from '../experimentals/Carousel'
 
-interface ICarouselProps {
+import {Carousel} from '@experimentals/Carousel'
+
+interface CarouselProps {
   slides: Array<{
     src: string
     alt: string
@@ -10,7 +11,7 @@ interface ICarouselProps {
 interface ICarouselExampleState {
   active: string
 }
-class CarouselExample extends Component<ICarouselProps, ICarouselExampleState> {
+class CarouselExample extends Component<CarouselProps, ICarouselExampleState> {
   public static defaultProps = {
     slides: [
       {

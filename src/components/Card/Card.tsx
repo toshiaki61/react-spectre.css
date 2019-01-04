@@ -1,5 +1,7 @@
 import React, {ReactElement} from 'react'
 
+import cx from 'classnames'
+
 import {CardItemHeaderProps, CardProps} from './interfaces'
 
 import CardBody from './CardBody'
@@ -12,8 +14,13 @@ import CardTitle from './CardTitle'
 function isCardItemHeader(item: any): item is CardItemHeaderProps {
   return item.button && item.title
 }
-const Card = ({items, children}: CardProps): ReactElement<CardProps> => (
-  <div className="card">
+const Card = ({
+  items,
+  children,
+  className,
+  ...rest
+}: CardProps): ReactElement<CardProps> => (
+  <div className={cx('card', className)} {...rest}>
     {children
       ? children
       : items &&

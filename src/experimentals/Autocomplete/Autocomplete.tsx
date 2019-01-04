@@ -1,43 +1,13 @@
-import classnames from 'classnames'
-import React, {ChangeEvent, FocusEvent, MouseEvent, ReactElement} from 'react'
-import {Button, Icon} from '../../elements'
+import React, {MouseEvent, ReactElement, useCallback} from 'react'
 
-import Avatar from '../Avatar'
-import Chip from '../Chip'
-import Tile from '../Tile'
-import {AutocompleteProps, SuggestProps} from './interfaces'
+import {Avatar, Chip, Menu, MenuItem, Tile} from '@components/index'
+import {Button, FormIcon, FormInput, HasIcon} from '@elements/index'
 
-const delimiter: string = '______'
-function mark(
-  target: string,
-  search: string
-): string | Array<string | ReactElement<any>> {
-  if (!search) {
-    return target
-  }
-  const regex: RegExp = new RegExp(`(${search})`, 'ig')
-  return target
-    .replace(regex, `${delimiter}$1${delimiter}`)
-    .replace(new RegExp(`^${delimiter}|${delimiter}$`, 'g'), '')
-    .split(delimiter)
-    .filter((row: string) => row !== '')
-    .map((row: string, i: number) => {
-      if (regex.test(row)) {
-        const key: string = `mark-${i}`
-        return <mark key={key}>{row}</mark>
-      }
-      return row
-    })
-}
-function filter(word: string, key: string): (v: SuggestProps) => boolean {
-  const regex = new RegExp(word, 'ig')
-  return function search(value) {
-    if (word === '') {
-      return true
-    }
-    return regex.test(value[key])
-  }
-}
+import {AutocompleteProps} from './interfaces'
+
+import FormAutocomplete from './FormAutocomplete'
+import FormAutocompleteInput from './FormAutocompleteInput'
+import {filter, mark} from './util'
 
 const Autocomplete = ({
   placeholder,
@@ -52,23 +22,14 @@ const Autocomplete = ({
   onClearClick,
   onSelected,
 }: AutocompleteProps): ReactElement<AutocompleteProps> => {
-  const classes = classnames('form-autocomplete-input form-input', {
-    'is-focused': active,
-  })
-  const inputNode = (
-    <input
-      className="form-input"
-      type="text"
-      placeholder={placeholder}
-      value={input}
-      onChange={onChange}
-    />
-  )
   return (
-    <div className="form-autocomplete" onFocus={onFocus} onBlur={onBlur}>
-      <div className={classes}>
+    <FormAutocomplete onFocus={onFocus} onBlur={onBlur}>
+      <FormAutocompleteInput active={active}>
         {selected.map(({id, name, img, initial}) => {
-          const handleClearClick = (e: MouseEvent<any>) => onClearClick(e, id)
+          const handleClearClick = useCallback(
+            (e: MouseEvent<any>) => onClearClick(e, id),
+            [id]
+          )
           return (
             <Chip
               key={id}
@@ -81,21 +42,34 @@ const Autocomplete = ({
         })}
 
         {loading ? (
-          <div className="has-icon-left">
-            {inputNode}
-            <Icon form loading />
-          </div>
+          <HasIcon position="left">
+            <FormInput
+              type="text"
+              placeholder={placeholder}
+              value={input}
+              onChange={onChange}
+            />
+            <FormIcon loading />
+          </HasIcon>
         ) : (
-          inputNode
+          <FormInput
+            type="text"
+            placeholder={placeholder}
+            value={input}
+            onChange={onChange}
+          />
         )}
-      </div>
-      <ul className="menu" style={{position: active ? 'static' : 'absolute'}}>
+      </FormAutocompleteInput>
+      <Menu style={{position: active ? 'static' : 'absolute'}}>
         {suggests
           .filter(v => filter(input, 'name')(v))
           .map(({id, name, img, initial}) => {
-            const handleSelect = (e: MouseEvent<any>) => onSelected(e, id)
+            const handleSelect = useCallback(
+              (e: MouseEvent<any>) => onSelected(e, id),
+              [id]
+            )
             return (
-              <li key={id} className="menu-item">
+              <MenuItem key={id}>
                 <Button href="#" onClick={handleSelect}>
                   <Tile
                     compact
@@ -103,11 +77,11 @@ const Autocomplete = ({
                     icon={<Avatar sm initial={initial} src={img} alt={name} />}
                   />
                 </Button>
-              </li>
+              </MenuItem>
             )
           })}
-      </ul>
-    </div>
+      </Menu>
+    </FormAutocomplete>
   )
 }
 Autocomplete.defaultProps = {
@@ -115,4 +89,5 @@ Autocomplete.defaultProps = {
   active: false,
   loading: false,
 }
+
 export default Autocomplete

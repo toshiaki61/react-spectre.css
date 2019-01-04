@@ -1,4 +1,4 @@
-import {ReactNode, ReactNodeArray} from 'react'
+import {ChangeEventHandler, ReactNode, ReactNodeArray} from 'react'
 
 import {IconType} from '@elements/Icon'
 
@@ -50,6 +50,8 @@ export interface FormInputProps {
   size?: FormSize
   state?: FormFieldState
   placeholder?: string
+  value?: string
+  onChange?: ChangeEventHandler
 }
 
 export interface FormTextareaProps {

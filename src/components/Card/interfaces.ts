@@ -1,4 +1,5 @@
-import {ReactNode} from 'react'
+import {CSSProperties, ReactNode} from 'react'
+
 import {BasePartProps} from '../../interfaces'
 
 export interface CardItemHeaderProps {
@@ -19,6 +20,8 @@ export interface CardItemProps {
 export interface CardProps {
   items?: CardItemProps[]
   children?: ReactNode
+  className?: string
+  style?: CSSProperties
 }
 
 export type CardPartProps = Partial<BasePartProps>

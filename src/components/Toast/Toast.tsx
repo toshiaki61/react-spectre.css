@@ -21,7 +21,11 @@ const Toast = ({
       })}
     >
       {onClearClick ? (
-        <Button clear {...attr({floating: 'right'})} onClick={onClearClick} />
+        <Button
+          clearButton
+          {...attr({floating: 'right'})}
+          onClick={onClearClick}
+        />
       ) : null}
       {title ? <h5>{title}</h5> : null}
       {children}

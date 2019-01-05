@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 
-import {number, object, text} from '@storybook/addon-knobs'
+import {object, text} from '@storybook/addon-knobs'
 
 import {Avatar, AvatarPresenceType, AvatarSizeType} from '@components/Avatar'
 
@@ -23,14 +23,24 @@ const avatarPresences: OptionalKeyMap<AvatarPresenceType> = {
 }
 const component = () => {
   return (
-    <Avatar
-      size={optionalSelect('Size', avatarSizes, '')}
-      initial={text('initial', '')}
-      src={text('src', '')}
-      alt={text('alt', '')}
-      icon={object('icon', {src: ''})}
-      presence={optionalSelect('Presence', avatarPresences, '')}
-    />
+    <Fragment>
+      <Avatar
+        size={optionalSelect('Size1', avatarSizes, 'lg')}
+        initial={text('initial1', 'Lg')}
+        // src={text('src', '')}
+        // alt={text('alt', '')}
+        // icon={object('icon', {src: ''})}
+        presence={optionalSelect('Presence', avatarPresences, '')}
+      />
+      <Avatar
+        size={optionalSelect('Size2', avatarSizes, 'xs')}
+        // initial={text('initial2', 'Xs')}
+        src={text('src', '/man.png')}
+        alt={text('alt', 'man')}
+        icon={object('icon', {src: '/woman.png', alt: 'woman'})}
+        // presence={optionalSelect('Presence', avatarPresences, '')}
+      />
+    </Fragment>
   )
 }
 

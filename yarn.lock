@@ -1126,6 +1126,14 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
+"@personare/react-storybook-decorator-github-corner@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@personare/react-storybook-decorator-github-corner/-/react-storybook-decorator-github-corner-0.1.5.tgz#2473b1898bd986f0cd0f4664a4b40fa0074a457e"
+  integrity sha1-JHOxiYvZhvDND0ZkpLQPoAdKRX4=
+  dependencies:
+    react "^15.3.0"
+    react-github-corner "^0.3.0"
+
 "@phenomnomnominal/tsquery@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@phenomnomnominal/tsquery/-/tsquery-3.0.0.tgz#6f2f4dbf6304ff52b12cc7a5b979f20c3794a22a"
@@ -4428,7 +4436,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-class@^15.6.2:
+create-react-class@^15.6.0, create-react-class@^15.6.2:
   version "15.6.3"
   resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
   integrity sha512-M+/3Q6E6DLO6Yx3OwrWjwHBnvfXXYA7W+dFjt/ZDBemHO1DDZhsalX/NUtnTYclN6GfnBDRh4qRHjcDHmlJBJg==
@@ -12005,6 +12013,11 @@ react-fuzzy@^0.5.2:
     fuse.js "^3.0.1"
     prop-types "^15.5.9"
 
+react-github-corner@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/react-github-corner/-/react-github-corner-0.3.0.tgz#b34c613e6f9cceb49fbe51378b78a9061af4da98"
+  integrity sha1-s0xhPm+czrSfvlE3i3ipBhr02pg=
+
 react-group@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/react-group/-/react-group-1.0.6.tgz#8dd7c00c3b35d05ce164021458bb07d580e3001a"
@@ -12217,6 +12230,17 @@ react-treebeard@^3.1.0:
     prop-types "^15.6.2"
     shallowequal "^1.1.0"
     velocity-react "^1.4.1"
+
+react@^15.3.0:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-15.6.2.tgz#dba0434ab439cfe82f108f0f511663908179aa72"
+  integrity sha1-26BDSrQ5z+gvEI8PURZjkIF5qnI=
+  dependencies:
+    create-react-class "^15.6.0"
+    fbjs "^0.8.9"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.0"
+    prop-types "^15.5.10"
 
 react@^16.6.3:
   version "16.7.0"

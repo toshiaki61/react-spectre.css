@@ -2,6 +2,7 @@ import React from 'react'
 import {configure, addDecorator} from '@storybook/react'
 import {withOptions} from '@storybook/addon-options'
 import {withInfo} from '@storybook/addon-info'
+import GithubCorner from '@personare/react-storybook-decorator-github-corner'
 
 import './index.scss'
 
@@ -36,5 +37,7 @@ addDecorator(
 )
 
 addDecorator(storyWrapper)
+
+addDecorator(GithubCorner)
 
 configure(loadStories, module)

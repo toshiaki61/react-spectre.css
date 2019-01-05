@@ -4,7 +4,7 @@ import cx from 'classnames'
 
 import {Button} from '@elements/index'
 
-import {DateItemProps} from './interfaces'
+import {CalendarDateItemProps} from './interfaces'
 
 const DateItem = ({
   children,
@@ -13,7 +13,7 @@ const DateItem = ({
   badge,
   today,
   onClick,
-}: DateItemProps) => (
+}: CalendarDateItemProps) => (
   <Button
     disabled={disabled}
     className={cx('date-item', {

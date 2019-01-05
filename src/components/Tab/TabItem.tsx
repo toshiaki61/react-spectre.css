@@ -10,7 +10,7 @@ import {TabItemProps} from './interfaces'
 const TabItem = ({title, active, badge, onClick}: TabItemProps) => {
   return (
     <li className={cx('tab-item', {active})}>
-      <a href={LinkHash} onClick={onClick} {...attr({badge})}>
+      <a href={LinkHash} onClick={onClick} {...attr({badge: `${badge}`})}>
         {title}
       </a>
     </li>

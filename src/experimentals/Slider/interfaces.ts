@@ -6,5 +6,5 @@ export interface SliderProps {
   max?: number
   value?: number
   tooltip?: boolean
-  onChange: ChangeEventHandler
+  onChange: ChangeEventHandler<HTMLInputElement>
 }

@@ -14,7 +14,7 @@ export interface MenuItemProps {
   content?: ReactNode
   divider?: boolean | string
   active?: boolean
-  badge?: string
+  badge?: string | number
   onClick?: MouseEventIdHandler
 }
 

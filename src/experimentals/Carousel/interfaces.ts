@@ -22,7 +22,7 @@ export interface CarouselProps {
 export interface CarouselLocatorProps {
   id: string
   checked: boolean
-  onChange: ChangeEventHandler
+  onChange: ChangeEventHandler<HTMLInputElement>
 }
 export interface CarouselItemPaging {
   prev: number

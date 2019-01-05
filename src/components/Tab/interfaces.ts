@@ -3,9 +3,9 @@ import {MouseEvent, MouseEventHandler, ReactNode} from 'react'
 export interface TabItemProps {
   id: string
   title: ReactNode
-  active: boolean
+  active?: boolean
   onClick?: MouseEventHandler
-  badge?: string
+  badge?: string | number
 }
 
 export interface TabActionProps {

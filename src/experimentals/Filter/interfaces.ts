@@ -20,7 +20,7 @@ export interface FilterProps {
 export interface FilterTagProps {
   id: string
   checked: boolean
-  onChange: ChangeEventHandler
+  onChange: ChangeEventHandler<HTMLInputElement>
 }
 export type FilterNavProps = Partial<BasePartProps>
 export type FilterBodyProps = Partial<BasePartProps>

@@ -18,7 +18,7 @@ const Timeline = ({
     {children
       ? children
       : timelines &&
-        timelines.map(({title, content}, i) => {
+        timelines.map(({title, content, action}, i) => {
           const key = `timeline-${i}`
           const first = i === 0
           return (
@@ -29,7 +29,7 @@ const Timeline = ({
                 </TimelineIcon>
               </TimelineLeft>
               <TimelineContent>
-                <Tile>
+                <Tile action={action}>
                   <TileSubtitle>{title}</TileSubtitle>
                   {content}
                 </Tile>

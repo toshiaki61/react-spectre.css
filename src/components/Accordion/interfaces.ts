@@ -10,6 +10,7 @@ export interface AccordionProps {
 }
 
 export interface AccordionItemProps {
+  id: string
   contents?: MenuItemProps[]
   className?: string
   exclusive?: boolean

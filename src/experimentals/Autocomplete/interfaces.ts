@@ -16,7 +16,7 @@ export interface AutocompleteProps {
   suggests: SuggestProps[]
   input: string
   loading?: boolean
-  onChange: ChangeEventHandler
+  onChange: ChangeEventHandler<HTMLInputElement>
   onFocus: FocusEventHandler
   onBlur: FocusEventHandler
   onClearClick: MouseEventIdHandler

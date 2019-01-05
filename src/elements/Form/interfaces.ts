@@ -51,7 +51,7 @@ export interface FormInputProps {
   state?: FormFieldState
   placeholder?: string
   value?: string
-  onChange?: ChangeEventHandler
+  onChange?: ChangeEventHandler<HTMLInputElement>
 }
 
 export interface FormTextareaProps {

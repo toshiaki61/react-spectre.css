@@ -91,17 +91,18 @@ function Table<T>({
   children,
   ...rest
 }: TableProps<T>): ReactElement<TableProps<T>> {
-  const classes = cx(
-    'table',
-    {
-      'table-striped': striped,
-      'table-hover': hover,
-      'table-scroll': scroll,
-    },
-    className
-  )
   return (
-    <table className={classes}>
+    <table
+      className={cx(
+        'table',
+        {
+          'table-striped': striped,
+          'table-hover': hover,
+          'table-scroll': scroll,
+        },
+        className
+      )}
+    >
       {data ? renderTableContent({...rest, data}) : children}
     </table>
   )

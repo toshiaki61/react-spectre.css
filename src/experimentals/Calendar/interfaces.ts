@@ -26,14 +26,14 @@ export type CalendarContainerProps = Partial<BasePartProps>
 export type CalendarBodyProps = Partial<BasePartProps>
 export type CalendarDateProps = Partial<BasePartProps>
 
-export interface NavDetail {
+export interface CalendarNavDetail {
   onClick: MouseEventHandler
   children: ReactNode
 }
-export interface Nav {
-  prev: NavDetail
-  current: NavDetail
-  next: NavDetail
+export interface CalendarNav {
+  prev: CalendarNavDetail
+  current: CalendarNavDetail
+  next: CalendarNavDetail
 }
 export interface CalendarOptions {
   data: CalendarData[]
@@ -42,7 +42,7 @@ export interface CalendarOptions {
 export interface CalendarProps {
   children?: ReactNode
   lg?: boolean
-  nav?: Nav
+  nav?: CalendarNav
   weekdays?: string[]
   current: DateLike
   // start: DateLike
@@ -52,7 +52,7 @@ export interface CalendarProps {
   onDateClick?: MouseEventDateLikeHandler
 }
 
-export interface DateItemProps {
+export interface CalendarDateItemProps {
   children: ReactNode
   active?: boolean
   disabled?: boolean

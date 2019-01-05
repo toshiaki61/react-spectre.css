@@ -1,29 +1,17 @@
 import React, {ReactNode} from 'react'
 
-import cx from 'classnames'
-
 import {action} from '@storybook/addon-actions'
-import {boolean, number, select} from '@storybook/addon-knobs'
+import {boolean, number, object, select, text} from '@storybook/addon-knobs'
+import {OptionalKeyMap, optionalSelect} from '../../utils'
 
-import {Table, TableCellDecorator, TableData} from '@elements/Table'
+import {
+  Table,
+  TableCellDecorator,
+  TableData,
+  Tooltip,
+  TooltipProps,
+} from '../../../src/'
 
-interface TooltipProps {
-  children: ReactNode
-  text: string
-  position?: 'top' | 'right' | 'left' | 'bottom'
-}
-const Tooltip = ({children, text, position}: TooltipProps) => (
-  <div
-    className={cx('tooltip', {
-      'tooltip-right': position === 'right',
-      'tooltip-left': position === 'left',
-      'tooltip-bottom': position === 'bottom',
-    })}
-    data-tooltip={text}
-  >
-    {children}
-  </div>
-)
 const jobTitles = [
   'Motel Maid',
   'Twister Operator',

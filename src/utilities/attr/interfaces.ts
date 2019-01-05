@@ -54,6 +54,8 @@ export type TextOverflowType = 'ellipsis' | 'clip' | 'break'
 // lang-
 export type LangType = 'ja' | 'ko' | 'zh-hans' | 'zh-hant' | 'cjk'
 
+export type TooltipPositionType = 'right' | 'left' | 'bottom'
+
 interface ColorProps {
   fg: ColorType
   bg: ColorType
@@ -126,11 +128,10 @@ interface DividerProps {
   dividerVertical: boolean
   dividerContent: string
 }
-export type TooltipPosition = 'right' | 'left' | 'bottom'
 
 interface TooltipProps {
   tooltip: string
-  tooltipPosition: TooltipPosition
+  tooltipPosition: TooltipPositionType
 }
 interface BadgeProps {
   badge: string

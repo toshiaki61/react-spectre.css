@@ -6,7 +6,7 @@ import Grid from './Grid'
 import Hero from './Hero'
 import Navbar from './Navbar'
 
-const stories = storiesOf('Elements', module)
+const stories = storiesOf('Layouts', module)
 
 stories
   .addDecorator(withKnobs)

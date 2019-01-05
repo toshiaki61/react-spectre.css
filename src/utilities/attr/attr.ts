@@ -74,76 +74,80 @@ export function attr({
 
   badge,
 }: Partial<BaseProps>) {
-  const result = {
-    style,
-    className: cx(className, {
-      [`text-${fg}`]: fg,
-      [`bg-${bg}`]: bg,
+  const cn = cx(className, {
+    [`text-${fg}`]: fg,
+    [`bg-${bg}`]: bg,
 
-      [`c-${cursor}`]: cursor,
-      [`d-${display}`]: display,
-      [`d-${visibility}`]: visibility,
+    [`c-${cursor}`]: cursor,
+    [`d-${display}`]: display,
+    [`d-${visibility}`]: visibility,
 
-      [`text-${textHide}`]: textHide,
-      [`text-${textAssistive}`]: textAssistive,
+    [`text-${textHide}`]: textHide,
+    [`text-${textAssistive}`]: textAssistive,
 
-      [`${floatClearing}`]: floatClearing,
-      [`float-${floating}`]: floating,
+    [`${floatClearing}`]: floatClearing,
+    [`float-${floating}`]: floating,
 
-      [`p-${position}`]: position,
-      [`p-${blockCentering}`]: blockCentering,
+    [`p-${position}`]: position,
+    [`p-${blockCentering}`]: blockCentering,
 
-      [`s-${shape}`]: shape,
+    [`s-${shape}`]: shape,
 
-      [`text-${textAlign}`]: textAlign,
-      [`text-${textCase}`]: textCase,
-      [`text-${textWeight}`]: textWeight,
-      [`text-${textDecoration}`]: textDecoration,
-      [`text-${textSize}`]: textSize,
-      [`text-${textOverflow}`]: textOverflow,
+    [`text-${textAlign}`]: textAlign,
+    [`text-${textCase}`]: textCase,
+    [`text-${textWeight}`]: textWeight,
+    [`text-${textDecoration}`]: textDecoration,
+    [`text-${textSize}`]: textSize,
+    [`text-${textOverflow}`]: textOverflow,
 
-      [`lang-${lang}`]: lang,
+    [`lang-${lang}`]: lang,
 
-      'm-1': margin,
-      'm-2': marginMore,
-      'mt-1': marginTop,
-      'mt-2': marginTopMore,
-      'mb-1': marginBottom,
-      'mb-2': marginBottomMore,
-      'ml-1': marginLeft,
-      'ml-2': marginLeftMore,
-      'mr-1': marginRight,
-      'mr-2': marginRightMore,
-      'mx-1': marginWidth,
-      'mx-2': marginWidthMore,
-      'my-1': marginHeight,
-      'my-2': marginHeightMore,
-      'p-1': padding,
-      'p-2': paddingMore,
-      'pt-1': paddingTop,
-      'pt-2': paddingTopMore,
-      'pb-1': paddingBottom,
-      'pb-2': paddingBottomMore,
-      'pl-1': paddingLeft,
-      'pl-2': paddingLeftMore,
-      'pr-1': paddingRight,
-      'pr-2': paddingRightMore,
-      'px-1': paddingWidth,
-      'px-2': paddingWidthMore,
-      'py-1': paddingHeight,
-      'py-2': paddingHeightMore,
+    'm-1': margin,
+    'm-2': marginMore,
+    'mt-1': marginTop,
+    'mt-2': marginTopMore,
+    'mb-1': marginBottom,
+    'mb-2': marginBottomMore,
+    'ml-1': marginLeft,
+    'ml-2': marginLeftMore,
+    'mr-1': marginRight,
+    'mr-2': marginRightMore,
+    'mx-1': marginWidth,
+    'mx-2': marginWidthMore,
+    'my-1': marginHeight,
+    'my-2': marginHeightMore,
+    'p-1': padding,
+    'p-2': paddingMore,
+    'pt-1': paddingTop,
+    'pt-2': paddingTopMore,
+    'pb-1': paddingBottom,
+    'pb-2': paddingBottomMore,
+    'pl-1': paddingLeft,
+    'pl-2': paddingLeftMore,
+    'pr-1': paddingRight,
+    'pr-2': paddingRightMore,
+    'px-1': paddingWidth,
+    'px-2': paddingWidthMore,
+    'py-1': paddingHeight,
+    'py-2': paddingHeightMore,
 
-      loading,
-      [`loading-${loadingSize}`]: loadingSize,
+    loading,
+    [`loading-${loadingSize}`]: loadingSize,
 
-      divider: divider && !dividerVertical,
-      'divider-vert': dividerVertical,
+    divider: divider && !dividerVertical,
+    'divider-vert': dividerVertical,
 
-      tooltip,
-      [`tooltip-${tooltipPosition}`]: tooltipPosition,
+    tooltip,
+    [`tooltip-${tooltipPosition}`]: tooltipPosition,
 
-      badge,
-    }),
+    badge,
+  })
+  const result: Partial<BaseProps> = {}
+  if (cn) {
+    result.className = cn
+  }
+  if (style) {
+    result.style = style
   }
   if (dividerContent) {
     result['data-content'] = dividerContent

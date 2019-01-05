@@ -1,9 +1,10 @@
 import React from 'react'
 
-import {boolean, number, text} from '@storybook/addon-knobs'
+import {action} from '@storybook/addon-actions'
+import {boolean, number, object, select, text} from '@storybook/addon-knobs'
+import {OptionalKeyMap, optionalSelect} from '../../utils'
 
-import {Accordion, AccordionItem} from '@components/Accordion'
-import {Menu, MenuItemProps} from '@components/Menu'
+import {Accordion, AccordionItem, Menu, MenuItemProps} from '../../../src'
 
 const generateData = (amount: number) =>
   Array(amount)

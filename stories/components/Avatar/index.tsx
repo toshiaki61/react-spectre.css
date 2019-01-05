@@ -1,11 +1,10 @@
 import React, {Fragment} from 'react'
 
-import {object, text} from '@storybook/addon-knobs'
+import {action} from '@storybook/addon-actions'
+import {boolean, number, object, select, text} from '@storybook/addon-knobs'
+import {OptionalKeyMap, optionalSelect} from '../../utils'
 
 import {Avatar, AvatarPresenceType, AvatarSizeType} from '@components/Avatar'
-
-import {OptionalKeyMap} from '../../utils/OptionalKeyMap'
-import {optionalSelect} from '../../utils/optionalSelect'
 
 const avatarSizes: OptionalKeyMap<AvatarSizeType> = {
   xl: 'xl',

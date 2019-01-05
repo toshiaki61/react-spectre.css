@@ -1,13 +1,10 @@
 import React from 'react'
 
-import {boolean, object, select, text} from '@storybook/addon-knobs'
-
 import {action} from '@storybook/addon-actions'
+import {boolean, number, object, select, text} from '@storybook/addon-knobs'
+import {OptionalKeyMap, optionalSelect} from '../../utils'
 
-import {Button, ButtonColorType, ButtonSizeType} from '@elements/Button'
-
-import {OptionalKeyMap} from '../../utils/OptionalKeyMap'
-import {optionalSelect} from '../../utils/optionalSelect'
+import {Button, ButtonColorType, ButtonSizeType} from '../../../src'
 
 const sizeOptions: OptionalKeyMap<ButtonSizeType> = {
   sm: 'sm',

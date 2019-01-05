@@ -5,7 +5,7 @@ import attr from './attr'
 import Divider from './Divider'
 import Loading from './Loading'
 
-const stories = storiesOf('Elements', module)
+const stories = storiesOf('Utilities', module)
 
 stories
   .addDecorator(withKnobs)

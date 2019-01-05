@@ -1,15 +1,12 @@
 import React from 'react'
 
-import {text} from '@storybook/addon-knobs'
+import {action} from '@storybook/addon-actions'
+import {boolean, number, object, select, text} from '@storybook/addon-knobs'
+import {OptionalKeyMap, optionalSelect} from '../../utils'
 
-import {Tooltip} from '@components/Tooltip'
-import {Button} from '@elements/Button'
-import {TooltipPosition} from '@utils/interfaces'
+import {Button, Tooltip, TooltipPositionType} from '../../../src/'
 
-import {OptionalKeyMap} from '../../utils/OptionalKeyMap'
-import {optionalSelect} from '../../utils/optionalSelect'
-
-const tooltipPositions: OptionalKeyMap<TooltipPosition> = {
+const tooltipPositions: OptionalKeyMap<TooltipPositionType> = {
   right: 'right',
   bottom: 'bottom',
   left: 'left',
@@ -19,7 +16,7 @@ const tooltipPositions: OptionalKeyMap<TooltipPosition> = {
 const component = () => (
   <Tooltip
     text={text('Text', 'I am a tooltip!')}
-    position={optionalSelect<TooltipPosition | ''>(
+    position={optionalSelect<TooltipPositionType | ''>(
       'Position',
       tooltipPositions,
       ''

@@ -1,11 +1,10 @@
 import React from 'react'
 
-import {boolean, object, text} from '@storybook/addon-knobs'
+import {action} from '@storybook/addon-actions'
+import {boolean, number, object, select, text} from '@storybook/addon-knobs'
+import {OptionalKeyMap, optionalSelect} from '../../utils'
 
-import {Label, LabelType} from '@elements/Label'
-
-import {OptionalKeyMap} from '../../utils/OptionalKeyMap'
-import {optionalSelect} from '../../utils/optionalSelect'
+import {Label, LabelType} from '../../../src'
 
 const typeOptions: OptionalKeyMap<LabelType> = {
   primary: 'primary',

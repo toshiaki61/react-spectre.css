@@ -13,7 +13,8 @@ import Parallax from './Parallax'
 import Progress from './Progress'
 import Slider from './Slider'
 import Timeline from './Timeline'
-const stories = storiesOf('Elements', module)
+
+const stories = storiesOf('Experimentals', module)
 
 stories
   .addDecorator(withKnobs)

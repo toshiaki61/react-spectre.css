@@ -2,13 +2,13 @@ import {ReactNode} from 'react'
 
 import {BasePartProps} from '../../interfaces'
 
-export type PopoverPosition = 'right' | 'left' | 'bottom'
+export type PopoverPositionType = 'right' | 'left' | 'bottom'
 
 export interface PopoverProps {
   target?: ReactNode
   content?: ReactNode
   children?: ReactNode
-  position?: PopoverPosition
+  position?: PopoverPositionType
   className?: string
 }
 

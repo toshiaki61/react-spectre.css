@@ -2,14 +2,14 @@ import {MouseEventHandler, ReactNode} from 'react'
 
 import {BasePartProps} from '../../interfaces'
 
-export type ModalSize = 'sm' | 'lg'
+export type ModalSizeType = 'sm' | 'lg'
 
 export interface ModalProps {
   active?: boolean
   title?: string
   content?: ReactNode
   footer?: ReactNode
-  size?: ModalSize
+  size?: ModalSizeType
   className?: string
   onClearClick?: MouseEventHandler
   children?: ReactNode

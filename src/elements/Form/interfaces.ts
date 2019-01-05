@@ -8,12 +8,12 @@ export interface FormProps {
   horizontal?: boolean
 }
 
-export type FormState = 'success' | 'error'
+export type FormStateType = 'success' | 'error'
 
 export interface FormGroupProps {
   children: ReactNode | ReactNodeArray
   className?: string
-  color?: FormState
+  color?: FormStateType
 }
 
 export interface FormLabelProps {
@@ -41,40 +41,40 @@ export type FormInputType =
   | 'color'
   | 'file'
 
-export type FormSize = 'sm' | 'lg'
+export type FormSizeType = 'sm' | 'lg'
 
-export type FormFieldState = FormState
+export type FormFieldStateType = FormStateType
 
 export interface FormInputProps {
   type: FormInputType
-  size?: FormSize
-  state?: FormFieldState
+  size?: FormSizeType
+  state?: FormFieldStateType
   placeholder?: string
   value?: string
   onChange?: ChangeEventHandler<HTMLInputElement>
 }
 
 export interface FormTextareaProps {
-  size?: FormSize
+  size?: FormSizeType
 }
 
 export interface FormSelectProps {
   children: ReactNode
-  size?: FormSize
+  size?: FormSizeType
 }
 export interface FormLabeledProps {
   label?: ReactNode
   inline?: boolean
-  size?: FormSize
+  size?: FormSizeType
 }
 export interface FormInputHintProps {
   children: ReactNode
 }
-export type InputIconPosition = 'right' | 'left'
+export type InputIconPositionType = 'right' | 'left'
 
 export interface HasIconProps {
   children: ReactNode
-  position: InputIconPosition
+  position: InputIconPositionType
 }
 
 export interface InputGroupProps {
@@ -82,5 +82,5 @@ export interface InputGroupProps {
 }
 export interface InputGroupAddonProps {
   children: ReactNode
-  size?: FormSize
+  size?: FormSizeType
 }

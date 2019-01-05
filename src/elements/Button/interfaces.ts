@@ -5,9 +5,9 @@ import {
   ReactNodeArray,
 } from 'react'
 
-export type ButtonSize = 'lg' | 'sm'
+export type ButtonSizeType = 'lg' | 'sm'
 
-export type ButtonColor = 'success' | 'error' | 'link' | 'primary'
+export type ButtonColorType = 'success' | 'error' | 'link' | 'primary'
 
 export type ButtonType = 'button' | 'submit'
 
@@ -16,8 +16,8 @@ export interface BaseButtonProps {
   className?: string
   loading?: boolean
   href?: string
-  size?: ButtonSize
-  color?: ButtonColor
+  size?: ButtonSizeType
+  color?: ButtonColorType
   inputGroup?: boolean
   blockButton?: boolean
   clearButton?: boolean

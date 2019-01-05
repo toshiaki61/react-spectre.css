@@ -1,6 +1,6 @@
 import {CSSProperties} from 'react'
 
-export type Color =
+export type ColorType =
   | 'primary'
   | 'secondary'
   | 'dark'
@@ -11,7 +11,7 @@ export type Color =
   | 'error'
 
 // c-
-export type Cursor =
+export type CursorType =
   | 'hand'
   | 'move'
   | 'zoom-in'
@@ -19,7 +19,7 @@ export type Cursor =
   | 'not-allowed'
   | 'auto'
 // d-
-export type Display =
+export type DisplayType =
   | 'block'
   | 'inline'
   | 'inline-block'
@@ -28,50 +28,50 @@ export type Display =
   | 'none'
   | 'hide'
 // d-
-export type Visibility = 'visible' | 'invisible'
+export type VisibilityType = 'visible' | 'invisible'
 // text-
-export type TextHide = 'hide'
-export type TextAssistive = 'assistive'
+export type TextHideType = 'hide'
+export type TextAssistiveType = 'assistive'
 
-export type FloatClearing = 'clearfix'
+export type FloatClearingType = 'clearfix'
 // float-
-export type Floating = 'left' | 'right'
+export type FloatingType = 'left' | 'right'
 // p-
-export type Position = 'relative' | 'absolute' | 'fixed' | 'sticky'
+export type PositionType = 'relative' | 'absolute' | 'fixed' | 'sticky'
 // p-
-export type BlockCentering = 'centered'
+export type BlockCenteringType = 'centered'
 // s-
-export type Shape = 'rounded' | 'circle'
+export type ShapeType = 'rounded' | 'circle'
 
 // text-
-export type TextAlign = 'center' | 'right' | 'justify'
-export type TextCase = 'lowercase' | 'uppercase' | 'capitalize'
-export type TextWeight = 'normal' | 'bold'
-export type TextDecoration = 'italic'
-export type TextSize = 'large'
-export type TextOverflow = 'ellipsis' | 'clip' | 'break'
+export type TextAlignType = 'center' | 'right' | 'justify'
+export type TextCaseType = 'lowercase' | 'uppercase' | 'capitalize'
+export type TextWeightType = 'normal' | 'bold'
+export type TextDecorationType = 'italic'
+export type TextSizeType = 'large'
+export type TextOverflowType = 'ellipsis' | 'clip' | 'break'
 
 // lang-
-export type Lang = 'ja' | 'ko' | 'zh-hans' | 'zh-hant' | 'cjk'
+export type LangType = 'ja' | 'ko' | 'zh-hans' | 'zh-hant' | 'cjk'
 
 interface ColorProps {
-  fg: Color
-  bg: Color
+  fg: ColorType
+  bg: ColorType
 }
 interface CursorProps {
-  cursor: Cursor
+  cursor: CursorType
 }
 interface DisplayProps {
-  display: Display
-  visibility: Visibility
-  textHide: TextHide
-  textAssistive: TextAssistive
+  display: DisplayType
+  visibility: VisibilityType
+  textHide: TextHideType
+  textAssistive: TextAssistiveType
 }
 interface PositionProps {
-  floatClearing: FloatClearing
-  floating: Floating
-  position: Position
-  blockCentering: BlockCentering
+  floatClearing: FloatClearingType
+  floating: FloatingType
+  position: PositionType
+  blockCentering: BlockCenteringType
 
   margin: boolean
   marginMore: boolean
@@ -103,18 +103,18 @@ interface PositionProps {
   paddingHeightMore: boolean
 }
 interface ShapeProps {
-  shape: Shape
+  shape: ShapeType
 }
 interface TextProps {
-  textAlign: TextAlign
-  textCase: TextCase
-  textWeight: TextWeight
-  textDecoration: TextDecoration
-  textSize: TextSize
-  textOverflow: TextOverflow
+  textAlign: TextAlignType
+  textCase: TextCaseType
+  textWeight: TextWeightType
+  textDecoration: TextDecorationType
+  textSize: TextSizeType
+  textOverflow: TextOverflowType
 }
 interface LangProps {
-  lang: Lang
+  lang: LangType
 }
 type LoadingSize = 'lg'
 interface LoadingProps {

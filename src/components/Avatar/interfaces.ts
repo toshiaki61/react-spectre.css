@@ -1,6 +1,6 @@
-export type AvatarSize = 'xl' | 'lg' | 'sm' | 'xs'
+export type AvatarSizeType = 'xl' | 'lg' | 'sm' | 'xs'
 
-export type AvatarPresence = 'online' | 'offline' | 'away' | 'busy'
+export type AvatarPresenceType = 'online' | 'offline' | 'away' | 'busy'
 
 export interface AvatarIconProps {
   src: string
@@ -9,15 +9,15 @@ export interface AvatarIconProps {
 }
 
 export interface AvatarPresenceProps {
-  presence: AvatarPresence
+  presence: AvatarPresenceType
 }
 
 export interface AvatarProps {
   className?: string
-  size?: AvatarSize
+  size?: AvatarSizeType
   initial?: string
   src?: string
   icon?: AvatarIconProps
   alt?: string
-  presence?: AvatarPresence
+  presence?: AvatarPresenceType
 }

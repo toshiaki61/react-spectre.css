@@ -1,12 +1,12 @@
 import {ReactNode} from 'react'
 
-export type HeroSize = 'lg' | 'sm'
+export type HeroSizeType = 'lg' | 'sm'
 
 export interface HeroProps {
   children?: ReactNode
   title?: ReactNode
   content?: ReactNode
-  size?: HeroSize
+  size?: HeroSizeType
   className?: string
 }
 

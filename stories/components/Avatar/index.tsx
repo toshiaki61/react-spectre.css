@@ -2,19 +2,19 @@ import React from 'react'
 
 import {number, object, text} from '@storybook/addon-knobs'
 
-import {Avatar, AvatarPresence, AvatarSize} from '@components/Avatar'
+import {Avatar, AvatarPresenceType, AvatarSizeType} from '@components/Avatar'
 
 import {OptionalKeyMap} from '../../utils/OptionalKeyMap'
 import {optionalSelect} from '../../utils/optionalSelect'
 
-const avatarSizes: OptionalKeyMap<AvatarSize> = {
+const avatarSizes: OptionalKeyMap<AvatarSizeType> = {
   xl: 'xl',
   lg: 'lg',
   sm: 'sm',
   xs: 'xs',
   'No Value': '',
 }
-const avatarPresences: OptionalKeyMap<AvatarPresence> = {
+const avatarPresences: OptionalKeyMap<AvatarPresenceType> = {
   online: 'online',
   offline: 'offline',
   away: 'away',
@@ -28,7 +28,7 @@ const component = () => {
       initial={text('initial', '')}
       src={text('src', '')}
       alt={text('alt', '')}
-      icon={object('icon', {})}
+      icon={object('icon', {src: ''})}
       presence={optionalSelect('Presence', avatarPresences, '')}
     />
   )

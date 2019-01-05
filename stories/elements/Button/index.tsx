@@ -4,17 +4,17 @@ import {boolean, object, select, text} from '@storybook/addon-knobs'
 
 import {action} from '@storybook/addon-actions'
 
-import {Button, ButtonColor, ButtonSize} from '@elements/Button'
+import {Button, ButtonColorType, ButtonSizeType} from '@elements/Button'
 
 import {OptionalKeyMap} from '../../utils/OptionalKeyMap'
 import {optionalSelect} from '../../utils/optionalSelect'
 
-const sizeOptions: OptionalKeyMap<ButtonSize> = {
+const sizeOptions: OptionalKeyMap<ButtonSizeType> = {
   sm: 'sm',
   lg: 'lg',
   'No Value': '',
 }
-const colorOptions: OptionalKeyMap<ButtonColor> = {
+const colorOptions: OptionalKeyMap<ButtonColorType> = {
   success: 'success',
   error: 'error',
   link: 'link',
@@ -25,8 +25,8 @@ const colorOptions: OptionalKeyMap<ButtonColor> = {
 const component = () => (
   <Button
     type={select('Type', ['button', 'submit'], 'button')}
-    size={optionalSelect<ButtonSize | ''>('Size', sizeOptions, '')}
-    color={optionalSelect<ButtonColor | ''>('Color', colorOptions, '')}
+    size={optionalSelect<ButtonSizeType | ''>('Size', sizeOptions, '')}
+    color={optionalSelect<ButtonColorType | ''>('Color', colorOptions, '')}
     loading={boolean('loading', false)}
     blockButton={boolean('block', false)}
     inputGroup={boolean('inputGroup', false)}

@@ -7,20 +7,20 @@ export interface ColumnsProps {
   oneline?: boolean
 }
 
-export type ColumnSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+export type ColumnSizeType = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 
-export type ColumnOffset = 'mx' | 'ml' | 'mr'
+export type ColumnOffsetType = 'mx' | 'ml' | 'mr'
 
 export interface ColumnProps {
   children: ReactNode
   className?: string
-  xs?: ColumnSize
-  sm?: ColumnSize
-  md?: ColumnSize
-  lg?: ColumnSize
-  xl?: ColumnSize
-  size?: ColumnSize
-  offset?: ColumnOffset
+  xs?: ColumnSizeType
+  sm?: ColumnSizeType
+  md?: ColumnSizeType
+  lg?: ColumnSizeType
+  xl?: ColumnSizeType
+  size?: ColumnSizeType
+  offset?: ColumnOffsetType
   autoWidth?: boolean
   autoWidthXl?: boolean
   autoWidthLg?: boolean

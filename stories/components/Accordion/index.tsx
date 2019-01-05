@@ -36,6 +36,7 @@ const component = () => {
       {generateItems(numOfItems).map(item => (
         <AccordionItem
           key={item.id}
+          id={item.id}
           header={text('Header', 'Header')}
           useIcon={boolean('useIcon', true)}
           exclusive={boolean('exclusive', false)}

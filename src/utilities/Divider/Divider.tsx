@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
@@ -6,7 +6,7 @@ import {attr} from '@utils/attr'
 
 import {DividerProps} from './interfaces'
 
-const Divider = ({
+const Divider: SFC<DividerProps> = ({
   children,
   content,
   vertical,
@@ -14,7 +14,7 @@ const Divider = ({
   center,
   className,
   ...rest
-}: DividerProps): ReactElement<DividerProps> =>
+}) =>
   li ? (
     <li
       {...attr({

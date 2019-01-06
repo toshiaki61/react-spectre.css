@@ -13,7 +13,7 @@ import {
 } from 'date-fns'
 
 import {compose, range} from 'ramda'
-import {CalendarOptions, DateLike} from './interfaces'
+import {CalendarChildrenProps, CalendarOptions, DateLike} from './interfaces'
 
 export function isBeforeMonth(date: DateLike, target: DateLike) {
   return isBefore(date, target) && !isSameMonth(date, target)
@@ -85,4 +85,8 @@ export function generateCalendarData(
       rangeEnd,
     }
   })
+}
+
+export function hasCalendarChildren(item: any): item is CalendarChildrenProps {
+  return item.children
 }

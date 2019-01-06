@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import {ChipWrapperProps} from './interfaces'
 
-const ChipWrapper = ({children, htmlFor, ...rest}: ChipWrapperProps) =>
+const ChipWrapper: SFC<ChipWrapperProps> = ({children, htmlFor, ...rest}) =>
   htmlFor ? (
     <label {...rest} htmlFor={htmlFor}>
       {children}

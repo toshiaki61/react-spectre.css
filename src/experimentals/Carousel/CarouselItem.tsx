@@ -1,15 +1,15 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import {Icon} from '@elements/Icon'
 
 import {CarouselItemPaging, CarouselItemProps} from './interfaces'
 
-const CarouselItem = ({
+const CarouselItem: SFC<CarouselItemProps & CarouselItemPaging> = ({
   src,
   alt,
   prev,
   next,
-}: CarouselItemProps & CarouselItemPaging) => (
+}) => (
   <figure className="carousel-item">
     <label
       className="item-prev btn btn-action btn-lg"

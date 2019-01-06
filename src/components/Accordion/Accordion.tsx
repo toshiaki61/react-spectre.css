@@ -1,39 +1,24 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import AccordionItem from './AccordionItem'
-import {AccordionItemProps, AccordionProps} from './interfaces'
+import {AccordionProps} from './interfaces'
+import {hasAccordionChildren} from './util'
 
-const Accordion = ({
-  menus,
-  className,
-  children,
-}: AccordionProps): ReactElement<AccordionProps> => {
-  const classes = cx('accordion', className)
-  return (
-    <div className={classes}>
-      {children
-        ? children
-        : menus &&
-          menus.map(
-            ({header, contents, ...menu}: AccordionItemProps, i: number) => {
-              const key = `accordion_${i}`
-              return (
-                <AccordionItem
-                  key={key}
-                  header={header}
-                  contents={contents}
-                  {...menu}
-                />
-              )
-            }
-          )}
-    </div>
-  )
+function renderAccordion(p: AccordionProps) {
+  if (hasAccordionChildren(p)) {
+    return p.children
+  }
+  return p.menus.map(({header, contents, ...menu}, i: number) => {
+    const key = `accordion_${i}`
+    return (
+      <AccordionItem key={key} header={header} contents={contents} {...menu} />
+    )
+  })
 }
-Accordion.defaultProps = {
-  className: '',
-}
+const Accordion: SFC<AccordionProps> = p => (
+  <div className={cx('accordion', p.className)}>{renderAccordion(p)}</div>
+)
 
 export default Accordion

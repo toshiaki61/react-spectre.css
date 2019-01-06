@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {TableHeaderProps} from './interfaces'
 
-const TableHeader = ({className, children}: TableHeaderProps) => (
+const TableHeader: SFC<TableHeaderProps> = ({className, children}) => (
   <thead className={cx(className)}>{children}</thead>
 )
 

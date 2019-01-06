@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import {ComparisonBeforeProps} from './interfaces'
 
-const ComparisonBefore = ({children}: ComparisonBeforeProps) => (
+const ComparisonBefore: SFC<ComparisonBeforeProps> = ({children}) => (
   <figure className="comparison-before">{children}</figure>
 )
 

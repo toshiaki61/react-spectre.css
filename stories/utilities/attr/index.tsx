@@ -4,150 +4,232 @@ import {action} from '@storybook/addon-actions'
 import {boolean, number, object, select, text} from '@storybook/addon-knobs'
 import {OptionalKeyMap, optionalSelect} from '../../utils'
 
-import {attr, BaseProps} from '../../../src/'
+import {
+  attr,
+  BaseProps,
+  BlockCenteringType,
+  ColorType,
+  CursorType,
+  DisplayType,
+  FloatClearingType,
+  FloatingType,
+  LangType,
+  LoadingSizeType,
+  PositionType,
+  ShapeType,
+  TextAlignType,
+  TextAssistiveType,
+  TextCaseType,
+  TextDecorationType,
+  TextHideType,
+  TextOverflowType,
+  TextSizeType,
+  TextWeightType,
+  TooltipPositionType,
+  VisibilityType,
+} from '../../../src/'
 
-// export type ColorType =
-//   | 'primary'
-//   | 'secondary'
-//   | 'dark'
-//   | 'gray'
-//   | 'light'
-//   | 'success'
-//   | 'warning'
-//   | 'error'
+const colorTypes: OptionalKeyMap<ColorType> = {
+  primary: 'primary',
+  secondary: 'secondary',
+  dark: 'dark',
+  gray: 'gray',
+  light: 'light',
+  success: 'success',
+  warning: 'warning',
+  error: 'error',
+  'No Value': '',
+}
+const cursorTypes: OptionalKeyMap<CursorType> = {
+  hand: 'hand',
+  move: 'move',
+  'zoom-in': 'zoom-in',
+  'zoom-out': 'zoom-out',
+  'not-allowed': 'not-allowed',
+  auto: 'auto',
+  'No Value': '',
+}
+const displayTypes: OptionalKeyMap<DisplayType> = {
+  block: 'block',
+  inline: 'inline',
+  'inline-block': 'inline-block',
+  flex: 'flex',
+  'inline-flex': 'inline-flex',
+  none: 'none',
+  hide: 'hide',
+  'No Value': '',
+}
+const visibilityTypes: OptionalKeyMap<VisibilityType> = {
+  visible: 'visible',
+  invisible: 'invisible',
+  'No Value': '',
+}
+const textHideTypes: OptionalKeyMap<TextHideType> = {
+  hide: 'hide',
+  'No Value': '',
+}
+const textAssistiveTypes: OptionalKeyMap<TextAssistiveType> = {
+  assistive: 'assistive',
+  'No Value': '',
+}
+const floatClearingTypes: OptionalKeyMap<FloatClearingType> = {
+  clearfix: 'clearfix',
+  'No Value': '',
+}
+const floatingTypes: OptionalKeyMap<FloatingType> = {
+  left: 'left',
+  right: 'right',
+  'No Value': '',
+}
+const positionTypes: OptionalKeyMap<PositionType> = {
+  relative: 'relative',
+  absolute: 'absolute',
+  fixed: 'fixed',
+  sticky: 'sticky',
+  'No Value': '',
+}
+const blockCenteringTypes: OptionalKeyMap<BlockCenteringType> = {
+  centered: 'centered',
+  'No Value': '',
+}
+const shapeTypes: OptionalKeyMap<ShapeType> = {
+  rounded: 'rounded',
+  circle: 'circle',
+  'No Value': '',
+}
+const textAlignTypes: OptionalKeyMap<TextAlignType> = {
+  center: 'center',
+  right: 'right',
+  justify: 'justify',
+  'No Value': '',
+}
+const textCaseTypes: OptionalKeyMap<TextCaseType> = {
+  lowercase: 'lowercase',
+  uppercase: 'uppercase',
+  capitalize: 'capitalize',
+  'No Value': '',
+}
+const textWeightTypes: OptionalKeyMap<TextWeightType> = {
+  normal: 'normal',
+  bold: 'bold',
+  'No Value': '',
+}
+const textDecorationTypes: OptionalKeyMap<TextDecorationType> = {
+  italic: 'italic',
+  'No Value': '',
+}
+const textSizeTypes: OptionalKeyMap<TextSizeType> = {
+  large: 'large',
+  'No Value': '',
+}
+const textOverflowTypes: OptionalKeyMap<TextOverflowType> = {
+  ellipsis: 'ellipsis',
+  chip: 'clip',
+  breadk: 'break',
+  'No Value': '',
+}
+const langTypes: OptionalKeyMap<LangType> = {
+  ja: 'ja',
+  ko: 'ko',
+  'zh-hans': 'zh-hans',
+  'zh-hant': 'zh-hant',
+  cjk: 'cjk',
+  'No Value': '',
+}
+const tooltipPositionTypes: OptionalKeyMap<TooltipPositionType> = {
+  right: 'right',
+  left: 'left',
+  bottom: 'bottom',
+  'No Value': '',
+}
+const loadingSizeTypes: OptionalKeyMap<LoadingSizeType> = {
+  lg: 'lg',
+  'No Value': '',
+}
 
-// // c-
-// export type CursorType =
-//   | 'hand'
-//   | 'move'
-//   | 'zoom-in'
-//   | 'zoom-out'
-//   | 'not-allowed'
-//   | 'auto'
-// // d-
-// export type DisplayType =
-//   | 'block'
-//   | 'inline'
-//   | 'inline-block'
-//   | 'flex'
-//   | 'inline-flex'
-//   | 'none'
-//   | 'hide'
-// // d-
-// export type VisibilityType = 'visible' | 'invisible'
-// // text-
-// export type TextHideType = 'hide'
-// export type TextAssistiveType = 'assistive'
-
-// export type FloatClearingType = 'clearfix'
-// // float-
-// export type FloatingType = 'left' | 'right'
-// // p-
-// export type PositionType = 'relative' | 'absolute' | 'fixed' | 'sticky'
-// // p-
-// export type BlockCenteringType = 'centered'
-// // s-
-// export type ShapeType = 'rounded' | 'circle'
-
-// // text-
-// export type TextAlignType = 'center' | 'right' | 'justify'
-// export type TextCaseType = 'lowercase' | 'uppercase' | 'capitalize'
-// export type TextWeightType = 'normal' | 'bold'
-// export type TextDecorationType = 'italic'
-// export type TextSizeType = 'large'
-// export type TextOverflowType = 'ellipsis' | 'clip' | 'break'
-
-// // lang-
-// export type LangType = 'ja' | 'ko' | 'zh-hans' | 'zh-hant' | 'cjk'
-
-// export type TooltipPositionType = 'right' | 'left' | 'bottom'
-
-// interface ColorProps {
-//   fg: ColorType
-//   bg: ColorType
-// }
-// interface CursorProps {
-//   cursor: CursorType
-// }
-// interface DisplayProps {
-//   display: DisplayType
-//   visibility: VisibilityType
-//   textHide: TextHideType
-//   textAssistive: TextAssistiveType
-// }
-// interface PositionProps {
-//   floatClearing: FloatClearingType
-//   floating: FloatingType
-//   position: PositionType
-//   blockCentering: BlockCenteringType
-
-//   margin: boolean
-//   marginMore: boolean
-//   marginTop: boolean
-//   marginTopMore: boolean
-//   marginBottom: boolean
-//   marginBottomMore: boolean
-//   marginLeft: boolean
-//   marginLeftMore: boolean
-//   marginRight: boolean
-//   marginRightMore: boolean
-//   marginWidth: boolean
-//   marginWidthMore: boolean
-//   marginHeight: boolean
-//   marginHeightMore: boolean
-//   padding: boolean
-//   paddingMore: boolean
-//   paddingTop: boolean
-//   paddingTopMore: boolean
-//   paddingBottom: boolean
-//   paddingBottomMore: boolean
-//   paddingLeft: boolean
-//   paddingLeftMore: boolean
-//   paddingRight: boolean
-//   paddingRightMore: boolean
-//   paddingWidth: boolean
-//   paddingWidthMore: boolean
-//   paddingHeight: boolean
-//   paddingHeightMore: boolean
-// }
-// interface ShapeProps {
-//   shape: ShapeType
-// }
-// interface TextProps {
-//   textAlign: TextAlignType
-//   textCase: TextCaseType
-//   textWeight: TextWeightType
-//   textDecoration: TextDecorationType
-//   textSize: TextSizeType
-//   textOverflow: TextOverflowType
-// }
-// interface LangProps {
-//   lang: LangType
-// }
-// type LoadingSize = 'lg'
-// interface LoadingProps {
-//   loading: boolean
-//   loadingSize: LoadingSize
-// }
-// interface DividerProps {
-//   divider: boolean
-//   dividerVertical: boolean
-//   dividerContent: string
-// }
-
-// interface TooltipProps {
-//   tooltip: string
-//   tooltipPosition: TooltipPositionType
-// }
-// interface BadgeProps {
-//   badge: string
-// }
-// interface StyleProps {
-//   className: string
-//   style: CSSProperties
-// }
 const component = () => {
-  return <div {...attr({})}>attr</div>
+  return (
+    <div
+      {...attr({
+        fg: optionalSelect('fg', colorTypes, ''),
+        bg: optionalSelect('bg', colorTypes, ''),
+
+        cursor: optionalSelect('cursor', cursorTypes, ''),
+        display: optionalSelect('display', displayTypes, ''),
+        visibility: optionalSelect('visibility', visibilityTypes, ''),
+        textHide: optionalSelect('textHide', textHideTypes, ''),
+        textAssistive: optionalSelect('textAssistive', textAssistiveTypes, ''),
+
+        floatClearing: optionalSelect('floatClearing', floatClearingTypes, ''),
+        floating: optionalSelect('floating', floatingTypes, ''),
+        position: optionalSelect('position', positionTypes, ''),
+        blockCentering: optionalSelect(
+          'blockCentering',
+          blockCenteringTypes,
+          ''
+        ),
+
+        margin: boolean('margin', false),
+        marginMore: boolean('marginMore', false),
+        marginTop: boolean('marginTop', false),
+        marginTopMore: boolean('marginTopMore', false),
+        marginBottom: boolean('marginBottom', false),
+        marginBottomMore: boolean('marginBottomMore', false),
+        marginLeft: boolean('marginLeft', false),
+        marginLeftMore: boolean('marginLeftMore', false),
+        marginRight: boolean('marginRight', false),
+        marginRightMore: boolean('marginRightMore', false),
+        marginWidth: boolean('marginWidth', false),
+        marginWidthMore: boolean('marginWidthMore', false),
+        marginHeight: boolean('marginHeight', false),
+        marginHeightMore: boolean('marginHeightMore', false),
+        padding: boolean('padding', false),
+        paddingMore: boolean('paddingMore', false),
+        paddingTop: boolean('paddingTop', false),
+        paddingTopMore: boolean('paddingTopMore', false),
+        paddingBottom: boolean('paddingBottom', false),
+        paddingBottomMore: boolean('paddingBottomMore', false),
+        paddingLeft: boolean('paddingLeft', false),
+        paddingLeftMore: boolean('paddingLeftMore', false),
+        paddingRight: boolean('paddingRight', false),
+        paddingRightMore: boolean('paddingRightMore', false),
+        paddingWidth: boolean('paddingWidth', false),
+        paddingWidthMore: boolean('paddingWidthMore', false),
+        paddingHeight: boolean('paddingHeight', false),
+        paddingHeightMore: boolean('paddingHeightMore', false),
+
+        shape: optionalSelect('shape', shapeTypes, ''),
+        textAlign: optionalSelect('textAlign', textAlignTypes, ''),
+        textCase: optionalSelect('textCase', textCaseTypes, ''),
+        textWeight: optionalSelect('textWeight', textWeightTypes, ''),
+        textDecoration: optionalSelect(
+          'textDecoration',
+          textDecorationTypes,
+          ''
+        ),
+        textSize: optionalSelect('textSize', textSizeTypes, ''),
+        textOverflow: optionalSelect('textOverflow', textOverflowTypes, ''),
+        lang: optionalSelect('lang', langTypes, ''),
+        loading: boolean('loading', false),
+        loadingSize: optionalSelect('loadingSize', loadingSizeTypes, ''),
+        divider: boolean('divider', false),
+        dividerVertical: boolean('dividerVertical', false),
+        dividerContent: text('dividerContent', ''),
+        tooltip: text('tooltip', ''),
+        tooltipPosition: optionalSelect(
+          'tooltipPosition',
+          tooltipPositionTypes,
+          ''
+        ),
+
+        badge: text('badge', ''),
+        className: text('className', ''),
+        style: object('style', {}),
+      })}
+    >
+      attr
+    </div>
+  )
 }
 
 export default component

@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
-import FormIcon from './FormIcon'
 import {FormLabeledProps} from './interfaces'
 
-const FormRadio = ({label, inline, size, ...rest}: FormLabeledProps) => (
+import FormIcon from './FormIcon'
+
+const FormRadio: SFC<FormLabeledProps> = ({label, inline, size, ...rest}) => (
   <label
     className={cx('form-radio', {
       'form-inline': inline,

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import {Icon} from '@elements/Icon'
 
@@ -6,7 +6,7 @@ import {attr} from '@utils/attr'
 
 import {FormIconProps} from './interfaces'
 
-const FormIcon = ({iconType, loading}: FormIconProps) =>
+const FormIcon: SFC<FormIconProps> = ({iconType, loading}) =>
   iconType ? (
     <Icon type={iconType} className="form-icon" />
   ) : (

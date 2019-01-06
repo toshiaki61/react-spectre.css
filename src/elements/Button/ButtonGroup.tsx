@@ -1,17 +1,13 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {ButtonGroupProps} from './interfaces'
 
-const ButtonGroup = ({children, className, block}: ButtonGroupProps) => (
+const ButtonGroup: SFC<ButtonGroupProps> = ({children, className, block}) => (
   <div className={cx('btn-group', {'btn-group-block': block}, className)}>
     {children}
   </div>
 )
-ButtonGroup.defaultProps = {
-  className: '',
-  block: false,
-}
 
 export default ButtonGroup

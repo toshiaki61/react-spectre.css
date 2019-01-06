@@ -1,21 +1,29 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {MenuProps} from './interfaces'
+import {hasMenuChildren} from './util'
+
 import MenuItem from './MenuItem'
 
-const Menu = ({
-  className,
-  nav,
-  contents,
-  onClick,
-  children,
-  ...props
-}: MenuProps): ReactElement<MenuProps> => {
-  const ulProps = Object.keys(props)
-    .filter(p => p !== 'header')
-    .reduce((memo, p) => ({...memo, [p]: props[p]}), {})
+function renderMenu(p: MenuProps) {
+  if (hasMenuChildren(p)) {
+    return p.children
+  }
+  return p.contents.map((content, i) => (
+    <MenuItem
+      key={content.id}
+      {...content}
+      onClick={content.onClick || p.onClick}
+    />
+  ))
+}
+const Menu: SFC<MenuProps> = p => {
+  const {className, nav, onClick, children, ...rest} = p
+  const ulProps = Object.keys(rest)
+    .filter(r => r !== 'header')
+    .reduce((memo, r) => ({...memo, [r]: rest[r]}), {})
   return (
     <ul
       className={cx(
@@ -27,22 +35,9 @@ const Menu = ({
       )}
       {...ulProps}
     >
-      {children
-        ? children
-        : contents &&
-          contents.map((content, i) => (
-            <MenuItem
-              key={content.id}
-              {...content}
-              onClick={content.onClick || onClick}
-            />
-          ))}
+      {renderMenu(p)}
     </ul>
   )
-}
-Menu.defaultProps = {
-  className: '',
-  nav: false,
 }
 
 export default Menu

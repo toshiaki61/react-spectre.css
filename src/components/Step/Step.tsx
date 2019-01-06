@@ -1,29 +1,21 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import {StepProps} from './interfaces'
+import {hasStepChildren} from './util'
 
 import StepItem from './StepItem'
 
-const Step = ({
-  children,
-  items,
-  activeId,
-}: StepProps): ReactElement<StepProps> | null => {
-  return (
-    <ul className="step">
-      {children
-        ? children
-        : items &&
-          items.map(item => (
-            <StepItem key={item.id} {...item} active={item.id === activeId}>
-              {item.children}
-            </StepItem>
-          ))}
-    </ul>
-  )
+function renderStep(p: StepProps) {
+  if (hasStepChildren(p)) {
+    return p.children
+  }
+  const {items, activeId} = p
+  return items.map(item => (
+    <StepItem key={item.id} {...item} active={item.id === activeId}>
+      {item.children}
+    </StepItem>
+  ))
 }
-Step.defaultProps = {
-  active: '',
-}
+const Step: SFC<StepProps> = p => <ul className="step">{renderStep(p)}</ul>
 
 export default Step

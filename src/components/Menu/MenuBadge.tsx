@@ -1,10 +1,8 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import {MenuBadgeProps} from './interfaces'
 
-const MenuBadge = ({
-  content,
-}: MenuBadgeProps): ReactElement<MenuBadgeProps> | null => {
+const MenuBadge: SFC<MenuBadgeProps> = ({content}) => {
   if (!content) {
     return null
   }
@@ -13,9 +11,6 @@ const MenuBadge = ({
       <span className="label label-primary">{content}</span>
     </div>
   )
-}
-MenuBadge.defaultProps = {
-  content: '',
 }
 
 export default MenuBadge

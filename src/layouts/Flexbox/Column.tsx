@@ -1,10 +1,10 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {ColumnProps} from './interfaces'
 
-const Column = ({
+const Column: SFC<ColumnProps> = ({
   children,
   className,
   xs,
@@ -21,7 +21,7 @@ const Column = ({
   autoWidthSm,
   autoWidthXs,
   ...props
-}: ColumnProps): ReactElement<ColumnProps> => (
+}) => (
   <div
     className={cx(
       'column',

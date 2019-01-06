@@ -13,7 +13,7 @@ export interface PaginationItemProps {
   onClick?: (e: MouseEvent<any>, value: number) => void
 }
 
-export interface PaginationTitleProps {
+export interface PaginationTitleItemProps {
   title: string
   subtitle: string
   current: number
@@ -26,19 +26,33 @@ export interface PaginationTitle {
   subtitle: string
 }
 
-export interface PaginationProps {
+export interface PaginationBaseProps {
+  current: number
+  onClick?: (e: MouseEvent<any>, page: number) => void
+}
+
+export interface PaginationAttrProps extends PaginationBaseProps {
   label?: {
     previous: ReactNode
     next: ReactNode
     skip: ReactNode
   }
   total: number
-  current: number
   each?: number
-  title?: {
+}
+
+export interface PaginationTitleProps extends PaginationBaseProps {
+  title: {
     prev: PaginationTitle
     next: PaginationTitle
   }
-  onClick?: (e: MouseEvent<any>, page: number) => void
-  children?: ReactNode
 }
+
+export interface PaginationChildrenProps extends PaginationBaseProps {
+  children: ReactNode
+}
+
+export type PaginationProps =
+  | PaginationAttrProps
+  | PaginationTitleProps
+  | PaginationChildrenProps

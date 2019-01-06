@@ -3,16 +3,15 @@ import React, {Fragment, ReactElement} from 'react'
 import cx from 'classnames'
 
 // table components
-import {TableColumn, TableProps} from './interfaces'
+import {TableProps} from './interfaces'
+import {isTableCloumn} from './util'
+
 import Body from './TableBody'
 import Data from './TableData'
 import Header from './TableHeader'
 import Heading from './TableHeading'
 import Row from './TableRow'
 
-function isTableCloumn<T>(item: any): item is TableColumn<T> {
-  return item.children || item.headingProps
-}
 function renderTableHeader<T>({header, columns}: Partial<TableProps<T>>) {
   return (
     header &&
@@ -82,6 +81,7 @@ function renderTableContent<T>({
     </Fragment>
   )
 }
+
 function Table<T>({
   data,
   className = '',
@@ -90,7 +90,7 @@ function Table<T>({
   scroll = false,
   children,
   ...rest
-}: TableProps<T>): ReactElement<TableProps<T>> {
+}: TableProps<T>) {
   return (
     <table
       className={cx(
@@ -107,7 +107,6 @@ function Table<T>({
     </table>
   )
 }
-
 Table.defaultProps = {
   className: '',
   hover: true,

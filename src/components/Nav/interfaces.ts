@@ -1,4 +1,5 @@
 import {MouseEvent, ReactNode} from 'react'
+import {StyleProps} from 'src/interfaces'
 
 export interface NavItemProps {
   id: string
@@ -9,10 +10,14 @@ export interface NavItemProps {
   className?: string
 }
 
-export interface NavProps {
-  children?: ReactNode
-  items?: NavItemProps[]
-  active?: string
+export interface NavAttrProps extends Partial<StyleProps> {
+  items: NavItemProps[]
+  activeId?: string
   onClick?: (e: MouseEvent<any>, id: string) => void
-  className?: string
 }
+
+export interface NavChildrenProps extends Partial<StyleProps> {
+  children: ReactNode
+}
+
+export type NavProps = NavAttrProps | NavChildrenProps

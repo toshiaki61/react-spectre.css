@@ -1,4 +1,4 @@
-import React, {Fragment, ReactElement} from 'react'
+import React, {Fragment, SFC} from 'react'
 
 import cx from 'classnames'
 
@@ -10,7 +10,7 @@ import PanelHeader from './PanelHeader'
 import PanelNav from './PanelNav'
 import PanelTitle from './PanelTitle'
 
-const Panel = ({
+const Panel: SFC<PanelProps> = ({
   header,
   nav,
   content,
@@ -18,7 +18,7 @@ const Panel = ({
   headerClass,
   className,
   children,
-}: PanelProps): ReactElement<PanelProps> => {
+}) => {
   return (
     <div className={cx('panel', className)}>
       {children ? (

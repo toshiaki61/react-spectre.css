@@ -1,6 +1,6 @@
 import {ReactNode} from 'react'
 
-import {Page} from './interfaces'
+import {Page, PaginationChildrenProps, PaginationTitleProps} from './interfaces'
 
 export function calculateStartAndEnd(
   current: number,
@@ -46,4 +46,14 @@ export function pages(
     result.push({label: `${total}`, value: total})
   }
   return result
+}
+
+export function hasPaginationChildren(
+  item: any
+): item is PaginationChildrenProps {
+  return item.children
+}
+
+export function hasPaginationTitle(item: any): item is PaginationTitleProps {
+  return item.title
 }

@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {CardPartProps} from './interfaces'
 
-const CardSubtitle = ({children, className}: CardPartProps) => (
+const CardSubtitle: SFC<CardPartProps> = ({children, className}) => (
   <div className={cx('card-subtitle', className)}>{children}</div>
 )
 

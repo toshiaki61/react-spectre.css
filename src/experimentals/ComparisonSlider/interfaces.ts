@@ -15,8 +15,13 @@ export type ComparisonAfterProps = Partial<BasePartProps>
 
 export type ComparisonLabelProps = Partial<BasePartProps>
 
-export interface ComparisonSliderProps {
-  children?: ReactNode
-  before?: ComparisonImageProps
-  after?: ComparisonImageProps
+export interface ComparisonSliderAttrProps {
+  before: ComparisonImageProps
+  after: ComparisonImageProps
 }
+export interface ComparisonSliderChildrenProps {
+  children: ReactNode
+}
+export type ComparisonSliderProps =
+  | ComparisonSliderAttrProps
+  | ComparisonSliderChildrenProps

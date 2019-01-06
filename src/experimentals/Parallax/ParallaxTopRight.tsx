@@ -1,5 +1,5 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
-const ParallaxTopRight = () => <div className="parallax-top-right" />
+const ParallaxTopRight: SFC<{}> = () => <div className="parallax-top-right" />
 
 export default ParallaxTopRight

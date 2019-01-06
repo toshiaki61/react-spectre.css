@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import {FormInputHintProps} from './interfaces'
 
-const FormInputHint = ({children}: FormInputHintProps) => (
+const FormInputHint: SFC<FormInputHintProps> = ({children}) => (
   <p className="form-input-hint">{children}</p>
 )
 export default FormInputHint

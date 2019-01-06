@@ -1,34 +1,28 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {NavProps} from './interfaces'
+import {hasNavChildren} from './util'
 
 import NavItem from './NavItem'
 
-const Nav = ({
-  children,
-  items,
-  active,
-  onClick,
-  className,
-}: NavProps): ReactElement<NavProps> => (
-  <ul className={cx('nav', className)}>
-    {children
-      ? children
-      : items &&
-        items.map(item => (
-          <NavItem
-            key={item.id}
-            {...item}
-            active={active === item.id}
-            onClick={onClick}
-          />
-        ))}
-  </ul>
-)
-Nav.defaultProps = {
-  active: '',
+function renderNav(p: NavProps) {
+  if (hasNavChildren(p)) {
+    return p.children
+  }
+  const {items, activeId, onClick} = p
+  return items.map(item => (
+    <NavItem
+      key={item.id}
+      {...item}
+      active={activeId === item.id}
+      onClick={onClick}
+    />
+  ))
 }
+const Nav: SFC<NavProps> = p => (
+  <ul className={cx('nav', p.className)}>{renderNav(p)}</ul>
+)
 
 export default Nav

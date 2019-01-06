@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react'
+import React, {ReactElement, SFC} from 'react'
 
 import cx from 'classnames'
 
@@ -8,30 +8,24 @@ import {attr} from '@utils/attr'
 
 import {AccordionItemProps} from './interfaces'
 
-const AccordionItem = ({
-  id,
-  contents,
-  className,
-  exclusive,
-  useIcon,
-  header,
-  children,
-}: AccordionItemProps): ReactElement<AccordionItemProps> => {
-  const classes = cx('accordion-item', className)
+import AccordionBody from './AccordionBody'
+
+const AccordionItem: SFC<AccordionItemProps> = p => {
+  const {id, header, className, exclusive, useIcon} = p
   const type = exclusive ? 'radio' : 'checkbox'
   const inputProps = {id, type, name: `accordion-${type}`}
   const icon = useIcon ? (
     <Icon {...attr({marginRight: true})} type="arrow-right" />
   ) : null
   return (
-    <div className={classes}>
+    <div className={cx('accordion-item', className)}>
       <input {...inputProps} id={id} hidden />
       <label className="accordion-header" htmlFor={id}>
         {icon}
         {header}
       </label>
       <div className="accordion-body">
-        {children ? children : contents && <Menu nav contents={contents} />}
+        <AccordionBody {...p} />
       </div>
     </div>
   )

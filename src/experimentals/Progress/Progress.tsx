@@ -1,11 +1,8 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import {ProgressProps} from './interfaces'
 
-const Progress = ({
-  max,
-  ...props
-}: ProgressProps): ReactElement<ProgressProps> => (
+const Progress: SFC<ProgressProps> = ({max, ...props}) => (
   <progress className="progress" max={max} {...props} />
 )
 Progress.defaultProps = {max: 100}

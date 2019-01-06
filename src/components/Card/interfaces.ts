@@ -1,6 +1,6 @@
-import {CSSProperties, ReactNode} from 'react'
+import {ReactElement, ReactNode} from 'react'
 
-import {BasePartProps} from '../../interfaces'
+import {BasePartProps, StyleProps} from '../../interfaces'
 
 export interface CardItemHeaderProps {
   button: ReactNode
@@ -17,11 +17,12 @@ export interface CardItemProps {
   content?: CardItemHeaderProps | ReactNode
 }
 
-export interface CardProps {
-  items?: CardItemProps[]
-  children?: ReactNode
-  className?: string
-  style?: CSSProperties
+export interface CardAttrProps extends Partial<StyleProps> {
+  items: CardItemProps[]
 }
+export interface CardChildrenProps extends Partial<StyleProps> {
+  children: ReactElement<CardItemProps>
+}
+export type CardProps = CardAttrProps | CardChildrenProps
 
 export type CardPartProps = Partial<BasePartProps>

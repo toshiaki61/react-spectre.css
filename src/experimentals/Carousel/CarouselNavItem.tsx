@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import {CarouselNavItemProps} from './interfaces'
 
-const CarouselNavItem = ({children, id}: CarouselNavItemProps) => (
+const CarouselNavItem: SFC<CarouselNavItemProps> = ({children, id}) => (
   <label className="nav-item text-hide c-hand" htmlFor={id}>
     {children}
   </label>

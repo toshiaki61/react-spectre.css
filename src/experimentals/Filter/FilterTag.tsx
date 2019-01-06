@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import {FilterTagProps} from './interfaces'
 
-const FilterTag = ({id, checked, onChange}: FilterTagProps) => (
+const FilterTag: SFC<FilterTagProps> = ({id, checked, onChange}) => (
   <input
     className="filter-tag"
     name="filter-radio"

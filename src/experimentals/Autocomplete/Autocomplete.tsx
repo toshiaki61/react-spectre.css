@@ -1,4 +1,4 @@
-import React, {MouseEvent, ReactElement, useCallback} from 'react'
+import React, {MouseEvent, SFC, useCallback} from 'react'
 
 import {Avatar, Chip, Menu, MenuItem, Tile} from '@components/index'
 import {Button, FormIcon, FormInput, HasIcon} from '@elements/index'
@@ -9,7 +9,7 @@ import FormAutocomplete from './FormAutocomplete'
 import FormAutocompleteInput from './FormAutocompleteInput'
 import {filter, mark} from './util'
 
-const Autocomplete = ({
+const Autocomplete: SFC<AutocompleteProps> = ({
   placeholder,
   active,
   selected,
@@ -21,7 +21,7 @@ const Autocomplete = ({
   onBlur,
   onClearClick,
   onSelected,
-}: AutocompleteProps): ReactElement<AutocompleteProps> => {
+}) => {
   return (
     <FormAutocomplete onFocus={onFocus} onBlur={onBlur}>
       <FormAutocompleteInput active={active}>
@@ -74,7 +74,14 @@ const Autocomplete = ({
                   <Tile
                     compact
                     content={mark(name, input)}
-                    icon={<Avatar sm initial={initial} src={img} alt={name} />}
+                    icon={
+                      <Avatar
+                        size="sm"
+                        initial={initial}
+                        src={img}
+                        alt={name}
+                      />
+                    }
                   />
                 </Button>
               </MenuItem>

@@ -1,13 +1,16 @@
-import React, {MouseEventHandler, ReactElement, ReactNode} from 'react'
+import {MouseEventHandler, ReactElement, ReactNode} from 'react'
 
 export interface BreadcrumbItemProps {
   id: string
+  children: ReactNode
   link?: string
-  children?: ReactNode
   onClick?: MouseEventHandler
 }
 
-export interface BreadcrumbProps {
-  items?: BreadcrumbItemProps[]
-  children?: ReactNode
+export interface BreadcrumbAttrProps {
+  items: BreadcrumbItemProps[]
 }
+export interface BreadcrumbChildrenProps {
+  children: Array<ReactElement<BreadcrumbItemProps>>
+}
+export type BreadcrumbProps = BreadcrumbAttrProps | BreadcrumbChildrenProps

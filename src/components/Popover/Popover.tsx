@@ -1,4 +1,4 @@
-import React, {Fragment, ReactElement} from 'react'
+import React, {Fragment, SFC} from 'react'
 
 import cx from 'classnames'
 
@@ -6,13 +6,13 @@ import {PopoverProps} from './interfaces'
 
 import PopoverContainer from './PopoverContainer'
 
-const Popover = ({
+const Popover: SFC<PopoverProps> = ({
   target,
   content,
   children,
   position,
   className,
-}: PopoverProps): ReactElement<PopoverProps> => (
+}) => (
   <div
     className={cx('popover', className, {
       [`popover-${position}`]: position,
@@ -29,10 +29,4 @@ const Popover = ({
   </div>
 )
 
-Popover.defaultProps = {
-  right: false,
-  left: false,
-  bottom: false,
-  className: '',
-}
 export default Popover

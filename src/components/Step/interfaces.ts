@@ -7,8 +7,12 @@ export interface StepItemProps {
   active?: boolean
 }
 
-export interface StepProps {
-  children?: ReactNode
-  items?: StepItemProps[]
+export interface StepAttrProps {
+  items: StepItemProps[]
   activeId?: string
 }
+export interface StepChildrenProps {
+  children: ReactNode
+}
+
+export type StepProps = StepAttrProps | StepChildrenProps

@@ -12,12 +12,17 @@ export interface CarouselItemProps {
   alt: string
 }
 
-export interface CarouselProps {
-  children?: ReactNode
-  slides?: CarouselItemProps[]
+export interface CarouselAttrProps {
+  slides: CarouselItemProps[]
   active?: string
   onChange: ChangeEventIdHandler
 }
+
+export interface CarouselChildrenProps {
+  children: ReactNode
+}
+
+export type CarouselProps = CarouselAttrProps | CarouselChildrenProps
 
 export interface CarouselLocatorProps {
   id: string

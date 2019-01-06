@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {ModalPartProps} from './interfaces'
 
-const ModalBody = ({children, className}: ModalPartProps) => (
+const ModalBody: SFC<ModalPartProps> = ({children, className}) => (
   <div className={cx('modal-body', className)}>
     <div className="content">{children}</div>
   </div>

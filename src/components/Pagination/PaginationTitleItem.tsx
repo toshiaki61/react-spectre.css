@@ -1,28 +1,29 @@
-import React, {MouseEvent, ReactElement, useCallback} from 'react'
+import React, {MouseEvent, SFC, useCallback} from 'react'
 
 import cx from 'classnames'
 
 import {LinkHash} from '../../interfaces'
 
-import {PaginationTitleProps} from './interfaces'
+import {PaginationTitleItemProps} from './interfaces'
 
-const PaginationTitle = ({
+const PaginationTitleItem: SFC<PaginationTitleItemProps> = ({
   title,
   subtitle,
   current,
   value,
   onClick,
-}: PaginationTitleProps): ReactElement<PaginationTitleProps> => {
-  const classes = cx('page-item', {
-    'page-prev': current > value,
-    'page-next': current < value,
-  })
+}) => {
   const handleLinkClick = useCallback(
     (e: MouseEvent<any>) => onClick && onClick(e, value),
     [value]
   )
   return (
-    <li className={classes}>
+    <li
+      className={cx('page-item', {
+        'page-prev': current > value,
+        'page-next': current < value,
+      })}
+    >
       <a href={LinkHash} onClick={handleLinkClick}>
         <div className="page-item-subtitle">{subtitle}</div>
         <div className="page-item-title h5">{title}</div>
@@ -31,4 +32,4 @@ const PaginationTitle = ({
   )
 }
 
-export default PaginationTitle
+export default PaginationTitleItem

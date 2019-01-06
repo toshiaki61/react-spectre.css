@@ -1,17 +1,17 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {SliderProps} from './interfaces'
 
-const Slider = ({
+const Slider: SFC<SliderProps> = ({
   min,
   max,
   value,
   tooltip,
   onChange,
   ...props
-}: SliderProps): ReactElement<SliderProps> => (
+}) => (
   <input
     type="range"
     className={cx('slider', {tooltip})}

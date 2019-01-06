@@ -1,4 +1,4 @@
-import React, {MouseEvent, ReactElement, useCallback} from 'react'
+import React, {MouseEvent, SFC, useCallback} from 'react'
 
 import cx from 'classnames'
 
@@ -8,14 +8,14 @@ import {NavItemProps} from './interfaces'
 
 import Nav from './Nav'
 
-const NavItem = ({
+const NavItem: SFC<NavItemProps> = ({
   id,
   name,
   items,
   active,
   onClick,
   className,
-}: NavItemProps): ReactElement<NavItemProps> => {
+}) => {
   const handleItemClick = useCallback(
     (e: MouseEvent<any>) => onClick && onClick(e, id),
     [id]

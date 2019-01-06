@@ -1,4 +1,4 @@
-import React, {MouseEvent, ReactElement, useCallback} from 'react'
+import React, {MouseEvent, SFC, useCallback} from 'react'
 
 import cx from 'classnames'
 
@@ -6,17 +6,13 @@ import {LinkHash} from '../../interfaces'
 
 import {PaginationItemProps} from './interfaces'
 
-const PaginationItem = ({
+const PaginationItem: SFC<PaginationItemProps> = ({
   current,
   value,
   label,
   disabled,
   onClick,
-}: PaginationItemProps): ReactElement<PaginationItemProps> => {
-  const classes = cx('page-item', {
-    disabled,
-    active: value === current,
-  })
+}) => {
   const linkProp: {tabIndex?: number} = {}
   if (disabled) {
     linkProp.tabIndex = -1
@@ -26,7 +22,12 @@ const PaginationItem = ({
     [value]
   )
   return (
-    <li className={classes}>
+    <li
+      className={cx('page-item', {
+        disabled,
+        active: value === current,
+      })}
+    >
       <a href={LinkHash} {...linkProp} onClick={handleLinkClick}>
         {label}
       </a>

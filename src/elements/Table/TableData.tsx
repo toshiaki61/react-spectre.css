@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 import {TableDataProps} from './interfaces'
 
-const TableData = ({className, children}: TableDataProps) => (
+const TableData: SFC<TableDataProps> = ({className, children}) => (
   <td className={cx(className)}>{children}</td>
 )
 

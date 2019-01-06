@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
@@ -8,7 +8,7 @@ import {LinkHash} from '../../interfaces'
 
 import {StepItemProps} from './interfaces'
 
-const StepItem = ({children, active, tooltip}: StepItemProps) => (
+const StepItem: SFC<StepItemProps> = ({children, active, tooltip}) => (
   <li className={cx('step-item', {active})}>
     <a href={LinkHash} {...attr({tooltip})}>
       {children}

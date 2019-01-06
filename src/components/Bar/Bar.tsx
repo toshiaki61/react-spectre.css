@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
@@ -9,44 +9,38 @@ import {BarProps} from './interfaces'
 
 import {attr} from '@utils/attr'
 
-const Bar = ({
-  className,
-  small,
-  slider,
-  items,
-}: BarProps): ReactElement<BarProps> => {
-  const classes = cx(
-    'bar',
-    {
-      'bar-sm': small,
-      'bar-slider': slider,
-    },
-    className
-  )
-  return (
-    <div className={classes}>
-      {items.map((item, i) => {
-        const key = `bar-item-${i}`
-        if (slider) {
-          const value = `${item.value}%`
-          Object.assign(item, {
-            role: 'progressbar',
-            style: {width: value},
-            content: (
-              <Button
-                {...attr({
-                  className: 'bar-slider-btn',
-                  tooltip: value,
-                })}
-              />
-            ),
-          })
-        }
-        return <BarItem key={key} small={small} {...item} />
-      })}
-    </div>
-  )
-}
+const Bar: SFC<BarProps> = ({className, small, slider, items}) => (
+  <div
+    className={cx(
+      'bar',
+      {
+        'bar-sm': small,
+        'bar-slider': slider,
+      },
+      className
+    )}
+  >
+    {items.map((item, i) => {
+      const key = `bar-item-${i}`
+      if (slider) {
+        const value = `${item.value}%`
+        Object.assign(item, {
+          role: 'progressbar',
+          style: {width: value},
+          content: (
+            <Button
+              {...attr({
+                className: 'bar-slider-btn',
+                tooltip: value,
+              })}
+            />
+          ),
+        })
+      }
+      return <BarItem key={key} small={small} {...item} />
+    })}
+  </div>
+)
 Bar.defaultProps = {
   className: '',
   small: false,

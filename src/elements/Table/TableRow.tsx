@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {TableRowProps} from './interfaces'
 
-const TableRow = ({className, children, onClick}: TableRowProps) => (
+const TableRow: SFC<TableRowProps> = ({className, children, onClick}) => (
   <tr onClick={onClick} className={cx(className)}>
     {children}
   </tr>

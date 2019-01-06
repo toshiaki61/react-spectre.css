@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
@@ -7,13 +7,13 @@ import {TableHeadingProps, TableSortDirection} from './interfaces'
 import {Button} from '@elements/Button'
 import {Icon} from '@elements/Icon'
 
-const TableHeading = ({
+const TableHeading: SFC<TableHeadingProps> = ({
   className,
   children,
   onClick,
   sortDirection,
   ...rest
-}: TableHeadingProps) => (
+}) => (
   <th className={cx(className)} onClick={onClick} {...rest}>
     {children}
     {sortDirection && (

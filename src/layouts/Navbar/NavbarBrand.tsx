@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {NavbarBrandProps} from './interfaces'
 
-const NavbarBrand = ({children, className, href}: NavbarBrandProps) =>
+const NavbarBrand: SFC<NavbarBrandProps> = ({children, className, href}) =>
   href ? (
     <a href={href} className={cx('navbar-brand', className)}>
       {children}

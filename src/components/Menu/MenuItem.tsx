@@ -1,68 +1,49 @@
-import React, {MouseEvent, ReactElement, useCallback} from 'react'
+import React, {Fragment, MouseEvent, SFC, useCallback} from 'react'
 
 import cx from 'classnames'
 
 import {Divider} from '@utils/Divider'
 
 import {MenuItemProps} from './interfaces'
+import {hasMenuItemChildren, isMenuItemDivider} from './util'
+
 import MenuBadge from './MenuBadge'
 
-const MenuItem = ({
-  children,
-  className,
-  id,
-  link,
-  content,
-  divider,
-  active,
-  badge,
-  onClick,
-  ...props
-}: MenuItemProps): ReactElement<MenuItemProps> => {
-  if (children) {
-    return (
-      <li className={cx('menu-item', className)} {...props}>
-        {children}
-      </li>
-    )
+function renderMenuitem(p: MenuItemProps) {
+  if (isMenuItemDivider(p)) {
+    return null
   }
-  if (divider) {
-    return (
-      <Divider
-        className={cx('menu-item', className)}
-        content={typeof divider === 'string' ? divider : ''}
-      />
-    )
+  if (hasMenuItemChildren(p)) {
+    return p.children
   }
-  if (typeof content !== 'string') {
-    return (
-      <li className={cx('menu-item', className)} {...props}>
-        {content}
-      </li>
-    )
-  }
-
+  const {id, link, content, active, badge, onClick} = p
   const handleItemClick = useCallback(
     (e: MouseEvent<any>) => onClick && onClick(e, id || ''),
     [id]
   )
-
   return (
-    <li className={cx('menu-item', className)} {...props}>
+    <Fragment>
       <MenuBadge content={badge} />
       <a href={link} className={cx({active})} onClick={handleItemClick}>
         {content}
       </a>
-    </li>
+    </Fragment>
   )
+}
+const MenuItem: SFC<MenuItemProps> = p => {
+  const {className} = p
+  if (isMenuItemDivider(p)) {
+    return (
+      <Divider
+        className={cx('menu-item', className)}
+        content={p.divider === 'string' ? p.divider : ''}
+      />
+    )
+  }
+  return <li className={cx('menu-item', className)}>{renderMenuitem(p)}</li>
 }
 MenuItem.defaultProps = {
   link: 'javascript:void(0)',
-  content: '',
-  className: '',
-  divider: false,
-  active: false,
-  badge: 0,
 }
 
 export default MenuItem

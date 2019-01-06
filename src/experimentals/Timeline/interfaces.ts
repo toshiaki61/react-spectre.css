@@ -2,10 +2,13 @@ import {ReactNode} from 'react'
 
 import {BasePartProps} from '../../interfaces'
 
-export interface TimelineProps {
-  children?: ReactNode
-  timelines?: TimelineData[]
+export interface TimelineAttrProps {
+  timelines: TimelineData[]
 }
+export interface TimelineChildrenProps {
+  children: ReactNode
+}
+export type TimelineProps = TimelineAttrProps | TimelineChildrenProps
 
 export interface TimelineItemProps {
   id: string

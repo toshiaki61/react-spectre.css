@@ -1,19 +1,18 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import {BreadcrumbProps} from './interfaces'
+import {hasBreadcrumbChildren} from './util'
 
 import BreadcrumbItem from './BreadcrumbItem'
 
-const Breadcrumb = ({
-  items,
-  children,
-}: BreadcrumbProps): ReactElement<BreadcrumbProps> => (
-  <ul className="breadcrumb">
-    {children
-      ? children
-      : items &&
-        items.map((item, i) => <BreadcrumbItem key={item.id} {...item} />)}
-  </ul>
+function renderBreadcrumb(p: BreadcrumbProps) {
+  if (hasBreadcrumbChildren(p)) {
+    return p.children
+  }
+  return p.items.map((item, i) => <BreadcrumbItem key={item.id} {...item} />)
+}
+const Breadcrumb: SFC<BreadcrumbProps> = p => (
+  <ul className="breadcrumb">{renderBreadcrumb(p)}</ul>
 )
 
 export default Breadcrumb

@@ -1,16 +1,12 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 import {AvatarIconProps} from './interfaces'
 
-const AvatarIcon = ({
-  className,
-  alt,
-  ...props
-}: AvatarIconProps): ReactElement<AvatarIconProps> => {
-  const classes = cx('avatar-icon', className)
-  return <img className={classes} alt={alt} {...props} />
-}
+const AvatarIcon: SFC<AvatarIconProps> = ({className, alt, ...props}) => (
+  <img className={cx('avatar-icon', className)} alt={alt} {...props} />
+)
+
 AvatarIcon.defaultProps = {
   alt: '',
   className: '',

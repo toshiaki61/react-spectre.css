@@ -1,11 +1,17 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
-import FormIcon from './FormIcon'
 import {FormLabeledProps} from './interfaces'
 
-const FormCheckbox = ({label, inline, size, ...rest}: FormLabeledProps) => (
+import FormIcon from './FormIcon'
+
+const FormCheckbox: SFC<FormLabeledProps> = ({
+  label,
+  inline,
+  size,
+  ...rest
+}) => (
   <label
     className={cx('form-checkbox', {
       'form-inline': inline,

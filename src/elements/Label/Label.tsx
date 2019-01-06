@@ -1,10 +1,16 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {LabelProps} from './interfaces'
 
-const Label = ({children, className, rounded, type, ...props}: LabelProps) => (
+const Label: SFC<LabelProps> = ({
+  children,
+  className,
+  rounded,
+  type,
+  ...props
+}) => (
   <span
     className={cx(
       'label',
@@ -19,9 +25,5 @@ const Label = ({children, className, rounded, type, ...props}: LabelProps) => (
     {children}
   </span>
 )
-Label.defaultProps = {
-  className: '',
-  rounded: false,
-}
 
 export default Label

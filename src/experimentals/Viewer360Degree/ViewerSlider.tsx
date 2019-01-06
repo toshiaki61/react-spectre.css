@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
@@ -6,7 +6,7 @@ import {Slider} from '../Slider'
 
 import {ViewerSliderProps} from './interfaces'
 
-const ViewerSlider = ({className, ...rest}: ViewerSliderProps) => (
+const ViewerSlider: SFC<ViewerSliderProps> = ({className, ...rest}) => (
   <Slider className={cx('viewer-slider', className)} {...rest} />
 )
 

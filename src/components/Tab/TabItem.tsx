@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
@@ -7,14 +7,12 @@ import {LinkHash} from '../../interfaces'
 
 import {TabItemProps} from './interfaces'
 
-const TabItem = ({title, active, badge, onClick}: TabItemProps) => {
-  return (
-    <li className={cx('tab-item', {active})}>
-      <a href={LinkHash} onClick={onClick} {...attr({badge: `${badge}`})}>
-        {title}
-      </a>
-    </li>
-  )
-}
+const TabItem: SFC<TabItemProps> = ({title, active, badge, onClick}) => (
+  <li className={cx('tab-item', {active})}>
+    <a href={LinkHash} onClick={onClick} {...attr({badge: `${badge}`})}>
+      {title}
+    </a>
+  </li>
+)
 
 export default TabItem

@@ -1,4 +1,4 @@
-import React, {Fragment, ReactElement} from 'react'
+import React, {Fragment, SFC} from 'react'
 
 import cx from 'classnames'
 
@@ -11,14 +11,8 @@ import EmptyIcon from './EmptyIcon'
 import EmptySubtitle from './EmptySubtitle'
 import EmptyTitle from './EmptyTitle'
 
-const Empty = ({
-  children,
-  className,
-  iconType,
-  title,
-  subtitle,
-  action,
-}: EmptyProps): ReactElement<EmptyProps> => {
+const Empty: SFC<EmptyProps> = p => {
+  const {children, className, iconType, title, subtitle, action} = p
   return (
     <div className={cx('empty', className)}>
       {children ? (
@@ -37,13 +31,6 @@ const Empty = ({
       )}
     </div>
   )
-}
-Empty.defaultProps = {
-  children: null,
-  className: '',
-  icon: '',
-  title: null,
-  subtitle: null,
 }
 
 export default Empty

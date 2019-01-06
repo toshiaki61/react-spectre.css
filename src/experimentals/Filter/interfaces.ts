@@ -7,15 +7,19 @@ export interface FilterDatum {
   title: string
   subtitle: string
 }
-export interface FilterProps {
-  children?: ReactNode
-  tags?: {
+
+export interface FilterAttrProps {
+  tags: {
     [key: string]: string
   }
   data?: FilterDatum[]
   activeId?: string
   onChange: (e: ChangeEvent<HTMLInputElement>, id: string) => void
 }
+export interface FilterChildrenProps {
+  children: ReactNode
+}
+export type FilterProps = FilterAttrProps | FilterChildrenProps
 
 export interface FilterTagProps {
   id: string

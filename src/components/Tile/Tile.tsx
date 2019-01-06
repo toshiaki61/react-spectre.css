@@ -1,8 +1,9 @@
-import React, {Fragment, ReactElement} from 'react'
+import React, {Fragment, SFC} from 'react'
 
 import cx from 'classnames'
 
 import {TileProps} from './interfaces'
+import {hasTileChildren} from './util'
 
 import TileAction from './TileAction'
 import TileContent from './TileContent'
@@ -10,33 +11,28 @@ import TileIcon from './TileIcon'
 import TileSubtitle from './TileSubtitle'
 import TileTitle from './TileTitle'
 
-const Tile = ({
-  children,
-  className,
-  compact,
-  title,
-  subtitle,
-  content,
-  icon,
-  style,
-  action,
-}: TileProps): ReactElement<TileProps> => (
-  <div className={cx('tile', className, {'tile-centered': compact})}>
-    {children ? (
-      children
-    ) : (
-      <Fragment>
-        {icon ? <TileIcon>{icon}</TileIcon> : null}
-        <TileContent>
-          {title ? <TileTitle style={style}>{title}</TileTitle> : null}
-          {subtitle ? (
-            <TileSubtitle className="text-gray">{subtitle}</TileSubtitle>
-          ) : null}
-          {content}
-        </TileContent>
-        {action ? <TileAction>{action}</TileAction> : null}
-      </Fragment>
-    )}
+function renderTile(p: TileProps) {
+  if (hasTileChildren(p)) {
+    return p.children
+  }
+  const {title, subtitle, content, icon, style, action} = p
+  return (
+    <Fragment>
+      {icon ? <TileIcon>{icon}</TileIcon> : null}
+      <TileContent>
+        {title ? <TileTitle style={style}>{title}</TileTitle> : null}
+        {subtitle ? (
+          <TileSubtitle className="text-gray">{subtitle}</TileSubtitle>
+        ) : null}
+        {content}
+      </TileContent>
+      {action ? <TileAction>{action}</TileAction> : null}
+    </Fragment>
+  )
+}
+const Tile: SFC<TileProps> = p => (
+  <div className={cx('tile', p.className, {'tile-centered': p.compact})}>
+    {renderTile(p)}
   </div>
 )
 

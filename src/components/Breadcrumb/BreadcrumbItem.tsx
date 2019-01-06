@@ -1,12 +1,12 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import {BreadcrumbItemProps} from './interfaces'
 
-const BreadcrumbItem = ({
+const BreadcrumbItem: SFC<BreadcrumbItemProps> = ({
   link,
   children,
   onClick,
-}: BreadcrumbItemProps): ReactElement<BreadcrumbItemProps> => (
+}) => (
   <li className="breadcrumb-item">
     <a href={link} onClick={onClick}>
       {children}
@@ -15,7 +15,6 @@ const BreadcrumbItem = ({
 )
 BreadcrumbItem.defaultProps = {
   link: '#',
-  content: '',
 }
 
 export default BreadcrumbItem

@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {FormTextareaProps} from './interfaces'
 
-const FormTextarea = ({size}: FormTextareaProps) => (
+const FormTextarea: SFC<FormTextareaProps> = ({size}) => (
   <textarea className={cx('form-input', {[`input-${size}`]: size})} />
 )
 

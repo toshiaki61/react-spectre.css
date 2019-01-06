@@ -39,18 +39,6 @@ export interface CalendarOptions {
   data: CalendarData[]
   range: CalendarRange[]
 }
-export interface CalendarProps {
-  children?: ReactNode
-  lg?: boolean
-  nav?: CalendarNav
-  weekdays?: string[]
-  current: DateLike
-  // start: DateLike
-  // end: DateLike
-  options?: CalendarOptions
-  formatDate?: (date: DateLike) => string
-  onDateClick?: MouseEventDateLikeHandler
-}
 
 export interface CalendarDateItemProps {
   children: ReactNode
@@ -60,3 +48,21 @@ export interface CalendarDateItemProps {
   today?: boolean
   onClick: MouseEventHandler
 }
+
+export interface CalendarBaseProps {
+  lg?: boolean
+}
+export interface CalendarAttrProps extends CalendarBaseProps {
+  nav?: CalendarNav
+  weekdays?: string[]
+  current: DateLike
+  options?: CalendarOptions
+  formatDate?: (date: DateLike) => string
+  onDateClick?: MouseEventDateLikeHandler
+}
+
+export interface CalendarChildrenProps extends CalendarBaseProps {
+  children: ReactNode
+}
+
+export type CalendarProps = CalendarAttrProps | CalendarChildrenProps

@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {TilePartProps} from './interfaces'
 
-const TileContent = ({children, className}: TilePartProps) => (
+const TileContent: SFC<TilePartProps> = ({children, className}) => (
   <div className={cx('tile-content', className)}>{children}</div>
 )
 

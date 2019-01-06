@@ -1,13 +1,10 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {CalendarNavProps} from './interfaces'
 
-const CalendarNav = ({
-  children,
-  className,
-}: CalendarNavProps): ReactElement<CalendarNavProps> => {
+const CalendarNav: SFC<CalendarNavProps> = ({children, className}) => {
   return (
     <div className={cx('calendar-nav', 'navbar', className)}>{children}</div>
   )

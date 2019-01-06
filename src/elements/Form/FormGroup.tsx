@@ -1,14 +1,10 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {FormGroupProps} from './interfaces'
 
-const FormGroup = ({
-  children,
-  className,
-  color,
-}: FormGroupProps): ReactElement<FormGroupProps> => (
+const FormGroup: SFC<FormGroupProps> = ({children, className, color}) => (
   <div
     className={cx('form-group', className, {
       [`has-${color}`]: color,
@@ -17,11 +13,5 @@ const FormGroup = ({
     {children}
   </div>
 )
-
-FormGroup.defaultProps = {
-  className: '',
-  success: false,
-  danger: false,
-}
 
 export default FormGroup

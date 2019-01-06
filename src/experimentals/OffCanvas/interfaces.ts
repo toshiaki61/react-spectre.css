@@ -8,12 +8,15 @@ export interface OffCanvasSidebarProps {
   id: string
 }
 
-export interface OffCanvasProps {
-  children?: ReactNode
-  sidebarId?: string
+export interface OffCanvasAttrProps {
+  sidebarId: string
   sidebarContent?: ReactNode
   content?: ReactNode
 }
+export interface OffCanvasChildrenProps {
+  children: ReactNode
+}
+export type OffCanvasProps = OffCanvasAttrProps | OffCanvasChildrenProps
 
 export type OffCanvasContentProps = Partial<BasePartProps>
 

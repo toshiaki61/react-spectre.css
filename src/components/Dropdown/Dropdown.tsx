@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
@@ -8,27 +8,27 @@ import {Icon} from '@elements/Icon'
 import {Menu} from '../Menu'
 
 import {DropdownProps} from './interfaces'
+import {hasDropdownChildren} from './util'
 
-const Dropdown = ({
-  className,
-  active,
-  right,
-  initialValue,
-  contents,
-  onClick,
-  onMenuClick,
-  children,
-}: DropdownProps): ReactElement<DropdownProps> => {
-  const classes = cx(
-    'dropdown',
-    {
-      'dropdown-right': right,
-      active,
-    },
-    className
-  )
+function renderDropdown(p: DropdownProps) {
+  if (hasDropdownChildren(p)) {
+    return p.children
+  }
+  return <Menu onClick={p.onMenuClick} contents={p.contents} />
+}
+const Dropdown: SFC<DropdownProps> = p => {
+  const {className, active, right, initialValue, onClick} = p
   return (
-    <div className={classes}>
+    <div
+      className={cx(
+        'dropdown',
+        {
+          'dropdown-right': right,
+          active,
+        },
+        className
+      )}
+    >
       <Button
         color="link"
         className="dropdown-toggle"
@@ -37,9 +37,7 @@ const Dropdown = ({
       >
         {initialValue} <Icon type="caret" />
       </Button>
-      {children
-        ? children
-        : contents && <Menu onClick={onMenuClick} contents={contents} />}
+      {renderDropdown(p)}
     </div>
   )
 }

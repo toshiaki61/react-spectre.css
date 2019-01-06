@@ -1,15 +1,15 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {ContainerProps} from './interfaces'
 
-const Container = ({
+const Container: SFC<ContainerProps> = ({
   children,
   className,
   size,
   ...props
-}: ContainerProps): ReactElement<ContainerProps> => (
+}) => (
   <div
     className={cx(
       'container',
@@ -23,8 +23,5 @@ const Container = ({
     {children}
   </div>
 )
-Container.defaultProps = {
-  className: '',
-}
 
 export default Container

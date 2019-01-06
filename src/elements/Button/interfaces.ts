@@ -1,9 +1,5 @@
-import {
-  CSSProperties,
-  MouseEventHandler,
-  ReactNode,
-  ReactNodeArray,
-} from 'react'
+import {MouseEventHandler, ReactNode, ReactNodeArray} from 'react'
+import {StyleProps} from '../../interfaces'
 
 export type ButtonSizeType = 'lg' | 'sm'
 
@@ -11,9 +7,8 @@ export type ButtonColorType = 'success' | 'error' | 'link' | 'primary'
 
 export type ButtonType = 'button' | 'submit'
 
-export interface BaseButtonProps {
-  children?: ReactNode
-  className?: string
+export interface BaseButtonProps extends Partial<StyleProps> {
+  children: ReactNode
   loading?: boolean
   href?: string
   size?: ButtonSizeType
@@ -27,13 +22,11 @@ export interface BaseButtonProps {
   tabIndex?: number
   disabled?: boolean
   type?: ButtonType
-  style?: CSSProperties
 }
 
 export type ButtonProps = BaseButtonProps
 
-export interface ButtonGroupProps {
+export interface ButtonGroupProps extends Partial<StyleProps> {
   children: ReactNodeArray
-  className?: string
   block?: boolean
 }

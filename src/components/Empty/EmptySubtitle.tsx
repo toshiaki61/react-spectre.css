@@ -1,18 +1,11 @@
-import React, {ReactElement} from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {EmptyPartProps} from './interfaces'
 
-const EmptySubtitle = ({
-  children,
-  className,
-}: EmptyPartProps): ReactElement<EmptyPartProps> => (
+const EmptySubtitle: SFC<EmptyPartProps> = ({children, className}) => (
   <p className={cx('empty-subtitle', className)}>{children}</p>
 )
-EmptySubtitle.defaultProps = {
-  children: null,
-  className: '',
-}
 
 export default EmptySubtitle

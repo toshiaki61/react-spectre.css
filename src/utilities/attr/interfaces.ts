@@ -1,4 +1,4 @@
-import {CSSProperties} from 'react'
+import {StyleProps} from '../../interfaces'
 
 export type ColorType =
   | 'primary'
@@ -55,6 +55,8 @@ export type TextOverflowType = 'ellipsis' | 'clip' | 'break'
 export type LangType = 'ja' | 'ko' | 'zh-hans' | 'zh-hant' | 'cjk'
 
 export type TooltipPositionType = 'right' | 'left' | 'bottom'
+
+export type LoadingSizeType = 'lg'
 
 interface ColorProps {
   fg: ColorType
@@ -118,10 +120,10 @@ interface TextProps {
 interface LangProps {
   lang: LangType
 }
-type LoadingSize = 'lg'
+
 interface LoadingProps {
   loading: boolean
-  loadingSize: LoadingSize
+  loadingSize: LoadingSizeType
 }
 interface DividerProps {
   divider: boolean
@@ -135,10 +137,6 @@ interface TooltipProps {
 }
 interface BadgeProps {
   badge: string
-}
-interface StyleProps {
-  className: string
-  style: CSSProperties
 }
 export type BaseProps = ColorProps &
   CursorProps &

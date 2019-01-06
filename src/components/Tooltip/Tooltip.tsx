@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {SFC} from 'react'
 
 import cx from 'classnames'
 
 import {TooltipProps} from './interfaces'
 
-const Tooltip = ({children, text, position}: TooltipProps) => (
+const Tooltip: SFC<TooltipProps> = ({children, text, position}) => (
   <span
     className={cx('tooltip', {
       [`tooltip-${position}`]: position,

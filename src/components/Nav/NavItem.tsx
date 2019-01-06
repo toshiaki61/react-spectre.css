@@ -16,10 +16,10 @@ const NavItem: SFC<NavItemProps> = ({
   onClick,
   className,
 }) => {
-  const handleItemClick = useCallback(
-    (e: MouseEvent<any>) => onClick && onClick(e, id),
-    [id]
-  )
+  const handleItemClick =
+    // useCallback(
+    (e: MouseEvent<any>) => onClick && onClick(e, id)
+  // ,[id])
   return (
     <li className={cx('nav-item', className, {active})}>
       <Button href="#" onClick={handleItemClick}>

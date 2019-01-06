@@ -65,10 +65,10 @@ function renderCalendar(p: CalendarProps) {
               rangeStart,
               rangeEnd,
             }) => {
-              const handleDateClick = useCallback(
-                (e: MouseEvent<any>) => onDateClick && onDateClick(e, date),
-                [date]
-              )
+              const handleDateClick =
+                //  useCallback(
+                (e: MouseEvent<any>) => onDateClick && onDateClick(e, date)
+              // ,[date])
               return (
                 <CalendarDate
                   key={date.toDateString()}

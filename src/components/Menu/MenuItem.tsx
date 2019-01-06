@@ -17,10 +17,10 @@ function renderMenuitem(p: MenuItemProps) {
     return p.children
   }
   const {id, link, content, active, badge, onClick} = p
-  const handleItemClick = useCallback(
-    (e: MouseEvent<any>) => onClick && onClick(e, id || ''),
-    [id]
-  )
+  const handleItemClick =
+    // useCallback(
+    (e: MouseEvent<any>) => onClick && onClick(e, id || '')
+  // ,[id])
   return (
     <Fragment>
       <MenuBadge content={badge} />

@@ -13,10 +13,10 @@ const PaginationTitleItem: SFC<PaginationTitleItemProps> = ({
   value,
   onClick,
 }) => {
-  const handleLinkClick = useCallback(
-    (e: MouseEvent<any>) => onClick && onClick(e, value),
-    [value]
-  )
+  const handleLinkClick =
+    // useCallback(
+    (e: MouseEvent<any>) => onClick && onClick(e, value)
+  // ,[value])
   return (
     <li
       className={cx('page-item', {

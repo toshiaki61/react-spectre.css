@@ -64,13 +64,16 @@ const Autocomplete: SFC<AutocompleteProps> = ({
         {suggests
           .filter(v => filter(input, 'name')(v))
           .map(({id, name, img, initial}) => {
-            const handleSelect = useCallback(
-              (e: MouseEvent<any>) => onSelected(e, id),
-              [id]
-            )
+            const handleSelect =
+              // useCallback(
+              (e: MouseEvent<any>) => {
+                e.preventDefault()
+                onSelected(e, id)
+              }
+            // ,[id])
             return (
-              <MenuItem key={id}>
-                <Button href="#" onClick={handleSelect}>
+              <MenuItem key={id} onClick={handleSelect}>
+                <a href="#">
                   <Tile
                     compact
                     content={mark(name, input)}
@@ -83,7 +86,7 @@ const Autocomplete: SFC<AutocompleteProps> = ({
                       />
                     }
                   />
-                </Button>
+                </a>
               </MenuItem>
             )
           })}

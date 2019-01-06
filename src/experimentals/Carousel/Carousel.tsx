@@ -18,10 +18,10 @@ function renderCarousel(p: CarouselProps) {
     <Fragment>
       {slides.map((slide, i) => {
         const id = `slide-${i}`
-        const handleChange = useCallback(
-          (e: ChangeEvent<any>) => onChange(e, id),
-          [id]
-        )
+        const handleChange =
+          // useCallback(
+          (e: ChangeEvent<any>) => onChange(e, id)
+        // ,[id])
         return (
           <CarouselLocator
             key={`${id}_locator`}

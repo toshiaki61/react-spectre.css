@@ -1,4 +1,4 @@
-import React, {Fragment, SFC, useCallback} from 'react'
+import React, {Fragment, MouseEvent, SFC, useCallback} from 'react'
 
 import cx from 'classnames'
 
@@ -16,7 +16,10 @@ function renderTab(p: TabProps) {
   return (
     <Fragment>
       {items.map(item => {
-        const handleLinkClick = useCallback(e => onClick(e, item.id), [item.id])
+        const handleLinkClick =
+          // useCallback(
+          (e: MouseEvent<any>) => onClick(e, item.id)
+        // , [item.id])
         return (
           <TabItem
             key={item.id}

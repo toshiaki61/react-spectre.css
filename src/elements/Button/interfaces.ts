@@ -8,7 +8,7 @@ export type ButtonColorType = 'success' | 'error' | 'link' | 'primary'
 export type ButtonType = 'button' | 'submit'
 
 export interface BaseButtonProps extends Partial<StyleProps> {
-  children: ReactNode
+  children?: ReactNode
   loading?: boolean
   href?: string
   size?: ButtonSizeType

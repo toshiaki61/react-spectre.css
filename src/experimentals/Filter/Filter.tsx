@@ -24,10 +24,10 @@ function renderFilter(p: FilterProps) {
   return (
     <Fragment>
       {Object.keys(tags).map(key => {
-        const handleChange = useCallback(
-          (e: ChangeEvent<any>) => onChange(e, key),
-          [key]
-        )
+        const handleChange =
+          // useCallback(
+          (e: ChangeEvent<any>) => onChange(e, key)
+        // ,[key])
         return (
           <FilterTag
             key={`${key}_input`}

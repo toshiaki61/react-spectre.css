@@ -17,6 +17,7 @@ const FormInput: SFC<FormInputProps> = ({
       [`input-${size}`]: size,
       [`is-${state}`]: state,
     })}
+    placeholder={placeholder}
     {...rest}
   />
 )

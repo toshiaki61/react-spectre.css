@@ -20,7 +20,10 @@ function renderHero(p: HeroProps) {
   )
 }
 const Hero: SFC<HeroProps> = p => (
-  <div className={cx('hero', p.className, {[`hero-${p.size}`]: p.size})}>
+  <div
+    className={cx('hero', p.className, {[`hero-${p.size}`]: p.size})}
+    style={p.style}
+  >
     {renderHero(p)}
   </div>
 )

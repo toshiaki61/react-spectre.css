@@ -1,9 +1,9 @@
 import React, {Component, MouseEvent} from 'react'
 
-import {eachDay, endOfWeek, format, startOfWeek} from 'date-fns'
+import {addMonths, eachDay, endOfWeek, format, startOfWeek} from 'date-fns'
 
 import {Popover} from '@components/Popover'
-import {Calendar} from '@experimentals/Calendar'
+import {Calendar, DateLike} from '@experimentals/Calendar'
 
 interface ICalendarExampleState {
   active: boolean
@@ -29,13 +29,24 @@ class CalendarExample extends Component<any, ICalendarExampleState> {
 
   public render() {
     const {current} = this.state
+    const dateClick = (e: MouseEvent<any>, date: DateLike) => console.log(date)
+    const prevClick = () => {
+      this.setState(s => ({current: addMonths(s.current, -1)}))
+    }
+    const nextClick = () => {
+      this.setState(s => ({current: addMonths(s.current, 1)}))
+    }
     return (
-      <Popover target={<div>PopOver</div>} bottom>
+      <Popover target={<div>PopOver</div>} position="bottom">
         <Calendar
           current={current}
           // onMonthClick={this.onMonthClick}
-          // nav={{current: {on}}}
-          onDateClick={this.onClick}
+          nav={{
+            current: format(current, 'MMMM YYYY'),
+            prev: {onClick: prevClick},
+            next: {onClick: nextClick},
+          }}
+          onDateClick={dateClick}
           weekdays={this.weekdays}
         />
       </Popover>

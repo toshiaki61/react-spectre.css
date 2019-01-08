@@ -2,7 +2,7 @@ import React, {FC, Fragment, MouseEvent, useCallback} from 'react'
 
 import cx from 'classnames'
 
-import {Button} from '@elements/index'
+import {Button, Icon} from '@elements/index'
 import {attr} from '@utils/attr'
 
 import {CalendarProps} from './interfaces'
@@ -30,18 +30,16 @@ function renderCalendar(p: CalendarProps) {
             actionButton
             onClick={nav.prev.onClick}
           >
-            {nav.prev.children}
+            {nav.prev.children || <Icon type="arrow-left" />}
           </Button>
-          <Button size="lg" color="link" onClick={nav.current.onClick}>
-            {nav.current.children}
-          </Button>
+          <div className="navbar-primary">{nav.current}</div>
           <Button
             size="lg"
             color="link"
             actionButton
             onClick={nav.next.onClick}
           >
-            {nav.next.children}
+            {nav.next.children || <Icon type="arrow-right" />}
           </Button>
         </CalendarNav>
       )}
@@ -73,14 +71,13 @@ function renderCalendar(p: CalendarProps) {
                 <CalendarDate
                   key={date.toDateString()}
                   {...attr({
-                    className: cx('calendar-date', {
+                    className: cx({
                       'prev-month': before,
                       'current-month': same,
                       'next-month': after,
                       'calendar-range': foundBetween,
                       'range-start': rangeStart,
                       'range-end': rangeEnd,
-                      tooltip: foundSameDay,
                       disabled: before || after,
                     }),
                     tooltip: foundSameDay && foundSameDay.tooltip,

@@ -59,19 +59,20 @@ export function generateCalendarData(
 ) {
   const start = startOfCalendarWeek(current)
   const end = endOfCalendarWeek(current)
+  const o = options || {
+    data: [],
+    range: [],
+  }
   return range(0, differenceInCalendarDays(end, start) + 1).map(d => {
     const date = addDays(start, d)
     const same = isSameMonth(date, current)
     const before = isBeforeMonth(date, current)
     const after = isAfterMonth(date, current)
-    const foundSameDay =
-      options &&
-      options.data &&
-      options.data.find(datum => isSameDay(date, datum.date))
-    const foundBetween =
-      options &&
-      options.range &&
-      options.range.find(r => isBetween(date, r.start, r.end, '[]'))
+    const foundSameDay = o.data.find(datum => isSameDay(date, datum.date))
+    console.log(options && options.data)
+    const foundBetween = o.range.find(r =>
+      isBetween(date, r.start, r.end, '[]')
+    )
     const rangeStart = foundBetween && isSameDay(date, foundBetween.start)
     const rangeEnd = foundBetween && isSameDay(date, foundBetween.end)
     return {

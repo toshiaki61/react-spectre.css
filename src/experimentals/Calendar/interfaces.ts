@@ -9,14 +9,14 @@ export type MouseEventDateLikeHandler = (
 ) => void
 
 export interface CalendarRange {
-  start: string
-  end: string
+  start: DateLike
+  end: DateLike
 }
 
 export type CalendarDataType = 'badge' | 'disabled' | 'today'
 
 export interface CalendarData {
-  date: string
+  date: DateLike
   tooltip: string
   type?: CalendarDataType
 }
@@ -28,11 +28,11 @@ export type CalendarDateProps = Partial<BasePartProps>
 
 export interface CalendarNavDetail {
   onClick: MouseEventHandler
-  children: ReactNode
+  children?: ReactNode
 }
 export interface CalendarNav {
+  current: string
   prev: CalendarNavDetail
-  current: CalendarNavDetail
   next: CalendarNavDetail
 }
 export interface CalendarOptions {
@@ -53,8 +53,9 @@ export interface CalendarBaseProps {
   lg?: boolean
 }
 export interface CalendarAttrProps extends CalendarBaseProps {
-  nav?: CalendarNav
-  weekdays?: string[]
+  nav: CalendarNav
+  weekdays: string[]
+  /** Date | string | number */
   current: DateLike
   options?: CalendarOptions
   formatDate?: (date: DateLike) => string

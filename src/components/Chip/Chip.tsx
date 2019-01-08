@@ -1,4 +1,4 @@
-import React, {Fragment, SFC} from 'react'
+import React, {FC, Fragment} from 'react'
 
 import cx from 'classnames'
 
@@ -24,7 +24,7 @@ function renderChip(p: ChipProps) {
     </Fragment>
   )
 }
-const Chip: SFC<ChipProps> = p => {
+const Chip: FC<ChipProps> = p => {
   const {htmlFor, className} = p
   return (
     <ChipWrapper htmlFor={htmlFor} className={cx('chip', className)}>

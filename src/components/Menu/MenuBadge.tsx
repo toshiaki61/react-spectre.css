@@ -1,8 +1,8 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import {MenuBadgeProps} from './interfaces'
 
-const MenuBadge: SFC<MenuBadgeProps> = ({content}) => {
+const MenuBadge: FC<MenuBadgeProps> = ({content}) => {
   if (!content) {
     return null
   }

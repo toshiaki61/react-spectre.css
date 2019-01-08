@@ -1,10 +1,10 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
 import {LabelProps} from './interfaces'
 
-const Label: SFC<LabelProps> = ({
+const Label: FC<LabelProps> = ({
   children,
   className,
   rounded,

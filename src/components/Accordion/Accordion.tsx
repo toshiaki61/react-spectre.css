@@ -1,4 +1,4 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
@@ -17,7 +17,7 @@ function renderAccordion(p: AccordionProps) {
     )
   })
 }
-const Accordion: SFC<AccordionProps> = p => (
+const Accordion: FC<AccordionProps> = p => (
   <div className={cx('accordion', p.className)}>{renderAccordion(p)}</div>
 )
 

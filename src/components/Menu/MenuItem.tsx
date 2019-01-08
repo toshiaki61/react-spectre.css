@@ -1,4 +1,4 @@
-import React, {Fragment, MouseEvent, SFC, useCallback} from 'react'
+import React, {FC, Fragment, MouseEvent, useCallback} from 'react'
 
 import cx from 'classnames'
 
@@ -30,7 +30,7 @@ function renderMenuitem(p: MenuItemProps) {
     </Fragment>
   )
 }
-const MenuItem: SFC<MenuItemProps> = p => {
+const MenuItem: FC<MenuItemProps> = p => {
   const {className} = p
   if (isMenuItemDivider(p)) {
     return (

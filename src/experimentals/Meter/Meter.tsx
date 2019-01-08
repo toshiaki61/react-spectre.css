@@ -1,8 +1,8 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import {MeterProps} from './interfaces'
 
-const Meter: SFC<MeterProps> = ({value, ...props}) => (
+const Meter: FC<MeterProps> = ({value, ...props}) => (
   <meter className="meter" value={value} {...props} />
 )
 Meter.defaultProps = {

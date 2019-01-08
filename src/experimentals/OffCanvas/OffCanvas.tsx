@@ -1,4 +1,4 @@
-import React, {Fragment, SFC} from 'react'
+import React, {FC, Fragment} from 'react'
 
 import {Icon} from '@elements/index'
 
@@ -26,7 +26,7 @@ function renderOffCanvas(p: OffCanvasProps) {
     </Fragment>
   )
 }
-const OffCanvas: SFC<OffCanvasProps> = p => (
+const OffCanvas: FC<OffCanvasProps> = p => (
   <div className="off-canvas off-canvas-sidebar-show">{renderOffCanvas(p)}</div>
 )
 

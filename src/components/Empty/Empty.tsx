@@ -1,4 +1,4 @@
-import React, {Fragment, SFC} from 'react'
+import React, {FC, Fragment} from 'react'
 
 import cx from 'classnames'
 
@@ -11,7 +11,7 @@ import EmptyIcon from './EmptyIcon'
 import EmptySubtitle from './EmptySubtitle'
 import EmptyTitle from './EmptyTitle'
 
-const Empty: SFC<EmptyProps> = p => {
+const Empty: FC<EmptyProps> = p => {
   const {children, className, iconType, title, subtitle, action} = p
   return (
     <div className={cx('empty', className)}>

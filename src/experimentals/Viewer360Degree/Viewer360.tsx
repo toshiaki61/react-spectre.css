@@ -1,4 +1,4 @@
-import React, {Fragment, SFC} from 'react'
+import React, {FC, Fragment} from 'react'
 
 import cx from 'classnames'
 
@@ -20,7 +20,7 @@ function renderViewer360(p: Viewer360Props) {
     </Fragment>
   )
 }
-const Viewer360: SFC<Viewer360Props> = p => (
+const Viewer360: FC<Viewer360Props> = p => (
   <div className={cx('viewer-360', p.className)}>{renderViewer360(p)}</div>
 )
 

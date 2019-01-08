@@ -1,4 +1,4 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import {Tile, TileSubtitle} from '@components/index'
 import {Icon} from '@elements/Icon'
@@ -36,7 +36,7 @@ function renderTimeline(p: TimelineProps) {
     )
   })
 }
-const Timeline: SFC<TimelineProps> = p => (
+const Timeline: FC<TimelineProps> = p => (
   <div className="timeline">{renderTimeline(p)}</div>
 )
 

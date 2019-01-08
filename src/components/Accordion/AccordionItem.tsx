@@ -1,8 +1,7 @@
-import React, {ReactElement, SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
-import {Menu} from '@components/Menu'
 import {Icon} from '@elements/Icon'
 import {attr} from '@utils/attr'
 
@@ -10,7 +9,7 @@ import {AccordionItemProps} from './interfaces'
 
 import AccordionBody from './AccordionBody'
 
-const AccordionItem: SFC<AccordionItemProps> = p => {
+const AccordionItem: FC<AccordionItemProps> = p => {
   const {id, header, className, exclusive, useIcon} = p
   const type = exclusive ? 'radio' : 'checkbox'
   const inputProps = {id, type, name: `accordion-${type}`}

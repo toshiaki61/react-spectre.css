@@ -1,10 +1,10 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import {Icon} from '@elements/Icon'
 
 import {CarouselItemPaging, CarouselItemProps} from './interfaces'
 
-const CarouselItem: SFC<CarouselItemProps & CarouselItemPaging> = ({
+const CarouselItem: FC<CarouselItemProps & CarouselItemPaging> = ({
   src,
   alt,
   prev,

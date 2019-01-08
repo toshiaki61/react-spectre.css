@@ -1,4 +1,4 @@
-import React, {Fragment, SFC} from 'react'
+import React, {FC, Fragment} from 'react'
 
 import {PaginationProps} from './interfaces'
 import {hasPaginationChildren, hasPaginationTitle, pages} from './util'
@@ -66,7 +66,7 @@ function renderPagination(p: PaginationProps) {
     </Fragment>
   )
 }
-const Pagination: SFC<PaginationProps> = p => {
+const Pagination: FC<PaginationProps> = p => {
   return <ul className="pagination">{renderPagination(p)}</ul>
 }
 Pagination.defaultProps = {

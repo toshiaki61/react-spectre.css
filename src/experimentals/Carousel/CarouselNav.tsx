@@ -1,8 +1,8 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import {CarouselNavProps} from './interfaces'
 
-const CarouselNav: SFC<CarouselNavProps> = ({children}) => (
+const CarouselNav: FC<CarouselNavProps> = ({children}) => (
   <div className="carousel-nav">{children}</div>
 )
 

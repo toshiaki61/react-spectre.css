@@ -1,10 +1,10 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
 import {FormAutocompleteProps} from './interfaces'
 
-const FormAutocomplete: SFC<FormAutocompleteProps> = ({
+const FormAutocomplete: FC<FormAutocompleteProps> = ({
   children,
   className,
   onFocus,

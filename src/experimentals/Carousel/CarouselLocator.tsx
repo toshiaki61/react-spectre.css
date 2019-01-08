@@ -1,8 +1,8 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import {CarouselLocatorProps} from './interfaces'
 
-const CarouselLocator: SFC<CarouselLocatorProps> = p => (
+const CarouselLocator: FC<CarouselLocatorProps> = p => (
   <input
     name="carousel-radio"
     className="carousel-locator"

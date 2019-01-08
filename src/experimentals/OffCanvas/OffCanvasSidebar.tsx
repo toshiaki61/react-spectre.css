@@ -1,10 +1,10 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
 import {OffCanvasSidebarProps} from './interfaces'
 
-const OffCanvasSidebar: SFC<OffCanvasSidebarProps> = ({
+const OffCanvasSidebar: FC<OffCanvasSidebarProps> = ({
   children,
   className,
   id,

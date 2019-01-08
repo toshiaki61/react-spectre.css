@@ -1,8 +1,8 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import {FilterNavProps} from './interfaces'
 
-const FilterNav: SFC<FilterNavProps> = ({children}) => (
+const FilterNav: FC<FilterNavProps> = ({children}) => (
   <div className="filter-nav">{children}</div>
 )
 

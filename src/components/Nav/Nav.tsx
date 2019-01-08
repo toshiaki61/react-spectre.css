@@ -1,4 +1,4 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
@@ -21,7 +21,7 @@ function renderNav(p: NavProps) {
     />
   ))
 }
-const Nav: SFC<NavProps> = p => (
+const Nav: FC<NavProps> = p => (
   <ul className={cx('nav', p.className)}>{renderNav(p)}</ul>
 )
 

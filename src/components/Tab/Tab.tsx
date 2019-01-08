@@ -1,4 +1,4 @@
-import React, {Fragment, MouseEvent, SFC, useCallback} from 'react'
+import React, {FC, Fragment, MouseEvent, useCallback} from 'react'
 
 import cx from 'classnames'
 
@@ -33,7 +33,7 @@ function renderTab(p: TabProps) {
     </Fragment>
   )
 }
-const Tab: SFC<TabProps> = p => (
+const Tab: FC<TabProps> = p => (
   <ul className={cx('tab', {'tab-block': p.block})}>{renderTab(p)}</ul>
 )
 

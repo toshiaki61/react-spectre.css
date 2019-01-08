@@ -1,4 +1,4 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
@@ -19,7 +19,7 @@ function renderMenu(p: MenuProps) {
     />
   ))
 }
-const Menu: SFC<MenuProps> = p => {
+const Menu: FC<MenuProps> = p => {
   const {className, nav, onClick, children, ...rest} = p
   const ulProps = Object.keys(rest)
     .filter(r => r !== 'header')

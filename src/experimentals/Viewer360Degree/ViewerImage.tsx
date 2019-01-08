@@ -1,8 +1,8 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import {ViewerImageProps} from './interfaces'
 
-const ViewerImage: SFC<ViewerImageProps> = ({image}) => (
+const ViewerImage: FC<ViewerImageProps> = ({image}) => (
   <figure
     className="viewer-image"
     style={{

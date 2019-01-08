@@ -1,4 +1,4 @@
-import React, {Fragment, SFC} from 'react'
+import React, {FC, Fragment} from 'react'
 
 import cx from 'classnames'
 
@@ -6,7 +6,7 @@ import {PopoverProps} from './interfaces'
 
 import PopoverContainer from './PopoverContainer'
 
-const Popover: SFC<PopoverProps> = ({
+const Popover: FC<PopoverProps> = ({
   target,
   content,
   children,

@@ -1,4 +1,4 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
@@ -19,7 +19,7 @@ function renderHero(p: HeroProps) {
     </HeroBody>
   )
 }
-const Hero: SFC<HeroProps> = p => (
+const Hero: FC<HeroProps> = p => (
   <div
     className={cx('hero', p.className, {[`hero-${p.size}`]: p.size})}
     style={p.style}

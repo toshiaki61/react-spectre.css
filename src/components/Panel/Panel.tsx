@@ -1,4 +1,4 @@
-import React, {Fragment, SFC} from 'react'
+import React, {FC, Fragment} from 'react'
 
 import cx from 'classnames'
 
@@ -10,7 +10,7 @@ import PanelHeader from './PanelHeader'
 import PanelNav from './PanelNav'
 import PanelTitle from './PanelTitle'
 
-const Panel: SFC<PanelProps> = ({
+const Panel: FC<PanelProps> = ({
   header,
   nav,
   content,

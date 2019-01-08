@@ -1,10 +1,10 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
 import {CalendarContainerProps} from './interfaces'
 
-const CalendarContainer: SFC<CalendarContainerProps> = ({
+const CalendarContainer: FC<CalendarContainerProps> = ({
   children,
   className,
 }) => <div className={cx('calendar-container', className)}>{children}</div>

@@ -1,10 +1,10 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
 import {IconProps} from './interfaces'
 
-const Icon: SFC<IconProps> = ({className, size, type, ...rest}) => (
+const Icon: FC<IconProps> = ({className, size, type, ...rest}) => (
   <i
     className={cx(
       'icon',

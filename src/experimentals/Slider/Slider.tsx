@@ -1,10 +1,10 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
 import {SliderProps} from './interfaces'
 
-const Slider: SFC<SliderProps> = ({
+const Slider: FC<SliderProps> = ({
   min,
   max,
   value,

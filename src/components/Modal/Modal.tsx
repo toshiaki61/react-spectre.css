@@ -1,4 +1,4 @@
-import React, {Fragment, SFC} from 'react'
+import React, {FC, Fragment} from 'react'
 
 import cx from 'classnames'
 
@@ -38,7 +38,7 @@ function renderModal(p: ModalProps) {
     </Fragment>
   )
 }
-const Modal: SFC<ModalProps> = p => {
+const Modal: FC<ModalProps> = p => {
   const {active, size, className} = p
   return (
     <div

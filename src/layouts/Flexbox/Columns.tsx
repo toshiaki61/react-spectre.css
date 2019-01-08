@@ -1,10 +1,10 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
 import {ColumnsProps} from './interfaces'
 
-const Columns: SFC<ColumnsProps> = ({
+const Columns: FC<ColumnsProps> = ({
   children,
   className,
   gapless,

@@ -1,8 +1,8 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import {TimelineItemProps} from './interfaces'
 
-const TimelineItem: SFC<TimelineItemProps> = ({children, id}) => (
+const TimelineItem: FC<TimelineItemProps> = ({children, id}) => (
   <div className="timeline-item" id={id}>
     {children}
   </div>

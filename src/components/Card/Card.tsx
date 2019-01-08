@@ -1,4 +1,4 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
@@ -41,7 +41,7 @@ function renderCard(p: CardProps) {
     }
   })
 }
-const Card: SFC<CardProps> = p => {
+const Card: FC<CardProps> = p => {
   const {children, className, ...rest} = p
   return (
     <div className={cx('card', className)} {...rest}>

@@ -1,4 +1,4 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
@@ -6,7 +6,7 @@ import {FormLabeledProps} from './interfaces'
 
 import FormIcon from './FormIcon'
 
-const FormSwitch: SFC<FormLabeledProps> = ({label, inline, size, ...rest}) => (
+const FormSwitch: FC<FormLabeledProps> = ({label, inline, size, ...rest}) => (
   <label
     className={cx('form-switch', {
       'form-inline': inline,

@@ -1,4 +1,4 @@
-import React, {ChangeEvent, Fragment, SFC, useCallback} from 'react'
+import React, {ChangeEvent, FC, Fragment, useCallback} from 'react'
 
 import {
   Card,
@@ -64,7 +64,7 @@ function renderFilter(p: FilterProps) {
     </Fragment>
   )
 }
-const Filter: SFC<FilterProps> = p => (
+const Filter: FC<FilterProps> = p => (
   <div className="filter">{renderFilter(p)}</div>
 )
 export default Filter

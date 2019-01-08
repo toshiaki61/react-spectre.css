@@ -1,10 +1,10 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
 import {ModalCloseable, ModalPartProps} from './interfaces'
 
-const ModalOverlay: SFC<ModalPartProps & ModalCloseable> = ({
+const ModalOverlay: FC<ModalPartProps & ModalCloseable> = ({
   className,
   onClearClick,
 }) => (

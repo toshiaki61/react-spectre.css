@@ -1,10 +1,10 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
 import {ContainerProps} from './interfaces'
 
-const Container: SFC<ContainerProps> = ({
+const Container: FC<ContainerProps> = ({
   children,
   className,
   size,

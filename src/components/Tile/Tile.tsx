@@ -1,4 +1,4 @@
-import React, {Fragment, SFC} from 'react'
+import React, {FC, Fragment} from 'react'
 
 import cx from 'classnames'
 
@@ -30,7 +30,7 @@ function renderTile(p: TileProps) {
     </Fragment>
   )
 }
-const Tile: SFC<TileProps> = p => (
+const Tile: FC<TileProps> = p => (
   <div className={cx('tile', p.className, {'tile-centered': p.compact})}>
     {renderTile(p)}
   </div>

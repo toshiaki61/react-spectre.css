@@ -1,4 +1,4 @@
-import React, {MouseEvent, SFC, useCallback} from 'react'
+import React, {FC, MouseEvent, useCallback} from 'react'
 
 import cx from 'classnames'
 
@@ -8,7 +8,7 @@ import {NavItemProps} from './interfaces'
 
 import Nav from './Nav'
 
-const NavItem: SFC<NavItemProps> = ({
+const NavItem: FC<NavItemProps> = ({
   id,
   name,
   items,

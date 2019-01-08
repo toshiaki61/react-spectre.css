@@ -1,6 +1,6 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
-const OffCanvasOverlay: SFC<{}> = () => (
+const OffCanvasOverlay: FC<{}> = () => (
   <a className="off-canvas-overlay" href="#close">
     close
   </a>

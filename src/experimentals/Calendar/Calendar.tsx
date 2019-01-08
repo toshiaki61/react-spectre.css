@@ -1,4 +1,4 @@
-import React, {Fragment, MouseEvent, SFC, useCallback} from 'react'
+import React, {FC, Fragment, MouseEvent, useCallback} from 'react'
 
 import cx from 'classnames'
 
@@ -104,7 +104,7 @@ function renderCalendar(p: CalendarProps) {
     </Fragment>
   )
 }
-const Calendar: SFC<CalendarProps> = p => (
+const Calendar: FC<CalendarProps> = p => (
   <div className={cx('calendar', {'calendar-lg': p.lg})}>
     {renderCalendar(p)}
   </div>

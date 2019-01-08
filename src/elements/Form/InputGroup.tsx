@@ -1,8 +1,8 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import {InputGroupProps} from './interfaces'
 
-const InputGroup: SFC<InputGroupProps> = ({children}) => (
+const InputGroup: FC<InputGroupProps> = ({children}) => (
   <div className="input-group">{children}</div>
 )
 

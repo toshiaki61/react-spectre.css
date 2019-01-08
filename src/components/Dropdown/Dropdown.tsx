@@ -1,4 +1,4 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
@@ -16,7 +16,7 @@ function renderDropdown(p: DropdownProps) {
   }
   return <Menu onClick={p.onMenuClick} contents={p.contents} />
 }
-const Dropdown: SFC<DropdownProps> = p => {
+const Dropdown: FC<DropdownProps> = p => {
   const {className, active, right, initialValue, onClick} = p
   return (
     <div

@@ -1,4 +1,4 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import {StepProps} from './interfaces'
 import {hasStepChildren} from './util'
@@ -16,6 +16,6 @@ function renderStep(p: StepProps) {
     </StepItem>
   ))
 }
-const Step: SFC<StepProps> = p => <ul className="step">{renderStep(p)}</ul>
+const Step: FC<StepProps> = p => <ul className="step">{renderStep(p)}</ul>
 
 export default Step

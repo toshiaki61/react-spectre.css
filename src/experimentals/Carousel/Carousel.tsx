@@ -1,4 +1,4 @@
-import React, {ChangeEvent, Fragment, SFC, useCallback} from 'react'
+import React, {ChangeEvent, FC, Fragment, useCallback} from 'react'
 
 import {CarouselProps} from './interfaces'
 import {hasCarouselChildren} from './util'
@@ -55,7 +55,7 @@ function renderCarousel(p: CarouselProps) {
     </Fragment>
   )
 }
-const Carousel: SFC<CarouselProps> = p => (
+const Carousel: FC<CarouselProps> = p => (
   <div className="carousel">{renderCarousel(p)}</div>
 )
 Carousel.defaultProps = {

@@ -1,4 +1,4 @@
-import React, {MouseEvent, SFC, useCallback} from 'react'
+import React, {FC, MouseEvent, useCallback} from 'react'
 
 import cx from 'classnames'
 
@@ -6,7 +6,7 @@ import {LinkHash} from '../../interfaces'
 
 import {PaginationTitleItemProps} from './interfaces'
 
-const PaginationTitleItem: SFC<PaginationTitleItemProps> = ({
+const PaginationTitleItem: FC<PaginationTitleItemProps> = ({
   title,
   subtitle,
   current,

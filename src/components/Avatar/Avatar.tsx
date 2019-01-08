@@ -1,4 +1,4 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
@@ -6,7 +6,7 @@ import AvatarIcon from './AvatarIcon'
 import AvatarPresence from './AvatarPresence'
 import {AvatarProps} from './interfaces'
 
-const Avatar: SFC<AvatarProps> = ({
+const Avatar: FC<AvatarProps> = ({
   className,
   initial,
   src,

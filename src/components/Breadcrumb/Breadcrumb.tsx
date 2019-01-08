@@ -1,4 +1,4 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import {BreadcrumbProps} from './interfaces'
 import {hasBreadcrumbChildren} from './util'
@@ -11,7 +11,7 @@ function renderBreadcrumb(p: BreadcrumbProps) {
   }
   return p.items.map((item, i) => <BreadcrumbItem key={item.id} {...item} />)
 }
-const Breadcrumb: SFC<BreadcrumbProps> = p => (
+const Breadcrumb: FC<BreadcrumbProps> = p => (
   <ul className="breadcrumb">{renderBreadcrumb(p)}</ul>
 )
 

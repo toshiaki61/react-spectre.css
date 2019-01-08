@@ -1,9 +1,9 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import {ButtonProps} from './interfaces'
 import {isAnchorElement} from './util'
 
-const ButtonWrapper: SFC<Partial<ButtonProps>> = p => {
+const ButtonWrapper: FC<Partial<ButtonProps>> = p => {
   if (isAnchorElement(p)) {
     return <a {...p}>{p.children}</a>
   }

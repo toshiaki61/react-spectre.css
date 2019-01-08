@@ -1,4 +1,4 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
@@ -6,7 +6,7 @@ import {ButtonProps} from './interfaces'
 
 import ButtonWrapper from './ButtonWrapper'
 
-const Button: SFC<ButtonProps> = ({
+const Button: FC<ButtonProps> = ({
   children,
   className,
   size,

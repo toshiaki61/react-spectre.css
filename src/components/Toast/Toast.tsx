@@ -1,4 +1,4 @@
-import React, {Fragment, SFC} from 'react'
+import React, {FC, Fragment} from 'react'
 
 import cx from 'classnames'
 
@@ -27,7 +27,7 @@ function renderToast(p: ToastProps) {
     </Fragment>
   )
 }
-const Toast: SFC<ToastProps> = p => (
+const Toast: FC<ToastProps> = p => (
   <div
     className={cx('toast', p.className, {
       [`toast-${p.color}`]: p.color,

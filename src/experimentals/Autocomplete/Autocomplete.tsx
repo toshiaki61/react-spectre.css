@@ -1,4 +1,4 @@
-import React, {MouseEvent, SFC, useCallback} from 'react'
+import React, {FC, MouseEvent, useCallback} from 'react'
 
 import {Avatar, Chip, Menu, MenuItem, Tile} from '@components/index'
 import {Button, FormIcon, FormInput, HasIcon} from '@elements/index'
@@ -9,7 +9,7 @@ import FormAutocomplete from './FormAutocomplete'
 import FormAutocompleteInput from './FormAutocompleteInput'
 import {filter, mark} from './util'
 
-const Autocomplete: SFC<AutocompleteProps> = ({
+const Autocomplete: FC<AutocompleteProps> = ({
   placeholder,
   active,
   selected,

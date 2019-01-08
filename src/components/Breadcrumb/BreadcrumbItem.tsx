@@ -1,8 +1,8 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import {BreadcrumbItemProps} from './interfaces'
 
-const BreadcrumbItem: SFC<BreadcrumbItemProps> = ({
+const BreadcrumbItem: FC<BreadcrumbItemProps> = ({
   link,
   children,
   onClick,

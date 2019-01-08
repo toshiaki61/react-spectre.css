@@ -1,10 +1,10 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
 import {TilePartProps} from './interfaces'
 
-const TileSubtitle: SFC<TilePartProps> = ({children, className}) => (
+const TileSubtitle: FC<TilePartProps> = ({children, className}) => (
   <p className={cx('tile-subtitle', className)}>{children}</p>
 )
 

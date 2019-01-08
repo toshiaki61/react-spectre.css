@@ -1,4 +1,4 @@
-import React, {SFC} from 'react'
+import React, {FC} from 'react'
 
 import cx from 'classnames'
 
@@ -9,7 +9,7 @@ import {BarProps} from './interfaces'
 
 import {attr} from '@utils/attr'
 
-const Bar: SFC<BarProps> = ({className, small, slider, items}) => (
+const Bar: FC<BarProps> = ({className, small, slider, items}) => (
   <div
     className={cx(
       'bar',

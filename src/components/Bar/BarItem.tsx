@@ -4,8 +4,8 @@ import {BarItemProps} from './interfaces'
 
 import {attr} from '@utils/attr'
 
-const BarItem: FC<BarItemProps> = ({small, tooltip, content}) => (
-  <div {...attr({className: 'bar-item', tooltip})}>
+const BarItem: FC<BarItemProps> = ({small, tooltip, content, ...rest}) => (
+  <div {...attr({className: 'bar-item', tooltip})} {...rest}>
     {small ? null : content}
   </div>
 )

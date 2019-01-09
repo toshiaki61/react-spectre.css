@@ -11,6 +11,8 @@ export interface BreadcrumbAttrProps {
   items: BreadcrumbItemProps[]
 }
 export interface BreadcrumbChildrenProps {
-  children: Array<ReactElement<BreadcrumbItemProps>>
+  children:
+    | Array<ReactElement<BreadcrumbItemProps>>
+    | ReactElement<BreadcrumbItemProps>
 }
 export type BreadcrumbProps = BreadcrumbAttrProps | BreadcrumbChildrenProps

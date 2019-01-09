@@ -69,7 +69,7 @@ export function generateCalendarData(
     const before = isBeforeMonth(date, current)
     const after = isAfterMonth(date, current)
     const foundSameDay = o.data.find(datum => isSameDay(date, datum.date))
-    console.log(options && options.data)
+    // console.log(options && options.data)
     const foundBetween = o.range.find(r =>
       isBetween(date, r.start, r.end, '[]')
     )

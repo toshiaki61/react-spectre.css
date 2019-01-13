@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 
 import {action} from '@storybook/addon-actions'
 import {boolean, number, object, select, text} from '@storybook/addon-knobs'
@@ -12,11 +12,30 @@ import {
 
 const component = () => {
   return (
-    <Breadcrumb>
-      <BreadcrumbItem id="first">First</BreadcrumbItem>
-      <BreadcrumbItem id="second">Second</BreadcrumbItem>
-      <BreadcrumbItem id="third">Third</BreadcrumbItem>
-    </Breadcrumb>
+    <Fragment>
+      <Breadcrumb>
+        <BreadcrumbItem
+          link={text('link1', '')}
+          onClick={action('first_clicked')}
+        >
+          First
+        </BreadcrumbItem>
+        <BreadcrumbItem
+          link={text('link2', '')}
+          onClick={action('second_clicked')}
+        >
+          Second
+        </BreadcrumbItem>
+        <BreadcrumbItem
+          link={text('link3', '')}
+          onClick={action('third_clicked')}
+        >
+          Third
+        </BreadcrumbItem>
+      </Breadcrumb>
+      items
+      <Breadcrumb items={[{id: 'first', children: 'items_first'}]} />
+    </Fragment>
   )
 }
 

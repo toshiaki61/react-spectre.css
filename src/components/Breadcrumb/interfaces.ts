@@ -1,14 +1,13 @@
 import {MouseEventHandler, ReactElement, ReactNode} from 'react'
 
 export interface BreadcrumbItemProps {
-  id: string
   children: ReactNode
   link?: string
   onClick?: MouseEventHandler
 }
 
 export interface BreadcrumbAttrProps {
-  items: BreadcrumbItemProps[]
+  items: Array<BreadcrumbItemProps & {id: string}>
 }
 export interface BreadcrumbChildrenProps {
   children:

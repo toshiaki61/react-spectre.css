@@ -11,17 +11,16 @@ export interface CardItemHeaderProps {
 export type CardType = 'image' | 'body' | 'footer' | 'header'
 
 export interface CardItemProps {
-  id: string
   className?: string
   type?: CardType
   content?: CardItemHeaderProps | ReactNode
 }
 
 export interface CardAttrProps extends Partial<StyleProps> {
-  items: CardItemProps[]
+  items: Array<CardItemProps & {id: string}>
 }
 export interface CardChildrenProps extends Partial<StyleProps> {
-  children: ReactElement<CardItemProps>
+  children: ReactElement<CardItemProps> | Array<ReactElement<CardItemProps>>
 }
 export type CardProps = CardAttrProps | CardChildrenProps
 

@@ -27,7 +27,7 @@ function renderChip(p: ChipProps) {
 const Chip: FC<ChipProps> = p => {
   const {htmlFor, className} = p
   return (
-    <ChipWrapper htmlFor={htmlFor} className={cx('chip', className)}>
+    <ChipWrapper htmlFor={htmlFor || ''} className={cx('chip', className)}>
       {renderChip(p)}
     </ChipWrapper>
   )

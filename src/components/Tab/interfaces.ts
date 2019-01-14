@@ -3,7 +3,6 @@ import {MouseEventHandler, ReactNode} from 'react'
 import {MouseEventIdHandler} from '../../interfaces'
 
 export interface TabItemProps {
-  id: string
   title: ReactNode
   active?: boolean
   onClick?: MouseEventHandler
@@ -19,7 +18,7 @@ export interface TabBaseProps {
 }
 
 export interface TabAttrProps extends TabBaseProps {
-  items: TabItemProps[]
+  items: Array<TabItemProps & {id: string}>
   onClick: MouseEventIdHandler
   activeId?: string
   action?: ReactNode

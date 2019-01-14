@@ -18,7 +18,10 @@ function renderTab(p: TabProps) {
       {items.map(item => {
         const handleLinkClick =
           // useCallback(
-          (e: MouseEvent<any>) => onClick(e, item.id)
+          (e: MouseEvent<any>) => {
+            e.preventDefault()
+            onClick(e, item.id)
+          }
         // , [item.id])
         return (
           <TabItem

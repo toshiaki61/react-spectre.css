@@ -7,12 +7,15 @@ import {LinkHash} from '../../interfaces'
 
 import {TabItemProps} from './interfaces'
 
-const TabItem: FC<TabItemProps> = ({title, active, badge, onClick}) => (
-  <li className={cx('tab-item', {active})}>
-    <a href={LinkHash} onClick={onClick} {...attr({badge: `${badge}`})}>
-      {title}
-    </a>
-  </li>
-)
+const TabItem: FC<TabItemProps> = ({title, active, badge, onClick}) => {
+  const badgeAttr = badge ? attr({badge: `${badge}`}) : {}
+  return (
+    <li className={cx('tab-item', {active})}>
+      <a href={LinkHash} onClick={onClick} {...badgeAttr}>
+        {title}
+      </a>
+    </li>
+  )
+}
 
 export default TabItem

@@ -4,8 +4,10 @@ import cx from 'classnames'
 
 import {PanelPartProps} from './interfaces'
 
-const PanelBody: FC<PanelPartProps> = ({children, className}) => (
-  <div className={cx('panel-body', className)}>{children}</div>
+const PanelBody: FC<PanelPartProps> = ({children, className, ...rest}) => (
+  <div className={cx('panel-body', className)} {...rest}>
+    {children}
+  </div>
 )
 
 export default PanelBody

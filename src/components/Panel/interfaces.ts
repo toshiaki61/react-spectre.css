@@ -1,14 +1,13 @@
 import {ReactNode} from 'react'
 
-import {BasePartProps} from '../../interfaces'
+import {BasePartProps, StyleProps} from '../../interfaces'
 
-export interface PanelProps {
+export interface PanelProps extends Partial<StyleProps> {
   header?: ReactNode
   nav?: ReactNode
   content?: ReactNode
   footer?: ReactNode
   headerClass?: string
-  className?: string
   children?: ReactNode
 }
 

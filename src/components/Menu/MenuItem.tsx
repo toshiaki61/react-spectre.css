@@ -19,7 +19,12 @@ function renderMenuitem(p: MenuItemProps) {
   const {id, link, content, active, badge, onClick} = p
   const handleItemClick =
     // useCallback(
-    (e: MouseEvent<any>) => onClick && onClick(e, id || '')
+    (e: MouseEvent<any>) => {
+      e.preventDefault()
+      if (onClick) {
+        onClick(e, id || '')
+      }
+    }
   // ,[id])
   return (
     <Fragment>

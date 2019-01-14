@@ -19,7 +19,12 @@ const PaginationItem: FC<PaginationItemProps> = ({
   }
   const handleLinkClick =
     // useCallback(
-    (e: MouseEvent<any>) => onClick && onClick(e, value)
+    (e: MouseEvent<any>) => {
+      e.preventDefault()
+      if (onClick) {
+        onClick(e, value)
+      }
+    }
   // ,[value])
   return (
     <li

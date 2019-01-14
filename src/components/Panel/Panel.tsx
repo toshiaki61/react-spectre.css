@@ -18,9 +18,10 @@ const Panel: FC<PanelProps> = ({
   headerClass,
   className,
   children,
+  ...rest
 }) => {
   return (
-    <div className={cx('panel', className)}>
+    <div className={cx('panel', className)} {...rest}>
       {children ? (
         children
       ) : (

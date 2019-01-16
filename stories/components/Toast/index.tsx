@@ -4,10 +4,38 @@ import {action} from '@storybook/addon-actions'
 import {boolean, number, object, select, text} from '@storybook/addon-knobs'
 import {OptionalKeyMap, optionalSelect} from '../../utils'
 
-import {Toast, ToastProps} from '../../../src/'
+import {Toast, ToastColorType, ToastProps} from '../../../src/'
+const toastColorTypes: OptionalKeyMap<ToastColorType> = {
+  primary: 'primary',
+  success: 'success',
+  warning: 'warning',
+  error: 'error',
+  'No Value': '',
+}
+// export type ToastColorType = 'primary' | 'success' | 'warning' | 'error'
 
+// export interface ToastBaseProps extends Partial<StyleProps> {
+//   color?: ToastColorType
+// }
+
+// export interface ToastAttrProps extends ToastBaseProps {
+//   content: ReactNode
+//   title?: ReactNode
+//   onClearClick?: MouseEventHandler
+// }
 const component = () => {
-  return <Toast>not implemented</Toast>
+  return (
+    <Toast
+      style={{width: '80%'}}
+      color={optionalSelect('color', toastColorTypes, '')}
+      title={text('title', 'Toast title')}
+      content={text(
+        'content',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+      )}
+      onClearClick={action('clear_clicked')}
+    />
+  )
 }
 
 export default component

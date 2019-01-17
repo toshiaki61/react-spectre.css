@@ -45,27 +45,39 @@ export type FormSizeType = 'sm' | 'lg'
 
 export type FormFieldStateType = FormStateType
 
-export interface FormInputProps {
-  type: FormInputType
-  size?: FormSizeType
+export interface FormInputProps
+  extends React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {
+  formSize?: FormSizeType
   state?: FormFieldStateType
-  placeholder?: string
-  value?: string
-  onChange?: ChangeEventHandler<HTMLInputElement>
 }
 
-export interface FormTextareaProps {
-  size?: FormSizeType
+export interface FormTextareaProps
+  extends React.DetailedHTMLProps<
+    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+    HTMLTextAreaElement
+  > {
+  formSize?: FormSizeType
 }
 
-export interface FormSelectProps {
+export interface FormSelectProps
+  extends React.DetailedHTMLProps<
+    React.SelectHTMLAttributes<HTMLSelectElement>,
+    HTMLSelectElement
+  > {
   children: ReactNode
-  size?: FormSizeType
+  formSize?: FormSizeType
 }
-export interface FormLabeledProps {
+export interface FormLabeledProps
+  extends React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {
   label?: ReactNode
   inline?: boolean
-  size?: FormSizeType
+  formSize?: FormSizeType
 }
 export interface FormInputHintProps {
   children: ReactNode
@@ -82,5 +94,5 @@ export interface InputGroupProps {
 }
 export interface InputGroupAddonProps {
   children: ReactNode
-  size?: FormSizeType
+  formSize?: FormSizeType
 }

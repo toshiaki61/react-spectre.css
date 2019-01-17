@@ -6,7 +6,7 @@ import {FormInputProps} from './interfaces'
 
 const FormInput: FC<FormInputProps> = ({
   type,
-  size,
+  formSize,
   state,
   placeholder,
   ...rest
@@ -14,7 +14,7 @@ const FormInput: FC<FormInputProps> = ({
   <input
     type={type}
     className={cx('form-input', {
-      [`input-${size}`]: size,
+      [`input-${formSize}`]: formSize,
       [`is-${state}`]: state,
     })}
     placeholder={placeholder}

@@ -6,11 +6,16 @@ import {FormLabeledProps} from './interfaces'
 
 import FormIcon from './FormIcon'
 
-const FormSwitch: FC<FormLabeledProps> = ({label, inline, size, ...rest}) => (
+const FormSwitch: FC<FormLabeledProps> = ({
+  label,
+  inline,
+  formSize,
+  ...rest
+}) => (
   <label
     className={cx('form-switch', {
       'form-inline': inline,
-      [`input-${size}`]: size,
+      [`input-${formSize}`]: formSize,
     })}
   >
     <input type="checkbox" {...rest} />

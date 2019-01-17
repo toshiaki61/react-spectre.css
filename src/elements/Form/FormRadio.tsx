@@ -6,11 +6,16 @@ import {FormLabeledProps} from './interfaces'
 
 import FormIcon from './FormIcon'
 
-const FormRadio: FC<FormLabeledProps> = ({label, inline, size, ...rest}) => (
+const FormRadio: FC<FormLabeledProps> = ({
+  label,
+  inline,
+  formSize,
+  ...rest
+}) => (
   <label
     className={cx('form-radio', {
       'form-inline': inline,
-      [`input-${size}`]: size,
+      [`input-${formSize}`]: formSize,
     })}
   >
     <input type="radio" {...rest} />

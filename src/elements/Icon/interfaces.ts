@@ -1,4 +1,4 @@
-import {CSSProperties} from 'react'
+import {StyleProps} from 'src/interfaces'
 
 export type IconType =
   | 'apps'
@@ -41,10 +41,10 @@ export type IconType =
   | 'upload'
   | 'upward'
 
-export interface IconProps {
-  className?: string
-  size?: 2 | 3 | 4
+export type IconSizeType = 2 | 3 | 4
+
+export interface IconProps extends Partial<StyleProps> {
+  size?: IconSizeType
   name?: string
-  style?: CSSProperties
   type: IconType
 }

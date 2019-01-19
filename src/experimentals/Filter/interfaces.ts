@@ -1,8 +1,8 @@
 import {ChangeEvent, ChangeEventHandler, ReactNode} from 'react'
 
-import {BasePartProps} from '../../interfaces'
+import {BasePartProps, StyleProps} from '../../interfaces'
 
-export interface FilterDatum {
+export interface FilterDatum extends Partial<StyleProps> {
   tag: string
   title: string
   subtitle: string

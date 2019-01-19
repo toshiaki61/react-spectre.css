@@ -29,8 +29,8 @@ import {Autocomplete} from '../../../src/index'
 const component = () => {
   const data = [
     {id: '1', name: 'Bruce Banner'},
-    {id: '2', name: 'Thor Odinson', img: '/woman.png'},
-    {id: '3', name: 'Steve Rogers', img: '/man.png'},
+    {id: '2', name: 'Thor Odinson', img: '/img/woman.png'},
+    {id: '3', name: 'Steve Rogers', img: '/img/man.png'},
     {id: '4', name: 'Tony Stark', initial: 'TS'},
   ]
   const selected = [{id: '5', name: 'Natasha Romanoff'}]

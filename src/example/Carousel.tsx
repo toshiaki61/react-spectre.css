@@ -43,7 +43,9 @@ class CarouselExample extends Component<CarouselProps, ICarouselExampleState> {
       return null
     }
     const {active} = this.state
-    return <Carousel slides={slides} active={active} onChange={this.onChange} />
+    return (
+      <Carousel slides={slides} activeId={active} onChange={this.onChange} />
+    )
   }
 
   private onChange = (e: ChangeEvent<any>, id: string) =>

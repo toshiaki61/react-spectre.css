@@ -1,7 +1,8 @@
 // tslint:disable:jsx-no-lambda
 // tslint:disable:no-console
+import React, {Fragment, MouseEvent} from 'react'
+
 import {format} from 'date-fns'
-import React, {Fragment} from 'react'
 
 import AutocompleteExample from './example/Autocomplete'
 import CalendarExample from './example/Calendar'
@@ -94,7 +95,7 @@ const App = () => (
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </Toast>
         <Tab
-          active="1"
+          activeId="1"
           onClick={(e, id) => console.log('tab: ', id)}
           items={[
             {id: '1', title: 'Music', badge: 999},
@@ -103,7 +104,7 @@ const App = () => (
           ]}
         />
         <Step
-          active="4"
+          activeId="4"
           items={[
             {id: '1', children: 'Step 1', tooltip: 'Step 1 tooltip'},
             {id: '2', children: 'Step 2', tooltip: 'Step 2 tooltip'},
@@ -113,6 +114,7 @@ const App = () => (
         />
         <Nav
           onClick={(e, key) => console.log('clicked: ', key)}
+          activeId="2"
           items={[
             {id: '1', name: 'Elements'},
             {
@@ -128,7 +130,6 @@ const App = () => (
             {id: '3', name: 'Components'},
             {id: '4', name: 'Utilities'},
           ]}
-          active="2"
         />
         <Panel
           headerClass="text-center"
@@ -152,7 +153,7 @@ const App = () => (
         <CalendarExample />
         <ModalExample />
         <DropdownExample />
-        <Empty icon="people" title="test" subtitle="sub" />
+        <Empty iconType="people" title="test" subtitle="sub" />
         <Columns>
           <Column size={6}>
             <Card
@@ -225,12 +226,13 @@ const App = () => (
             },
           ]}
         />
-        <Avatar lg initial="kkkkkk" presence="online" />
+        <Avatar size="lg" initial="kkkkkk" presence="online" />
         <Tile
           icon={<Icon type="people" className="centered" />}
           compact
           title="アイウエオ"
           subtitle="カキクケコ"
+          content="content"
         />
         <AutocompleteExample />
         <Menu
@@ -388,6 +390,21 @@ const App = () => (
           lg
           current={now}
           // navFormat="YYYY-MM"
+          nav={{
+            current: format(now, 'MMMM YYYY'),
+            prev: {
+              onClick: (e: MouseEvent<any>) => {
+                e.preventDefault()
+                console.log('prev_clicked')
+              },
+            },
+            next: {
+              onClick: (e: MouseEvent<any>) => {
+                e.preventDefault()
+                console.log('next_clicked')
+              },
+            },
+          }}
           weekdays={['日', '月', '火', '水', '木', '金', '土']}
           options={{
             data: [

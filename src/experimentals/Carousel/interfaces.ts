@@ -14,7 +14,7 @@ export interface CarouselItemProps {
 
 export interface CarouselAttrProps {
   slides: CarouselItemProps[]
-  active?: string
+  activeId?: string
   onChange: ChangeEventIdHandler
 }
 

@@ -20,19 +20,20 @@ function renderFilter(p: FilterProps) {
   if (hasFilterChildren(p)) {
     return p.children
   }
-  const {tags, data, activeId: active, onChange} = p
+  const {tags, data, activeId, onChange} = p
   return (
     <Fragment>
-      {Object.keys(tags).map(key => {
+      {Object.keys(tags).map((key, i) => {
         const handleChange =
           // useCallback(
           (e: ChangeEvent<any>) => onChange(e, key)
         // ,[key])
+        const checked = activeId ? activeId === key : i === 0
         return (
           <FilterTag
             key={`${key}_input`}
             id={key}
-            checked={key === active}
+            checked={checked}
             onChange={handleChange}
           />
         )
@@ -47,14 +48,16 @@ function renderFilter(p: FilterProps) {
       </FilterNav>
       <FilterBody>
         {data &&
-          data.map(({tag, title, subtitle}, i) => {
+          data.map(({tag, title, subtitle, style}, i) => {
             const key = `card_${i}`
             return (
               <FilterItem key={key} data-tag={tag}>
-                <Card style={{marginBottom: '0.4rem'}}>
+                <Card style={{...style, marginBottom: '0.4rem'}}>
                   <CardHeader>
-                    <CardTitle>{title}</CardTitle>
-                    <CardSubtitle>{subtitle}</CardSubtitle>
+                    <CardTitle className="text-bold">{title}</CardTitle>
+                    <CardSubtitle className="text-gray">
+                      {subtitle}
+                    </CardSubtitle>
                   </CardHeader>
                 </Card>
               </FilterItem>

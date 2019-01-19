@@ -34,9 +34,9 @@ const component = () => {
       <Avatar
         size={optionalSelect('Size2', avatarSizes, 'xs')}
         // initial={text('initial2', 'Xs')}
-        src={text('src', '/man.png')}
+        src={text('src', '/img/man.png')}
         alt={text('alt', 'man')}
-        icon={object('icon', {src: '/woman.png', alt: 'woman'})}
+        icon={object('icon', {src: '/img/woman.png', alt: 'woman'})}
         // presence={optionalSelect('Presence', avatarPresences, '')}
       />
     </Fragment>

@@ -13,11 +13,12 @@ function renderCarousel(p: CarouselProps) {
   if (hasCarouselChildren(p)) {
     return p.children
   }
-  const {slides, active, onChange} = p
+  const {slides, activeId, onChange} = p
   return (
     <Fragment>
       {slides.map((slide, i) => {
         const id = `slide-${i}`
+        const checked = activeId ? activeId === id : i === 0
         const handleChange =
           // useCallback(
           (e: ChangeEvent<any>) => onChange(e, id)
@@ -26,7 +27,7 @@ function renderCarousel(p: CarouselProps) {
           <CarouselLocator
             key={`${id}_locator`}
             id={id}
-            checked={id === active}
+            checked={checked}
             onChange={handleChange}
           />
         )
@@ -51,7 +52,6 @@ function renderCarousel(p: CarouselProps) {
           )
         })}
       </CarouselNav>
-      }
     </Fragment>
   )
 }
@@ -59,7 +59,7 @@ const Carousel: FC<CarouselProps> = p => (
   <div className="carousel">{renderCarousel(p)}</div>
 )
 Carousel.defaultProps = {
-  active: 'slide-0',
+  activeId: 'slide-0',
 }
 
 export default Carousel

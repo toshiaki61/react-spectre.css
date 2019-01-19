@@ -4,8 +4,8 @@ import cx from 'classnames'
 
 import {InputGroupAddonProps} from './interfaces'
 
-const InputGroupAddon: FC<InputGroupAddonProps> = ({children, size}) => (
-  <span className={cx('input-group-addon', {[`addon-${size}`]: size})}>
+const InputGroupAddon: FC<InputGroupAddonProps> = ({children, formSize}) => (
+  <span className={cx('input-group-addon', {[`addon-${formSize}`]: formSize})}>
     {children}
   </span>
 )

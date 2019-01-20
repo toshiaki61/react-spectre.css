@@ -1,4 +1,4 @@
-import {ChangeEventHandler, ReactNode, ReactNodeArray} from 'react'
+import {ReactNode, ReactNodeArray} from 'react'
 
 import {IconType} from '@elements/Icon'
 

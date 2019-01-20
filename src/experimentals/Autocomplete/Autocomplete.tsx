@@ -1,7 +1,7 @@
-import React, {FC, MouseEvent, useCallback} from 'react'
+import React, {FC, MouseEvent} from 'react'
 
 import {Avatar, Chip, Menu, MenuItem, Tile} from '@components/index'
-import {Button, FormIcon, FormInput, HasIcon} from '@elements/index'
+import {FormIcon, FormInput, HasIcon} from '@elements/index'
 
 import {AutocompleteProps} from './interfaces'
 

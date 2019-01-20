@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC, Fragment, useCallback} from 'react'
+import React, {ChangeEvent, FC, Fragment} from 'react'
 
 import {CarouselProps} from './interfaces'
 import {hasCarouselChildren} from './util'

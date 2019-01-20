@@ -1,4 +1,4 @@
-import React, {FC, MouseEvent, useCallback} from 'react'
+import React, {FC, MouseEvent} from 'react'
 
 import cx from 'classnames'
 

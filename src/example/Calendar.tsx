@@ -53,9 +53,9 @@ class CalendarExample extends Component<any, ICalendarExampleState> {
     )
   }
 
-  private onMonthClick = (e: MouseEvent<any>, m: string | number | Date) =>
-    this.setState({current: m})
+  // private onMonthClick = (e: MouseEvent<any>, m: string | number | Date) =>
+  //   this.setState({current: m})
 
-  private onClick = () => this.setState({active: !this.state.active})
+  // private onClick = () => this.setState({active: !this.state.active})
 }
 export default CalendarExample

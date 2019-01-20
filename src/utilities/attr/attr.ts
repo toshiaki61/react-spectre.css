@@ -1,5 +1,3 @@
-import {HTMLAttributes} from 'react'
-
 import cx from 'classnames'
 
 import {BaseProps} from './interfaces'

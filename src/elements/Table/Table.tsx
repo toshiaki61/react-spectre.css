@@ -1,4 +1,4 @@
-import React, {Fragment, ReactElement} from 'react'
+import React, {Fragment} from 'react'
 
 import cx from 'classnames'
 

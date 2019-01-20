@@ -113,7 +113,7 @@ const App = () => (
           ]}
         />
         <Nav
-          onClick={(e, key) => console.log('clicked: ', key)}
+          onClick={(e: MouseEvent<any>, key: string) => console.log('clicked: ', key)}
           activeId="2"
           items={[
             {id: '1', name: 'Elements'},

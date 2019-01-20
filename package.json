@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "test": "node scripts/test.js",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc --build tsconfig.build.json",
     "clean": "rimraf dist",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",

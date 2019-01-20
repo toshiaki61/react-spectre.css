@@ -1,0 +1,1 @@
+{"version":3,"file":"AvatarPresence.jsx","sourceRoot":"","sources":["../../../src/components/Avatar/AvatarPresence.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAW,MAAM,OAAO,CAAA;AAE/B,OAAO,EAAE,MAAM,YAAY,CAAA;AAG3B,IAAM,cAAc,GAA4B,UAAC,EAAU;QAAT,sBAAQ;IAAM,OAAA,CAC9D,CAAC,CAAC,CAAC,SAAS,CAAC,CAAC,EAAE,CAAC,iBAAiB,EAAE,QAAQ,CAAC,CAAC,EAAG,CAClD;AAF+D,CAE/D,CAAA;AAED,eAAe,cAAc,CAAA"}

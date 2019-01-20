@@ -26,10 +26,10 @@ const Autocomplete: FC<AutocompleteProps> = ({
     <FormAutocomplete onFocus={onFocus} onBlur={onBlur}>
       <FormAutocompleteInput active={active}>
         {selected.map(({id, name, img, initial}) => {
-          const handleClearClick = useCallback(
-            (e: MouseEvent<any>) => onClearClick(e, id),
-            [id]
-          )
+          const handleClearClick =
+            // useCallback(
+            (e: MouseEvent<any>) => onClearClick(e, id)
+          // ,[id])
           return (
             <Chip
               key={id}
@@ -73,7 +73,7 @@ const Autocomplete: FC<AutocompleteProps> = ({
             // ,[id])
             return (
               <MenuItem key={id} onClick={handleSelect}>
-                <a href="#">
+                <a href="#" onClick={handleSelect}>
                   <Tile
                     compact
                     content={mark(name, input)}

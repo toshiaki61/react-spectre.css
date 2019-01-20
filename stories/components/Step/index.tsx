@@ -6,22 +6,6 @@ import {OptionalKeyMap, optionalSelect} from '../../utils'
 
 import {Step, StepItemProps, StepProps} from '../../../src'
 
-{
-  /* <ul class="step">
-  <li class="step-item">
-    <a href="#" class="tooltip" data-tooltip="Step 1">Step 1</a>
-  </li>
-  <li class="step-item active">
-    <a href="#" class="tooltip" data-tooltip="Step 2">Step 2</a>
-  </li>
-  <li class="step-item">
-    <a href="#" class="tooltip" data-tooltip="Step 3">Step 3</a>
-  </li>
-  <li class="step-item">
-    <a href="#" class="tooltip" data-tooltip="Step 4">Step 4</a>
-  </li>
-</ul> */
-}
 const component = () => {
   return (
     <Step

@@ -15,13 +15,6 @@ import {
   DateLike,
 } from '../../../src/index'
 
-// nav?: CalendarNav
-// weekdays?: string[]
-// current: DateLike
-// options?: CalendarOptions
-// formatDate?: (date: DateLike) => string
-// onDateClick?: MouseEventDateLikeHandler
-
 const component = () => {
   // const now = new Date()
   const current = new Date()

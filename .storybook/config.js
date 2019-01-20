@@ -4,6 +4,8 @@ import {withOptions} from '@storybook/addon-options'
 import {withInfo} from '@storybook/addon-info'
 import GithubCorner from '@personare/react-storybook-decorator-github-corner'
 
+import 'storybook-chromatic'
+
 import './index.scss'
 
 // const req = require.context('../stories', true, /.stories.tsx$/)

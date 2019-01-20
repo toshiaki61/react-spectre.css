@@ -6,26 +6,6 @@ import {OptionalKeyMap, optionalSelect} from '../../utils'
 
 import {Autocomplete} from '../../../src/index'
 
-// export interface SuggestProps {
-//   id: string
-//   name: string
-//   img?: string
-//   initial?: string
-// }
-
-// export interface AutocompleteProps {
-//   placeholder?: string
-//   active?: boolean
-//   selected: SuggestProps[]
-//   suggests: SuggestProps[]
-//   input: string
-//   loading?: boolean
-//   onChange: ChangeEventHandler<HTMLInputElement>
-//   onFocus: FocusEventHandler
-//   onBlur: FocusEventHandler
-//   onClearClick: MouseEventIdHandler
-//   onSelected: MouseEventIdHandler
-// }
 const component = () => {
   const data = [
     {id: '1', name: 'Bruce Banner'},

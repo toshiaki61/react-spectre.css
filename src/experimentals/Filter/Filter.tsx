@@ -51,7 +51,7 @@ function renderFilter(p: FilterProps) {
           data.map(({tag, title, subtitle, style}, i) => {
             const key = `card_${i}`
             return (
-              <FilterItem key={key} data-tag={tag}>
+              <FilterItem key={key} data-tag={tag} style={{padding: '0.4rem'}}>
                 <Card style={{...style, marginBottom: '0.4rem'}}>
                   <CardHeader>
                     <CardTitle className="text-bold">{title}</CardTitle>

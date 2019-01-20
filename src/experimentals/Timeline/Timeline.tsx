@@ -1,6 +1,12 @@
 import React, {FC} from 'react'
 
-import {Tile, TileSubtitle} from '@components/index'
+import {
+  Tile,
+  TileAction,
+  TileSubtitle,
+  TileTitle,
+  TileContent,
+} from '@components/index'
 import {Icon} from '@elements/Icon'
 
 import {TimelineProps} from './interfaces'
@@ -27,9 +33,16 @@ function renderTimeline(p: TimelineProps) {
           </TimelineIcon>
         </TimelineLeft>
         <TimelineContent>
-          <Tile action={action}>
-            <TileSubtitle>{title}</TileSubtitle>
-            {content}
+          <Tile>
+            <TileContent>
+              <TileSubtitle>{title}</TileSubtitle>
+              {Array.isArray(content) ? (
+                content.map(c => <TileTitle>{c}</TileTitle>)
+              ) : (
+                <TileTitle>{content}</TileTitle>
+              )}
+            </TileContent>
+            {action ? <TileAction>{action}</TileAction> : null}
           </Tile>
         </TimelineContent>
       </TimelineItem>

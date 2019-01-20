@@ -15,22 +15,7 @@ import {
   TabItem,
   Tile,
 } from '../../../src'
-{
-  /* <div class="panel">
-  <div class="panel-header">
-    <div class="panel-title">Comments</div>
-  </div>
-  <div class="panel-nav">
-    <!-- navigation components: tabs, breadcrumbs or pagination -->
-  </div>
-  <div class="panel-body">
-    <!-- contents -->
-  </div>
-  <div class="panel-footer">
-    <!-- buttons or inputs -->
-  </div>
-</div> */
-}
+
 const component = () => {
   return (
     <Panel style={{height: '75vh'}}>

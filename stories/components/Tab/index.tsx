@@ -6,33 +6,6 @@ import {OptionalKeyMap, optionalSelect} from '../../utils'
 
 import {Tab, TabProps} from '../../../src'
 
-// export interface TabAttrProps extends TabBaseProps {
-//   items: Array<TabItemProps & {id: string}>
-//   onClick: MouseEventIdHandler
-//   activeId?: string
-//   action?: ReactNode
-//   block?: boolean
-// }
-// export interface TabItemProps {
-//   title: ReactNode
-//   active?: boolean
-//   onClick?: MouseEventHandler
-//   badge?: string | number
-// }
-{
-  /* <li class="tab-item active">
-<a href="#">Music</a>
-</li>
-<li class="tab-item">
-<a href="#" class="active">Playlists</a>
-</li>
-<li class="tab-item">
-<a href="#">Radio</a>
-</li>
-<li class="tab-item">
-<a href="#">Connect</a>
-</li> */
-}
 const component = () => {
   return (
     <Tab

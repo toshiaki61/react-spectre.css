@@ -7,7 +7,7 @@ import {Slider} from '../Slider'
 import {ViewerSliderProps} from './interfaces'
 
 const ViewerSlider: FC<ViewerSliderProps> = ({className, ...rest}) => (
-  <Slider className={cx('viewer-slider', className)} {...rest} />
+  <Slider className={cx('viewer-slider slider', className)} {...rest} />
 )
 
 export default ViewerSlider

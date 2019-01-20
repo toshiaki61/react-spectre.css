@@ -5,6 +5,7 @@ import {boolean, number, object, select, text} from '@storybook/addon-knobs'
 import {OptionalKeyMap, optionalSelect} from '../../utils'
 
 import {Toast, ToastColorType, ToastProps} from '../../../src/'
+
 const toastColorTypes: OptionalKeyMap<ToastColorType> = {
   primary: 'primary',
   success: 'success',
@@ -12,17 +13,7 @@ const toastColorTypes: OptionalKeyMap<ToastColorType> = {
   error: 'error',
   'No Value': '',
 }
-// export type ToastColorType = 'primary' | 'success' | 'warning' | 'error'
 
-// export interface ToastBaseProps extends Partial<StyleProps> {
-//   color?: ToastColorType
-// }
-
-// export interface ToastAttrProps extends ToastBaseProps {
-//   content: ReactNode
-//   title?: ReactNode
-//   onClearClick?: MouseEventHandler
-// }
 const component = () => {
   return (
     <Toast

@@ -27,5 +27,5 @@ export interface TimelineIconProps {
 export interface TimelineData {
   title: string
   action?: ReactNode
-  content: ReactNode
+  content: ReactNode | ReactNode[]
 }

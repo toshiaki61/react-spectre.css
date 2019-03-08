@@ -16,7 +16,7 @@
     "build-storybook": "build-storybook -s public",
     "deploy-storybook": "storybook-to-ghpages",
     "chromatic": "chromatic test",
-    "postinstall": "npm build"
+    "postinstall": "npm run-script build"
   },
   "eslintConfig": {
     "extends": "react-app"

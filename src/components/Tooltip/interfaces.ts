@@ -1,6 +1,6 @@
 import {ReactNode} from 'react'
 
-import {TooltipPositionType} from '@utils/attr/interfaces'
+import {TooltipPositionType} from 'utilities/attr/interfaces'
 
 export interface TooltipProps {
   children: ReactNode

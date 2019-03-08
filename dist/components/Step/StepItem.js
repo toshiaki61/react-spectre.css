@@ -1,7 +1,7 @@
 import * as tslib_1 from "tslib";
 import React from 'react';
 import cx from 'classnames';
-import { attr } from '@utils/attr';
+import { attr } from 'utilities/attr';
 import { LinkHash } from '../../interfaces';
 var StepItem = function (_a) {
     var children = _a.children, active = _a.active, tooltip = _a.tooltip;

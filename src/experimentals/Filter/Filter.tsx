@@ -1,12 +1,6 @@
 import React, {ChangeEvent, FC, Fragment} from 'react'
 
-import {
-  Card,
-  CardHeader,
-  CardSubtitle,
-  CardTitle,
-  Chip,
-} from '@components/index'
+import {Card, CardHeader, CardSubtitle, CardTitle, Chip} from 'components/index'
 
 import {FilterProps} from './interfaces'
 import {hasFilterChildren} from './util'

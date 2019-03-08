@@ -1,6 +1,6 @@
 import React, {ChangeEvent, Component} from 'react'
 
-import {Filter} from '@experimentals/Filter'
+import {Filter} from 'experimentals/Filter'
 
 interface FilterProps {
   tags: {

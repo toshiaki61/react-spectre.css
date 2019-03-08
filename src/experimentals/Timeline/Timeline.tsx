@@ -6,8 +6,8 @@ import {
   TileSubtitle,
   TileTitle,
   TileContent,
-} from '@components/index'
-import {Icon} from '@elements/Icon'
+} from 'components/index'
+import {Icon} from 'elements/Icon'
 
 import {TimelineProps} from './interfaces'
 import {hasTimelineChildren} from './util'

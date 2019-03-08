@@ -2,12 +2,12 @@ import React, {FC} from 'react'
 
 import cx from 'classnames'
 
-import {Button} from '@elements/Button'
+import {Button} from 'elements/Button'
 
 import BarItem from './BarItem'
 import {BarProps} from './interfaces'
 
-import {attr} from '@utils/attr'
+import {attr} from 'utilities/attr'
 
 const Bar: FC<BarProps> = ({className, small, slider, items}) => (
   <div

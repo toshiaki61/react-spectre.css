@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import cx from 'classnames';
-import { Divider } from '@utils/Divider';
+import { Divider } from 'utilities/Divider';
 import { hasMenuItemChildren, isMenuItemDivider } from './util';
 import MenuBadge from './MenuBadge';
 function renderMenuitem(p) {

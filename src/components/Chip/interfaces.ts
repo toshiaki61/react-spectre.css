@@ -1,6 +1,6 @@
 import {MouseEventHandler, ReactNode} from 'react'
 
-import {AvatarProps} from '@components/Avatar'
+import {AvatarProps} from 'components/Avatar'
 
 import {StyleProps} from '../../interfaces'
 

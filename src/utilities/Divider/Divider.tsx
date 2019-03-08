@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 import cx from 'classnames'
 
-import {attr} from '@utils/attr'
+import {attr} from 'utilities/attr'
 
 import {DividerProps} from './interfaces'
 

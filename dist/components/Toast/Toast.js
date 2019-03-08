@@ -1,8 +1,8 @@
 import * as tslib_1 from "tslib";
 import React, { Fragment } from 'react';
 import cx from 'classnames';
-import { Button } from '@elements/Button';
-import { attr } from '@utils/attr';
+import { Button } from 'elements/Button';
+import { attr } from 'utilities/attr';
 import { hasToastChildren } from './util';
 function renderToast(p) {
     if (hasToastChildren(p)) {

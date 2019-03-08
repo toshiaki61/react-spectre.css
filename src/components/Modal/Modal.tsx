@@ -2,8 +2,8 @@ import React, {FC, Fragment} from 'react'
 
 import cx from 'classnames'
 
-import {Button} from '@elements/Button'
-import {attr} from '@utils/attr'
+import {Button} from 'elements/Button'
+import {attr} from 'utilities/attr'
 
 import {ModalProps} from './interfaces'
 import {hasModalChildren} from './util'

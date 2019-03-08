@@ -2,7 +2,7 @@ import React, {FC, Fragment} from 'react'
 
 import cx from 'classnames'
 
-import {Icon} from '@elements/Icon'
+import {Icon} from 'elements/Icon'
 
 import {EmptyProps} from './interfaces'
 

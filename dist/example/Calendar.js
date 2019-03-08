@@ -1,8 +1,8 @@
 import * as tslib_1 from "tslib";
 import React, { Component } from 'react';
 import { addMonths, eachDay, endOfWeek, format, startOfWeek } from 'date-fns';
-import { Popover } from '@components/Popover';
-import { Calendar } from '@experimentals/Calendar';
+import { Popover } from 'components/Popover';
+import { Calendar } from 'experimentals/Calendar';
 var CalendarExample = /** @class */ (function (_super) {
     tslib_1.__extends(CalendarExample, _super);
     function CalendarExample(props) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '@elements/Icon';
+import { Icon } from 'elements/Icon';
 var CarouselItem = function (_a) {
     var src = _a.src, alt = _a.alt, prev = _a.prev, next = _a.next;
     return (React.createElement("figure", { className: "carousel-item" },

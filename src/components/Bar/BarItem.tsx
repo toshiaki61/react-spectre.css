@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 import {BarItemProps} from './interfaces'
 
-import {attr} from '@utils/attr'
+import {attr} from 'utilities/attr'
 
 const BarItem: FC<BarItemProps> = ({small, tooltip, content, ...rest}) => (
   <div {...attr({className: 'bar-item', tooltip})} {...rest}>

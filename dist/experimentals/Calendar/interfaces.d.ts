@@ -1,5 +1,5 @@
 import { MouseEvent, MouseEventHandler, ReactNode } from 'react';
-import { BasePartProps } from 'src/interfaces';
+import { BasePartProps } from 'interfaces';
 export declare type DateLike = Date | string | number;
 export declare type MouseEventDateLikeHandler = (e: MouseEvent<any>, m: DateLike) => void;
 export interface CalendarRange {

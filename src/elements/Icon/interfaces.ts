@@ -1,4 +1,4 @@
-import {StyleProps} from 'src/interfaces'
+import {StyleProps} from 'interfaces'
 
 export type IconType =
   | 'apps'

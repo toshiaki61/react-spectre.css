@@ -1,6 +1,6 @@
 import React from 'react';
-import { Avatar, Chip, Menu, MenuItem, Tile } from '@components/index';
-import { FormIcon, FormInput, HasIcon } from '@elements/index';
+import { Avatar, Chip, Menu, MenuItem, Tile } from 'components/index';
+import { FormIcon, FormInput, HasIcon } from 'elements/index';
 import FormAutocomplete from './FormAutocomplete';
 import FormAutocompleteInput from './FormAutocompleteInput';
 import { filter, mark } from './util';

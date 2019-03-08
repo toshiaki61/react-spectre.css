@@ -1,7 +1,7 @@
 import * as tslib_1 from "tslib";
 import React, { Component } from 'react';
-import { Modal } from '@components/Modal';
-import { Button } from '@elements/Button';
+import { Modal } from 'components/Modal';
+import { Button } from 'elements/Button';
 var ModalExample = /** @class */ (function (_super) {
     tslib_1.__extends(ModalExample, _super);
     function ModalExample() {

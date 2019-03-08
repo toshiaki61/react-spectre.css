@@ -2,8 +2,8 @@ import React, {FC, Fragment} from 'react'
 
 import cx from 'classnames'
 
-import {Avatar} from '@components/Avatar'
-import {Button} from '@elements/Button'
+import {Avatar} from 'components/Avatar'
+import {Button} from 'elements/Button'
 
 import {ChipProps} from './interfaces'
 import {hasChipChildren} from './util'

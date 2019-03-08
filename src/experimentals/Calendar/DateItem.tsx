@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 import cx from 'classnames'
 
-import {Button} from '@elements/index'
+import {Button} from 'elements/index'
 
 import {CalendarDateItemProps} from './interfaces'
 

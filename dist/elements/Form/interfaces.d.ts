@@ -1,5 +1,5 @@
 import { ReactNode, ReactNodeArray } from 'react';
-import { IconType } from '@elements/Icon';
+import { IconType } from 'elements/Icon';
 export interface FormProps {
     children: ReactNode;
     className?: string;

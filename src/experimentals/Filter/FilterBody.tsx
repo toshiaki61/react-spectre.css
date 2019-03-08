@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Columns} from '@layouts/index'
+import {Columns} from 'layouts/index'
 
 import {FilterBodyProps} from './interfaces'
 

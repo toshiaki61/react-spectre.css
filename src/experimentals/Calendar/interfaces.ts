@@ -1,5 +1,6 @@
 import {MouseEvent, MouseEventHandler, ReactNode} from 'react'
-import {BasePartProps} from 'src/interfaces'
+
+import {BasePartProps} from 'interfaces'
 
 export type DateLike = Date | string | number
 

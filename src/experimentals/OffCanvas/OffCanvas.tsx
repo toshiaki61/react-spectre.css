@@ -1,6 +1,6 @@
 import React, {FC, Fragment} from 'react'
 
-import {Icon} from '@elements/index'
+import {Icon} from 'elements/index'
 
 import {OffCanvasProps} from './interfaces'
 import {hasOffCanvasChildren} from './util'

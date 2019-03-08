@@ -2,8 +2,8 @@ import React, {FC} from 'react'
 
 import cx from 'classnames'
 
-import {Button} from '@elements/Button'
-import {Icon} from '@elements/Icon'
+import {Button} from 'elements/Button'
+import {Icon} from 'elements/Icon'
 
 import {Menu} from '../Menu'
 

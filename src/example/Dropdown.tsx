@@ -1,6 +1,6 @@
 import React, {Component, MouseEvent} from 'react'
 
-import {Dropdown} from '@components/Dropdown'
+import {Dropdown} from 'components/Dropdown'
 
 interface IDropdownExampleState {
   value: string

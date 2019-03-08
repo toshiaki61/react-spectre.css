@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import cx from 'classnames';
-import { Icon } from '@elements/Icon';
+import { Icon } from 'elements/Icon';
 import EmptyAction from './EmptyAction';
 import EmptyIcon from './EmptyIcon';
 import EmptySubtitle from './EmptySubtitle';

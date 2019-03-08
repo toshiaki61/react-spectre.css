@@ -2,8 +2,8 @@ import React, {FC} from 'react'
 
 import cx from 'classnames'
 
-import {Icon} from '@elements/Icon'
-import {attr} from '@utils/attr'
+import {Icon} from 'elements/Icon'
+import {attr} from 'utilities/attr'
 
 import {AccordionItemProps} from './interfaces'
 

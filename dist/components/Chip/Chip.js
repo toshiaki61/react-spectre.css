@@ -1,8 +1,8 @@
 import * as tslib_1 from "tslib";
 import React, { Fragment } from 'react';
 import cx from 'classnames';
-import { Avatar } from '@components/Avatar';
-import { Button } from '@elements/Button';
+import { Avatar } from 'components/Avatar';
+import { Button } from 'elements/Button';
 import { hasChipChildren } from './util';
 import ChipWrapper from './ChipWrapper';
 function renderChip(p) {

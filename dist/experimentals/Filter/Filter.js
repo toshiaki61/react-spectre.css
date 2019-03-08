@@ -1,6 +1,6 @@
 import * as tslib_1 from "tslib";
 import React, { Fragment } from 'react';
-import { Card, CardHeader, CardSubtitle, CardTitle, Chip, } from '@components/index';
+import { Card, CardHeader, CardSubtitle, CardTitle, Chip } from 'components/index';
 import { hasFilterChildren } from './util';
 import FilterBody from './FilterBody';
 import FilterItem from './FilterItem';

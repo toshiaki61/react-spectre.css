@@ -1,5 +1,5 @@
 import { MouseEvent, ReactNode } from 'react';
-import { StyleProps } from 'src/interfaces';
+import { StyleProps } from 'interfaces';
 export interface NavItemProps {
     id: string;
     name: string;

@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Button} from '@elements/index'
+import {Button} from 'elements/index'
 
 import {OffCanvasToggleProps} from './interfaces'
 

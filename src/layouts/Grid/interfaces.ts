@@ -1,5 +1,6 @@
 import {ReactNode} from 'react'
-import {StyleProps} from 'src/interfaces'
+
+import {StyleProps} from 'interfaces'
 
 export type ContainerGridSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 

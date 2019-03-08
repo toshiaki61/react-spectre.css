@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Column} from '@layouts/index'
+import {Column} from 'layouts/index'
 
 import {FilterItemProps} from './interfaces'
 

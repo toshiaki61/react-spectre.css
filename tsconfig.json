@@ -2,7 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
@@ -12,14 +12,6 @@
     "moduleResolution": "node",
     "noEmit": true,
     "noImplicitAny": false,
-    "paths": {
-      "@components*": ["src/components*"],
-      "@elements*": ["src/elements*"],
-      "@features*": ["src/features*"],
-      "@experimentals*": ["src/experimentals*"],
-      "@layouts*": ["src/layouts*"],
-      "@utils*": ["src/utilities*"]
-    },
     "resolveJsonModule": true,
     "skipLibCheck": false,
     "sourceMap": true,

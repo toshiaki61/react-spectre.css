@@ -1,6 +1,6 @@
 import * as tslib_1 from "tslib";
 import React, { Component } from 'react';
-import { Carousel } from '@experimentals/Carousel';
+import { Carousel } from 'experimentals/Carousel';
 var CarouselExample = /** @class */ (function (_super) {
     tslib_1.__extends(CarouselExample, _super);
     function CarouselExample() {

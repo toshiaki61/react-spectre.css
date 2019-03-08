@@ -1,6 +1,6 @@
 import * as tslib_1 from "tslib";
 import React, { Component } from 'react';
-import { Dropdown } from '@components/Dropdown';
+import { Dropdown } from 'components/Dropdown';
 var DropdownExample = /** @class */ (function (_super) {
     tslib_1.__extends(DropdownExample, _super);
     function DropdownExample() {

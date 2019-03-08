@@ -1,6 +1,6 @@
 import React from 'react';
-import { Tile, TileAction, TileSubtitle, TileTitle, TileContent, } from '@components/index';
-import { Icon } from '@elements/Icon';
+import { Tile, TileAction, TileSubtitle, TileTitle, TileContent, } from 'components/index';
+import { Icon } from 'elements/Icon';
 import { hasTimelineChildren } from './util';
 import TimelineContent from './TimelineContent';
 import TimelineIcon from './TimelineIcon';

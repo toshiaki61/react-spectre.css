@@ -1,8 +1,8 @@
 import * as tslib_1 from "tslib";
 import React from 'react';
 import cx from 'classnames';
-import { Icon } from '@elements/Icon';
-import { attr } from '@utils/attr';
+import { Icon } from 'elements/Icon';
+import { attr } from 'utilities/attr';
 import AccordionBody from './AccordionBody';
 var AccordionItem = function (p) {
     var id = p.id, header = p.header, className = p.className, exclusive = p.exclusive, useIcon = p.useIcon;

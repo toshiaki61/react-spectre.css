@@ -1,6 +1,6 @@
 import * as tslib_1 from "tslib";
 import React, { Component } from 'react';
-import { Filter } from '@experimentals/Filter';
+import { Filter } from 'experimentals/Filter';
 var FilterExample = /** @class */ (function (_super) {
     tslib_1.__extends(FilterExample, _super);
     function FilterExample() {

@@ -1,6 +1,6 @@
 import React, {ChangeEvent, Component} from 'react'
 
-import {Carousel} from '@experimentals/Carousel'
+import {Carousel} from 'experimentals/Carousel'
 
 interface CarouselProps {
   slides: Array<{

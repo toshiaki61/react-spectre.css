@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Icon} from '@elements/Icon'
+import {Icon} from 'elements/Icon'
 
 import {CarouselItemPaging, CarouselItemProps} from './interfaces'
 

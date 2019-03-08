@@ -4,8 +4,8 @@ import cx from 'classnames'
 
 import {TableHeadingProps, TableSortDirection} from './interfaces'
 
-import {Button} from '@elements/Button'
-import {Icon} from '@elements/Icon'
+import {Button} from 'elements/Button'
+import {Icon} from 'elements/Icon'
 
 const TableHeading: FC<TableHeadingProps> = ({
   className,

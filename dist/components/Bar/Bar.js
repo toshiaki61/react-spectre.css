@@ -1,9 +1,9 @@
 import * as tslib_1 from "tslib";
 import React from 'react';
 import cx from 'classnames';
-import { Button } from '@elements/Button';
+import { Button } from 'elements/Button';
 import BarItem from './BarItem';
-import { attr } from '@utils/attr';
+import { attr } from 'utilities/attr';
 var Bar = function (_a) {
     var className = _a.className, small = _a.small, slider = _a.slider, items = _a.items;
     return (React.createElement("div", { className: cx('bar', {

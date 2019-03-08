@@ -1,6 +1,6 @@
 import * as tslib_1 from "tslib";
 import React, { Component } from 'react';
-import { Autocomplete } from '@experimentals/Autocomplete';
+import { Autocomplete } from 'experimentals/Autocomplete';
 var AutocompleteExample = /** @class */ (function (_super) {
     tslib_1.__extends(AutocompleteExample, _super);
     function AutocompleteExample() {

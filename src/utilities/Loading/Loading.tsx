@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {attr} from '@utils/attr'
+import {attr} from 'utilities/attr'
 
 import {LoadingProps} from './interfaces'
 

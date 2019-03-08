@@ -7,7 +7,7 @@ import {
 
 import {StyleProps} from '../../interfaces'
 
-import {MenuItemProps} from '@components/Menu'
+import {MenuItemProps} from 'components/Menu'
 
 export interface DropdownBaseProps extends Partial<StyleProps> {
   active?: boolean

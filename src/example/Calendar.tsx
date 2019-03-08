@@ -2,8 +2,8 @@ import React, {Component, MouseEvent} from 'react'
 
 import {addMonths, eachDay, endOfWeek, format, startOfWeek} from 'date-fns'
 
-import {Popover} from '@components/Popover'
-import {Calendar, DateLike} from '@experimentals/Calendar'
+import {Popover} from 'components/Popover'
+import {Calendar, DateLike} from 'experimentals/Calendar'
 
 interface ICalendarExampleState {
   active: boolean

@@ -2,8 +2,8 @@ import React, {FC, Fragment, MouseEvent} from 'react'
 
 import cx from 'classnames'
 
-import {Button} from '@elements/Button'
-import {attr} from '@utils/attr'
+import {Button} from 'elements/Button'
+import {attr} from 'utilities/attr'
 
 import {ToastProps} from './interfaces'
 import {hasToastChildren} from './util'

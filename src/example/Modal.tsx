@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
-import {Modal} from '@components/Modal'
-import {Button} from '@elements/Button'
+import {Modal} from 'components/Modal'
+import {Button} from 'elements/Button'
 
 interface IModalExampleState {
   active: boolean

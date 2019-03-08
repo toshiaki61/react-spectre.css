@@ -2,8 +2,8 @@ import React, {FC, Fragment, MouseEvent} from 'react'
 
 import cx from 'classnames'
 
-import {Button, Icon} from '@elements/index'
-import {attr} from '@utils/attr'
+import {Button, Icon} from 'elements/index'
+import {attr} from 'utilities/attr'
 
 import {CalendarProps} from './interfaces'
 import {generateCalendarData, hasCalendarChildren} from './util'

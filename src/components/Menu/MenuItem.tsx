@@ -2,7 +2,7 @@ import React, {FC, Fragment, MouseEvent} from 'react'
 
 import cx from 'classnames'
 
-import {Divider} from '@utils/Divider'
+import {Divider} from 'utilities/Divider'
 
 import {MenuItemProps} from './interfaces'
 import {hasMenuItemChildren, isMenuItemDivider} from './util'

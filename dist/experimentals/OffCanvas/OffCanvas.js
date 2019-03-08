@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Icon } from '@elements/index';
+import { Icon } from 'elements/index';
 import { hasOffCanvasChildren } from './util';
 import OffCanvasContent from './OffCanvasContent';
 import OffCanvasOverlay from './OffCanvasOverlay';

@@ -1,8 +1,8 @@
 import React, {FC} from 'react'
 
-import {Icon} from '@elements/Icon'
+import {Icon} from 'elements/Icon'
 
-import {attr} from '@utils/attr'
+import {attr} from 'utilities/attr'
 
 import {FormIconProps} from './interfaces'
 

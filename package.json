@@ -3,7 +3,6 @@
   "version": "0.5.15",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "module": "src/index.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/toshiaki61/react-spectre.css.git"

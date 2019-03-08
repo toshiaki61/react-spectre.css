@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions'
 import {boolean, number, object, select, text} from '@storybook/addon-knobs'
 import {OptionalKeyMap, optionalSelect} from '../../utils'
 
-import {Avatar, AvatarPresenceType, AvatarSizeType} from '@components/Avatar'
+import {Avatar, AvatarPresenceType, AvatarSizeType} from 'components/Avatar'
 
 const avatarSizes: OptionalKeyMap<AvatarSizeType> = {
   xl: 'xl',

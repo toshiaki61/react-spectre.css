@@ -2,7 +2,7 @@ import React from 'react'
 
 import {boolean, number, text} from '@storybook/addon-knobs'
 
-import {Menu, MenuItem, MenuItemProps} from '@components/Menu'
+import {Menu, MenuItem, MenuItemProps} from 'components/Menu'
 import {action} from '@storybook/addon-actions'
 
 const generateData = (amount: number) =>

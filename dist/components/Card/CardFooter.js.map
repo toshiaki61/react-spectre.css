@@ -1,1 +1,0 @@
-{"version":3,"file":"CardFooter.js","sourceRoot":"","sources":["../../../src/components/Card/CardFooter.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAW,MAAM,OAAO,CAAA;AAE/B,OAAO,EAAE,MAAM,YAAY,CAAA;AAI3B,IAAM,UAAU,GAAsB,UAAC,EAAqB;QAApB,sBAAQ,EAAE,wBAAS;IAAM,OAAA,CAC/D,6BAAK,SAAS,EAAE,EAAE,CAAC,aAAa,EAAE,SAAS,CAAC,IAAG,QAAQ,CAAO,CAC/D;AAFgE,CAEhE,CAAA;AAED,eAAe,UAAU,CAAA"}

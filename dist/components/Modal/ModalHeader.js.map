@@ -1,1 +1,0 @@
-{"version":3,"file":"ModalHeader.js","sourceRoot":"","sources":["../../../src/components/Modal/ModalHeader.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAW,MAAM,OAAO,CAAA;AAE/B,OAAO,EAAE,MAAM,YAAY,CAAA;AAI3B,IAAM,WAAW,GAAuB,UAAC,EAAqB;QAApB,sBAAQ,EAAE,wBAAS;IAAM,OAAA,CACjE,6BAAK,SAAS,EAAE,EAAE,CAAC,cAAc,EAAE,SAAS,CAAC,IAAG,QAAQ,CAAO,CAChE;AAFkE,CAElE,CAAA;AAED,eAAe,WAAW,CAAA"}

@@ -138,6 +138,12 @@ interface TooltipProps {
 interface BadgeProps {
   badge: string
 }
+interface DataProps {
+  'data-content': string
+  'data-tooltip': string
+  'data-badge': string
+}
+
 export type BaseProps = ColorProps &
   CursorProps &
   DisplayProps &
@@ -149,4 +155,5 @@ export type BaseProps = ColorProps &
   DividerProps &
   TooltipProps &
   BadgeProps &
-  StyleProps
+  StyleProps &
+  DataProps

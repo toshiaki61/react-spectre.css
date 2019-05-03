@@ -1,10 +1,9 @@
-import {ReactNode} from 'react'
-
-import {StyleProps} from 'interfaces'
+import * as React from 'react'
+import {StyleProps} from '../../interfaces'
 
 export type ContainerGridSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
 export interface ContainerProps extends Partial<StyleProps> {
-  children: ReactNode
+  children: React.ReactNode
   size?: ContainerGridSizeType
 }

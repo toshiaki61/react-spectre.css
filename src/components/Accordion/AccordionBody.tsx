@@ -1,11 +1,11 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import {Menu} from 'components/Menu'
+import {Menu} from '../Menu'
 
 import {AccordionItemProps} from './interfaces'
 import {hasAccordionItemChildren} from './util'
 
-const AccordionBody: FC<AccordionItemProps> = p => {
+const AccordionBody: React.FC<AccordionItemProps> = p => {
   if (hasAccordionItemChildren(p)) {
     return p.children
   }

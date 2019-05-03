@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {TimelinePartProps} from './interfaces'
 
-const TimelineLeft: FC<TimelinePartProps> = ({children}) => (
+const TimelineLeft: React.FC<TimelinePartProps> = ({children}) => (
   <div className={cx('timeline-left')}>{children}</div>
 )
 

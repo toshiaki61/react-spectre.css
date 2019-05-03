@@ -1,4 +1,4 @@
-import React, {FC, Fragment} from 'react'
+import * as React from 'react'
 
 import {PaginationProps} from './interfaces'
 import {hasPaginationChildren, hasPaginationTitle, pages} from './util'
@@ -14,7 +14,7 @@ function renderPagination(p: PaginationProps) {
   if (hasPaginationTitle(p)) {
     const {title} = p
     return (
-      <Fragment>
+      <React.Fragment>
         <PaginationTitleItem
           title={title.prev.title}
           subtitle={title.prev.subtitle}
@@ -29,14 +29,14 @@ function renderPagination(p: PaginationProps) {
           value={current + 1}
           onClick={onClick}
         />
-      </Fragment>
+      </React.Fragment>
     )
   }
   const {label, total, each} = p
   const safeLabel = label ? label : {skip: null, previous: null, next: null}
   const list = pages(current, total, each, safeLabel.skip)
   return (
-    <Fragment>
+    <React.Fragment>
       <PaginationItem
         current={current}
         label={safeLabel.previous}
@@ -63,10 +63,10 @@ function renderPagination(p: PaginationProps) {
         value={current + 1}
         onClick={onClick}
       />
-    </Fragment>
+    </React.Fragment>
   )
 }
-const Pagination: FC<PaginationProps> = p => {
+const Pagination: React.FC<PaginationProps> = p => {
   return <ul className="pagination">{renderPagination(p)}</ul>
 }
 Pagination.defaultProps = {

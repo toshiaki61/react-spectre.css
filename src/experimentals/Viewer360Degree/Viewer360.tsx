@@ -1,6 +1,6 @@
-import React, {FC, Fragment} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {Viewer360Props} from './interfaces'
 import {hasViewer360Children} from './util'
@@ -14,13 +14,13 @@ function renderViewer360(p: Viewer360Props) {
   }
   const {slider, image} = p
   return (
-    <Fragment>
+    <React.Fragment>
       <ViewerSlider {...slider} />
       <ViewerImage image={image} />
-    </Fragment>
+    </React.Fragment>
   )
 }
-const Viewer360: FC<Viewer360Props> = p => (
+const Viewer360: React.FC<Viewer360Props> = p => (
   <div className={cx('viewer-360', p.className)}>{renderViewer360(p)}</div>
 )
 

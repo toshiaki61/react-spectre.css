@@ -1,6 +1,6 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {CardProps} from './interfaces'
 
@@ -41,7 +41,7 @@ function renderCard(p: CardProps) {
     }
   })
 }
-const Card: FC<CardProps> = p => {
+const Card: React.FC<CardProps> = p => {
   const {children, className, ...rest} = p
   return (
     <div className={cx('card', className)} {...rest}>

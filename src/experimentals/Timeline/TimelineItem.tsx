@@ -1,8 +1,8 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
 import {TimelineItemProps} from './interfaces'
 
-const TimelineItem: FC<TimelineItemProps> = ({children, id}) => (
+const TimelineItem: React.FC<TimelineItemProps> = ({children, id}) => (
   <div className="timeline-item" id={id}>
     {children}
   </div>

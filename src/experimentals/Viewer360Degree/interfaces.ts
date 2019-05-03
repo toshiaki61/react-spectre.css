@@ -1,4 +1,4 @@
-import {ReactNode} from 'react'
+import * as React from 'react'
 
 import {StyleProps} from '../../interfaces'
 
@@ -9,7 +9,7 @@ export interface Viewer360AttrProps extends Partial<StyleProps> {
   image: string
 }
 export interface Viewer360ChildrenProps extends Partial<StyleProps> {
-  children: ReactNode
+  children: React.ReactNode
 }
 export type Viewer360Props = Viewer360AttrProps | Viewer360ChildrenProps
 

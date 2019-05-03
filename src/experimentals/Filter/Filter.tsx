@@ -1,6 +1,6 @@
-import React, {ChangeEvent, FC, Fragment} from 'react'
+import * as React from 'react'
 
-import {Card, CardHeader, CardSubtitle, CardTitle, Chip} from 'components/index'
+import {Card, CardHeader, CardSubtitle, CardTitle, Chip} from '../../components'
 
 import {FilterProps} from './interfaces'
 import {hasFilterChildren} from './util'
@@ -16,11 +16,11 @@ function renderFilter(p: FilterProps) {
   }
   const {tags, data, activeId, onChange} = p
   return (
-    <Fragment>
+    <React.Fragment>
       {Object.keys(tags).map((key, i) => {
         const handleChange =
           // useCallback(
-          (e: ChangeEvent<any>) => onChange(e, key)
+          (e: React.ChangeEvent<any>) => onChange(e, key)
         // ,[key])
         const checked = activeId ? activeId === key : i === 0
         return (
@@ -58,10 +58,10 @@ function renderFilter(p: FilterProps) {
             )
           })}
       </FilterBody>
-    </Fragment>
+    </React.Fragment>
   )
 }
-const Filter: FC<FilterProps> = p => (
+const Filter: React.FC<FilterProps> = p => (
   <div className="filter">{renderFilter(p)}</div>
 )
 export default Filter

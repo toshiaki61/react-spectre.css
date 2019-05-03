@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {HasIconProps} from './interfaces'
 
-const HasIcon: FC<HasIconProps> = ({children, position}) => (
+const HasIcon: React.FC<HasIconProps> = ({children, position}) => (
   <div className={cx({[`has-icon-${position}`]: position})}>{children}</div>
 )
 

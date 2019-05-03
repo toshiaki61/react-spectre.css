@@ -1,12 +1,12 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import {Icon} from 'elements/Icon'
+import {Icon} from '../Icon'
 
-import {attr} from 'utilities/attr'
+import {attr} from '../../utilities/attr'
 
 import {FormIconProps} from './interfaces'
 
-const FormIcon: FC<FormIconProps> = ({iconType, loading}) =>
+const FormIcon: React.FC<FormIconProps> = ({iconType, loading}) =>
   iconType ? (
     <Icon type={iconType} className="form-icon" />
   ) : (

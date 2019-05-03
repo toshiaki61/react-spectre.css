@@ -1,15 +1,15 @@
 // tslint:disable:jsx-no-lambda
 // tslint:disable:no-console
-import React, {Fragment, MouseEvent} from 'react'
+import * as React from 'react'
 
 import {format} from 'date-fns'
 
-import AutocompleteExample from './example/Autocomplete'
-import CalendarExample from './example/Calendar'
-import CarouselExample from './example/Carousel'
-import DropdownExample from './example/Dropdown'
-import FilterExample from './example/Filter'
-import ModalExample from './example/Modal'
+import AutocompleteExample from './Autocomplete'
+import CalendarExample from './Calendar'
+import CarouselExample from './Carousel'
+import DropdownExample from './Dropdown'
+import FilterExample from './Filter'
+import ModalExample from './Modal'
 
 import {
   Accordion,
@@ -44,7 +44,7 @@ import {
   TileTitle,
   Timeline,
   Toast,
-} from './'
+} from '../src'
 
 const now = new Date()
 const sidebarId = 'sidebar-id'
@@ -113,7 +113,9 @@ const App = () => (
           ]}
         />
         <Nav
-          onClick={(e: MouseEvent<any>, key: string) => console.log('clicked: ', key)}
+          onClick={(e: React.MouseEvent<any>, key: string) =>
+            console.log('clicked: ', key)
+          }
           activeId="2"
           items={[
             {id: '1', name: 'Elements'},
@@ -278,15 +280,15 @@ const App = () => (
             {
               title: 'March 2016',
               content: (
-                <Fragment>
+                <React.Fragment>
                   <TileTitle>Initial commit</TileTitle>
-                </Fragment>
+                </React.Fragment>
               ),
             },
             {
               title: 'February 2017',
               content: (
-                <Fragment>
+                <React.Fragment>
                   <TileTitle>New Documents experience</TileTitle>
                   <TileTitle>
                     <a href="components.html#bars">Bars</a>: represent the
@@ -301,16 +303,16 @@ const App = () => (
                     <a href="components.html#tiles">Tiles</a>: repeatable or
                     embeddable information blocks
                   </TileTitle>
-                </Fragment>
+                </React.Fragment>
               ),
               action: <button className="btn">View</button>,
             },
             {
               title: 'March 2017',
               content: (
-                <Fragment>
+                <React.Fragment>
                   <TileTitle>Initial commit</TileTitle>
-                </Fragment>
+                </React.Fragment>
               ),
             },
           ]}
@@ -393,13 +395,13 @@ const App = () => (
           nav={{
             current: format(now, 'MMMM YYYY'),
             prev: {
-              onClick: (e: MouseEvent<any>) => {
+              onClick: (e: React.MouseEvent<any>) => {
                 e.preventDefault()
                 console.log('prev_clicked')
               },
             },
             next: {
-              onClick: (e: MouseEvent<any>) => {
+              onClick: (e: React.MouseEvent<any>) => {
                 e.preventDefault()
                 console.log('next_clicked')
               },

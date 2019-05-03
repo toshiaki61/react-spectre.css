@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {ContainerProps} from './interfaces'
 
-const Container: FC<ContainerProps> = ({
+const Container: React.FC<ContainerProps> = ({
   children,
   className,
   size,

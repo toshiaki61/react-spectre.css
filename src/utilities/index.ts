@@ -1,4 +1,4 @@
-export * from './attr'
+export {attr} from './attr'
 
-export * from './Divider'
-export * from './Loading'
+export {Divider, DividerProps} from './Divider'
+export {Loading, LoadingProps} from './Loading'

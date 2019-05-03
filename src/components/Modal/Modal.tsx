@@ -1,9 +1,9 @@
-import React, {FC, Fragment} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
-import {Button} from 'elements/Button'
-import {attr} from 'utilities/attr'
+import {Button} from '../../elements/Button'
+import {attr} from '../../utilities/attr'
 
 import {ModalProps} from './interfaces'
 import {hasModalChildren} from './util'
@@ -21,7 +21,7 @@ function renderModal(p: ModalProps) {
   }
   const {title, content, footer, onClearClick} = p
   return (
-    <Fragment>
+    <React.Fragment>
       <ModalOverlay onClearClick={onClearClick} />
       <ModalContainer>
         <ModalHeader>
@@ -35,10 +35,10 @@ function renderModal(p: ModalProps) {
         {content ? <ModalBody>{content}</ModalBody> : null}
         {footer ? <ModalFooter>{footer}</ModalFooter> : null}
       </ModalContainer>
-    </Fragment>
+    </React.Fragment>
   )
 }
-const Modal: FC<ModalProps> = p => {
+const Modal: React.FC<ModalProps> = p => {
   const {active, size, className} = p
   return (
     <div

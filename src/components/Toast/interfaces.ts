@@ -1,4 +1,4 @@
-import {MouseEventHandler, ReactNode} from 'react'
+import * as React from 'react'
 
 import {StyleProps} from '../../interfaces'
 
@@ -9,13 +9,13 @@ export interface ToastBaseProps extends Partial<StyleProps> {
 }
 
 export interface ToastAttrProps extends ToastBaseProps {
-  content: ReactNode
-  title?: ReactNode
-  onClearClick?: MouseEventHandler
+  content: React.ReactNode
+  title?: React.ReactNode
+  onClearClick?: React.MouseEventHandler
 }
 
 export interface ToastChildrenProps extends ToastBaseProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export type ToastProps = ToastAttrProps | ToastChildrenProps

@@ -1,8 +1,8 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
 import {OffCanvasContentProps} from './interfaces'
 
-const OffCanvasContent: FC<OffCanvasContentProps> = ({children}) => (
+const OffCanvasContent: React.FC<OffCanvasContentProps> = ({children}) => (
   <div className="off-canvas-content">
     <div className="content">{children}</div>
   </div>

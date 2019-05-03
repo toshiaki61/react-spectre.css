@@ -1,4 +1,4 @@
-import {CSSProperties, ReactNode} from 'react'
+import * as React from 'react'
 
 export type LabelType =
   | 'primary'
@@ -8,9 +8,9 @@ export type LabelType =
   | 'error'
 
 export interface LabelProps {
-  children: ReactNode
+  children: React.ReactNode
   className?: string
-  style?: CSSProperties
+  style?: React.CSSProperties
   rounded?: boolean
   type?: LabelType
 }

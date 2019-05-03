@@ -1,6 +1,6 @@
-import React, {ChangeEvent, Component} from 'react'
+import * as React from 'react'
 
-import {Filter} from 'experimentals/Filter'
+import {Filter} from '../src'
 
 interface FilterProps {
   tags: {
@@ -16,7 +16,7 @@ interface FilterProps {
 interface FilterExampleState {
   active: string
 }
-class FilterExample extends Component<FilterProps, FilterExampleState> {
+class FilterExample extends React.Component<FilterProps, FilterExampleState> {
   public static defaultProps = {
     tags: {
       'tag-0': 'All',
@@ -58,7 +58,7 @@ class FilterExample extends Component<FilterProps, FilterExampleState> {
     )
   }
 
-  private onChange = (e: ChangeEvent<any>, id: string) =>
+  private onChange = (e: React.ChangeEvent<any>, id: string) =>
     this.setState({active: id})
 }
 export default FilterExample

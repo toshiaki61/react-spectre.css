@@ -1,8 +1,8 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
 import {TimelinePartProps} from './interfaces'
 
-const TimelineContent: FC<TimelinePartProps> = ({children}) => (
+const TimelineContent: React.FC<TimelinePartProps> = ({children}) => (
   <div className="timeline-content">{children}</div>
 )
 

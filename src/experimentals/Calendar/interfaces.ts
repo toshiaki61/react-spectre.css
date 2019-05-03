@@ -1,11 +1,10 @@
-import {MouseEvent, MouseEventHandler, ReactNode} from 'react'
-
-import {BasePartProps} from 'interfaces'
+import * as React from 'react'
+import {BasePartProps} from '../../interfaces'
 
 export type DateLike = Date | string | number
 
 export type MouseEventDateLikeHandler = (
-  e: MouseEvent<any>,
+  e: React.MouseEvent<any>,
   m: DateLike
 ) => void
 
@@ -28,8 +27,8 @@ export type CalendarBodyProps = Partial<BasePartProps>
 export type CalendarDateProps = Partial<BasePartProps>
 
 export interface CalendarNavDetail {
-  onClick: MouseEventHandler
-  children?: ReactNode
+  onClick: React.MouseEventHandler
+  children?: React.ReactNode
 }
 export interface CalendarNav {
   current: string
@@ -42,12 +41,12 @@ export interface CalendarOptions {
 }
 
 export interface CalendarDateItemProps {
-  children: ReactNode
+  children: React.ReactNode
   active?: boolean
   disabled?: boolean
   badge?: boolean
   today?: boolean
-  onClick: MouseEventHandler
+  onClick: React.MouseEventHandler
 }
 
 export interface CalendarBaseProps {
@@ -64,7 +63,7 @@ export interface CalendarAttrProps extends CalendarBaseProps {
 }
 
 export interface CalendarChildrenProps extends CalendarBaseProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export type CalendarProps = CalendarAttrProps | CalendarChildrenProps

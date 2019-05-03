@@ -1,6 +1,6 @@
-import React, {ChangeEvent, Component, MouseEvent} from 'react'
+import * as React from 'react'
 
-import {Autocomplete} from 'experimentals/Autocomplete'
+import {Autocomplete} from '../src'
 
 interface ISuggest {
   id: string
@@ -15,7 +15,10 @@ interface IAutocompleteExampleState {
   selected: ISuggest[]
   input: string
 }
-class AutocompleteExample extends Component<{}, IAutocompleteExampleState> {
+class AutocompleteExample extends React.Component<
+  {},
+  IAutocompleteExampleState
+> {
   public state: IAutocompleteExampleState = {
     active: false,
     loading: false,
@@ -67,7 +70,7 @@ class AutocompleteExample extends Component<{}, IAutocompleteExampleState> {
     return <Autocomplete {...props} />
   }
 
-  private onClearClick = (e: MouseEvent<any>, id: string) => {
+  private onClearClick = (e: React.MouseEvent<any>, id: string) => {
     e.preventDefault()
     const {suggests, selected} = this.state
     suggests.push(selected.find(row => row.id === id) as any)
@@ -77,7 +80,7 @@ class AutocompleteExample extends Component<{}, IAutocompleteExampleState> {
     })
   }
 
-  private onSelected = (e: MouseEvent<any>, id: string) => {
+  private onSelected = (e: React.MouseEvent<any>, id: string) => {
     e.preventDefault()
     const {suggests, selected} = this.state
     const found = suggests.find(row => row.id === id)
@@ -90,7 +93,7 @@ class AutocompleteExample extends Component<{}, IAutocompleteExampleState> {
     })
   }
 
-  private onChange = ({target: {value}}: ChangeEvent<HTMLInputElement>) =>
+  private onChange = ({target: {value}}: React.ChangeEvent<HTMLInputElement>) =>
     this.setState({input: value})
 
   private onFocus = () => this.setState({active: true})

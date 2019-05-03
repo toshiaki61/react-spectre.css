@@ -1,4 +1,4 @@
-import {ReactNode} from 'react'
+import * as React from 'react'
 
 import {BasePartProps, StyleProps} from '../../interfaces'
 
@@ -9,12 +9,12 @@ export interface PopoverBaseProps extends Partial<StyleProps> {
 }
 
 export interface PopoverAttrProps extends Partial<PopoverBaseProps> {
-  target: ReactNode
-  content: ReactNode
+  target: React.ReactNode
+  content: React.ReactNode
 }
 
 export interface PopoverChildrenProps extends Partial<PopoverBaseProps> {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export type PopoverProps = PopoverAttrProps | PopoverChildrenProps

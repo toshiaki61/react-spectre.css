@@ -1,12 +1,12 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
-import {Button} from 'elements/index'
+import {Button} from '../../elements'
 
 import {CalendarDateItemProps} from './interfaces'
 
-const DateItem: FC<CalendarDateItemProps> = ({
+const DateItem: React.FC<CalendarDateItemProps> = ({
   children,
   active,
   disabled,

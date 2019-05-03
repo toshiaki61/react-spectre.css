@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {FormAutocompleteInputProps} from './interfaces'
 
-const FormAutocompleteInput: FC<FormAutocompleteInputProps> = ({
+const FormAutocompleteInput: React.FC<FormAutocompleteInputProps> = ({
   children,
   className,
   active,

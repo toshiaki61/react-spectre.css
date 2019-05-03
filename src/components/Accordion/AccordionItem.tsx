@@ -1,15 +1,15 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
-import {Icon} from 'elements/Icon'
-import {attr} from 'utilities/attr'
+import {Icon} from '../../elements/Icon'
+import {attr} from '../../utilities/attr'
 
 import {AccordionItemProps} from './interfaces'
 
 import AccordionBody from './AccordionBody'
 
-const AccordionItem: FC<AccordionItemProps> = p => {
+const AccordionItem: React.FC<AccordionItemProps> = p => {
   const {id, header, className, exclusive, useIcon} = p
   const type = exclusive ? 'radio' : 'checkbox'
   const inputProps = {id, type, name: `accordion-${type}`}

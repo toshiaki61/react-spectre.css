@@ -1,8 +1,8 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
 import {ComparisonAfterProps} from './interfaces'
 
-const ComparisonAfter: FC<ComparisonAfterProps> = ({children}) => (
+const ComparisonAfter: React.FC<ComparisonAfterProps> = ({children}) => (
   <figure className="comparison-after">{children}</figure>
 )
 

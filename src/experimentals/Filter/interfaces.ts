@@ -1,4 +1,4 @@
-import {ChangeEvent, ChangeEventHandler, ReactNode} from 'react'
+import * as React from 'react'
 
 import {BasePartProps, StyleProps} from '../../interfaces'
 
@@ -14,17 +14,17 @@ export interface FilterAttrProps {
   }
   data?: FilterDatum[]
   activeId?: string
-  onChange: (e: ChangeEvent<HTMLInputElement>, id: string) => void
+  onChange: (e: React.ChangeEvent<HTMLInputElement>, id: string) => void
 }
 export interface FilterChildrenProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 export type FilterProps = FilterAttrProps | FilterChildrenProps
 
 export interface FilterTagProps {
   id: string
   checked: boolean
-  onChange: ChangeEventHandler<HTMLInputElement>
+  onChange: React.ChangeEventHandler<HTMLInputElement>
 }
 export type FilterNavProps = Partial<BasePartProps>
 export type FilterBodyProps = Partial<BasePartProps>

@@ -1,8 +1,8 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
 import {ViewerImageProps} from './interfaces'
 
-const ViewerImage: FC<ViewerImageProps> = ({image}) => (
+const ViewerImage: React.FC<ViewerImageProps> = ({image}) => (
   <figure
     className="viewer-image"
     style={{

@@ -1,16 +1,16 @@
-import {MouseEventHandler, ReactNode} from 'react'
+import * as React from 'react'
 
 import {MouseEventIdHandler} from '../../interfaces'
 
 export interface TabItemProps {
-  title: ReactNode
+  title: React.ReactNode
   active?: boolean
-  onClick?: MouseEventHandler
+  onClick?: React.MouseEventHandler
   badge?: string | number
 }
 
 export interface TabActionProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export interface TabBaseProps {
@@ -21,12 +21,12 @@ export interface TabAttrProps extends TabBaseProps {
   items: Array<TabItemProps & {id: string}>
   onClick: MouseEventIdHandler
   activeId?: string
-  action?: ReactNode
+  action?: React.ReactNode
   block?: boolean
 }
 
 export interface TabChildrenProps extends TabBaseProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export type TabProps = TabAttrProps | TabChildrenProps

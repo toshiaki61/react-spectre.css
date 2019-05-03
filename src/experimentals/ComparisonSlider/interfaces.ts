@@ -1,4 +1,4 @@
-import {ReactNode} from 'react'
+import * as React from 'react'
 
 import {BasePartProps, StyleProps} from '../../interfaces'
 
@@ -18,7 +18,7 @@ export interface ComparisonSliderAttrProps extends Partial<StyleProps> {
   after: ComparisonImageProps
 }
 export interface ComparisonSliderChildrenProps extends Partial<StyleProps> {
-  children: ReactNode
+  children: React.ReactNode
 }
 export type ComparisonSliderProps =
   | ComparisonSliderAttrProps

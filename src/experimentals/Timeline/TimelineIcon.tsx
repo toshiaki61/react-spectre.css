@@ -1,12 +1,17 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
-import {attr} from 'utilities/attr'
+import {attr} from '../../utilities/attr'
 
 import {TimelineIconProps} from './interfaces'
 
-const TimelineIcon: FC<TimelineIconProps> = ({children, id, tooltip, lg}) => (
+const TimelineIcon: React.FC<TimelineIconProps> = ({
+  children,
+  id,
+  tooltip,
+  lg,
+}) => (
   <a
     href={`#${id}`}
     {...attr({

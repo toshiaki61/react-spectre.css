@@ -1,8 +1,8 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
 import {TabActionProps} from './interfaces'
 
-const TabAction: FC<TabActionProps> = ({children}) => (
+const TabAction: React.FC<TabActionProps> = ({children}) => (
   <li className="tab-item tab-action">{children}</li>
 )
 

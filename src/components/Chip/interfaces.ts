@@ -1,6 +1,6 @@
-import {MouseEventHandler, ReactNode} from 'react'
+import * as React from 'react'
 
-import {AvatarProps} from 'components/Avatar'
+import {AvatarProps} from '../Avatar'
 
 import {StyleProps} from '../../interfaces'
 
@@ -8,18 +8,18 @@ export interface ChipBaseProps extends Partial<StyleProps> {
   htmlFor?: string
 }
 export interface ChipAttrProps extends ChipBaseProps {
-  content: ReactNode
+  content: React.ReactNode
   clear?: boolean
-  icon?: ReactNode
+  icon?: React.ReactNode
   avatar?: AvatarProps
-  onClearClick?: MouseEventHandler
+  onClearClick?: React.MouseEventHandler
 }
 export interface ChipChildrenProps extends ChipBaseProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 export type ChipProps = ChipAttrProps | ChipChildrenProps
 
 export interface ChipWrapperProps extends ChipBaseProps {
-  children: ReactNode
+  children: React.ReactNode
   htmlFor: string
 }

@@ -1,9 +1,9 @@
-import {ReactNode} from 'react'
+import * as React from 'react'
 
 import {MouseEventIdHandler, StyleProps} from '../../interfaces'
 
 export interface MenuBadgeProps {
-  content?: ReactNode
+  content?: React.ReactNode
 }
 
 export interface MenuItemBaseProps extends Partial<StyleProps> {
@@ -14,10 +14,10 @@ export interface MenuItemDividerProps extends MenuItemBaseProps {
   divider: boolean | string
 }
 export interface MenuItemChildrenProps extends MenuItemBaseProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 export interface MenuItemContentProps extends MenuItemBaseProps {
-  content: ReactNode
+  content: React.ReactNode
   link?: string
   active?: boolean
   badge?: string | number
@@ -38,7 +38,7 @@ export interface MenuAttrProps extends MenuBaseProps {
 }
 
 export interface MenuChildrenProps extends MenuBaseProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export type MenuProps = MenuAttrProps | MenuChildrenProps

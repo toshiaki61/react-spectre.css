@@ -1,7 +1,8 @@
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {BaseProps} from './interfaces'
 
+type Props = {[P in keyof BaseProps]: BaseProps[P]}
 export function attr({
   className,
   style,
@@ -140,7 +141,7 @@ export function attr({
 
     badge,
   })
-  const result: Partial<BaseProps> = {}
+  const result: Partial<Props> = {}
   if (cn) {
     result.className = cn
   }

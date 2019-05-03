@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import {Column} from 'layouts/index'
+import {Column} from '../../layouts/index'
 
 import {FilterItemProps} from './interfaces'
 
-const FilterItem: FC<FilterItemProps> = ({children, ...rest}) => (
+const FilterItem: React.FC<FilterItemProps> = ({children, ...rest}) => (
   <Column className="filter-item" size={4} {...rest}>
     {children}
   </Column>

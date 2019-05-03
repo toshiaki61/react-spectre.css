@@ -1,9 +1,9 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 import {TableDataProps} from './interfaces'
 
-const TableData: FC<TableDataProps> = ({className, children}) => (
+const TableData: React.FC<TableDataProps> = ({className, children}) => (
   <td className={cx(className)}>{children}</td>
 )
 

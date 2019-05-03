@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {FormInputProps} from './interfaces'
 
-const FormInput: FC<FormInputProps> = ({
+const FormInput: React.FC<FormInputProps> = ({
   type,
   formSize,
   state,

@@ -1,9 +1,9 @@
-import {ChangeEvent, ChangeEventHandler, ReactNode} from 'react'
+import * as React from 'react'
 
 import {BasePartProps} from '../../interfaces'
 
 export type ChangeEventIdHandler = (
-  e: ChangeEvent<HTMLInputElement>,
+  e: React.ChangeEvent<HTMLInputElement>,
   id: string
 ) => void
 
@@ -19,7 +19,7 @@ export interface CarouselAttrProps {
 }
 
 export interface CarouselChildrenProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export type CarouselProps = CarouselAttrProps | CarouselChildrenProps
@@ -27,7 +27,7 @@ export type CarouselProps = CarouselAttrProps | CarouselChildrenProps
 export interface CarouselLocatorProps {
   id: string
   checked: boolean
-  onChange: ChangeEventHandler<HTMLInputElement>
+  onChange: React.ChangeEventHandler<HTMLInputElement>
 }
 export interface CarouselItemPaging {
   prev: number

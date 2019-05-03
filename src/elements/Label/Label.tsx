@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {LabelProps} from './interfaces'
 
-const Label: FC<LabelProps> = ({
+const Label: React.FC<LabelProps> = ({
   children,
   className,
   rounded,

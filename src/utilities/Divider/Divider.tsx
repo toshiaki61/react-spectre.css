@@ -1,12 +1,12 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
-import {attr} from 'utilities/attr'
+import {attr} from '../attr'
 
 import {DividerProps} from './interfaces'
 
-const Divider: FC<DividerProps> = ({
+const Divider: React.FC<DividerProps> = ({
   children,
   content,
   vertical,

@@ -1,12 +1,12 @@
-import React, {FC, MouseEvent} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {LinkHash} from '../../interfaces'
 
 import {PaginationTitleItemProps} from './interfaces'
 
-const PaginationTitleItem: FC<PaginationTitleItemProps> = ({
+const PaginationTitleItem: React.FC<PaginationTitleItemProps> = ({
   title,
   subtitle,
   current,
@@ -15,7 +15,7 @@ const PaginationTitleItem: FC<PaginationTitleItemProps> = ({
 }) => {
   const handleLinkClick =
     // useCallback(
-    (e: MouseEvent<any>) => onClick && onClick(e, value)
+    (e: React.MouseEvent<any>) => onClick && onClick(e, value)
   // ,[value])
   return (
     <li

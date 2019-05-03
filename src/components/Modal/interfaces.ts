@@ -1,4 +1,4 @@
-import {MouseEventHandler, ReactNode} from 'react'
+import * as React from 'react'
 
 import {BasePartProps, StyleProps} from '../../interfaces'
 
@@ -10,14 +10,14 @@ export interface ModalBaseProps extends Partial<StyleProps> {
 }
 
 export interface ModalAttrProps extends Partial<ModalBaseProps> {
-  content: ReactNode
-  onClearClick: MouseEventHandler
+  content: React.ReactNode
+  onClearClick: React.MouseEventHandler
   title?: string
-  footer?: ReactNode
+  footer?: React.ReactNode
 }
 
 export interface ModalChildrenProps extends Partial<ModalBaseProps> {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export type ModalProps = ModalAttrProps | ModalChildrenProps
@@ -25,5 +25,5 @@ export type ModalProps = ModalAttrProps | ModalChildrenProps
 export type ModalPartProps = Partial<BasePartProps>
 
 export interface ModalCloseable {
-  onClearClick?: MouseEventHandler
+  onClearClick?: React.MouseEventHandler
 }

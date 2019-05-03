@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import {Columns} from 'layouts/index'
+import {Columns} from '../../layouts'
 
 import {FilterBodyProps} from './interfaces'
 
-const FilterBody: FC<FilterBodyProps> = ({children}) => (
+const FilterBody: React.FC<FilterBodyProps> = ({children}) => (
   <Columns className="filter-body">{children}</Columns>
 )
 

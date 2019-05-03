@@ -1,6 +1,6 @@
-import React, {Fragment} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 // table components
 import {TableProps} from './interfaces'
@@ -75,10 +75,10 @@ function renderTableContent<T>({
   onRowClick,
 }: Partial<TableProps<T>>) {
   return (
-    <Fragment>
+    <React.Fragment>
       {renderTableHeader<T>({header, columns})}
       {renderTableBody({columns, data, onRowClick})}
-    </Fragment>
+    </React.Fragment>
   )
 }
 

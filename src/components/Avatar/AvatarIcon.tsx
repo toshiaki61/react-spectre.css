@@ -1,9 +1,9 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 import {AvatarIconProps} from './interfaces'
 
-const AvatarIcon: FC<AvatarIconProps> = ({className, alt, ...props}) => (
+const AvatarIcon: React.FC<AvatarIconProps> = ({className, alt, ...props}) => (
   <img className={cx('avatar-icon', className)} alt={alt} {...props} />
 )
 

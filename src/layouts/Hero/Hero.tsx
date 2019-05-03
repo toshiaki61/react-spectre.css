@@ -1,6 +1,6 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {HeroProps} from './interfaces'
 import {hasHeroChildren} from './util'
@@ -19,7 +19,7 @@ function renderHero(p: HeroProps) {
     </HeroBody>
   )
 }
-const Hero: FC<HeroProps> = p => (
+const Hero: React.FC<HeroProps> = p => (
   <div
     className={cx('hero', p.className, {[`hero-${p.size}`]: p.size})}
     style={p.style}

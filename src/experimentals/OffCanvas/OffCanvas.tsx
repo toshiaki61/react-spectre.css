@@ -1,6 +1,6 @@
-import React, {FC, Fragment} from 'react'
+import * as React from 'react'
 
-import {Icon} from 'elements/index'
+import {Icon} from '../../elements'
 
 import {OffCanvasProps} from './interfaces'
 import {hasOffCanvasChildren} from './util'
@@ -16,17 +16,17 @@ function renderOffCanvas(p: OffCanvasProps) {
   }
   const {sidebarId, sidebarContent, content} = p
   return (
-    <Fragment>
+    <React.Fragment>
       <OffCanvasToggle sidebarId={sidebarId}>
         <Icon type="menu" />
       </OffCanvasToggle>
       <OffCanvasSidebar id={sidebarId}>{sidebarContent}</OffCanvasSidebar>
       <OffCanvasOverlay />
       <OffCanvasContent>{content}</OffCanvasContent>
-    </Fragment>
+    </React.Fragment>
   )
 }
-const OffCanvas: FC<OffCanvasProps> = p => (
+const OffCanvas: React.FC<OffCanvasProps> = p => (
   <div className="off-canvas off-canvas-sidebar-show">{renderOffCanvas(p)}</div>
 )
 

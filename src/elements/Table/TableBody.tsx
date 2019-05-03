@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {TableBodyProps} from './interfaces'
 
-const TableBody: FC<TableBodyProps> = ({className, children}) => (
+const TableBody: React.FC<TableBodyProps> = ({className, children}) => (
   <tbody className={cx(className)}>{children}</tbody>
 )
 

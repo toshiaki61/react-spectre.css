@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {ModalPartProps} from './interfaces'
 
-const ModalHeader: FC<ModalPartProps> = ({children, className}) => (
+const ModalHeader: React.FC<ModalPartProps> = ({children, className}) => (
   <div className={cx('modal-header', className)}>{children}</div>
 )
 

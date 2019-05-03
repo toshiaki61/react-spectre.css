@@ -1,9 +1,9 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
-import {Button} from 'elements/Button'
-import {Icon} from 'elements/Icon'
+import {Button} from '../../elements/Button'
+import {Icon} from '../../elements/Icon'
 
 import {Menu} from '../Menu'
 
@@ -16,7 +16,7 @@ function renderDropdown(p: DropdownProps) {
   }
   return <Menu onClick={p.onMenuClick} contents={p.contents} />
 }
-const Dropdown: FC<DropdownProps> = p => {
+const Dropdown: React.FC<DropdownProps> = p => {
   const {className, active, right, initialValue, onClick} = p
   return (
     <div

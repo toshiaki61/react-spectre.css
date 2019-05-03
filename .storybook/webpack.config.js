@@ -1,4 +1,4 @@
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
+// const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 const path = require('path')
 module.exports = (baseConfig, env, config) => {
@@ -14,11 +14,11 @@ module.exports = (baseConfig, env, config) => {
     ],
   })
   config.resolve.extensions.push('.ts', '.tsx')
-  config.resolve.plugins = [
-    new TsconfigPathsPlugin({
-      /* options: see below */
-    }),
-  ]
+  // config.resolve.plugins = [
+  //   new TsconfigPathsPlugin({
+  //     /* options: see below */
+  //   }),
+  // ]
   // config.module.rules.push({
   //   test: /\.css?$/,
   //   use: ['style-loader', 'raw-loader'],

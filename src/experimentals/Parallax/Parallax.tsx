@@ -1,4 +1,4 @@
-import React, {FC, Fragment} from 'react'
+import * as React from 'react'
 
 import {ParallaxProps} from './interfaces'
 import {hasParallaxChildren} from './util'
@@ -17,7 +17,7 @@ function renderParallax(p: ParallaxProps) {
   }
   const {src, alt, title} = p
   return (
-    <Fragment>
+    <React.Fragment>
       <ParallaxTopLeft />
       <ParallaxTopRight />
       <ParallaxBottomLeft />
@@ -34,10 +34,10 @@ function renderParallax(p: ParallaxProps) {
           />
         </ParallaxBack>
       </ParallaxContent>
-    </Fragment>
+    </React.Fragment>
   )
 }
-const Parallax: FC<ParallaxProps> = p => (
+const Parallax: React.FC<ParallaxProps> = p => (
   <div className="parallax">{renderParallax(p)}</div>
 )
 

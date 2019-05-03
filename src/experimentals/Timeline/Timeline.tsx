@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
 import {
   Tile,
@@ -6,8 +6,8 @@ import {
   TileSubtitle,
   TileTitle,
   TileContent,
-} from 'components/index'
-import {Icon} from 'elements/Icon'
+} from '../../components'
+import {Icon} from '../../elements/Icon'
 
 import {TimelineProps} from './interfaces'
 import {hasTimelineChildren} from './util'
@@ -49,7 +49,7 @@ function renderTimeline(p: TimelineProps) {
     )
   })
 }
-const Timeline: FC<TimelineProps> = p => (
+const Timeline: React.FC<TimelineProps> = p => (
   <div className="timeline">{renderTimeline(p)}</div>
 )
 

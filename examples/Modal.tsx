@@ -1,12 +1,11 @@
-import React, {Component} from 'react'
+import * as React from 'react'
 
-import {Modal} from 'components/Modal'
-import {Button} from 'elements/Button'
+import {Modal, Button} from '../src'
 
 interface IModalExampleState {
   active: boolean
 }
-class ModalExample extends Component<{}, IModalExampleState> {
+class ModalExample extends React.Component<{}, IModalExampleState> {
   public state = {
     active: false,
   }

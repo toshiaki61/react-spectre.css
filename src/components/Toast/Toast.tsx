@@ -1,9 +1,9 @@
-import React, {FC, Fragment, MouseEvent} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
-import {Button} from 'elements/Button'
-import {attr} from 'utilities/attr'
+import {Button} from '../../elements/Button'
+import {attr} from '../../utilities/attr'
 
 import {ToastProps} from './interfaces'
 import {hasToastChildren} from './util'
@@ -14,13 +14,13 @@ function renderToast(p: ToastProps) {
   }
   const {content, title, onClearClick} = p
   const handleClearClick = onClearClick
-    ? (e: MouseEvent) => {
+    ? (e: React.MouseEvent) => {
         e.preventDefault()
         onClearClick(e)
       }
     : null
   return (
-    <Fragment>
+    <React.Fragment>
       {handleClearClick ? (
         <Button
           clearButton
@@ -30,10 +30,10 @@ function renderToast(p: ToastProps) {
       ) : null}
       {title ? <h5>{title}</h5> : null}
       {content}
-    </Fragment>
+    </React.Fragment>
   )
 }
-const Toast: FC<ToastProps> = p => {
+const Toast: React.FC<ToastProps> = p => {
   const style = p.style ? {style: p.style} : {}
   return (
     <div

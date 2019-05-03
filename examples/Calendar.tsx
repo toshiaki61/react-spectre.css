@@ -1,15 +1,14 @@
-import React, {Component, MouseEvent} from 'react'
+import * as React from 'react'
 
 import {addMonths, eachDay, endOfWeek, format, startOfWeek} from 'date-fns'
 
-import {Popover} from 'components/Popover'
-import {Calendar, DateLike} from 'experimentals/Calendar'
+import {Popover, Calendar, DateLike} from '../src'
 
 interface ICalendarExampleState {
   active: boolean
   current: Date | string | number
 }
-class CalendarExample extends Component<any, ICalendarExampleState> {
+class CalendarExample extends React.Component<any, ICalendarExampleState> {
   private weekdays: string[]
 
   constructor(props: any) {
@@ -29,7 +28,8 @@ class CalendarExample extends Component<any, ICalendarExampleState> {
 
   public render() {
     const {current} = this.state
-    const dateClick = (e: MouseEvent<any>, date: DateLike) => console.log(date)
+    const dateClick = (e: React.MouseEvent<any>, date: DateLike) =>
+      console.log(date)
     const prevClick = () => {
       this.setState(s => ({current: addMonths(s.current, -1)}))
     }
@@ -53,7 +53,7 @@ class CalendarExample extends Component<any, ICalendarExampleState> {
     )
   }
 
-  // private onMonthClick = (e: MouseEvent<any>, m: string | number | Date) =>
+  // private onMonthClick = (e: React.MouseEvent<any>, m: string | number | Date) =>
   //   this.setState({current: m})
 
   // private onClick = () => this.setState({active: !this.state.active})

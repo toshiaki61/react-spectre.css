@@ -1,4 +1,4 @@
-import React, {MouseEvent} from 'react'
+import * as React from 'react'
 
 import {eachDay, endOfWeek, format, startOfWeek} from 'date-fns'
 
@@ -29,13 +29,13 @@ const component = () => {
   const nav = {
     current: format(current, 'MMMM YYYY'),
     prev: {
-      onClick: (e: MouseEvent<any>) => {
+      onClick: (e: React.MouseEvent<any>) => {
         e.preventDefault()
         action('prev_clicked')
       },
     },
     next: {
-      onClick: (e: MouseEvent<any>) => {
+      onClick: (e: React.MouseEvent<any>) => {
         e.preventDefault()
         action('next_clicked')
       },

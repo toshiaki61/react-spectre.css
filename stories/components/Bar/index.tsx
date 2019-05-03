@@ -1,14 +1,14 @@
-import React, {Fragment} from 'react'
+import * as React from 'react'
 
 import {action} from '@storybook/addon-actions'
 import {boolean, number, object, select, text} from '@storybook/addon-knobs'
 import {OptionalKeyMap, optionalSelect} from '../../utils'
 
-import {attr, Bar} from '../../../src/index'
+import {attr, Bar} from '../../../src'
 
 const component = () => {
   return (
-    <Fragment>
+    <React.Fragment>
       <Bar slider items={[{value: 15}, {value: 45}]} />
       <Bar
         {...attr({marginBottom: true})}
@@ -33,7 +33,7 @@ const component = () => {
           },
         ]}
       />
-    </Fragment>
+    </React.Fragment>
   )
 }
 

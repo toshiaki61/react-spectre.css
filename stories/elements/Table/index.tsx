@@ -1,4 +1,4 @@
-import React, {ReactNode} from 'react'
+import * as React from 'react'
 
 import {action} from '@storybook/addon-actions'
 import {boolean, number, object, select, text} from '@storybook/addon-knobs'
@@ -105,8 +105,8 @@ const columnsAdvanced = [
     headingProps: {
       onClick: action('column_heading_clicked'),
     },
-    sortCompareAsc: (a, b) => a.title.length - b.title.length,
-    sortCompareDesc: (a, b) => b.title.length - a.title.length,
+    sortCompareAsc: (a: any, b: any) => a.title.length - b.title.length,
+    sortCompareDesc: (a: any, b: any) => b.title.length - a.title.length,
   },
   {key: 'age', children: 'Age (years)'},
   {
@@ -134,7 +134,7 @@ const columnOptions = {
   advanced: 'advanced',
 }
 
-const columnConfig = {
+const columnConfig: any = {
   simple: columnsSimple,
   custom: columnsCustom,
   advanced: columnsAdvanced,

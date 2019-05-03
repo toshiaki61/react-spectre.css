@@ -3,11 +3,11 @@
   "version": "0.5.16",
   "main": "dist-cjs/index.js",
   "types": "dist-cjs/index.d.ts",
+  "module": "dist-esm/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/toshiaki61/react-spectre.css.git"
   },
-  "module": "dist-esm/index.js",
   "scripts": {
     "build": "npm-run-all clean -s build:cjs build:esm",
     "prebuild:cjs": "shx mkdir -p dist-cjs",

@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react'
+import * as React from 'react'
 
 import {action} from '@storybook/addon-actions'
 import {boolean, number, object, select, text} from '@storybook/addon-knobs'
@@ -12,7 +12,7 @@ import {
 
 const component = () => {
   return (
-    <Fragment>
+    <React.Fragment>
       <Breadcrumb>
         <BreadcrumbItem
           link={text('link1', '')}
@@ -35,7 +35,7 @@ const component = () => {
       </Breadcrumb>
       items
       <Breadcrumb items={[{id: 'first', children: 'items_first'}]} />
-    </Fragment>
+    </React.Fragment>
   )
 }
 

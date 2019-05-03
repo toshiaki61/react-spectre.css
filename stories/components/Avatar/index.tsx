@@ -1,10 +1,10 @@
-import React, {Fragment} from 'react'
+import * as React from 'react'
 
 import {action} from '@storybook/addon-actions'
 import {boolean, number, object, select, text} from '@storybook/addon-knobs'
 import {OptionalKeyMap, optionalSelect} from '../../utils'
 
-import {Avatar, AvatarPresenceType, AvatarSizeType} from 'components/Avatar'
+import {Avatar, AvatarPresenceType, AvatarSizeType} from '../../../src'
 
 const avatarSizes: OptionalKeyMap<AvatarSizeType> = {
   xl: 'xl',
@@ -22,7 +22,7 @@ const avatarPresences: OptionalKeyMap<AvatarPresenceType> = {
 }
 const component = () => {
   return (
-    <Fragment>
+    <React.Fragment>
       <Avatar
         size={optionalSelect('Size1', avatarSizes, 'lg')}
         initial={text('initial1', 'Lg')}
@@ -39,7 +39,7 @@ const component = () => {
         icon={object('icon', {src: '/img/woman.png', alt: 'woman'})}
         // presence={optionalSelect('Presence', avatarPresences, '')}
       />
-    </Fragment>
+    </React.Fragment>
   )
 }
 

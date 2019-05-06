@@ -13,8 +13,10 @@
     "skipLibCheck": true,
     "strict": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "rootDirs": ["src", "stories"],
+    "typeRoots": ["src/types", "stories/types"]
   },
-  "include": ["src"],
+  "include": ["src", "stories"],
   "exclude": ["node_modules"]
 }

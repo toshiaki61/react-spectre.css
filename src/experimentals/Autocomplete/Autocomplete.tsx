@@ -26,9 +26,9 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
     <FormAutocomplete onFocus={onFocus} onBlur={onBlur}>
       <FormAutocompleteInput active={active}>
         {selected.map(({id, name, img, initial}) => {
-          const handleClearClick =
+          const handleClearClick: React.MouseEventHandler =
             // useCallback(
-            (e: React.MouseEvent<any>) => onClearClick(e, id)
+            e => onClearClick(e, id)
           // ,[id])
           return (
             <Chip

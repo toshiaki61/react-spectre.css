@@ -24,8 +24,9 @@ export interface TableColumn<T> {
 
 export type RowClickHandler = <T>(datum: T) => void
 
+export type TableColumnType<T> = keyof T | TableColumn<T>
 export interface TableProps<T> extends BaseProps {
-  columns: Array<keyof T | TableColumn<T>>
+  columns: TableColumnType<T>[]
   data: T[]
   striped?: boolean
   hover?: boolean

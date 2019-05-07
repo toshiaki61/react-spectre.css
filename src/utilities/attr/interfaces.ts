@@ -59,22 +59,33 @@ export type TooltipPositionType = 'right' | 'left' | 'bottom'
 export type LoadingSizeType = 'lg'
 
 interface ColorProps {
+  /** 'primary' | 'secondary' | 'dark' | 'gray' | 'light' | 'success' | 'warning' | 'error' */
   fg: ColorType
+  /** 'primary' | 'secondary' | 'dark' | 'gray' | 'light' | 'success' | 'warning' | 'error' */
   bg: ColorType
 }
 interface CursorProps {
+  /** 'hand' | 'move' | 'zoom-in' | 'zoom-out' | 'not-allowed' | 'auto' */
   cursor: CursorType
 }
 interface DisplayProps {
+  /** 'block' | 'inline' | 'inline-block' | 'flex' | 'inline-flex' | 'none' | 'hide' */
   display: DisplayType
+  /** 'visible' | 'invisible' */
   visibility: VisibilityType
+  /** 'hide' */
   textHide: TextHideType
+  /** 'assistive' */
   textAssistive: TextAssistiveType
 }
 interface PositionProps {
+  /** 'clearfix' */
   floatClearing: FloatClearingType
+  /** 'left' | 'right' */
   floating: FloatingType
+  /** 'relative' | 'absolute' | 'fixed' | 'sticky' */
   position: PositionType
+  /** 'centered' */
   blockCentering: BlockCenteringType
 
   margin: boolean
@@ -107,22 +118,31 @@ interface PositionProps {
   paddingHeightMore: boolean
 }
 interface ShapeProps {
+  /** 'rounded' | 'circle' */
   shape: ShapeType
 }
 interface TextProps {
+  /** 'center' | 'right' | 'justify' */
   textAlign: TextAlignType
+  /** 'lowercase' | 'uppercase' | 'capitalize' */
   textCase: TextCaseType
+  /** 'normal' | 'bold' */
   textWeight: TextWeightType
+  /** 'italic' */
   textDecoration: TextDecorationType
+  /** 'large' */
   textSize: TextSizeType
+  /** 'ellipsis' | 'clip' | 'break' */
   textOverflow: TextOverflowType
 }
 interface LangProps {
+  /** 'ja' | 'ko' | 'zh-hans' | 'zh-hant' | 'cjk' */
   lang: LangType
 }
 
 interface LoadingProps {
   loading: boolean
+  /** 'lg' */
   loadingSize: LoadingSizeType
 }
 interface DividerProps {
@@ -133,6 +153,7 @@ interface DividerProps {
 
 interface TooltipProps {
   tooltip: string
+  /** 'right' | 'left' | 'bottom' */
   tooltipPosition: TooltipPositionType
 }
 interface BadgeProps {

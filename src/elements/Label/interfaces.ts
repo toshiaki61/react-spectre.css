@@ -12,5 +12,6 @@ export interface LabelProps {
   className?: string
   style?: React.CSSProperties
   rounded?: boolean
+  /** 'primary' | 'secondary' | 'success' | 'warning' | 'error' */
   type?: LabelType
 }

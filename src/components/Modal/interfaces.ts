@@ -6,6 +6,7 @@ export type ModalSizeType = 'sm' | 'lg'
 
 export interface ModalBaseProps extends Partial<StyleProps> {
   active: boolean
+  /** 'sm' | 'lg' */
   size: ModalSizeType
 }
 

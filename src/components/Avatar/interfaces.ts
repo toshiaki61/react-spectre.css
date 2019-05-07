@@ -14,10 +14,12 @@ export interface AvatarPresenceProps {
 
 export interface AvatarProps {
   className?: string
+  /** 'xl' | 'lg' | 'sm' | 'xs' */
   size?: AvatarSizeType
   initial?: string
   src?: string
   icon?: AvatarIconProps
   alt?: string
+  /** 'online' | 'offline' | 'away' | 'busy' */
   presence?: AvatarPresenceType
 }

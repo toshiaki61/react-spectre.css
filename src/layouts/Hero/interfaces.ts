@@ -5,6 +5,7 @@ import {StyleProps} from '../../interfaces'
 export type HeroSizeType = 'lg' | 'sm'
 
 export interface HeroBaseProps extends Partial<StyleProps> {
+  /** 'lg' | 'sm' */
   size?: HeroSizeType
 }
 export interface HeroAttrProps extends HeroBaseProps {

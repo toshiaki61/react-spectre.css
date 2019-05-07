@@ -11,7 +11,9 @@ export interface BaseButtonProps extends Partial<StyleProps> {
   children?: React.ReactNode
   loading?: boolean
   href?: string
+  /** 'lg' | 'sm' */
   size?: ButtonSizeType
+  /** 'success' | 'error' | 'link' | 'primary' */
   color?: ButtonColorType
   inputGroup?: boolean
   blockButton?: boolean
@@ -21,6 +23,7 @@ export interface BaseButtonProps extends Partial<StyleProps> {
   onClick?: React.MouseEventHandler
   tabIndex?: number
   disabled?: boolean
+  /** 'button' | 'submit' */
   type?: ButtonType
 }
 

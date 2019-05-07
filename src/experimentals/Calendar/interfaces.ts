@@ -18,6 +18,7 @@ export type CalendarDataType = 'badge' | 'disabled' | 'today'
 export interface CalendarData {
   date: DateLike
   tooltip: string
+  /** 'badge' | 'disabled' | 'today' */
   type?: CalendarDataType
 }
 export type CalendarHeaderProps = Partial<BasePartProps>

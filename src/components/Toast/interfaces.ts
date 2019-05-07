@@ -5,6 +5,7 @@ import {StyleProps} from '../../interfaces'
 export type ToastColorType = 'primary' | 'success' | 'warning' | 'error'
 
 export interface ToastBaseProps extends Partial<StyleProps> {
+  /** 'primary' | 'success' | 'warning' | 'error' */
   color?: ToastColorType
 }
 

@@ -5,6 +5,7 @@ import {BasePartProps, StyleProps} from '../../interfaces'
 export type PopoverPositionType = 'right' | 'left' | 'bottom'
 
 export interface PopoverBaseProps extends Partial<StyleProps> {
+  /** 'right' | 'left' | 'bottom' */
   position: PopoverPositionType
 }
 

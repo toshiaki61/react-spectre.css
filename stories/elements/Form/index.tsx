@@ -3,6 +3,7 @@ import * as React from 'react'
 import {action} from '@storybook/addon-actions'
 import {boolean, number, object, select, text} from '@storybook/addon-knobs'
 import {OptionalKeyMap, optionalSelect} from '../../utils'
+import {withLiveEditAndInfo} from '../../utils/withLiveEditAndInfo'
 
 import {
   Column,
@@ -81,4 +82,15 @@ const component = () => {
   )
 }
 
-export default component
+export default withLiveEditAndInfo(component, {
+  Column,
+  Form,
+  FormCheckbox,
+  FormGroup,
+  FormInput,
+  FormLabel,
+  FormRadio,
+  FormSelect,
+  FormSwitch,
+  FormTextarea,
+})

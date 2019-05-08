@@ -5,6 +5,7 @@ import {boolean, number, object, select, text} from '@storybook/addon-knobs'
 import {OptionalKeyMap, optionalSelect} from '../../utils'
 
 import {Label, LabelType} from '../../../src'
+import {withLiveEditAndInfo} from '../../utils/withLiveEditAndInfo'
 
 const typeOptions: OptionalKeyMap<LabelType> = {
   primary: 'primary',
@@ -26,4 +27,6 @@ const component = () => (
   </Label>
 )
 
-export default component
+export default withLiveEditAndInfo(component, {
+  Label,
+})

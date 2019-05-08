@@ -1,10 +1,10 @@
 import * as React from 'react'
 
-import {action} from '@storybook/addon-actions'
-import {boolean, number, object, select, text} from '@storybook/addon-knobs'
+import {object, text} from '@storybook/addon-knobs'
 import {OptionalKeyMap, optionalSelect} from '../../utils'
 
 import {Avatar, AvatarPresenceType, AvatarSizeType} from '../../../src'
+import {withLiveEditAndInfo} from '../../utils/withLiveEditAndInfo'
 
 const avatarSizes: OptionalKeyMap<AvatarSizeType> = {
   xl: 'xl',
@@ -43,4 +43,4 @@ const component = () => {
   )
 }
 
-export default component
+export default withLiveEditAndInfo(component, {Avatar})

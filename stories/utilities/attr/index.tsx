@@ -1,12 +1,10 @@
 import * as React from 'react'
 
-import {action} from '@storybook/addon-actions'
-import {boolean, number, object, select, text} from '@storybook/addon-knobs'
+import {boolean, object, text} from '@storybook/addon-knobs'
 import {OptionalKeyMap, optionalSelect} from '../../utils'
 
 import {
   attr,
-  BaseProps,
   BlockCenteringType,
   ColorType,
   CursorType,
@@ -28,6 +26,7 @@ import {
   TooltipPositionType,
   VisibilityType,
 } from '../../../src/'
+import {withLiveEditAndInfo} from '../../utils/withLiveEditAndInfo'
 
 const colorTypes: OptionalKeyMap<ColorType> = {
   primary: 'primary',
@@ -232,4 +231,4 @@ const component = () => {
   )
 }
 
-export default component
+export default withLiveEditAndInfo(component, {})

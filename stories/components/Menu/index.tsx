@@ -4,6 +4,7 @@ import {boolean, number, text} from '@storybook/addon-knobs'
 import {action} from '@storybook/addon-actions'
 
 import {Menu, MenuItem, MenuItemProps} from '../../../src'
+import {withLiveEditAndInfo} from '../../utils/withLiveEditAndInfo'
 
 const generateData = (amount: number) =>
   Array(amount)
@@ -40,4 +41,4 @@ const component = () => {
   )
 }
 
-export default component
+export default withLiveEditAndInfo(component, {Menu, MenuItem})

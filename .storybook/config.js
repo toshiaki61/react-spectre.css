@@ -5,7 +5,7 @@ import {
   setAddon,
   addParameters,
 } from '@storybook/react'
-import {withOptions} from '@storybook/addon-options'
+// import {withOptions} from '@storybook/addon-options'
 import {withInfo} from '@storybook/addon-info'
 
 import LiveEdit, {setOptions} from 'storybook-addon-react-live-edit'

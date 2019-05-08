@@ -1,14 +1,15 @@
 import * as React from 'react'
 
 import {Button} from '../../../src'
+
 import {withLiveEditAndInfo} from '../../utils/withLiveEditAndInfo'
 
 const component = () => (
   <Button
     type={'button'}
     size={'lg'}
-    color={'success'}
-    // onClick={() => {}}
+    color={'error'}
+    onClick={() => alert('clicked')}
     className={''}
     style={{}}
   >

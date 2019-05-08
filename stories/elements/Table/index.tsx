@@ -11,6 +11,7 @@ import {
   Tooltip,
   TooltipProps,
 } from '../../../src/'
+import {withLiveEditAndInfo} from '../../utils/withLiveEditAndInfo'
 
 const jobTitles = [
   'Motel Maid',
@@ -183,4 +184,8 @@ const component = () => {
     />
   )
 }
-export default component
+export default withLiveEditAndInfo(component, {
+  Table,
+  TableData,
+  Tooltip,
+})

@@ -9,8 +9,8 @@ import Table from './Table'
 const stories = storiesOf('Elements', module)
 
 stories
-  .add('Button', Button, Button.options)
-  .add('Form', Form, Form.options)
-  .add('Icon', Icon, Icon.options)
-  .add('Label', Label, Label.options)
-  .add('Table', Table, Table.options)
+  .add('Button', Button[0], Button[1])
+  .add('Form', Form[0], Form[1])
+  .add('Icon', Icon[0], Icon[1])
+  .add('Label', Label[0], Label[1])
+  .add('Table', Table[0], Table[1])

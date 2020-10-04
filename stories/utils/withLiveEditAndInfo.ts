@@ -2,8 +2,9 @@ import * as React from 'react'
 
 import {withLiveEdit, LivePreview} from 'storybook-addon-react-live-edit'
 import reactElementToJSXString from 'react-element-to-jsx-string'
-import {RenderFunction} from '@storybook/react'
-import {Options} from '@storybook/addon-info'
+import { Options } from '@storybook/addon-info'
+import { StoryFn } from '@storybook/addons'
+import { StoryFnReactReturnType } from '@storybook/react/dist/client/preview/types'
 
 export interface Context {
   context: React.ComponentType<any>[]
@@ -14,27 +15,20 @@ export interface InfoParams {
 export function withLiveEditAndInfo(
   render: () => JSX.Element,
   context: {[key: string]: React.ComponentType<any>}
-): RenderFunction & InfoParams {
+) {
   const original = render()
   const liveEdit = withLiveEdit(reactElementToJSXString(original), {
     React,
     ...context,
   })({})
-  // console.log(original.type.__docgenInfo)
-  // console.log(liveEdit)
-  const renderFunction: RenderFunction & InfoParams = () => {
-    // liveEdit.type.__docgenInfo = {} //original.type.__docgenInfo
-    // // liveEdit.type.__docgenInfo.props.children = original.props.children
-    // liveEdit.type.displayName = '' //original.type.displayName
-    // liveEdit.props.children = original.props.children
-    // liveEdit.props = {...liveEdit.props, children: original.props.children}
+  const renderFunction: StoryFn<StoryFnReactReturnType> = () => {
     return liveEdit
   }
-  renderFunction.options = {
+  const options = {
     info: {
       propTables: Object.values(context),
       propTablesExclude: [LivePreview],
     },
   }
-  return renderFunction
+  return  [renderFunction, options] as const
 }

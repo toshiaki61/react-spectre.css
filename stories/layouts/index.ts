@@ -10,7 +10,7 @@ const stories = storiesOf('Layouts', module)
 
 stories
   .addDecorator(withKnobs)
-  .add('Flexbox', Flexbox, Flexbox.options)
-  .add('Grid', Grid, Grid.options)
-  .add('Hero', Hero, Hero.options)
-  .add('Navbar', Navbar, Navbar.options)
+  .add('Flexbox', Flexbox[0], Flexbox[1])
+  .add('Grid', Grid[0], Grid[1])
+  .add('Hero', Hero[0], Hero[1])
+  .add('Navbar', Navbar[0], Navbar[1])

@@ -1,26 +1,29 @@
-import {ReactElement, ReactNode} from 'react'
+import * as React from 'react'
 
 import {BasePartProps, StyleProps} from '../../interfaces'
 
 export interface CardItemHeaderProps {
-  button: ReactNode
-  title: ReactNode
-  subtitle: ReactNode
+  button: React.ReactNode
+  title: React.ReactNode
+  subtitle: React.ReactNode
 }
 
 export type CardType = 'image' | 'body' | 'footer' | 'header'
 
 export interface CardItemProps {
   className?: string
+  /** 'image' | 'body' | 'footer' | 'header' */
   type?: CardType
-  content?: CardItemHeaderProps | ReactNode
+  content?: CardItemHeaderProps | React.ReactNode
 }
 
 export interface CardAttrProps extends Partial<StyleProps> {
-  items: Array<CardItemProps & {id: string}>
+  items: (CardItemProps & {id: string})[]
 }
 export interface CardChildrenProps extends Partial<StyleProps> {
-  children: ReactElement<CardItemProps> | Array<ReactElement<CardItemProps>>
+  children:
+    | React.ReactElement<CardItemProps>
+    | React.ReactElement<CardItemProps>[]
 }
 export type CardProps = CardAttrProps | CardChildrenProps
 

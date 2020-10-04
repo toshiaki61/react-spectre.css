@@ -1,21 +1,16 @@
-import {
-  FocusEventHandler,
-  MouseEvent,
-  MouseEventHandler,
-  ReactNode,
-} from 'react'
+import * as React from 'react'
 
 import {StyleProps} from '../../interfaces'
 
-import {MenuItemProps} from 'components/Menu'
+import {MenuItemProps} from '../Menu'
 
 export interface DropdownBaseProps extends Partial<StyleProps> {
   active?: boolean
   right?: boolean
   initialValue?: string
-  onClick: MouseEventHandler
-  onBlur: FocusEventHandler
-  onMenuClick?: (e: MouseEvent<any>, id: string) => void
+  onClick: React.MouseEventHandler
+  onBlur: React.FocusEventHandler
+  onMenuClick?: (e: React.MouseEvent<any>, id: string) => void
 }
 
 export interface DropdownAttrProps extends DropdownBaseProps {
@@ -23,7 +18,7 @@ export interface DropdownAttrProps extends DropdownBaseProps {
 }
 
 export interface DropdownChildrenProps extends DropdownBaseProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export type DropdownProps = DropdownAttrProps | DropdownChildrenProps

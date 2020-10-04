@@ -1,6 +1,6 @@
-import React, {FC, Fragment} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {PopoverProps} from './interfaces'
 import {hasPopoverChildren} from './util'
@@ -12,13 +12,13 @@ function renderPopover(p: PopoverProps) {
     return p.children
   }
   return (
-    <Fragment>
+    <React.Fragment>
       {p.target}
       <PopoverContainer>{p.content}</PopoverContainer>
-    </Fragment>
+    </React.Fragment>
   )
 }
-const Popover: FC<PopoverProps> = (p: PopoverProps) => (
+const Popover: React.FC<PopoverProps> = (p: PopoverProps) => (
   <div
     className={cx('popover', p.className, {
       [`popover-${p.position}`]: p.position,

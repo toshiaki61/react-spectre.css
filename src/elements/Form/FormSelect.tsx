@@ -1,10 +1,14 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {FormSelectProps} from './interfaces'
 
-const FormSelect: FC<FormSelectProps> = ({children, formSize, ...rest}) => (
+const FormSelect: React.FC<FormSelectProps> = ({
+  children,
+  formSize,
+  ...rest
+}) => (
   <select
     className={cx('form-select', {[`select-${formSize}`]: formSize})}
     {...rest}

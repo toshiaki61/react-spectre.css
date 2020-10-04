@@ -1,9 +1,9 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 import {AvatarPresenceProps} from './interfaces'
 
-const AvatarPresence: FC<AvatarPresenceProps> = ({presence}) => (
+const AvatarPresence: React.FC<AvatarPresenceProps> = ({presence}) => (
   <i className={cx('avatar-presence', presence)} />
 )
 

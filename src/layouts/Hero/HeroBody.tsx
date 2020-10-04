@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {HeroBodyProps} from './interfaces'
 
-const HeroBody: FC<HeroBodyProps> = ({children, className}) => (
+const HeroBody: React.FC<HeroBodyProps> = ({children, className}) => (
   <div className={cx('hero-body', className)}>{children}</div>
 )
 

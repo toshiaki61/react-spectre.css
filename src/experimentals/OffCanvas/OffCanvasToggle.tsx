@@ -1,10 +1,13 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import {Button} from 'elements/index'
+import {Button} from '../../elements'
 
 import {OffCanvasToggleProps} from './interfaces'
 
-const OffCanvasToggle: FC<OffCanvasToggleProps> = ({children, sidebarId}) => (
+const OffCanvasToggle: React.FC<OffCanvasToggleProps> = ({
+  children,
+  sidebarId,
+}) => (
   <Button
     actionButton
     color="primary"

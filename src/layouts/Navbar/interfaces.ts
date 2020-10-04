@@ -1,22 +1,22 @@
-import {ReactNode} from 'react'
+import * as React from 'react'
 
 export interface NavbarSectionProps {
-  children?: ReactNode
+  children?: React.ReactNode
   className?: string
 }
 
 export interface NavbarCenterProps {
-  children?: ReactNode
+  children?: React.ReactNode
   className?: string
 }
 
 export interface NavbarProps {
-  children?: ReactNode
+  children?: React.ReactNode
   className?: string
 }
 
 export interface NavbarBrandProps {
-  children?: ReactNode
+  children?: React.ReactNode
   className?: string
   href?: string
 }

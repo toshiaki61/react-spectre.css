@@ -1,4 +1,4 @@
-import React, {FC, Fragment} from 'react'
+import * as React from 'react'
 
 import {ComparisonSliderProps} from './interfaces'
 import {hasComparisonSliderChildren} from './util'
@@ -15,7 +15,7 @@ function renderComparisonSlider(p: ComparisonSliderProps) {
   }
   const {before, after} = p
   return (
-    <Fragment>
+    <React.Fragment>
       <ComparisonBefore>
         <ComparisonImage {...before} />
         <ComparisonLabel>Before</ComparisonLabel>
@@ -25,10 +25,10 @@ function renderComparisonSlider(p: ComparisonSliderProps) {
         <ComparisonLabel>After</ComparisonLabel>
         <ComparisonResizer />
       </ComparisonAfter>
-    </Fragment>
+    </React.Fragment>
   )
 }
-const ComparisonSlider: FC<ComparisonSliderProps> = p => (
+const ComparisonSlider: React.FC<ComparisonSliderProps> = p => (
   <div className="comparison-slider">{renderComparisonSlider(p)}</div>
 )
 export default ComparisonSlider

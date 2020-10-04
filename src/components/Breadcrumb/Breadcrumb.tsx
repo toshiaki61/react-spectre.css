@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
 import {BreadcrumbProps} from './interfaces'
 import {hasBreadcrumbChildren} from './util'
@@ -9,9 +9,9 @@ function renderBreadcrumb(p: BreadcrumbProps) {
   if (hasBreadcrumbChildren(p)) {
     return p.children
   }
-  return p.items.map((item, i) => <BreadcrumbItem key={item.id} {...item} />)
+  return p.items.map(item => <BreadcrumbItem key={item.id} {...item} />)
 }
-const Breadcrumb: FC<BreadcrumbProps> = p => (
+const Breadcrumb: React.FC<BreadcrumbProps> = p => (
   <ul className="breadcrumb">{renderBreadcrumb(p)}</ul>
 )
 

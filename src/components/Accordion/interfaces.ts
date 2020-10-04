@@ -1,4 +1,4 @@
-import {ReactElement, ReactNode} from 'react'
+import * as React from 'react'
 
 import {StyleProps} from '../../interfaces'
 import {MenuItemProps} from '../Menu'
@@ -7,13 +7,13 @@ export interface AccordionAttrProps extends Partial<StyleProps> {
   menus: AccordionItemAttrProps[]
 }
 export interface AccordionChildrenProps extends Partial<StyleProps> {
-  children: Array<ReactElement<AccordionItemChildrenProps>>
+  children: Array<React.ReactElement<AccordionItemChildrenProps>>
 }
 export type AccordionProps = AccordionAttrProps | AccordionChildrenProps
 
 export interface AccordionItemBaseProps {
   id: string
-  header: ReactNode
+  header: React.ReactNode
   exclusive?: boolean
   useIcon?: boolean
 }
@@ -25,7 +25,7 @@ export interface AccordionItemAttrProps
 export interface AccordionItemChildrenProps
   extends AccordionItemBaseProps,
     Partial<StyleProps> {
-  children: ReactElement<AccordionItemProps>
+  children: React.ReactElement<AccordionItemProps>
 }
 
 export type AccordionItemProps =

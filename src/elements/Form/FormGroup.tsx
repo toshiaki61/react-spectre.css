@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {FormGroupProps} from './interfaces'
 
-const FormGroup: FC<FormGroupProps> = ({children, className, color}) => (
+const FormGroup: React.FC<FormGroupProps> = ({children, className, color}) => (
   <div
     className={cx('form-group', className, {
       [`has-${color}`]: color,

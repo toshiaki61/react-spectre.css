@@ -1,8 +1,8 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
 import {ComparisonLabelProps} from './interfaces'
 
-const ComparisonLabel: FC<ComparisonLabelProps> = ({children}) => (
+const ComparisonLabel: React.FC<ComparisonLabelProps> = ({children}) => (
   <div className="comparison-label">{children}</div>
 )
 

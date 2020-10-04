@@ -1,6 +1,6 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-const ComparisonResizer: FC<{}> = () => (
+const ComparisonResizer: React.FC<{}> = () => (
   <textarea className="comparison-resizer" readOnly />
 )
 

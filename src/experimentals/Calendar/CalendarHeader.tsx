@@ -1,11 +1,12 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {CalendarHeaderProps} from './interfaces'
 
-const CalendarHeader: FC<CalendarHeaderProps> = ({children, className}) => (
-  <div className={cx('calendar-header', className)}>{children}</div>
-)
+const CalendarHeader: React.FC<CalendarHeaderProps> = ({
+  children,
+  className,
+}) => <div className={cx('calendar-header', className)}>{children}</div>
 
 export default CalendarHeader

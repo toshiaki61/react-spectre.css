@@ -1,13 +1,13 @@
-import React, {ReactNode, ReactNodeArray} from 'react'
+import * as React from 'react'
 
-import {SuggestProps} from './interfaces'
+import {SuggestProps, SuggestValues} from './interfaces'
 
 export const delimiter: string = '______'
 
 export function mark(
   target: string,
   search: string
-): ReactNode | ReactNodeArray {
+): React.ReactNode | React.ReactNodeArray {
   if (!search) {
     return target
   }
@@ -25,16 +25,15 @@ export function mark(
       return row
     })
 }
-
 export function filter(
   word: string,
-  key: string
+  key: keyof SuggestProps
 ): (v: SuggestProps) => boolean {
   const regex = new RegExp(word, 'ig')
-  return function search(value) {
+  return function search(value: Partial<SuggestValues>) {
     if (word === '') {
       return true
     }
-    return regex.test(value[key])
+    return regex.test(value[key] || '')
   }
 }

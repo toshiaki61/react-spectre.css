@@ -1,4 +1,4 @@
-import {ChangeEventHandler} from 'react'
+import * as React from 'react'
 
 export interface SliderProps {
   className?: string
@@ -6,5 +6,5 @@ export interface SliderProps {
   max?: number
   value?: number
   tooltip?: boolean
-  onChange: ChangeEventHandler<HTMLInputElement>
+  onChange: React.ChangeEventHandler<HTMLInputElement>
 }

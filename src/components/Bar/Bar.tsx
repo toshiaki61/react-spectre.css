@@ -1,15 +1,15 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
-import {Button} from 'elements/Button'
+import {Button} from '../../elements/Button'
 
 import BarItem from './BarItem'
 import {BarProps} from './interfaces'
 
-import {attr} from 'utilities/attr'
+import {attr} from '../../utilities/attr'
 
-const Bar: FC<BarProps> = ({className, small, slider, items}) => (
+const Bar: React.FC<BarProps> = ({className, small, slider, items}) => (
   <div
     className={cx(
       'bar',
@@ -24,18 +24,16 @@ const Bar: FC<BarProps> = ({className, small, slider, items}) => (
       const key = `bar-item-${i}`
       if (slider) {
         const value = `${item.value}%`
-        Object.assign(item, {
-          role: 'progressbar',
-          style: {width: value},
-          content: (
-            <Button
-              {...attr({
-                className: 'bar-slider-btn',
-                tooltip: value,
-              })}
-            />
-          ),
-        })
+        item.role = 'progressbar'
+        item.style = {width: value}
+        item.content = (
+          <Button
+            {...attr({
+              className: 'bar-slider-btn',
+              tooltip: value,
+            })}
+          />
+        )
       }
       return <BarItem key={key} small={small} {...item} />
     })}

@@ -1,10 +1,11 @@
-import React from 'react'
+import * as React from 'react'
 
 import {action} from '@storybook/addon-actions'
-import {boolean, number, object, select, text} from '@storybook/addon-knobs'
+import {text} from '@storybook/addon-knobs'
 import {OptionalKeyMap, optionalSelect} from '../../utils'
 
-import {Toast, ToastColorType, ToastProps} from '../../../src/'
+import {Toast, ToastColorType} from '../../../src/'
+import {withLiveEditAndInfo} from '../../utils/withLiveEditAndInfo'
 
 const toastColorTypes: OptionalKeyMap<ToastColorType> = {
   primary: 'primary',
@@ -29,4 +30,4 @@ const component = () => {
   )
 }
 
-export default component
+export default withLiveEditAndInfo(component, {Toast})

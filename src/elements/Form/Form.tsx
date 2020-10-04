@@ -1,10 +1,15 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {FormProps} from './interfaces'
 
-const Form: FC<FormProps> = ({children, className, horizontal, ...rest}) => (
+const Form: React.FC<FormProps> = ({
+  children,
+  className,
+  horizontal,
+  ...rest
+}) => (
   <form {...rest} className={cx(className, {'form-horizontal': horizontal})}>
     {children}
   </form>

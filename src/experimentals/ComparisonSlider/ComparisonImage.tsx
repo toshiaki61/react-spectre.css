@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {ComparisonImageProps} from './interfaces'
 
-const ComparisonImage: FC<ComparisonImageProps> = ({
+const ComparisonImage: React.FC<ComparisonImageProps> = ({
   src,
   alt,
   className,

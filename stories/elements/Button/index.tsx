@@ -1,42 +1,20 @@
-import React from 'react'
+import * as React from 'react'
 
-import {action} from '@storybook/addon-actions'
-import {boolean, number, object, select, text} from '@storybook/addon-knobs'
-import {OptionalKeyMap, optionalSelect} from '../../utils'
+import {Button} from '../../../src'
 
-import {Button, ButtonColorType, ButtonSizeType} from '../../../src'
-
-const sizeOptions: OptionalKeyMap<ButtonSizeType> = {
-  sm: 'sm',
-  lg: 'lg',
-  'No Value': '',
-}
-const colorOptions: OptionalKeyMap<ButtonColorType> = {
-  success: 'success',
-  error: 'error',
-  link: 'link',
-  primary: 'primary',
-  'No Value': '',
-}
+import {withLiveEditAndInfo} from '../../utils/withLiveEditAndInfo'
 
 const component = () => (
   <Button
-    type={select('Type', ['button', 'submit'], 'button')}
-    size={optionalSelect<ButtonSizeType | ''>('Size', sizeOptions, '')}
-    color={optionalSelect<ButtonColorType | ''>('Color', colorOptions, '')}
-    loading={boolean('loading', false)}
-    blockButton={boolean('block', false)}
-    inputGroup={boolean('inputGroup', false)}
-    clearButton={boolean('clear', false)}
-    actionButton={boolean('actionButton', false)}
-    circle={boolean('circle', false)}
-    disabled={boolean('disabled', false)}
-    onClick={action('button_clicked')}
-    className={text('ClassName', '')}
-    style={object('Style', {})}
+    type={'button'}
+    size={'lg'}
+    color={'error'}
+    onClick={() => alert('clicked')}
+    className={''}
+    style={{}}
   >
     Great Success
   </Button>
 )
 
-export default component
+export default withLiveEditAndInfo(component, {Button})

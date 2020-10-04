@@ -1,13 +1,13 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {TableHeadingProps, TableSortDirection} from './interfaces'
 
-import {Button} from 'elements/Button'
-import {Icon} from 'elements/Icon'
+import {Button} from '../Button'
+import {Icon} from '../Icon'
 
-const TableHeading: FC<TableHeadingProps> = ({
+const TableHeading: React.FC<TableHeadingProps> = ({
   className,
   children,
   onClick,

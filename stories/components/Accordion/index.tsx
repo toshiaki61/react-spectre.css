@@ -1,10 +1,9 @@
-import React from 'react'
+import * as React from 'react'
 
-import {action} from '@storybook/addon-actions'
-import {boolean, number, object, select, text} from '@storybook/addon-knobs'
-import {OptionalKeyMap, optionalSelect} from '../../utils'
+import {boolean, number, text} from '@storybook/addon-knobs'
 
 import {Accordion, AccordionItem, Menu, MenuItemProps} from '../../../src'
+import {withLiveEditAndInfo} from '../../utils/withLiveEditAndInfo'
 
 const generateData = (amount: number) =>
   Array(amount)
@@ -49,4 +48,8 @@ const component = () => {
   )
 }
 
-export default component
+export default withLiveEditAndInfo(component, {
+  Accordion,
+  AccordionItem,
+  Menu,
+})

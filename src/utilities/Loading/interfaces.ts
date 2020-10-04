@@ -1,7 +1,7 @@
-import {CSSProperties} from 'react'
+import * as React from 'react'
 
 export interface LoadingProps {
   large?: boolean
   className?: string
-  style?: CSSProperties
+  style?: React.CSSProperties
 }

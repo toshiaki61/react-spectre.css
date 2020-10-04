@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {TilePartProps} from './interfaces'
 
-const TileIcon: FC<TilePartProps> = ({children, className}) => (
+const TileIcon: React.FC<TilePartProps> = ({children, className}) => (
   <div className={cx('tile-icon', className)}>{children}</div>
 )
 

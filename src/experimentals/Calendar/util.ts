@@ -4,14 +4,15 @@ import {
   endOfMonth,
   endOfWeek,
   isAfter,
-  isBefore,
+  // isBefore,
   isEqual,
   isSameDay,
   isSameMonth,
   startOfMonth,
   startOfWeek,
 } from 'date-fns'
-
+import {isBefore} from 'date-fns'
+// import * as isBefore from 'date-fns/is_before'
 import {compose, range} from 'ramda'
 import {CalendarChildrenProps, CalendarOptions, DateLike} from './interfaces'
 
@@ -29,7 +30,7 @@ export function isBetween(
   to: DateLike,
   inclusivity = '()'
 ) {
-  if (!['()', '[]', '(]', '[)'].includes(inclusivity)) {
+  if (!['()', '[]', '(]', '[)'].some(v => v === inclusivity)) {
     throw new Error('Inclusivity parameter must be one of (), [], (], [)')
   }
   const isBeforeEqual = inclusivity[0] === '['

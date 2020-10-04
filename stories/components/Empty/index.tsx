@@ -1,8 +1,7 @@
-import React from 'react'
+import * as React from 'react'
 
 import {action} from '@storybook/addon-actions'
-import {boolean, number, object, select, text} from '@storybook/addon-knobs'
-import {OptionalKeyMap, optionalSelect} from '../../utils'
+import {text} from '@storybook/addon-knobs'
 
 import {
   Button,
@@ -13,6 +12,7 @@ import {
   EmptyTitle,
   Icon,
 } from '../../../src'
+import {withLiveEditAndInfo} from '../../utils/withLiveEditAndInfo'
 
 const component = () => {
   return (
@@ -35,4 +35,12 @@ const component = () => {
   )
 }
 
-export default component
+export default withLiveEditAndInfo(component, {
+  Button,
+  Empty,
+  EmptyAction,
+  EmptyIcon,
+  EmptySubtitle,
+  EmptyTitle,
+  Icon,
+})

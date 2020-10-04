@@ -1,7 +1,7 @@
-import React, {FC, MouseEvent} from 'react'
+import * as React from 'react'
 
-import {Avatar, Chip, Menu, MenuItem, Tile} from 'components/index'
-import {FormIcon, FormInput, HasIcon} from 'elements/index'
+import {Avatar, Chip, Menu, MenuItem, Tile} from '../../components'
+import {FormIcon, FormInput, HasIcon} from '../../elements'
 
 import {AutocompleteProps} from './interfaces'
 
@@ -9,7 +9,7 @@ import FormAutocomplete from './FormAutocomplete'
 import FormAutocompleteInput from './FormAutocompleteInput'
 import {filter, mark} from './util'
 
-const Autocomplete: FC<AutocompleteProps> = ({
+const Autocomplete: React.FC<AutocompleteProps> = ({
   placeholder,
   active,
   selected,
@@ -26,9 +26,9 @@ const Autocomplete: FC<AutocompleteProps> = ({
     <FormAutocomplete onFocus={onFocus} onBlur={onBlur}>
       <FormAutocompleteInput active={active}>
         {selected.map(({id, name, img, initial}) => {
-          const handleClearClick =
+          const handleClearClick: React.MouseEventHandler =
             // useCallback(
-            (e: MouseEvent<any>) => onClearClick(e, id)
+            e => onClearClick(e, id)
           // ,[id])
           return (
             <Chip
@@ -66,7 +66,7 @@ const Autocomplete: FC<AutocompleteProps> = ({
           .map(({id, name, img, initial}) => {
             const handleSelect =
               // useCallback(
-              (e: MouseEvent<any>) => {
+              (e: React.MouseEvent<any>) => {
                 e.preventDefault()
                 onSelected(e, id)
               }

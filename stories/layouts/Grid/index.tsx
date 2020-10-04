@@ -1,17 +1,10 @@
-import React from 'react'
+import * as React from 'react'
 
-import {action} from '@storybook/addon-actions'
-import {boolean, number, object, select, text} from '@storybook/addon-knobs'
+import {object, text} from '@storybook/addon-knobs'
 import {OptionalKeyMap, optionalSelect} from '../../utils'
 
-import {
-  Column,
-  ColumnOffsetType,
-  Columns,
-  ColumnSizeType,
-  Container,
-  ContainerGridSizeType,
-} from '../../../src/index'
+import {Column, Columns, Container, ContainerGridSizeType} from '../../../src'
+import {withLiveEditAndInfo} from '../../utils/withLiveEditAndInfo'
 
 const containerGridSizeTypes: OptionalKeyMap<ContainerGridSizeType> = {
   xs: 'xs',
@@ -49,4 +42,8 @@ const component = () => {
   )
 }
 
-export default component
+export default withLiveEditAndInfo(component, {
+  Column,
+  Columns,
+  Container,
+})

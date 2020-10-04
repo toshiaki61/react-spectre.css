@@ -1,4 +1,4 @@
-import {ReactNode, ReactNodeArray} from 'react'
+import * as React from 'react'
 
 import {BasePartProps, StyleProps} from '../../interfaces'
 
@@ -7,15 +7,15 @@ export interface TileBaseProps extends Partial<StyleProps> {
 }
 
 export interface TileAttrProps extends TileBaseProps {
-  content: ReactNode | ReactNodeArray
-  title?: ReactNode
-  subtitle?: ReactNode
-  icon?: ReactNode
-  action?: ReactNode
+  content: React.ReactNode | React.ReactNodeArray
+  title?: React.ReactNode
+  subtitle?: React.ReactNode
+  icon?: React.ReactNode
+  action?: React.ReactNode
 }
 
 export interface TileChildrenProps extends TileBaseProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export type TileProps = TileAttrProps | TileChildrenProps

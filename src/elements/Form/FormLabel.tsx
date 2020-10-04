@@ -1,10 +1,14 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {FormLabelProps} from './interfaces'
 
-const FormLabel: FC<FormLabelProps> = ({children, className, htmlFor}) => {
+const FormLabel: React.FC<FormLabelProps> = ({
+  children,
+  className,
+  htmlFor,
+}) => {
   if (htmlFor) {
     return (
       <label className={cx('form-label', className)} htmlFor={htmlFor}>

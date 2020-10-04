@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC, Fragment} from 'react'
+import * as React from 'react'
 
 import {CarouselProps} from './interfaces'
 import {hasCarouselChildren} from './util'
@@ -15,13 +15,13 @@ function renderCarousel(p: CarouselProps) {
   }
   const {slides, activeId, onChange} = p
   return (
-    <Fragment>
+    <React.Fragment>
       {slides.map((slide, i) => {
-        const id = `slide-${i}`
+        const id = `slide-${slide.src || i}`
         const checked = activeId ? activeId === id : i === 0
         const handleChange =
           // useCallback(
-          (e: ChangeEvent<any>) => onChange(e, id)
+          (e: React.ChangeEvent<any>) => onChange(e, id)
         // ,[id])
         return (
           <CarouselLocator
@@ -44,7 +44,7 @@ function renderCarousel(p: CarouselProps) {
       </CarouselContainer>
       <CarouselNav>
         {slides.map((slide, i) => {
-          const id = `slide-${i}`
+          const id = `slide-${slide.src || i}`
           return (
             <CarouselNavItem key={`${id}_nav`} id={id}>
               {i + 1}
@@ -52,10 +52,10 @@ function renderCarousel(p: CarouselProps) {
           )
         })}
       </CarouselNav>
-    </Fragment>
+    </React.Fragment>
   )
 }
-const Carousel: FC<CarouselProps> = p => (
+const Carousel: React.FC<CarouselProps> = p => (
   <div className="carousel">{renderCarousel(p)}</div>
 )
 Carousel.defaultProps = {

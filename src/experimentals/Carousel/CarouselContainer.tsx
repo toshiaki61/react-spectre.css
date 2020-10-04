@@ -1,8 +1,8 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
 import {CarouselContainerProps} from './interfaces'
 
-const CarouselContainer: FC<CarouselContainerProps> = ({children}) => (
+const CarouselContainer: React.FC<CarouselContainerProps> = ({children}) => (
   <div className="carousel-container">{children}</div>
 )
 

@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "gamunu.vscode-yarn",
+    "kumar-harsh.graphql-for-vscode"
+  ]
+}

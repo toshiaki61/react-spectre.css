@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {ColumnsProps} from './interfaces'
 
-const Columns: FC<ColumnsProps> = ({
+const Columns: React.FC<ColumnsProps> = ({
   children,
   className,
   gapless,

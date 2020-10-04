@@ -1,6 +1,6 @@
-import React, {FC, Fragment} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {TileProps} from './interfaces'
 import {hasTileChildren} from './util'
@@ -17,7 +17,7 @@ function renderTile(p: TileProps) {
   }
   const {title, subtitle, content, icon, style, action} = p
   return (
-    <Fragment>
+    <React.Fragment>
       {icon ? <TileIcon>{icon}</TileIcon> : null}
       <TileContent>
         {title ? <TileTitle style={style}>{title}</TileTitle> : null}
@@ -27,10 +27,10 @@ function renderTile(p: TileProps) {
         {content}
       </TileContent>
       {action ? <TileAction>{action}</TileAction> : null}
-    </Fragment>
+    </React.Fragment>
   )
 }
-const Tile: FC<TileProps> = p => (
+const Tile: React.FC<TileProps> = p => (
   <div className={cx('tile', p.className, {'tile-centered': p.compact})}>
     {renderTile(p)}
   </div>

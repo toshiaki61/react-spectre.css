@@ -1,16 +1,16 @@
-import {MouseEvent, ReactNode} from 'react'
+import * as React from 'react'
 
 export interface Page {
-  label: ReactNode
+  label: React.ReactNode
   value: number
 }
 
 export interface PaginationItemProps {
-  label: ReactNode
+  label: React.ReactNode
   current: number
   value: number
   disabled?: boolean
-  onClick?: (e: MouseEvent<any>, value: number) => void
+  onClick?: (e: React.MouseEvent<any>, value: number) => void
 }
 
 export interface PaginationTitleItemProps {
@@ -18,7 +18,7 @@ export interface PaginationTitleItemProps {
   subtitle: string
   current: number
   value: number
-  onClick?: (e: MouseEvent<any>, value: number) => void
+  onClick?: (e: React.MouseEvent<any>, value: number) => void
 }
 
 export interface PaginationTitle {
@@ -28,14 +28,14 @@ export interface PaginationTitle {
 
 export interface PaginationBaseProps {
   current: number
-  onClick?: (e: MouseEvent<any>, page: number) => void
+  onClick?: (e: React.MouseEvent<any>, page: number) => void
 }
 
 export interface PaginationAttrProps extends PaginationBaseProps {
   label?: {
-    previous: ReactNode
-    next: ReactNode
-    skip: ReactNode
+    previous: React.ReactNode
+    next: React.ReactNode
+    skip: React.ReactNode
   }
   total: number
   each?: number
@@ -49,7 +49,7 @@ export interface PaginationTitleProps extends PaginationBaseProps {
 }
 
 export interface PaginationChildrenProps extends PaginationBaseProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export type PaginationProps =

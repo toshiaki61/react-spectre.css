@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {CardPartProps} from './interfaces'
 
-const CardImage: FC<CardPartProps> = ({children, className}) => (
+const CardImage: React.FC<CardPartProps> = ({children, className}) => (
   <div className={cx('card-image', className)}>{children}</div>
 )
 

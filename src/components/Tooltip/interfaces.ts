@@ -1,9 +1,10 @@
-import {ReactNode} from 'react'
+import * as React from 'react'
 
-import {TooltipPositionType} from 'utilities/attr/interfaces'
+import {TooltipPositionType} from '../../utilities/attr/interfaces'
 
 export interface TooltipProps {
-  children: ReactNode
+  children: React.ReactNode
   text: string
+  /** 'right' | 'left' | 'bottom' */
   position?: TooltipPositionType
 }

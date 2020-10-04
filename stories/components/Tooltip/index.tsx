@@ -1,10 +1,10 @@
-import React from 'react'
+import * as React from 'react'
 
-import {action} from '@storybook/addon-actions'
-import {boolean, number, object, select, text} from '@storybook/addon-knobs'
+import {text} from '@storybook/addon-knobs'
 import {OptionalKeyMap, optionalSelect} from '../../utils'
 
 import {Button, Tooltip, TooltipPositionType} from '../../../src/'
+import {withLiveEditAndInfo} from '../../utils/withLiveEditAndInfo'
 
 const tooltipPositions: OptionalKeyMap<TooltipPositionType> = {
   right: 'right',
@@ -26,4 +26,4 @@ const component = () => (
   </Tooltip>
 )
 
-export default component
+export default withLiveEditAndInfo(component, {Button, Tooltip})

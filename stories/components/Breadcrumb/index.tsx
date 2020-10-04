@@ -1,18 +1,14 @@
-import React, {Fragment} from 'react'
+import * as React from 'react'
 
 import {action} from '@storybook/addon-actions'
-import {boolean, number, object, select, text} from '@storybook/addon-knobs'
-import {OptionalKeyMap, optionalSelect} from '../../utils'
+import {text} from '@storybook/addon-knobs'
 
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbItemProps,
-} from '../../../src/index'
+import {Breadcrumb, BreadcrumbItem} from '../../../src'
+import {withLiveEditAndInfo} from '../../utils/withLiveEditAndInfo'
 
 const component = () => {
   return (
-    <Fragment>
+    <React.Fragment>
       <Breadcrumb>
         <BreadcrumbItem
           link={text('link1', '')}
@@ -35,8 +31,11 @@ const component = () => {
       </Breadcrumb>
       items
       <Breadcrumb items={[{id: 'first', children: 'items_first'}]} />
-    </Fragment>
+    </React.Fragment>
   )
 }
 
-export default component
+export default withLiveEditAndInfo(component, {
+  Breadcrumb,
+  BreadcrumbItem,
+})

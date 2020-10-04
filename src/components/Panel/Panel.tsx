@@ -1,6 +1,6 @@
-import React, {FC, Fragment} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {PanelProps} from './interfaces'
 
@@ -10,7 +10,7 @@ import PanelHeader from './PanelHeader'
 import PanelNav from './PanelNav'
 import PanelTitle from './PanelTitle'
 
-const Panel: FC<PanelProps> = ({
+const Panel: React.FC<PanelProps> = ({
   header,
   nav,
   content,
@@ -25,7 +25,7 @@ const Panel: FC<PanelProps> = ({
       {children ? (
         children
       ) : (
-        <Fragment>
+        <React.Fragment>
           {header ? (
             <PanelHeader className={headerClass}>
               {typeof header === 'string' ? (
@@ -38,7 +38,7 @@ const Panel: FC<PanelProps> = ({
           {nav ? <PanelNav>{nav}</PanelNav> : null}
           {content ? <PanelBody>{content}</PanelBody> : null}
           {footer ? <PanelFooter>{footer}</PanelFooter> : null}
-        </Fragment>
+        </React.Fragment>
       )}
     </div>
   )

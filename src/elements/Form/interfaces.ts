@@ -1,9 +1,9 @@
-import {ReactNode, ReactNodeArray} from 'react'
+import * as React from 'react'
 
-import {IconType} from 'elements/Icon'
+import {IconType} from '../Icon'
 
 export interface FormProps {
-  children: ReactNode
+  children: React.ReactNode
   className?: string
   horizontal?: boolean
 }
@@ -11,18 +11,19 @@ export interface FormProps {
 export type FormStateType = 'success' | 'error'
 
 export interface FormGroupProps {
-  children: ReactNode | ReactNodeArray
+  children: React.ReactNode | React.ReactNodeArray
   className?: string
   color?: FormStateType
 }
 
 export interface FormLabelProps {
-  children: ReactNode
+  children: React.ReactNode
   className?: string
   htmlFor?: string
 }
 
 export interface FormIconProps {
+  /** 'apps' | 'arrow-down' | 'arrow-left' | 'arrow-right' | 'arrow-up' | 'back' | 'bookmark' | 'caret' | 'check' | 'copy' | 'cross' | 'delete' | 'download' | 'downward' | 'edit' | 'emoji' | 'flag' | 'forward' | 'link' | 'location' | 'mail' | 'menu' | 'message' | 'minus' | 'more-horiz' | 'more-vert' | 'people' | 'photo' | 'plus' | 'refresh' | 'resize-horiz' | 'resize-vert' | 'search' | 'share' | 'shutdown' | 'stop' | 'time' | 'upload' | 'upward' */
   iconType?: IconType
   loading?: boolean
 }
@@ -67,7 +68,7 @@ export interface FormSelectProps
     React.SelectHTMLAttributes<HTMLSelectElement>,
     HTMLSelectElement
   > {
-  children: ReactNode
+  children: React.ReactNode
   formSize?: FormSizeType
 }
 export interface FormLabeledProps
@@ -75,24 +76,24 @@ export interface FormLabeledProps
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
   > {
-  label?: ReactNode
+  label?: React.ReactNode
   inline?: boolean
   formSize?: FormSizeType
 }
 export interface FormInputHintProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 export type InputIconPositionType = 'right' | 'left'
 
 export interface HasIconProps {
-  children: ReactNode
+  children: React.ReactNode
   position: InputIconPositionType
 }
 
 export interface InputGroupProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 export interface InputGroupAddonProps {
-  children: ReactNode
+  children: React.ReactNode
   formSize?: FormSizeType
 }

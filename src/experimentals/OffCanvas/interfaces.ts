@@ -1,26 +1,26 @@
-import {ReactNode} from 'react'
+import * as React from 'react'
 
 import {BasePartProps} from '../../interfaces'
 
 export interface OffCanvasSidebarProps {
-  children: ReactNode
+  children: React.ReactNode
   className?: string
   id: string
 }
 
 export interface OffCanvasAttrProps {
   sidebarId: string
-  sidebarContent?: ReactNode
-  content?: ReactNode
+  sidebarContent?: React.ReactNode
+  content?: React.ReactNode
 }
 export interface OffCanvasChildrenProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 export type OffCanvasProps = OffCanvasAttrProps | OffCanvasChildrenProps
 
 export type OffCanvasContentProps = Partial<BasePartProps>
 
 export interface OffCanvasToggleProps {
-  children: ReactNode
+  children: React.ReactNode
   sidebarId: string
 }

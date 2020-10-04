@@ -1,8 +1,8 @@
-import {MouseEventHandler, ReactNode} from 'react'
+import * as React from 'react'
 
 interface BaseProps {
   className?: string
-  children?: ReactNode
+  children?: React.ReactNode
 }
 
 export type SortCompareFunc = <T>(a: T, b: T) => number
@@ -10,7 +10,7 @@ export type TableCellDecorator = <T, K extends keyof T>(
   cellData: T[K],
   reactKey: string,
   datum: T
-) => ReactNode
+) => React.ReactNode
 
 export interface TableColumn<T> {
   children: any
@@ -24,8 +24,9 @@ export interface TableColumn<T> {
 
 export type RowClickHandler = <T>(datum: T) => void
 
+export type TableColumnType<T> = keyof T | TableColumn<T>
 export interface TableProps<T> extends BaseProps {
-  columns: Array<keyof T | TableColumn<T>>
+  columns: TableColumnType<T>[]
   data: T[]
   striped?: boolean
   hover?: boolean
@@ -46,7 +47,7 @@ export type TableHeaderProps = BaseProps
 export type TableBodyProps = BaseProps
 
 export interface TableHeadingProps extends BaseProps {
-  onClick?: MouseEventHandler
+  onClick?: React.MouseEventHandler
   sortDirection?: TableSortDirection
 }
 

@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {PanelPartProps} from './interfaces'
 
-const PanelNav: FC<PanelPartProps> = ({children, className, ...rest}) => (
+const PanelNav: React.FC<PanelPartProps> = ({children, className, ...rest}) => (
   <div className={cx('panel-nav', className)} {...rest}>
     {children}
   </div>

@@ -1,9 +1,9 @@
-import React, {FC, Fragment, MouseEvent} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
-import {Button, Icon} from 'elements/index'
-import {attr} from 'utilities/attr'
+import {Button, Icon} from '../../elements'
+import {attr} from '../../utilities/attr'
 
 import {CalendarProps} from './interfaces'
 import {generateCalendarData, hasCalendarChildren} from './util'
@@ -21,7 +21,7 @@ function renderCalendar(p: CalendarProps) {
   }
   const {nav, weekdays, current, options, onDateClick, formatDate} = p
   return (
-    <Fragment>
+    <React.Fragment>
       {nav && (
         <CalendarNav>
           <Button
@@ -65,7 +65,8 @@ function renderCalendar(p: CalendarProps) {
             }) => {
               const handleDateClick =
                 //  useCallback(
-                (e: MouseEvent<any>) => onDateClick && onDateClick(e, date)
+                (e: React.MouseEvent<any>) =>
+                  onDateClick && onDateClick(e, date)
               // ,[date])
               return (
                 <CalendarDate
@@ -98,10 +99,10 @@ function renderCalendar(p: CalendarProps) {
           )}
         </CalendarBody>
       </CalendarContainer>
-    </Fragment>
+    </React.Fragment>
   )
 }
-const Calendar: FC<CalendarProps> = p => (
+const Calendar: React.FC<CalendarProps> = p => (
   <div className={cx('calendar', {'calendar-lg': p.lg})}>
     {renderCalendar(p)}
   </div>

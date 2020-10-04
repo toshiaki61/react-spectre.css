@@ -1,4 +1,4 @@
-import {ReactNode} from 'react'
+import * as React from 'react'
 
 import {Page, PaginationChildrenProps, PaginationTitleProps} from './interfaces'
 
@@ -26,7 +26,7 @@ export function pages(
   current: number,
   total: number,
   each: number = 1,
-  skip: ReactNode = '...'
+  skip: React.ReactNode = '...'
 ): Page[] {
   const page = calculateStartAndEnd(current, total, each)
   const result: Page[] = []

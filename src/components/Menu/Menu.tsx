@@ -1,8 +1,8 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
-import {MenuProps} from './interfaces'
+import {MenuProps, MenuAttrProps} from './interfaces'
 import {hasMenuChildren} from './util'
 
 import MenuItem from './MenuItem'
@@ -11,7 +11,7 @@ function renderMenu(p: MenuProps) {
   if (hasMenuChildren(p)) {
     return p.children
   }
-  return p.contents.map((content, i) => (
+  return p.contents.map(content => (
     <MenuItem
       key={content.id}
       {...content}
@@ -19,11 +19,14 @@ function renderMenu(p: MenuProps) {
     />
   ))
 }
-const Menu: FC<MenuProps> = p => {
+const Menu: React.FC<MenuProps> = p => {
   const {className, nav, onClick, children, ...rest} = p
   const ulProps = Object.keys(rest)
     .filter(r => r !== 'header')
-    .reduce((memo, r) => ({...memo, [r]: rest[r]}), {})
+    .reduce<Partial<Pick<MenuAttrProps, 'contents' | 'style'>>>(
+      (memo, r) => ({...memo, [r]: (rest as any)[r]}),
+      {}
+    )
   return (
     <ul
       className={cx(

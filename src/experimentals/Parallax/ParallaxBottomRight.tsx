@@ -1,6 +1,6 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-const ParallaxBottomRight: FC<{}> = () => (
+const ParallaxBottomRight: React.FC<{}> = () => (
   <div className="parallax-bottom-right" />
 )
 

@@ -1,12 +1,12 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {FormLabeledProps} from './interfaces'
 
 import FormIcon from './FormIcon'
 
-const FormRadio: FC<FormLabeledProps> = ({
+const FormRadio: React.FC<FormLabeledProps> = ({
   label,
   inline,
   formSize,

@@ -1,12 +1,12 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import AvatarIcon from './AvatarIcon'
 import AvatarPresence from './AvatarPresence'
 import {AvatarProps} from './interfaces'
 
-const Avatar: FC<AvatarProps> = ({
+const Avatar: React.FC<AvatarProps> = ({
   className,
   initial,
   src,

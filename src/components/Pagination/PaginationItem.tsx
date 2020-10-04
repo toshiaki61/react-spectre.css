@@ -1,12 +1,12 @@
-import React, {FC, MouseEvent} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {LinkHash} from '../../interfaces'
 
 import {PaginationItemProps} from './interfaces'
 
-const PaginationItem: FC<PaginationItemProps> = ({
+const PaginationItem: React.FC<PaginationItemProps> = ({
   current,
   value,
   label,
@@ -19,7 +19,7 @@ const PaginationItem: FC<PaginationItemProps> = ({
   }
   const handleLinkClick =
     // useCallback(
-    (e: MouseEvent<any>) => {
+    (e: React.MouseEvent<any>) => {
       e.preventDefault()
       if (onClick) {
         onClick(e, value)

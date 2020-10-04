@@ -1,22 +1,23 @@
-import {ReactNode} from 'react'
+import * as React from 'react'
 
 import {StyleProps} from '../../interfaces'
 
 export type HeroSizeType = 'lg' | 'sm'
 
 export interface HeroBaseProps extends Partial<StyleProps> {
+  /** 'lg' | 'sm' */
   size?: HeroSizeType
 }
 export interface HeroAttrProps extends HeroBaseProps {
-  title: ReactNode
-  content: ReactNode
+  title: React.ReactNode
+  content: React.ReactNode
 }
 export interface HeroChildrenProps extends HeroBaseProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 export type HeroProps = HeroAttrProps | HeroChildrenProps
 
 export interface HeroBodyProps {
-  children?: ReactNode
+  children?: React.ReactNode
   className?: string
 }

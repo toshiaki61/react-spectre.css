@@ -1,4 +1,4 @@
-import {ReactNode} from 'react'
+import * as React from 'react'
 
 import {BasePartProps} from '../../interfaces'
 
@@ -8,7 +8,7 @@ export interface ParallaxAttrProps {
   title?: string
 }
 export interface ParallaxChildrenProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 export type ParallaxProps = ParallaxAttrProps | ParallaxChildrenProps
 

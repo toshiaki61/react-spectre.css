@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {EmptyPartProps} from './interfaces'
 
-const EmptyIcon: FC<EmptyPartProps> = ({children, className}) => (
+const EmptyIcon: React.FC<EmptyPartProps> = ({children, className}) => (
   <div className={cx('empty-icon', className)}>{children}</div>
 )
 export default EmptyIcon

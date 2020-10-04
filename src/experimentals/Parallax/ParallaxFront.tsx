@@ -1,8 +1,8 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
 import {ParallaxPartProps} from './interfaces'
 
-const ParallaxFront: FC<ParallaxPartProps> = ({children}) => (
+const ParallaxFront: React.FC<ParallaxPartProps> = ({children}) => (
   <div className="parallax-front">{children}</div>
 )
 

@@ -1,6 +1,6 @@
-import React, {FC, Fragment, MouseEvent} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {TabProps} from './interfaces'
 import {hasTabChildren} from './util'
@@ -14,11 +14,11 @@ function renderTab(p: TabProps) {
   }
   const {items, activeId, onClick, action} = p
   return (
-    <Fragment>
+    <React.Fragment>
       {items.map(item => {
         const handleLinkClick =
           // useCallback(
-          (e: MouseEvent<any>) => {
+          (e: React.MouseEvent<any>) => {
             e.preventDefault()
             onClick(e, item.id)
           }
@@ -33,10 +33,10 @@ function renderTab(p: TabProps) {
         )
       })}
       {action ? <TabAction>{action}</TabAction> : null}
-    </Fragment>
+    </React.Fragment>
   )
 }
-const Tab: FC<TabProps> = p => (
+const Tab: React.FC<TabProps> = p => (
   <ul className={cx('tab', {'tab-block': p.block})}>{renderTab(p)}</ul>
 )
 

@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {NavbarSectionProps} from './interfaces'
 
-const NavbarSection: FC<NavbarSectionProps> = ({children, className}) => (
+const NavbarSection: React.FC<NavbarSectionProps> = ({children, className}) => (
   <section className={cx('navbar-section', className)}>{children}</section>
 )
 

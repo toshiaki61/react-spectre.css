@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import {attr} from 'utilities/attr'
+import {attr} from '../attr'
 
 import {LoadingProps} from './interfaces'
 
-const Loading: FC<LoadingProps> = ({large, className, ...rest}) => (
+const Loading: React.FC<LoadingProps> = ({large, className, ...rest}) => (
   <div
     {...attr({loading: true, loadingSize: large ? 'lg' : undefined, className})}
     {...rest}

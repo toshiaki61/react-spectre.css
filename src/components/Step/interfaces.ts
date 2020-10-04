@@ -1,8 +1,8 @@
-import {ReactNode} from 'react'
+import * as React from 'react'
 
 export interface StepItemProps {
   id: string
-  children: ReactNode
+  children: React.ReactNode
   tooltip: string
   active?: boolean
 }
@@ -12,7 +12,7 @@ export interface StepAttrProps {
   activeId?: string
 }
 export interface StepChildrenProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export type StepProps = StepAttrProps | StepChildrenProps

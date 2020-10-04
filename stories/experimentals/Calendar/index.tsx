@@ -1,19 +1,18 @@
-import React, {MouseEvent} from 'react'
+import * as React from 'react'
 
 import {eachDay, endOfWeek, format, startOfWeek} from 'date-fns'
 
 import {action} from '@storybook/addon-actions'
-import {boolean, number, object, select, text} from '@storybook/addon-knobs'
-import {OptionalKeyMap, optionalSelect} from '../../utils'
+import {boolean} from '@storybook/addon-knobs'
 
 import {
   Calendar,
-  CalendarNav,
   CalendarOptions,
   Column,
   Columns,
   DateLike,
-} from '../../../src/index'
+} from '../../../src'
+import {withLiveEditAndInfo} from '../../utils/withLiveEditAndInfo'
 
 const component = () => {
   // const now = new Date()
@@ -29,13 +28,13 @@ const component = () => {
   const nav = {
     current: format(current, 'MMMM YYYY'),
     prev: {
-      onClick: (e: MouseEvent<any>) => {
+      onClick: (e: React.MouseEvent<any>) => {
         e.preventDefault()
         action('prev_clicked')
       },
     },
     next: {
-      onClick: (e: MouseEvent<any>) => {
+      onClick: (e: React.MouseEvent<any>) => {
         e.preventDefault()
         action('next_clicked')
       },
@@ -66,4 +65,4 @@ const component = () => {
   )
 }
 
-export default component
+export default withLiveEditAndInfo(component, {Calendar, Column, Columns})

@@ -1,10 +1,10 @@
-import React, {FC} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
 import {CalendarDateProps} from './interfaces'
 
-const CalendarDate: FC<CalendarDateProps> = ({
+const CalendarDate: React.FC<CalendarDateProps> = ({
   children,
   className,
   ...rest

@@ -9,6 +9,6 @@ const stories = storiesOf('Utilities', module)
 
 stories
   .addDecorator(withKnobs)
-  .add('attr', attr)
-  .add('Divider', Divider)
-  .add('Loading', Loading)
+  .add('attr', attr[0], attr[1])
+  .add('Divider', Divider[0], Divider[1])
+  .add('Loading', Loading[0], Loading[1])

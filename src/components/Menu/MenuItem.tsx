@@ -1,8 +1,8 @@
-import React, {FC, Fragment, MouseEvent} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
-import {Divider} from 'utilities/Divider'
+import {Divider} from '../../utilities/Divider'
 
 import {MenuItemProps} from './interfaces'
 import {hasMenuItemChildren, isMenuItemDivider} from './util'
@@ -19,7 +19,7 @@ function renderMenuitem(p: MenuItemProps) {
   const {id, link, content, active, badge, onClick} = p
   const handleItemClick =
     // useCallback(
-    (e: MouseEvent<any>) => {
+    (e: React.MouseEvent<any>) => {
       e.preventDefault()
       if (onClick) {
         onClick(e, id || '')
@@ -27,15 +27,15 @@ function renderMenuitem(p: MenuItemProps) {
     }
   // ,[id])
   return (
-    <Fragment>
+    <React.Fragment>
       <MenuBadge content={badge} />
       <a href={link} className={cx({active})} onClick={handleItemClick}>
         {content}
       </a>
-    </Fragment>
+    </React.Fragment>
   )
 }
-const MenuItem: FC<MenuItemProps> = p => {
+const MenuItem: React.FC<MenuItemProps> = p => {
   const {className} = p
   if (isMenuItemDivider(p)) {
     return (

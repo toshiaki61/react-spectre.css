@@ -1,22 +1,41 @@
 {
   "compilerOptions": {
-    "allowJs": true,
+    "target": "es5",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "jsx": "preserve",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "lib": ["esnext", "dom"],
-    "module": "esnext",
     "moduleResolution": "node",
-    "noEmit": true,
-    "noImplicitAny": false,
-    "resolveJsonModule": true,
-    "skipLibCheck": false,
-    "sourceMap": true,
+    "skipLibCheck": true,
     "strict": true,
-    "target": "es5"
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "rootDirs": [
+      "src",
+      "stories"
+    ],
+    "typeRoots": [
+      "src/types",
+      "stories/types"
+    ],
+    "allowJs": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
   },
-  "include": ["src", "stories"]
+  "include": [
+    "src",
+    "stories"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

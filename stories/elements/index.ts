@@ -1,4 +1,3 @@
-import {withKnobs} from '@storybook/addon-knobs'
 import {storiesOf} from '@storybook/react'
 
 import Button from './Button'
@@ -10,9 +9,8 @@ import Table from './Table'
 const stories = storiesOf('Elements', module)
 
 stories
-  .addDecorator(withKnobs)
-  .add('Button', Button)
-  .add('Form', Form)
-  .add('Icon', Icon)
-  .add('Label', Label)
-  .add('Table', Table)
+  .add('Button', Button[0], Button[1])
+  .add('Form', Form[0], Form[1])
+  .add('Icon', Icon[0], Icon[1])
+  .add('Label', Label[0], Label[1])
+  .add('Table', Table[0], Table[1])

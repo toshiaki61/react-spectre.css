@@ -1,14 +1,14 @@
-import {CSSProperties, MouseEvent, ReactNode} from 'react'
+import * as React from 'react'
 
 export const LinkHash = '#'
 
 export interface StyleProps {
   className: string
-  style: CSSProperties
+  style: React.CSSProperties
 }
 
 export interface BasePartProps extends Partial<StyleProps> {
-  children: ReactNode
+  children: React.ReactNode
 }
 
-export type MouseEventIdHandler = (e: MouseEvent<any>, id: string) => void
+export type MouseEventIdHandler = (e: React.MouseEvent<any>, id: string) => void

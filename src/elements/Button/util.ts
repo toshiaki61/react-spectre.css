@@ -1,7 +1,7 @@
-import {HTMLProps} from 'react'
+import * as React from 'react'
 
 export function isAnchorElement(
   item: any
-): item is HTMLProps<HTMLAnchorElement> {
+): item is React.HTMLProps<HTMLAnchorElement> {
   return item.href
 }

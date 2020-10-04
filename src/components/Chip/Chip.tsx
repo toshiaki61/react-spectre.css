@@ -1,9 +1,9 @@
-import React, {FC, Fragment} from 'react'
+import * as React from 'react'
 
-import cx from 'classnames'
+import cx from 'clsx'
 
-import {Avatar} from 'components/Avatar'
-import {Button} from 'elements/Button'
+import {Button} from '../../elements/Button'
+import {Avatar} from '../Avatar'
 
 import {ChipProps} from './interfaces'
 import {hasChipChildren} from './util'
@@ -16,15 +16,15 @@ function renderChip(p: ChipProps) {
   }
   const {clear, icon, avatar, onClearClick} = p
   return (
-    <Fragment>
+    <React.Fragment>
       {icon}
       {avatar ? <Avatar size="sm" {...avatar} /> : null}
       {p.content}
       {clear ? <Button clearButton onClick={onClearClick} /> : null}
-    </Fragment>
+    </React.Fragment>
   )
 }
-const Chip: FC<ChipProps> = p => {
+const Chip: React.FC<ChipProps> = p => {
   const {htmlFor, className} = p
   return (
     <ChipWrapper htmlFor={htmlFor || ''} className={cx('chip', className)}>

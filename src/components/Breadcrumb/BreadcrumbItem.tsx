@@ -1,10 +1,14 @@
-import React, {FC, MouseEvent} from 'react'
+import * as React from 'react'
 
 import {LinkHash} from '../../interfaces'
 import {BreadcrumbItemProps} from './interfaces'
 
-const BreadcrumbItem: FC<BreadcrumbItemProps> = ({link, children, onClick}) => {
-  const handleClick = (e: MouseEvent<any>) => {
+const BreadcrumbItem: React.FC<BreadcrumbItemProps> = ({
+  link,
+  children,
+  onClick,
+}) => {
+  const handleClick = (e: React.MouseEvent<any>) => {
     e.preventDefault()
     if (onClick) {
       onClick(e)
